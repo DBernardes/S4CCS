@@ -1,5 +1,7 @@
 # SPARC4-Acquisition-Control
  This is the Labview software of the acquisition control system of the new astronomical instrument Simultaneous Polarimeter and Rapid Camera in Four Bands (SPARC4). This software is designed to control two iXon Ultra EMCCD cameras of the Andor Technology company. 
+ 
+ ![SPARC4_ACS_GUI](https://github.com/DBernardes/SPARC4_ACS/blob/master/GUI_LabView.png)
 
 ## Getting Started
 
