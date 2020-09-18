@@ -16,15 +16,15 @@
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
 		<Item Name="CCDCamera.lvclass" Type="LVClass" URL="../CCDCamera/CCDCamera.lvclass"/>
 		<Item Name="Cooler.lvclass" Type="LVClass" URL="../Cooler/Cooler.lvclass"/>
-		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Channel Manager.lvclass" Type="LVClass" URL="../Channel Manager/Channel Manager.lvclass"/>
-		<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
-		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
+		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
 		<Item Name="Header.lvclass" Type="LVClass" URL="../Header/Header.lvclass"/>
 		<Item Name="Image Constructor.lvclass" Type="LVClass" URL="../Image Constructor/Image Constructor.lvclass"/>
-		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
-		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
+		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
+		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
+		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
+		<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
 		<Item Name="SPARC4_GUI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GUI.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
