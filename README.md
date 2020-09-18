@@ -1,7 +1,7 @@
 # SPARC4 Acquisition Control
 This is the Labview software of the acquisition control system of the new astronomical instrument Simultaneous Polarimeter and Rapid Camera in Four Bands (SPARC4). This software is being developed to control two iXon Ultra EMCCD cameras of the Andor Technology company. It allows us to acquire image cubes for each camera, with the maximum cube size being 170 images full-frame (1024 x 1024 pixels). This software is able to write the acquired data in the machine hard disk, even during the cube acquisition. Also, it is possible to concatenate image cubes with a minimal delay between them. 
 
-This readme presents a step-by-step tutorial to download the latest version of the code and run a simple test for image acquisition. Figure below presents an image of the interface that can be used to control the camera. However, this software is being developed only to control the cameras and its final version should not have an interface control. The interface presented is only for engineering purposes. 
+This readme presents a step-by-step tutorial to download the latest version of the code and run a simple test for image acquisition. Figure below presents an image of the interface that can be used to control the camera. However, this software is being developed only to control the cameras and its final version will not have an interface control. The presented interface is only for engineering purposes. 
  
 ![SPARC4_ACS_GUI](https://github.com/DBernardes/SPARC4_ACS/blob/master/GUI_LabView.png) 
 
