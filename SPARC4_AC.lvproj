@@ -18,6 +18,7 @@
 		<Item Name="Cooler.lvclass" Type="LVClass" URL="../Cooler/Cooler.lvclass"/>
 		<Item Name="Channel Manager.lvclass" Type="LVClass" URL="../Channel Manager/Channel Manager.lvclass"/>
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
+		<Item Name="Channel GUI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GUI.lvclass"/>
 		<Item Name="Header.lvclass" Type="LVClass" URL="../Header/Header.lvclass"/>
 		<Item Name="Image Constructor.lvclass" Type="LVClass" URL="../Image Constructor/Image Constructor.lvclass"/>
 		<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
