@@ -3,7 +3,6 @@ The acquisition control system (ACS) of the SPARC4 is written/developed using th
 
 This README presents a step-by-step tutorial to download the latest version of the code and run a simple test for image acquisition. Figure below presents an image of the interface that can be used to control the camera. However, this software is being developed only to control the cameras and its final version will not have a control interface. The presented interface is only for engineering purposes. Despide that, the software also presents a set of pre-configured commands to control the cameras: SET, GET, EXPOSE, and STATUS. The SET command allows the user to set a specific parameter. The GET command allows you to get the current value of a parameter. The EXPOSE command starts the exposure. The STATUS command gets the status of the CCD.
 
-Blah
  
 ![SPARC4_ACS_GUI](https://github.com/DBernardes/SPARC4_ACS/blob/master/GUI_LabView.png) 
 
