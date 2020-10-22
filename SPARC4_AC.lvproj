@@ -91,6 +91,7 @@
 				<Item Name="SetIODirection.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetIODirection.vi"/>
 				<Item Name="GetNumberIO.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetNumberIO.vi"/>
 				<Item Name="I2CWrite.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/I2CWrite.vi"/>
+				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
