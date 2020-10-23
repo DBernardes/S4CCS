@@ -25,7 +25,6 @@
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
-		<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
 		<Item Name="SPARC4_GUI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GUI.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
@@ -83,14 +82,10 @@
 				<Item Name="GetMetaDataInfo.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetMetaDataInfo.vi"/>
 				<Item Name="GetRelativeImageTimes.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetRelativeImageTimes.vi"/>
 				<Item Name="GetNumberNewImages.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetNumberNewImages.vi"/>
-				<Item Name="GetHSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetHSSpeed.vi"/>
-				<Item Name="GetSensitivity.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetSensitivity.vi"/>
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="SetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetIOLevel.vi"/>
 				<Item Name="SetIODirection.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetIODirection.vi"/>
-				<Item Name="GetNumberIO.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetNumberIO.vi"/>
-				<Item Name="I2CWrite.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/I2CWrite.vi"/>
 				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
@@ -127,7 +122,6 @@
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
-				<Item Name="High Resolution Relative Seconds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/High Resolution Relative Seconds.vi"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
@@ -141,6 +135,9 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Get Status.vi" Type="VI" URL="../../SPARC4_GUI - 2/SyncBox/Get Status.vi"/>
+			<Item Name="Close Connection.vi" Type="VI" URL="../../SPARC4_GUI - 2/SyncBox/Close Connection.vi"/>
+			<Item Name="Sync Box.lvclass" Type="LVClass" URL="../../SPARC4_GUI - 2/SyncBox/Sync Box.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
