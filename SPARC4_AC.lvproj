@@ -135,9 +135,6 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Get Status.vi" Type="VI" URL="../../SPARC4_GUI - 2/SyncBox/Get Status.vi"/>
-			<Item Name="Close Connection.vi" Type="VI" URL="../../SPARC4_GUI - 2/SyncBox/Close Connection.vi"/>
-			<Item Name="Sync Box.lvclass" Type="LVClass" URL="../../SPARC4_GUI - 2/SyncBox/Sync Box.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
