@@ -15,9 +15,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 There are some packages that need to be installed before running the software. The first one is the Software Development Kit (SDK) developed by Andor Technology to control the CCDs. The second one is the GFITSIO package, used to save the data acquired by the camera in FITS format. 
 
-![Software Development Kit (SDK)](https://andor.oxinst.com/products/software-development-kit/)
+[Software Development Kit (SDK)](https://andor.oxinst.com/products/software-development-kit/)
 
-![GFITSIO](https://github.com/USNavalResearchLaboratory/GFITSIO)
+[GFITSIO](https://github.com/USNavalResearchLaboratory/GFITSIO)
 
 
 ### Installing
