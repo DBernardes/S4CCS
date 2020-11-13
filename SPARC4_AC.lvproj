@@ -27,6 +27,7 @@
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
 		<Item Name="SPARC4_GUI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GUI.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
+		<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
 		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 		<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
 		<Item Name="CH2_Rx.vi" Type="VI" URL="../CH2_Rx.vi"/>
@@ -85,7 +86,6 @@
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="SetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetIOLevel.vi"/>
-				<Item Name="SetIODirection.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetIODirection.vi"/>
 				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
