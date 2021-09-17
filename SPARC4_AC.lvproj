@@ -36,6 +36,7 @@
 		<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
 		<Item Name="CH2_Rx.vi" Type="VI" URL="../CH2_Rx.vi"/>
 		<Item Name="CH2_Tx.vi" Type="VI" URL="../CH2_Tx.vi"/>
+		<Item Name="Calc Currente Exposure Time.vi" Type="VI" URL="../CCDCamera/Calc Currente Exposure Time.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -54,7 +55,6 @@
 				<Item Name="AbortAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/AbortAcquisition.vi"/>
 				<Item Name="Initialize.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Initialize.vi"/>
 				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
-				<Item Name="GetTemperatureRange.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetTemperatureRange.vi"/>
 				<Item Name="IsCoolerOn.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/IsCoolerOn.vi"/>
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Handler.vi"/>
@@ -89,7 +89,7 @@
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="SetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetIOLevel.vi"/>
-				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
+				<Item Name="GetTemperature.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetTemperature.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -138,6 +138,11 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Read CCDCamera.lvclass.vi" Type="VI" URL="../Image Constructor/Read CCDCamera.lvclass.vi"/>
+			<Item Name="Write CCDCamera.lvclass.vi" Type="VI" URL="../Image Constructor/Write CCDCamera.lvclass.vi"/>
+			<Item Name="Delete Header Content Line.vi" Type="VI" URL="../Header/Delete Header Content Line.vi"/>
+			<Item Name="Pop Standard Header.vi" Type="VI" URL="../Header/Pop Standard Header.vi"/>
+			<Item Name="Read Headers to be written.vi" Type="VI" URL="../Header/Read Headers to be written.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
