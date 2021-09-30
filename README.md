@@ -29,7 +29,7 @@ There are some packages that need to be installed before running the software. T
 Clone this repo using ``` git clone https://github.com/DBernardes/SPARC4_ACS.git ```
 
 ## Running the tests
-1. Before running the software, you need to connect an Andor iXon Ultra EMCCD camera to your computer. If you do not have this camera, the ACS will run in the simulated mode. In this mode, the ACS uses a class that simulates the communication with the camera to create the FITS images.
+1. Before running the software, you need to connect an Andor iXon Ultra EMCCD camera to your computer. If you do not have this camera, the ACS will run in the simulated mode. In this mode, the ACS uses a class that simulates the communication with the camera to create the image files. This feature is available since the 1.7 version of the code.
 2. Open the project SPARC4_AC.lvproj.
 3. Run the VI SPARC4_GUI.vi.
 4. Wait until the camera starts.
