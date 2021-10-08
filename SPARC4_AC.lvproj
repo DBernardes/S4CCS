@@ -136,11 +136,6 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Receive Interface Status.vi" Type="VI" URL="../Stream/Receive Interface Status.vi"/>
-			<Item Name="Write Interface.lvclass.vi" Type="VI" URL="../Stream/Write Interface.lvclass.vi"/>
-			<Item Name="Read Command.vi" Type="VI" URL="../Stream/Read Command.vi"/>
-			<Item Name="Read Interface.lvclass.vi" Type="VI" URL="../Stream/Read Interface.lvclass.vi"/>
-			<Item Name="Send Interface Status.vi" Type="VI" URL="../Stream/Send Interface Status.vi"/>
 			<Item Name="Flush Endpoint.vi" Type="VI" URL="../Stream/Flush Endpoint.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
