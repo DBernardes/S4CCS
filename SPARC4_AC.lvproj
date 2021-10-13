@@ -18,6 +18,7 @@
 		<Item Name="Simulated_Header.lvclass" Type="LVClass" URL="../Simulated_Header/Simulated_Header.lvclass"/>
 		<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
 		<Item Name="Simulated_Image_Constructor.lvclass" Type="LVClass" URL="../Simulated_Image_Constructor/Simulated_Image_Constructor.lvclass"/>
+		<Item Name="Header Contents.lvclass" Type="LVClass" URL="../Header Contents/Header Contents.lvclass"/>
 		<Item Name="CCDCamera.lvclass" Type="LVClass" URL="../CCDCamera/CCDCamera.lvclass"/>
 		<Item Name="Cooler.lvclass" Type="LVClass" URL="../Cooler/Cooler.lvclass"/>
 		<Item Name="Channel Manager.lvclass" Type="LVClass" URL="../Channel Manager/Channel Manager.lvclass"/>
