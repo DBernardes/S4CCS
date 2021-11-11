@@ -35,9 +35,6 @@
 		<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
 		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 		<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
-		<Item Name="CH2_Rx.vi" Type="VI" URL="../CH2_Rx.vi"/>
-		<Item Name="CH2_Tx.vi" Type="VI" URL="../CH2_Tx.vi"/>
-		<Item Name="Calc Currente Exposure Time.vi" Type="VI" URL="../CCDCamera/Calc Currente Exposure Time.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -138,6 +135,8 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="Flush Endpoint.vi" Type="VI" URL="../Stream/Flush Endpoint.vi"/>
+			<Item Name="Read Stream.lvclass.vi" Type="VI" URL="../Channel GUI/Read Stream.lvclass.vi"/>
+			<Item Name="Write Stream.lvclass.vi" Type="VI" URL="../Channel GUI/Write Stream.lvclass.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="AC1" Type="EXE">
@@ -155,7 +154,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{C8AB95F8-127F-4A9A-B595-98F8D49E7622}</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.build" Type="Int">7</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS1.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/AC1/ACS1.exe</Property>
@@ -164,7 +163,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/AC1/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{5B35A9AC-A771-4E19-95F5-EF21F866932C}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{A713E760-F4AF-45CF-86A1-B8C5A04573BF}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS_Controller.vi</Property>
@@ -185,53 +184,6 @@
 				<Property Name="TgtF_productName" Type="Str">AC1</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{97D80B52-3673-403A-8664-35E9318F84DD}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">ACS1.exe</Property>
-				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
-			</Item>
-			<Item Name="ACS2" Type="EXE">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{D5F5CF82-982A-4023-8B0C-567FFB26F0F8}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{2622B48F-4A98-49C8-9FE7-09CB1B90463C}</Property>
-				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{06E6C8D5-4A3F-4374-A8D4-01E23A6E5DCD}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">ACS2</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/ACS2</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{50583D04-1FB0-4616-A59F-B6DC274FAF3C}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">ACS2.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS2/ACS2.exe</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS2/data</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{898339A2-9A15-4968-BC44-B67581E0F4C2}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS_Controller.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/CH2_Rx.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/CH2_Tx.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">ACS2</Property>
-				<Property Name="TgtF_internalName" Type="Str">ACS2</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 </Property>
-				<Property Name="TgtF_productName" Type="Str">ACS2</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{B33FDDF3-D231-4FD3-A49B-4F2D161477A3}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">ACS2.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>
