@@ -134,9 +134,6 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Flush Endpoint.vi" Type="VI" URL="../Stream/Flush Endpoint.vi"/>
-			<Item Name="Read Stream.lvclass.vi" Type="VI" URL="../Channel GUI/Read Stream.lvclass.vi"/>
-			<Item Name="Write Stream.lvclass.vi" Type="VI" URL="../Channel GUI/Write Stream.lvclass.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="AC1" Type="EXE">
