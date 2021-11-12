@@ -11,6 +11,11 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="GEI Classes" Type="Folder">
+			<Item Name="Channel GEI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GEI.lvclass"/>
+			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
+			<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
+		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS_Controller.vi" Type="VI" URL="../S4ACS_Controller.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
@@ -23,16 +28,15 @@
 		<Item Name="Cooler.lvclass" Type="LVClass" URL="../Cooler/Cooler.lvclass"/>
 		<Item Name="Channel Manager.lvclass" Type="LVClass" URL="../Channel Manager/Channel Manager.lvclass"/>
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
-		<Item Name="Channel GUI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GUI.lvclass"/>
 		<Item Name="Header.lvclass" Type="LVClass" URL="../Header/Header.lvclass"/>
 		<Item Name="Image Constructor.lvclass" Type="LVClass" URL="../Image Constructor/Image Constructor.lvclass"/>
 		<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
-		<Item Name="SPARC4_GUI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GUI.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
-		<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
+		<Item Name="GUI_CH1_Rx.vi" Type="VI" URL="../GUI_CH1_Rx.vi"/>
+		<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
 		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 		<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -167,11 +171,11 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/CH1_Rx.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/GUI_CH1_Rx.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/CH1_Tx.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/GUI_CH1_Tx.vi</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">4</Property>
