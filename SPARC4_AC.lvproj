@@ -39,6 +39,12 @@
 		<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
 		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 		<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
+		<Item Name="CH2_Rx.vi" Type="VI" URL="../CH2_Rx.vi"/>
+		<Item Name="CH2_Tx.vi" Type="VI" URL="../CH2_Tx.vi"/>
+		<Item Name="CH3_Rx.vi" Type="VI" URL="../CH3_Rx.vi"/>
+		<Item Name="CH3_Tx.vi" Type="VI" URL="../CH3_Tx.vi"/>
+		<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
+		<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
