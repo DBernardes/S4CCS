@@ -146,51 +146,50 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="AC1" Type="EXE">
+			<Item Name="My Application" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{77F1BD96-D93D-4B16-9765-F8CA70DA04CE}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{0012CD20-C8BA-4840-9F3E-FC25BA87511B}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{128797BE-A5B2-40FA-8799-2823A4071D8E}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{98DEB618-B67F-4C85-8CF1-729BCB7D3A70}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{008F3CE9-AA51-4B09-8764-47B8987D944E}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">AC1</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{98941835-9BC6-4225-85B6-28B9169A0960}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">My Application</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/AC1</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/ACS5/ACS5</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{C8AB95F8-127F-4A9A-B595-98F8D49E7622}</Property>
-				<Property Name="Bld_version.build" Type="Int">7</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{7696005B-3A9C-4BC6-8E35-D24E404EC450}</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">ACS1.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/AC1/ACS1.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS5/ACS5/Application.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/AC1/data</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS5/ACS5/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A713E760-F4AF-45CF-86A1-B8C5A04573BF}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{8688640B-D896-48FE-B274-4D5E4D7DDF35}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS_Controller.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/GUI_CH1_Rx.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/CH1_Rx.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/GUI_CH1_Tx.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/CH1_Tx.vi</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">4</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">AC1</Property>
-				<Property Name="TgtF_internalName" Type="Str">AC1</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">My Application</Property>
+				<Property Name="TgtF_internalName" Type="Str">My Application</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 </Property>
-				<Property Name="TgtF_productName" Type="Str">AC1</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{97D80B52-3673-403A-8664-35E9318F84DD}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">ACS1.exe</Property>
+				<Property Name="TgtF_productName" Type="Str">My Application</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{5B8083C4-6A89-4201-A2B9-836751DB17A1}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Application.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>
