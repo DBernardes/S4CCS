@@ -94,9 +94,9 @@
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="GetTemperature.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetTemperature.vi"/>
-				<Item Name="GetRelativeImageTimes.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetRelativeImageTimes.vi"/>
 				<Item Name="DDGTriggerMode_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/DDGTriggerMode_mode typedef.ctl"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
+				<Item Name="GetRelativeImageTimes.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetRelativeImageTimes.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
