@@ -16,6 +16,26 @@
 			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
 			<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
 		</Item>
+		<Item Name="GEI RxTx" Type="Folder">
+			<Item Name="GUI_CH4_Rx.vi" Type="VI" URL="../GUI_CH4_Rx.vi"/>
+			<Item Name="GUI_CH4_Tx.vi" Type="VI" URL="../GUI_CH4_Tx.vi"/>
+			<Item Name="GUI_CH3_Rx.vi" Type="VI" URL="../GUI_CH3_Rx.vi"/>
+			<Item Name="GUI_CH3_Tx.vi" Type="VI" URL="../GUI_CH3_Tx.vi"/>
+			<Item Name="GUI_CH2_Rx.vi" Type="VI" URL="../GUI_CH2_Rx.vi"/>
+			<Item Name="GUI_CH2_Tx.vi" Type="VI" URL="../GUI_CH2_Tx.vi"/>
+			<Item Name="GUI_CH1_Rx.vi" Type="VI" URL="../GUI_CH1_Rx.vi"/>
+			<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
+		</Item>
+		<Item Name="ACS RxTx" Type="Folder">
+			<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
+			<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
+			<Item Name="CH2_Rx.vi" Type="VI" URL="../CH2_Rx.vi"/>
+			<Item Name="CH2_Tx.vi" Type="VI" URL="../CH2_Tx.vi"/>
+			<Item Name="CH3_Rx.vi" Type="VI" URL="../CH3_Rx.vi"/>
+			<Item Name="CH3_Tx.vi" Type="VI" URL="../CH3_Tx.vi"/>
+			<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
+			<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
+		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS_Controller.vi" Type="VI" URL="../S4ACS_Controller.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
@@ -35,16 +55,6 @@
 		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
-		<Item Name="GUI_CH1_Rx.vi" Type="VI" URL="../GUI_CH1_Rx.vi"/>
-		<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
-		<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
-		<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
-		<Item Name="CH2_Rx.vi" Type="VI" URL="../CH2_Rx.vi"/>
-		<Item Name="CH2_Tx.vi" Type="VI" URL="../CH2_Tx.vi"/>
-		<Item Name="CH3_Rx.vi" Type="VI" URL="../CH3_Rx.vi"/>
-		<Item Name="CH3_Tx.vi" Type="VI" URL="../CH3_Tx.vi"/>
-		<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
-		<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
@@ -176,11 +186,11 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/CH1_Rx.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Rx.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/CH1_Tx.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Tx.vi</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">4</Property>
