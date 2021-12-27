@@ -1,4 +1,4 @@
-# SPARC4 Acquisition Control System
+﻿# SPARC4 Acquisition Control System
 
 ## Introduction
 
@@ -9,7 +9,7 @@ For the control of the SPARC4 cameras, it is being developed the SPARC4 acquisit
 This README presents a step-by-step tutorial to download the latest version of the code and run a simple test for image acquisition. Figure below presents an image of the Graphical Engineering Interface (GEI) developed to control the ACS for engineering purposes. However, the ACS is being developed only to control the cameras and its final version will not have a graphical interface. 
 
 <p align="center">
-  <img src="https://github.com/DBernardes/SPARC4_ACS/blob/master/SPARC4_ACS_GEI.png" />
+  <img src="https://github.com/DBernardes/SPARC4_ACS/blob/master/Images/SPARC4_ACS_GEI.png" />
 </p>
 
  
