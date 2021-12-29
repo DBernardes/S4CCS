@@ -72,7 +72,6 @@
 				<Item Name="StartAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/StartAcquisition.vi"/>
 				<Item Name="GetStatus.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetStatus.vi"/>
 				<Item Name="AbortAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/AbortAcquisition.vi"/>
-				<Item Name="Initialize.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Initialize.vi"/>
 				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
 				<Item Name="IsCoolerOn.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/IsCoolerOn.vi"/>
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
@@ -107,6 +106,7 @@
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 				<Item Name="GetRelativeImageTimes.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetRelativeImageTimes.vi"/>
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
+				<Item Name="Initialize.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Initialize.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
