@@ -36,6 +36,10 @@
 			<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
 			<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
 		</Item>
+		<Item Name="TCS RxTx" Type="Folder">
+			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
+			<Item Name="TCS_Tx.vi" Type="VI" URL="../TCS_Tx.vi"/>
+		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS_Controller.vi" Type="VI" URL="../S4ACS_Controller.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
