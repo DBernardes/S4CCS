@@ -12,6 +12,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="GEI Classes" Type="Folder">
+			<Item Name="TCS.lvclass" Type="LVClass" URL="../TCS/TCS.lvclass"/>
 			<Item Name="Channel GEI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GEI.lvclass"/>
 			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
 			<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
@@ -79,7 +80,6 @@
 				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
 				<Item Name="IsCoolerOn.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/IsCoolerOn.vi"/>
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
-				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Handler.vi"/>
 				<Item Name="Add ECO For DLL.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Add ECO For DLL.vi"/>
 				<Item Name="Error Code Offset global.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Offset global.vi"/>
 				<Item Name="Get Error Source.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Get Error Source.vi"/>
@@ -107,10 +107,10 @@
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="GetTemperature.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetTemperature.vi"/>
 				<Item Name="DDGTriggerMode_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/DDGTriggerMode_mode typedef.ctl"/>
-				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 				<Item Name="GetRelativeImageTimes.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetRelativeImageTimes.vi"/>
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
 				<Item Name="Initialize.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Initialize.vi"/>
+				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Handler.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
