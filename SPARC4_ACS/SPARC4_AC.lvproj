@@ -16,6 +16,7 @@
 			<Item Name="Channel GEI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GEI.lvclass"/>
 			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
 			<Item Name="Sync Box.lvclass" Type="LVClass" URL="../Sync Box/Sync Box.lvclass"/>
+			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		</Item>
 		<Item Name="GEI RxTx" Type="Folder">
 			<Item Name="GUI_CH4_Rx.vi" Type="VI" URL="../GUI_CH4_Rx.vi"/>
@@ -37,7 +38,7 @@
 			<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
 			<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
 		</Item>
-		<Item Name="TCS RxTx" Type="Folder">
+		<Item Name="TCS Comm" Type="Folder">
 			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
 			<Item Name="TCS_Tx.vi" Type="VI" URL="../TCS_Tx.vi"/>
 		</Item>
@@ -62,6 +63,7 @@
 		<Item Name="TCS_ACS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS_ACS.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
+		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -153,6 +155,9 @@
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
+				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
+				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
+				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
 			</Item>
 			<Item Name="User32.dll" Type="Document" URL="User32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -160,6 +165,10 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Read Header Contents.vi" Type="VI" URL="../Simulated_Header/Read Header Contents.vi"/>
+			<Item Name="Write Header Contents.vi" Type="VI" URL="../Simulated_Header/Write Header Contents.vi"/>
+			<Item Name="Read First Header Contents Class Array .vi" Type="VI" URL="../Simulated_Header/Read First Header Contents Class Array .vi"/>
+			<Item Name="Write First Header Contents Class Array .vi" Type="VI" URL="../Simulated_Header/Write First Header Contents Class Array .vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">
