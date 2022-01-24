@@ -40,7 +40,9 @@
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
 			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
+			<Item Name="TCS_Rx_VISA.vi" Type="VI" URL="../TCS_Rx_VISA.vi"/>
 			<Item Name="TCS_Tx.vi" Type="VI" URL="../TCS_Tx.vi"/>
+			<Item Name="TCS_Tx_VISA.vi" Type="VI" URL="../TCS_Tx_VISA.vi"/>
 		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS_Controller.vi" Type="VI" URL="../S4ACS_Controller.vi"/>
