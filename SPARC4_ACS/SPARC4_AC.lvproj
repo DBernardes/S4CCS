@@ -165,10 +165,10 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Read Header Contents.vi" Type="VI" URL="../Simulated_Header/Read Header Contents.vi"/>
-			<Item Name="Write Header Contents.vi" Type="VI" URL="../Simulated_Header/Write Header Contents.vi"/>
-			<Item Name="Read First Header Contents Class Array .vi" Type="VI" URL="../Simulated_Header/Read First Header Contents Class Array .vi"/>
-			<Item Name="Write First Header Contents Class Array .vi" Type="VI" URL="../Simulated_Header/Write First Header Contents Class Array .vi"/>
+			<Item Name="Read Initialization.vi" Type="VI" URL="../Interface/Read Initialization.vi"/>
+			<Item Name="Read Temperature Status.vi" Type="VI" URL="../Interface/Read Temperature Status.vi"/>
+			<Item Name="Write Initialization.vi" Type="VI" URL="../Interface/Write Initialization.vi"/>
+			<Item Name="Write Temperature Status.vi" Type="VI" URL="../Interface/Write Temperature Status.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">
