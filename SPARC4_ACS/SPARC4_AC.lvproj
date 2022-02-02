@@ -49,7 +49,6 @@
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
 		<Item Name="Simulated_CCD_Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated_CCD_Camera.lvclass"/>
 		<Item Name="Simulated_Header.lvclass" Type="LVClass" URL="../Simulated_Header/Simulated_Header.lvclass"/>
-		<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
 		<Item Name="Simulated_Image_Constructor.lvclass" Type="LVClass" URL="../Simulated_Image_Constructor/Simulated_Image_Constructor.lvclass"/>
 		<Item Name="CCDCamera.lvclass" Type="LVClass" URL="../CCDCamera/CCDCamera.lvclass"/>
 		<Item Name="Cooler.lvclass" Type="LVClass" URL="../Cooler/Cooler.lvclass"/>
@@ -173,6 +172,9 @@
 			<Item Name="Write Initialization.vi" Type="VI" URL="../Interface/Write Initialization.vi"/>
 			<Item Name="Write Temperature Status.vi" Type="VI" URL="../Interface/Write Temperature Status.vi"/>
 			<Item Name="Write Exposure Time.vi" Type="VI" URL="../Simulated_CCD_Camera/Write Exposure Time.vi"/>
+			<Item Name="Read Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Read Simulated_Image_Constructor.lvclass.vi"/>
+			<Item Name="Write Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Write Simulated_Image_Constructor.lvclass.vi"/>
+			<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">
