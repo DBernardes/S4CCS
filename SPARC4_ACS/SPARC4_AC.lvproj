@@ -114,6 +114,7 @@
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
 				<Item Name="Initialize.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Initialize.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Handler.vi"/>
+				<Item Name="SetVSAmplitude.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVSAmplitude.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
@@ -171,7 +172,6 @@
 			<Item Name="Read Temperature Status.vi" Type="VI" URL="../Interface/Read Temperature Status.vi"/>
 			<Item Name="Write Initialization.vi" Type="VI" URL="../Interface/Write Initialization.vi"/>
 			<Item Name="Write Temperature Status.vi" Type="VI" URL="../Interface/Write Temperature Status.vi"/>
-			<Item Name="Write Exposure Time.vi" Type="VI" URL="../Simulated_CCD_Camera/Write Exposure Time.vi"/>
 			<Item Name="Read Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Read Simulated_Image_Constructor.lvclass.vi"/>
 			<Item Name="Write Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Write Simulated_Image_Constructor.lvclass.vi"/>
 			<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
