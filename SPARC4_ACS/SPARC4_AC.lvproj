@@ -44,6 +44,9 @@
 			<Item Name="TCS_Tx.vi" Type="VI" URL="../TCS_Tx.vi"/>
 			<Item Name="TCS_Tx_VISA.vi" Type="VI" URL="../TCS_Tx_VISA.vi"/>
 		</Item>
+		<Item Name="Save Header" Type="Folder">
+			<Item Name="CH1_Save_Header.vi" Type="VI" URL="../CH1_Save_Header.vi"/>
+		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS_Controller.vi" Type="VI" URL="../S4ACS_Controller.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
