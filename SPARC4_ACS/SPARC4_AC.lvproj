@@ -52,14 +52,11 @@
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
 		<Item Name="Simulated_CCD_Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated_CCD_Camera.lvclass"/>
 		<Item Name="Simulated_Header.lvclass" Type="LVClass" URL="../Simulated_Header/Simulated_Header.lvclass"/>
-		<Item Name="Simulated_Image_Constructor.lvclass" Type="LVClass" URL="../Simulated_Image_Constructor/Simulated_Image_Constructor.lvclass"/>
 		<Item Name="CCDCamera.lvclass" Type="LVClass" URL="../CCDCamera/CCDCamera.lvclass"/>
-		<Item Name="Cooler.lvclass" Type="LVClass" URL="../Cooler/Cooler.lvclass"/>
 		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Channel Manager.lvclass" Type="LVClass" URL="../Channel Manager/Channel Manager.lvclass"/>
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
 		<Item Name="Header.lvclass" Type="LVClass" URL="../Header/Header.lvclass"/>
-		<Item Name="Image Constructor.lvclass" Type="LVClass" URL="../Image Constructor/Image Constructor.lvclass"/>
 		<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
@@ -85,7 +82,6 @@
 				<Item Name="GetStatus.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetStatus.vi"/>
 				<Item Name="AbortAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/AbortAcquisition.vi"/>
 				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
-				<Item Name="IsCoolerOn.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/IsCoolerOn.vi"/>
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
 				<Item Name="Add ECO For DLL.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Add ECO For DLL.vi"/>
 				<Item Name="Error Code Offset global.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Offset global.vi"/>
@@ -178,6 +174,7 @@
 			<Item Name="Read Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Read Simulated_Image_Constructor.lvclass.vi"/>
 			<Item Name="Write Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Write Simulated_Image_Constructor.lvclass.vi"/>
 			<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
+			<Item Name="Simulated_Image_Constructor.lvclass" Type="LVClass" URL="../Simulated_Image_Constructor/Simulated_Image_Constructor.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">
