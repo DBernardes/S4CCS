@@ -188,6 +188,13 @@
 			<Item Name="Write Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Write Simulated_Image_Constructor.lvclass.vi"/>
 			<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
 			<Item Name="Simulated_Image_Constructor.lvclass" Type="LVClass" URL="../Simulated_Image_Constructor/Simulated_Image_Constructor.lvclass"/>
+			<Item Name="Read Cooler ON_OFF.vi" Type="VI" URL="../Simulated_Cooler/Read Cooler ON_OFF.vi"/>
+			<Item Name="Read Cooler Status.vi" Type="VI" URL="../Simulated_Cooler/Read Cooler Status.vi"/>
+			<Item Name="Close Connection.vi" Type="VI" URL="../Sync Box/Close Connection.vi"/>
+			<Item Name="Initialize Connection.vi" Type="VI" URL="../Sync Box/Initialize Connection.vi"/>
+			<Item Name="Write Setting.vi" Type="VI" URL="../Sync Box/Write Setting.vi"/>
+			<Item Name="Read Simulated_CCD_Camera.lvclass.vi" Type="VI" URL="../Simulated_Image_Constructor/Read Simulated_CCD_Camera.lvclass.vi"/>
+			<Item Name="Write Simulated_CCD_Camera.lvclass.vi" Type="VI" URL="../Simulated_Image_Constructor/Write Simulated_CCD_Camera.lvclass.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">
