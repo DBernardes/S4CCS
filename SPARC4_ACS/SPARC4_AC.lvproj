@@ -115,6 +115,9 @@
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Handler.vi"/>
 				<Item Name="SetVSAmplitude.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVSAmplitude.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
+				<Item Name="GetMetaDataInfo.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetMetaDataInfo.vi"/>
+				<Item Name="SYSTEMTIME structure typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SYSTEMTIME structure typedef.ctl"/>
+				<Item Name="U16 Array To SYSTEMTIME.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U16 Array To SYSTEMTIME.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
