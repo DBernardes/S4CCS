@@ -195,6 +195,7 @@
 			<Item Name="Write Setting.vi" Type="VI" URL="../Sync Box/Write Setting.vi"/>
 			<Item Name="Read Simulated_CCD_Camera.lvclass.vi" Type="VI" URL="../Simulated_Image_Constructor/Read Simulated_CCD_Camera.lvclass.vi"/>
 			<Item Name="Write Simulated_CCD_Camera.lvclass.vi" Type="VI" URL="../Simulated_Image_Constructor/Write Simulated_CCD_Camera.lvclass.vi"/>
+			<Item Name="Find tab index.vi" Type="VI" URL="../Save Image/Find tab index.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Application" Type="EXE">
