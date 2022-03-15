@@ -36,6 +36,8 @@
 			<Item Name="CH3_Tx.vi" Type="VI" URL="../CH3_Tx.vi"/>
 			<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
 			<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
+			<Item Name="CH1_Tx_TCPIP.vi" Type="VI" URL="../CH1_Tx_TCPIP.vi"/>
+			<Item Name="CH1_Rx_TCPIP.vi" Type="VI" URL="../CH1_Rx_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
 			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
@@ -64,6 +66,7 @@
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
 		<Item Name="TCS_ACS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS_ACS.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
+		<Item Name="TCPIP.lvclass" Type="LVClass" URL="../TCPIP/TCPIP.lvclass"/>
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
 		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
