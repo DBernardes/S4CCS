@@ -30,6 +30,7 @@ jobs:
         run: |
           git config --global user.email "denis.bernardes099@gmail.com"
           git config --global user.name "DBernardes"
+          git add "log.csv"
           git log --pretty=format:"%h; %an; %as; %s" > log.csv
           git commit -m "Auto updating log.csv"          
           git push origin master
