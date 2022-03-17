@@ -27,6 +27,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run:  git log --pretty=format:"%h; %an; %as; %s" > log.csv
+        run:  
+          git log --pretty=format:"%h; %an; %as; %s" > log.csv
+          git commit -m "Auto updating log.csv"
+          git fetch origin master
+          git push origin HEAD:master
+          
 
   
