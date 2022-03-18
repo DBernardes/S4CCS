@@ -11,6 +11,7 @@ jobs:
       - name: update the log file
         run: |          
           git log --pretty=format:"%h; %an; %as; %s" > log.csv
+          git add .
           git config --local user.name "DBernardes"          
           git commit -m "Updating the log.csv file"
       - name: Push changes # push the output folder to your repo
