@@ -9,8 +9,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: update the log file
-        run: |
-          cd ../..
+        run: |          
           git log --pretty=format:"%h; %an; %as; %s" > log.csv
           git config --local user.name "DBernardes"          
           git commit -m "Updating the log.csv file"
