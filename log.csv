@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 abfdba4; Denis; 2022-03-21; Update update_log_file.yml
 5bbd8ff; DBernardes; 2022-03-21; Updating the log.csv file
 9b5015d; Denis; 2022-03-21; Update update_log_file.yml
@@ -7,6 +8,8 @@ abfdba4; Denis; 2022-03-21; Update update_log_file.yml
 e137206; Denis; 2022-03-18; Update update_log_file.yml
 c46d6ca; Denis; 2022-03-18; Create update_log_file.yml
 e8cb8d1; Denis; 2022-03-18; The acquisition states fluxogram was updated
+=======
+>>>>>>> Stashed changes
 33d8a52; observer; 2022-03-17; The problem with the real header class was fixed
 eb54caa; observer; 2022-03-17; The problem with the extra HDU was fixed
 525a1a2; Denis; 2022-03-17; Delete .github/workflows directory
