@@ -31,6 +31,7 @@
 		<Item Name="ACS RxTx" Type="Folder">
 			<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
 			<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
+			<Item Name="CH1_Comm.vi" Type="VI" URL="../CH1_Comm.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
