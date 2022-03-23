@@ -1,3 +1,6 @@
+f067afe; observer; 2022-03-23; The GEI is using stream comm and the GUI is using TCPIP
+d08fd88; observer; 2022-03-23; Problem with the TCPIP communication in the same machine
+587f985; DBernardes; 2022-03-22; Updating the log.csv file
 65bef80; observer; 2022-03-22; TCPIP communication is working
 57aac82; DBernardes; 2022-03-21; Updating the log.csv file
 abfdba4; Denis; 2022-03-21; Update update_log_file.yml
