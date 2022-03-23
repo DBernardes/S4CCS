@@ -26,16 +26,11 @@
 			<Item Name="GUI_CH2_Tx.vi" Type="VI" URL="../GUI_CH2_Tx.vi"/>
 			<Item Name="GUI_CH1_Rx.vi" Type="VI" URL="../GUI_CH1_Rx.vi"/>
 			<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
+			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="ACS RxTx" Type="Folder">
-			<Item Name="CH1_Comm.vi" Type="VI" URL="../CH1_Comm.vi"/>
-			<Item Name="CH2_Tx.vi" Type="VI" URL="../CH2_Tx.vi"/>
-			<Item Name="CH3_Rx.vi" Type="VI" URL="../CH3_Rx.vi"/>
-			<Item Name="CH3_Tx.vi" Type="VI" URL="../CH3_Tx.vi"/>
-			<Item Name="CH4_Rx.vi" Type="VI" URL="../CH4_Rx.vi"/>
-			<Item Name="CH4_Tx.vi" Type="VI" URL="../CH4_Tx.vi"/>
-			<Item Name="CH1_Tx_TCPIP.vi" Type="VI" URL="../CH1_Tx_TCPIP.vi"/>
-			<Item Name="CH1_Rx_TCPIP.vi" Type="VI" URL="../CH1_Rx_TCPIP.vi"/>
+			<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
+			<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
@@ -178,6 +173,10 @@
 				<Item Name="Read Delimited Spreadsheet (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (I64).vi"/>
 				<Item Name="Read Delimited Spreadsheet (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (DBL).vi"/>
 				<Item Name="Read Delimited Spreadsheet.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet.vi"/>
+				<Item Name="TCP Listen List Operations.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen List Operations.ctl"/>
+				<Item Name="TCP Listen Internal List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen Internal List.vi"/>
+				<Item Name="Internecine Avoider.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/Internecine Avoider.vi"/>
+				<Item Name="TCP Listen.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen.vi"/>
 			</Item>
 			<Item Name="User32.dll" Type="Document" URL="User32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -233,7 +232,7 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Tx.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
