@@ -1,3 +1,6 @@
+402ebd4; observer; 2022-03-25; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
+6c4abc5; observer; 2022-03-25; The TCPIP communication was fixed
+1be2f6d; DBernardes; 2022-03-23; Updating the log.csv file
 f067afe; observer; 2022-03-23; The GEI is using stream comm and the GUI is using TCPIP
 d08fd88; observer; 2022-03-23; Problem with the TCPIP communication in the same machine
 587f985; DBernardes; 2022-03-22; Updating the log.csv file
