@@ -1,3 +1,5 @@
+ef7c816; observer; 2022-03-25; Now, the GEI is communicating with the ACS using TCPIP
+b7f4d25; DBernardes; 2022-03-25; Updating the log.csv file
 402ebd4; observer; 2022-03-25; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 6c4abc5; observer; 2022-03-25; The TCPIP communication was fixed
 1be2f6d; DBernardes; 2022-03-23; Updating the log.csv file
