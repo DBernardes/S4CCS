@@ -1,3 +1,40 @@
+d5e941d; observer; 2022-03-30; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
+962d62a; observer; 2022-03-30; Update SPARC4_ACS_GEI.png
+f2c5f34; DBernardes; 2022-03-30; Updating the log.csv file
+49edb84; Denis; 2022-03-30; Update README.md
+d47c5fb; DBernardes; 2022-03-28; Updating the log.csv file
+fb56c41; observer; 2022-03-28; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
+ae6b51b; observer; 2022-03-28; Updating the image of the ACS front pannel
+9f140a9; DBernardes; 2022-03-25; Updating the log.csv file
+ef7c816; observer; 2022-03-25; Now, the GEI is communicating with the ACS using TCPIP
+b7f4d25; DBernardes; 2022-03-25; Updating the log.csv file
+402ebd4; observer; 2022-03-25; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
+6c4abc5; observer; 2022-03-25; The TCPIP communication was fixed
+1be2f6d; DBernardes; 2022-03-23; Updating the log.csv file
+f067afe; observer; 2022-03-23; The GEI is using stream comm and the GUI is using TCPIP
+d08fd88; observer; 2022-03-23; Problem with the TCPIP communication in the same machine
+587f985; DBernardes; 2022-03-22; Updating the log.csv file
+65bef80; observer; 2022-03-22; TCPIP communication is working
+57aac82; DBernardes; 2022-03-21; Updating the log.csv file
+abfdba4; Denis; 2022-03-21; Update update_log_file.yml
+5bbd8ff; DBernardes; 2022-03-21; Updating the log.csv file
+9b5015d; Denis; 2022-03-21; Update update_log_file.yml
+0287319; DBernardes; 2022-03-18; Updating the log.csv file
+5e1bbf6; Denis; 2022-03-18; Update update_log_file.yml
+307c3cc; Denis; 2022-03-18; Update update_log_file.yml
+e137206; Denis; 2022-03-18; Update update_log_file.yml
+c46d6ca; Denis; 2022-03-18; Create update_log_file.yml
+e8cb8d1; Denis; 2022-03-18; The acquisition states fluxogram was updated
+33d8a52; observer; 2022-03-17; The problem with the real header class was fixed
+eb54caa; observer; 2022-03-17; The problem with the extra HDU was fixed
+525a1a2; Denis; 2022-03-17; Delete .github/workflows directory
+c3749e0; Denis; 2022-03-17; Update update_log_file.yml
+47c8a11; Denis; 2022-03-17; Update update_log_file.yml
+c4fbe21; Denis; 2022-03-17; Update update_log_file.yml
+356543a; Denis; 2022-03-17; Update update_log_file.yml
+df60d3f; Denis; 2022-03-17; Update update_log_file.yml
+0dd3778; Denis; 2022-03-17; Update update_log_file.yml
+7d7ab12; Denis; 2022-03-17; Create update_log_file.yml
 dbb7776; Denis; 2022-03-16; Small fixes
 7a4cbf0; Denis; 2022-03-15; Implementing the TCPIP communication
 6a9a6b8; Denis; 2022-03-15; small fixes
