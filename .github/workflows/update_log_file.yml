@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
       - name: update the log file
         run: |          
-          git log --pretty=format:"%h; %an; %as; %s" > log.csv
+          git log --invert-grep --grep="Updating the log.csv file" --grep="Merge branch" --pretty=format:"%h; %an; %as; %s" > log.csv
           git add .
           git config --local user.name "DBernardes"          
           git commit -m "Updating the log.csv file"
