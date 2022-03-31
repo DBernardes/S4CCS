@@ -1,33 +1,17 @@
+74d1019; Denis; 2022-03-31; Update update_log_file.yml
 96b79f9; Denis; 2022-03-31; Create citation.cff
-7950868; DBernardes; 2022-03-31; Updating the log.csv file
-4e6cf2f; Denis; 2022-03-31; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 82fa7ff; Denis; 2022-03-31; A fluxogram of the communication system was created
-cba157c; DBernardes; 2022-03-30; Updating the log.csv file
-12a05cb; Denis; 2022-03-30; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 66e3e3b; Denis; 2022-03-30; updating the fluxogram of the acquisition states
-afcf980; DBernardes; 2022-03-30; Updating the log.csv file
-d5e941d; observer; 2022-03-30; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 962d62a; observer; 2022-03-30; Update SPARC4_ACS_GEI.png
-f2c5f34; DBernardes; 2022-03-30; Updating the log.csv file
 49edb84; Denis; 2022-03-30; Update README.md
-d47c5fb; DBernardes; 2022-03-28; Updating the log.csv file
-fb56c41; observer; 2022-03-28; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 ae6b51b; observer; 2022-03-28; Updating the image of the ACS front pannel
-9f140a9; DBernardes; 2022-03-25; Updating the log.csv file
 ef7c816; observer; 2022-03-25; Now, the GEI is communicating with the ACS using TCPIP
-b7f4d25; DBernardes; 2022-03-25; Updating the log.csv file
-402ebd4; observer; 2022-03-25; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 6c4abc5; observer; 2022-03-25; The TCPIP communication was fixed
-1be2f6d; DBernardes; 2022-03-23; Updating the log.csv file
 f067afe; observer; 2022-03-23; The GEI is using stream comm and the GUI is using TCPIP
 d08fd88; observer; 2022-03-23; Problem with the TCPIP communication in the same machine
-587f985; DBernardes; 2022-03-22; Updating the log.csv file
 65bef80; observer; 2022-03-22; TCPIP communication is working
-57aac82; DBernardes; 2022-03-21; Updating the log.csv file
 abfdba4; Denis; 2022-03-21; Update update_log_file.yml
-5bbd8ff; DBernardes; 2022-03-21; Updating the log.csv file
 9b5015d; Denis; 2022-03-21; Update update_log_file.yml
-0287319; DBernardes; 2022-03-18; Updating the log.csv file
 5e1bbf6; Denis; 2022-03-18; Update update_log_file.yml
 307c3cc; Denis; 2022-03-18; Update update_log_file.yml
 e137206; Denis; 2022-03-18; Update update_log_file.yml
@@ -115,7 +99,6 @@ d98699e; Denis; 2021-11-23; small fixes
 50533ef; Denis; 2021-11-18; Rearranging the repo structure
 e83193e; Denis; 2021-11-17; small fixes
 9dfca44; Denis; 2021-11-17; Small fixes
-1972540; Denis; 2021-11-17; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 c3d5f90; Denis; 2021-11-17; The interface class was added as one of the CCD camera class attibutes
 ca3827d; Denis; 2021-11-16; Fixes in the Tx and Rx VIs
 86eb053; Denis; 2021-11-12; small fixes
@@ -127,7 +110,6 @@ ab57ebd; Denis; 2021-10-13; fixing the keyword written per iteration
 2a714ee; Denis; 2021-10-13; Save image class has a array of header classes
 ee05fe3; Denis; 2021-10-08; Fixing the Stream communication
 52b8747; Denis; 2021-10-07; Deleting those VIs that are not used anymore
-88d7d7b; Denis; 2021-10-04; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 79afca8; Denis; 2021-10-04; The IP of the computer was corrected
 5c13c2c; Denis; 2021-09-30; Update README.md
 fdcee6a; Denis; 2021-09-30; Update README.md
@@ -165,7 +147,6 @@ d318ed6; Denis; 2020-10-13; Voltei a permitir ligar mais de 1 camera
 c424b9a; Denis; 2020-10-09; ACS inicia apenas 1 canal
 d504c36; Denis; 2020-10-09; Atualização Figura GEI
 bc414dd; Denis; 2020-10-09; Atualização upstream
-651bb7f; Denis; 2020-10-09; Merge branch 'master' of https://github.com/sparc4-dev/SPARC4_ACS into master commit'
 869cbe9; Denis; 2020-10-09; Ajuste Header + Stop + Abort Buttons
 c3f094e; Denis; 2020-10-08; Update Run.vi
 27b31f1; Denis; 2020-10-08; Std hdr salvo em partes
@@ -191,7 +172,6 @@ fc745b8; Denis; 2020-10-01; v1.4  1/10
 f3644e6; Denis; 2020-10-01; v1.4 1/10
 82cb8b0; Denis; 2020-09-30; v1.4 30/09
 f9ea582; Denis; 2020-09-29; v1.4 29/09
-1a2046d; Denis; 2020-09-29; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 483cb52; Denis; 2020-09-29; v1.3 29/09
 09ed4cd; Denis; 2020-09-29; Update README.md
 7e55b5d; Denis; 2020-09-29; v1.3 29/09
@@ -203,7 +183,6 @@ fc3ebec; Denis; 2020-09-25; Update README.md
 6a13b57; Denis; 2020-09-25; Update README.md
 e0ea1f8; Denis; 2020-09-25; Update README.md
 866bc24; Denis; 2020-09-25; Merge pull request #1 from DBernardes/Salva-Header-Enquanto-IDLE
-4f8c646; Denis; 2020-09-25; Merge branch 'master' into Salva-Header-Enquanto-IDLE
 c9b91bd; Denis; 2020-09-24; v1.3 24/09
 59deeae; Denis; 2020-09-22; v1.3 22/09
 a282335; Denis; 2020-09-22; v1.3 22/09
@@ -218,7 +197,6 @@ deb2671; Denis; 2020-09-18; Update README.md
 cf0b147; Denis; 2020-09-18; Update README.md
 024de86; Denis; 2020-09-18; Update GUI_LabView.png
 c81d1a5; Denis; 2020-09-18; Update GUI_LabView.png
-9daf6cf; Denis; 2020-09-18; Merge branch 'master' of https://github.com/DBernardes/SPARC4_ACS
 ca86763; Denis; 2020-09-18; Update GUI_LabView.png
 eb60bf3; Denis; 2020-09-18; Update README.md
 c67bef0; Denis; 2020-09-18; Update README.md
