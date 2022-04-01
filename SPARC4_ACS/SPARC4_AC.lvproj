@@ -34,6 +34,9 @@
 			<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 			<Item Name="CH1_Comm.vi" Type="VI" URL="../CH1_Comm.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
+			<Item Name="CH2_Comm_TCPIP.vi" Type="VI" URL="../CH2_Comm_TCPIP.vi"/>
+			<Item Name="CH3_Comm_TCPIP.vi" Type="VI" URL="../CH3_Comm_TCPIP.vi"/>
+			<Item Name="CH4_Comm_TCPIP.vi" Type="VI" URL="../CH4_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
 			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
@@ -186,68 +189,124 @@
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Read Initialization.vi" Type="VI" URL="../Interface/Read Initialization.vi"/>
-			<Item Name="Read Temperature Status.vi" Type="VI" URL="../Interface/Read Temperature Status.vi"/>
-			<Item Name="Write Initialization.vi" Type="VI" URL="../Interface/Write Initialization.vi"/>
-			<Item Name="Write Temperature Status.vi" Type="VI" URL="../Interface/Write Temperature Status.vi"/>
 			<Item Name="Read Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Read Simulated_Image_Constructor.lvclass.vi"/>
 			<Item Name="Write Simulated_Image_Constructor.lvclass.vi" Type="VI" URL="../Channel/Write Simulated_Image_Constructor.lvclass.vi"/>
-			<Item Name="Simulated_Cooler.lvclass" Type="LVClass" URL="../Simulated_Cooler/Simulated_Cooler.lvclass"/>
 			<Item Name="Simulated_Image_Constructor.lvclass" Type="LVClass" URL="../Simulated_Image_Constructor/Simulated_Image_Constructor.lvclass"/>
-			<Item Name="Read Cooler ON_OFF.vi" Type="VI" URL="../Simulated_Cooler/Read Cooler ON_OFF.vi"/>
-			<Item Name="Read Cooler Status.vi" Type="VI" URL="../Simulated_Cooler/Read Cooler Status.vi"/>
-			<Item Name="Close Connection.vi" Type="VI" URL="../Sync Box/Close Connection.vi"/>
-			<Item Name="Initialize Connection.vi" Type="VI" URL="../Sync Box/Initialize Connection.vi"/>
-			<Item Name="Write Setting.vi" Type="VI" URL="../Sync Box/Write Setting.vi"/>
 			<Item Name="Read Simulated_CCD_Camera.lvclass.vi" Type="VI" URL="../Simulated_Image_Constructor/Read Simulated_CCD_Camera.lvclass.vi"/>
 			<Item Name="Write Simulated_CCD_Camera.lvclass.vi" Type="VI" URL="../Simulated_Image_Constructor/Write Simulated_CCD_Camera.lvclass.vi"/>
 			<Item Name="Find tab index.vi" Type="VI" URL="../Save Image/Find tab index.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="My Application" Type="EXE">
+			<Item Name="ACS1" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{128797BE-A5B2-40FA-8799-2823A4071D8E}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{98DEB618-B67F-4C85-8CF1-729BCB7D3A70}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{21262DA6-A045-4D81-BCD1-71A067ABCF95}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{9E9EE778-AFE5-40BE-8088-1E42DDB7DD77}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{98941835-9BC6-4225-85B6-28B9169A0960}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">My Application</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{A5891622-6AEF-4613-A2D2-A14238740DEB}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">ACS1</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/ACS5/ACS5</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/observer/Desktop/Executaveis</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{7696005B-3A9C-4BC6-8E35-D24E404EC450}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{097F7636-3E3C-46AB-87C2-5E5C6619C683}</Property>
+				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS5/ACS5/Application.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">ACS1.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/observer/Desktop/Executaveis/ACS1.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS5/ACS5/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/observer/Desktop/Executaveis/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8688640B-D896-48FE-B274-4D5E4D7DDF35}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{1EB2BC76-BADC-4A2F-8612-41924901AC56}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS_Controller.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Tx.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref"></Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">My Application</Property>
-				<Property Name="TgtF_internalName" Type="Str">My Application</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2021 </Property>
-				<Property Name="TgtF_productName" Type="Str">My Application</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{5B8083C4-6A89-4201-A2B9-836751DB17A1}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">Application.exe</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].type" Type="Str">VI</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[5].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">6</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">ACS1</Property>
+				<Property Name="TgtF_internalName" Type="Str">ACS1</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 </Property>
+				<Property Name="TgtF_productName" Type="Str">ACS1</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{EB6F631F-1C64-4880-9856-F5E1BB30C2C1}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">ACS1.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+			<Item Name="ACS2" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{EF686126-3116-4329-8977-026F7211FE00}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{50A2D439-E2C9-4E7C-860D-3354263DC134}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{7DC58721-38E8-4571-A271-B2195ACD4365}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">ACS2</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/observer/Desktop/Executaveis/Channel 2</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{E9D8E3F8-012B-4683-BCC0-111B4A9D735E}</Property>
+				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">ACS2.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/observer/Desktop/Executaveis/Channel 2/ACS2.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/observer/Desktop/Executaveis/Channel 2/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{17D3DBBE-1E9E-4BA1-A5D5-4CFC887FE998}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[2].type" Type="Str">VI</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].type" Type="Str">VI</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP.vi</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].type" Type="Str">VI</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/S4ACS_Controller.vi</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[5].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">6</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">ACS2</Property>
+				<Property Name="TgtF_internalName" Type="Str">ACS2</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 </Property>
+				<Property Name="TgtF_productName" Type="Str">ACS2</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{E73203A7-63BA-40E8-A861-D10B4F0DA64B}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">ACS2.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>
