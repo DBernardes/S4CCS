@@ -26,6 +26,7 @@
 			<Item Name="GUI_CH2_Tx.vi" Type="VI" URL="../GUI_CH2_Tx.vi"/>
 			<Item Name="GUI_CH1_Rx.vi" Type="VI" URL="../GUI_CH1_Rx.vi"/>
 			<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
+			<Item Name="GUI_CH1_Comm.vi" Type="VI" URL="../GUI_CH1_Comm.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="ACS RxTx" Type="Folder">
