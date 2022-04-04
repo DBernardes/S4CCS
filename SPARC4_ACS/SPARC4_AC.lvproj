@@ -18,25 +18,12 @@
 			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		</Item>
 		<Item Name="GEI RxTx" Type="Folder">
-			<Item Name="GUI_CH4_Rx.vi" Type="VI" URL="../GUI_CH4_Rx.vi"/>
-			<Item Name="GUI_CH4_Tx.vi" Type="VI" URL="../GUI_CH4_Tx.vi"/>
-			<Item Name="GUI_CH3_Rx.vi" Type="VI" URL="../GUI_CH3_Rx.vi"/>
-			<Item Name="GUI_CH3_Tx.vi" Type="VI" URL="../GUI_CH3_Tx.vi"/>
-			<Item Name="GUI_CH2_Rx.vi" Type="VI" URL="../GUI_CH2_Rx.vi"/>
-			<Item Name="GUI_CH2_Tx.vi" Type="VI" URL="../GUI_CH2_Tx.vi"/>
-			<Item Name="GUI_CH1_Rx.vi" Type="VI" URL="../GUI_CH1_Rx.vi"/>
-			<Item Name="GUI_CH1_Tx.vi" Type="VI" URL="../GUI_CH1_Tx.vi"/>
 			<Item Name="GUI_CH1_Comm.vi" Type="VI" URL="../GUI_CH1_Comm.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="ACS RxTx" Type="Folder">
-			<Item Name="CH1_Tx.vi" Type="VI" URL="../CH1_Tx.vi"/>
-			<Item Name="CH1_Rx.vi" Type="VI" URL="../CH1_Rx.vi"/>
 			<Item Name="CH1_Comm.vi" Type="VI" URL="../CH1_Comm.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
-			<Item Name="CH2_Comm_TCPIP.vi" Type="VI" URL="../CH2_Comm_TCPIP.vi"/>
-			<Item Name="CH3_Comm_TCPIP.vi" Type="VI" URL="../CH3_Comm_TCPIP.vi"/>
-			<Item Name="CH4_Comm_TCPIP.vi" Type="VI" URL="../CH4_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
 			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
