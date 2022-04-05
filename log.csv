@@ -1,3 +1,4 @@
+3e688b4; observer; 2022-04-05; Verification of the CCD parameters
 57d53ea; observer; 2022-04-05; Implementing the restart communication procedure
 6cf2b74; observer; 2022-04-05; The problem with the communication was fixed
 1e2382a; observer; 2022-04-04; There are problems with the Communication (RxTx))
