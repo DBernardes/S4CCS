@@ -19,10 +19,12 @@
 		</Item>
 		<Item Name="GEI RxTx" Type="Folder">
 			<Item Name="GUI_CH1_Comm.vi" Type="VI" URL="../GUI_CH1_Comm.vi"/>
+			<Item Name="GUI_CH2_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH2_Comm_TCPIP.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="ACS RxTx" Type="Folder">
 			<Item Name="CH1_Comm.vi" Type="VI" URL="../CH1_Comm.vi"/>
+			<Item Name="CH2_Comm_TCPIP.vi" Type="VI" URL="../CH2_Comm_TCPIP.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
