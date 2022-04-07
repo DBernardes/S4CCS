@@ -1,3 +1,4 @@
+c5ac1a3; observer; 2022-04-07; The keyword CRTLINTE was added to the image header
 c84a55b; observer; 2022-04-06; A timeout was added into the GET_STATUS state of the GEI
 86332ce; observer; 2022-04-06; Now, there is step to verify the coherence of the related CCD parameters
 111a29c; observer; 2022-04-06; A button to chose between the simulated or real TCS was added
