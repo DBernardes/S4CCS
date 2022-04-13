@@ -1,3 +1,4 @@
+2973287; observer; 2022-04-13; Fixing problems related to importing the Interface class
 07b5ae3; observer; 2022-04-13; The problem with the STOP and ABORT buttons was fixed
 a1388e5; observer; 2022-04-12; Fixing the problem with the RxTx dependencies!!
 7c80086; observer; 2022-04-11; Small fixes
