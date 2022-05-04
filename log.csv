@@ -1,3 +1,4 @@
+523ea4d; observer; 2022-05-04; The FRAME_EXPOSURE_TIME was being send to the GUI as an integer
 e5f80e8; observer; 2022-05-02; small fixes
 950aaa3; observer; 2022-04-29; fixing problem with the communication
 61b6f36; observer; 2022-04-27; Fixing the ACS with Orlando
