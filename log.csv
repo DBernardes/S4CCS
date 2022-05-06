@@ -1,3 +1,4 @@
+e04cdd4; observer; 2022-05-06; SMALL FIXES
 0dc5143; observer; 2022-05-04; the problem with the temperature in the image header was fixed
 523ea4d; observer; 2022-05-04; The FRAME_EXPOSURE_TIME was being send to the GUI as an integer
 e5f80e8; observer; 2022-05-02; small fixes
