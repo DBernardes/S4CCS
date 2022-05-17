@@ -1,3 +1,4 @@
+31fd267; observer; 2022-05-17; The parameter FRAMES_DONE was corrected
 a08b7d3; observer; 2022-05-17; GEI was initializing in the EM mode
 05b87da; observer; 2022-05-09; The problem with the communication was fixed
 e04cdd4; observer; 2022-05-06; SMALL FIXES
