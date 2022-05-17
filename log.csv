@@ -1,3 +1,4 @@
+e32cb91; observer; 2022-05-17; Problem with the communication
 d5561b4; observer; 2022-05-17; The TCS date information was added to the header
 31fd267; observer; 2022-05-17; The parameter FRAMES_DONE was corrected
 a08b7d3; observer; 2022-05-17; GEI was initializing in the EM mode
