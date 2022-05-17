@@ -1,3 +1,4 @@
+a08b7d3; observer; 2022-05-17; GEI was initializing in the EM mode
 05b87da; observer; 2022-05-09; The problem with the communication was fixed
 e04cdd4; observer; 2022-05-06; SMALL FIXES
 0dc5143; observer; 2022-05-04; the problem with the temperature in the image header was fixed
