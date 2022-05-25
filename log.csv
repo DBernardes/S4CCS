@@ -1,3 +1,4 @@
+9e59be0; observer; 2022-05-25; small fixes
 b84a0a9; observer; 2022-05-25; Small fixes in the communication structure
 c91ccff; observer; 2022-05-23; The delays of the images are being written in the image header in steps of 10 items
 3a354f5; observer; 2022-05-19; Update S4ACS.vi
