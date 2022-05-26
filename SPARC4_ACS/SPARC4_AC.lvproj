@@ -40,8 +40,9 @@
 			<Item Name="CH1_Save_Header.vi" Type="VI" URL="../CH1_Save_Header.vi"/>
 		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
-		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
+		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
+		<Item Name="old tests.vi" Type="VI" URL="../old tests.vi"/>
 		<Item Name="Simulated_CCD_Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated_CCD_Camera.lvclass"/>
 		<Item Name="Simulated_Header.lvclass" Type="LVClass" URL="../Simulated_Header/Simulated_Header.lvclass"/>
 		<Item Name="CCDCamera.lvclass" Type="LVClass" URL="../CCDCamera/CCDCamera.lvclass"/>
@@ -58,7 +59,6 @@
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
 		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
-		<Item Name="old tests.vi" Type="VI" URL="../old tests.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -189,6 +189,7 @@
 				<Item Name="Registry RtKey.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry RtKey.ctl"/>
 				<Item Name="Registry SAM.ctl" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Registry SAM.ctl"/>
 				<Item Name="Open Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Open Registry Key.vi"/>
+				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
 			</Item>
 			<Item Name="User32.dll" Type="Document" URL="User32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
