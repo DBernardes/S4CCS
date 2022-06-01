@@ -203,6 +203,8 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="SerialPortEdited.vi" Type="VI" URL="../../../RodFilters/SerialPortEdited.vi"/>
+			<Item Name="SerialPortComunication.vi" Type="VI" URL="../../../RodFilters/SerialPortComunication.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="ACS1" Type="EXE">
