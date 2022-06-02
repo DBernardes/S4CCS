@@ -16,9 +16,11 @@
 			<Item Name="Channel GEI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GEI.lvclass"/>
 			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
 			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
+			<Item Name="Filter_Wheel.lvclass" Type="LVClass" URL="../Filter_Wheel/Filter_Wheel.lvclass"/>
 		</Item>
 		<Item Name="GEI RxTx" Type="Folder">
 			<Item Name="GUI_CH1_Comm_Stream.vi" Type="VI" URL="../GUI_CH1_Comm_Stream.vi"/>
+			<Item Name="FWCS_Communication.vi" Type="VI" URL="../FWCS_Communication.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP_NEW.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
 		</Item>
@@ -59,7 +61,6 @@
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
 		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
-		<Item Name="FWCS_Communication.vi" Type="VI" URL="../FWCS_Communication.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
