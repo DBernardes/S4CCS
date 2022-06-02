@@ -1,3 +1,11 @@
+e269f98; Denis; 2022-06-02; Merge pull request #8 from DBernardes/slice-image-cube
+1676d67; observer; 2022-06-02; Fixing the simulated mode
+280aaf5; observer; 2022-06-01; small fixes
+46ae318; observer; 2022-05-30; small fixes
+1bc1432; observer; 2022-05-27; The EXE of the ACS and GEI were created
+1d592b3; observer; 2022-05-26; Bug with the image date was fixed
+b2bee92; observer; 2022-05-26; The correct date information for each frame was implemented
+b1397f6; observer; 2022-05-25; The cubes are being saved in frames
 9e59be0; observer; 2022-05-25; small fixes
 b84a0a9; observer; 2022-05-25; Small fixes in the communication structure
 c91ccff; observer; 2022-05-23; The delays of the images are being written in the image header in steps of 10 items
