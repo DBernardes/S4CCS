@@ -17,6 +17,7 @@
 			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
 			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 			<Item Name="Filter_Wheel.lvclass" Type="LVClass" URL="../Filter_Wheel/Filter_Wheel.lvclass"/>
+			<Item Name="FWCS_ACS_Iterator.lvclass" Type="LVClass" URL="../FWCS_ACS_Iterator/FWCS_ACS_Iterator.lvclass"/>
 		</Item>
 		<Item Name="GEI RxTx" Type="Folder">
 			<Item Name="GUI_CH1_Comm_Stream.vi" Type="VI" URL="../GUI_CH1_Comm_Stream.vi"/>
