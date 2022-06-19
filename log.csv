@@ -1,4 +1,17 @@
+913185c; Denis; 2022-06-19; Merge pull request #9 from DBernardes/Filter-Wheel-Communication
 bf17791; Denis; 2022-06-18; Update citation.cff
+c1a742b; observer; 2022-06-18; Updating images
+5ba97b5; observer; 2022-06-11; A stop button was added in the iterator
+2cd9e4a; observer; 2022-06-10; the image suffix was added to the iterator
+2cb0f24; observer; 2022-06-09; The iterator is controlling the filter and the ACS
+0117b8d; observer; 2022-06-08; the iterator is setting the filter
+312c70e; observer; 2022-06-08; small fixes
+dfb239e; observer; 2022-06-07; Adding the suffix in the iterator
+b2a42ec; observer; 2022-06-03; adding the iterator of FWCS and ACS
+7b73a23; observer; 2022-06-03; GEI is receiving status from FWCS
+4d99b45; observer; 2022-06-03; configuration of the filter using GEI is working
+f686580; observer; 2022-06-02; small fixes
+8e8d737; observer; 2022-06-02; The communication between GEI and FWCS was implemented
 59ce6ec; observer; 2022-06-02; Implementing Filter Wheel Communication
 e269f98; Denis; 2022-06-02; Merge pull request #8 from DBernardes/slice-image-cube
 1676d67; observer; 2022-06-02; Fixing the simulated mode
