@@ -16,9 +16,12 @@
 			<Item Name="Channel GEI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GEI.lvclass"/>
 			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
 			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
+			<Item Name="Filter_Wheel.lvclass" Type="LVClass" URL="../Filter_Wheel/Filter_Wheel.lvclass"/>
+			<Item Name="FWCS_ACS_Iterator.lvclass" Type="LVClass" URL="../FWCS_ACS_Iterator/FWCS_ACS_Iterator.lvclass"/>
 		</Item>
 		<Item Name="GEI RxTx" Type="Folder">
 			<Item Name="GUI_CH1_Comm_Stream.vi" Type="VI" URL="../GUI_CH1_Comm_Stream.vi"/>
+			<Item Name="FWCS_Communication.vi" Type="VI" URL="../FWCS_Communication.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP_NEW.vi"/>
 			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
 		</Item>
@@ -59,7 +62,6 @@
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
 		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
-		<Item Name="FWCS_Communication.vi" Type="VI" URL="../FWCS_Communication.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -204,147 +206,33 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="SerialPortEdited.vi" Type="VI" URL="../../../RodFilters/SerialPortEdited.vi"/>
-			<Item Name="SerialPortComunication.vi" Type="VI" URL="../../../RodFilters/SerialPortComunication.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="ACS1" Type="EXE">
+			<Item Name="ACS" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{21262DA6-A045-4D81-BCD1-71A067ABCF95}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{9E9EE778-AFE5-40BE-8088-1E42DDB7DD77}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{E412B969-F517-40EA-94F9-3D673C4A56B7}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{1CAAB5A8-8AC9-4B83-A2A4-75D1276E0708}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{A5891622-6AEF-4613-A2D2-A14238740DEB}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">ACS1</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{EBD3E9D1-87EC-4D07-9D0E-E12F7D672B36}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">ACS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/C/Users/observer/Desktop/Executaveis</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{097F7636-3E3C-46AB-87C2-5E5C6619C683}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">ACS1.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/observer/Desktop/Executaveis/ACS1.exe</Property>
-				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/observer/Desktop/Executaveis/data</Property>
-				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{1EB2BC76-BADC-4A2F-8612-41924901AC56}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
-				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">ACS1</Property>
-				<Property Name="TgtF_internalName" Type="Str">ACS1</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 </Property>
-				<Property Name="TgtF_productName" Type="Str">ACS1</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{EB6F631F-1C64-4880-9856-F5E1BB30C2C1}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">ACS1.exe</Property>
-				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
-			</Item>
-			<Item Name="ACS2" Type="EXE">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{EF686126-3116-4329-8977-026F7211FE00}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{50A2D439-E2C9-4E7C-860D-3354263DC134}</Property>
-				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{7DC58721-38E8-4571-A271-B2195ACD4365}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">ACS2</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/C/Users/observer/Desktop/Executaveis/Channel 2</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{E9D8E3F8-012B-4683-BCC0-111B4A9D735E}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">ACS2.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/observer/Desktop/Executaveis/Channel 2/ACS2.exe</Property>
-				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/observer/Desktop/Executaveis/Channel 2/data</Property>
-				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{17D3DBBE-1E9E-4BA1-A5D5-4CFC887FE998}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
-				<Property Name="Source[5].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">ACS2</Property>
-				<Property Name="TgtF_internalName" Type="Str">ACS2</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 </Property>
-				<Property Name="TgtF_productName" Type="Str">ACS2</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{E73203A7-63BA-40E8-A861-D10B4F0DA64B}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">ACS2.exe</Property>
-				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
-			</Item>
-			<Item Name="S4ACS" Type="EXE">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{9E040CE4-5972-4348-9704-5F809098BE86}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{123A0875-72E8-4244-BDCA-B877C64DA377}</Property>
-				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{36B87444-531D-4A97-82B5-91727A09CC78}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">S4ACS</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/S4ACS</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/ACS</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{9B92CEA6-5479-4ACC-974D-AFE9899F20B6}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
+				<Property Name="Bld_version.build" Type="Int">8</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">S4ACS.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/S4ACS/S4ACS.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/S4ACS/data</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{38078908-BE45-4FEE-92C7-F37C9D73E299}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{DE9CD102-55D0-42F1-A01C-0E50518D22CD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -355,33 +243,36 @@
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_Stream.vi</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
+				<Property Name="Source[5].Container.applyProperties" Type="Bool">true</Property>
+				<Property Name="Source[5].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/GEI Classes</Property>
+				<Property Name="Source[5].properties[0].type" Type="Str">Run when opened</Property>
+				<Property Name="Source[5].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[5].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[5].type" Type="Str">Container</Property>
 				<Property Name="SourceCount" Type="Int">6</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">S4ACS</Property>
-				<Property Name="TgtF_internalName" Type="Str">S4ACS</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
+				<Property Name="TgtF_internalName" Type="Str">ACS</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 </Property>
-				<Property Name="TgtF_productName" Type="Str">S4ACS</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{C10E93B0-7F77-4AD0-8DBD-11AE6E2E71B0}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">S4ACS.exe</Property>
+				<Property Name="TgtF_productName" Type="Str">ACS</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{A2BA6095-6D2D-49C8-9CF6-24A881229297}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">ACS.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="GEI" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{AF6CA066-97B2-4CBA-8BC8-93F8FC50890C}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{6B09F7C6-C135-46C9-949B-EC5345106976}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{FEA7FC95-23EB-458D-B83A-01364B665D2D}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{E2C59289-4EA0-472F-BA9C-CDDA5AE98BD3}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{277F3A61-E35A-4A69-B002-936962F44225}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{4315F096-A985-40E7-8CBA-B2619F1F05A5}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">GEI</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
@@ -389,7 +280,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/GEI</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{E2C055A6-6924-418D-842B-C646B16C2799}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{BC4F78AE-1AD6-4DF8-84A1-957EAE627C2D}</Property>
 				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">GEI.exe</Property>
@@ -399,45 +290,52 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/GEI/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{38078908-BE45-4FEE-92C7-F37C9D73E299}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{96F66743-5CB1-41BE-B24F-B4A74A4C536F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SPARC4_GEI.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/GEI RxTx/GUI_CH1_Comm_TCPIP_NEW.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx_VISA.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx_VISA.vi</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/GEI RxTx/FWCS_Communication.vi</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx_VISA.vi</Property>
-				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/GEI RxTx/GUI_CH1_Comm_TCPIP_NEW.vi</Property>
 				<Property Name="Source[5].type" Type="Str">VI</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx_VISA.vi</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/GEI RxTx/GUI_CH1_Comm_Stream.vi</Property>
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">7</Property>
+				<Property Name="Source[7].Container.applyProperties" Type="Bool">true</Property>
+				<Property Name="Source[7].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/GEI Classes</Property>
+				<Property Name="Source[7].properties[0].type" Type="Str">Run when opened</Property>
+				<Property Name="Source[7].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[7].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[7].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">8</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">GEI</Property>
 				<Property Name="TgtF_internalName" Type="Str">GEI</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">GEI</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{219BEE55-69D0-4449-8F19-3A9E09043ADC}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{2C2C9409-DE18-40E4-A7A8-E1DAFA54F994}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">GEI.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
-			<Item Name="S4ACS Installer" Type="Installer">
-				<Property Name="Destination[0].name" Type="Str">SPARC4_AC</Property>
+			<Item Name="ACS Installer" Type="Installer">
+				<Property Name="Destination[0].name" Type="Str">ACS Installer</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
-				<Property Name="Destination[0].tag" Type="Str">{1D4468FB-CFC8-4451-A6A4-BB37DBE3A109}</Property>
+				<Property Name="Destination[0].tag" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
 				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
@@ -486,41 +384,42 @@
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{3B195EBF-4A09-46E6-8EAD-931568C1344C}</Property>
 				<Property Name="DistPartCount" Type="Int">1</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
-				<Property Name="INST_buildLocation" Type="Path">../builds/S4ACS Installer</Property>
+				<Property Name="INST_buildLocation" Type="Path">../builds/ACS Installer</Property>
 				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
-				<Property Name="INST_buildSpecName" Type="Str">S4ACS Installer</Property>
-				<Property Name="INST_defaultDir" Type="Str">{1D4468FB-CFC8-4451-A6A4-BB37DBE3A109}</Property>
-				<Property Name="INST_productName" Type="Str">SPARC4_AC</Property>
+				<Property Name="INST_buildSpecName" Type="Str">ACS Installer</Property>
+				<Property Name="INST_defaultDir" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="INST_productName" Type="Str">ACS Installer</Property>
 				<Property Name="INST_productVersion" Type="Str">1.0.3</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">18008007</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
-				<Property Name="MSI_distID" Type="Str">{C79FFF63-523D-4937-AC6F-3522B6DE63CE}</Property>
+				<Property Name="MSI_distID" Type="Str">{E23AFAFC-B049-422C-B6A9-86169B2F7DF4}</Property>
 				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>
-				<Property Name="MSI_upgradeCode" Type="Str">{CE9E5C59-EDDF-4CA6-8A3A-CA1362AE90EF}</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{B1DEC259-AF2C-4C27-93CB-42A27D1DE63A}</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
 				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
 				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
 				<Property Name="RegDestCount" Type="Int">1</Property>
-				<Property Name="Source[0].dest" Type="Str">{1D4468FB-CFC8-4451-A6A4-BB37DBE3A109}</Property>
-				<Property Name="Source[0].name" Type="Str">S4ACS.vi</Property>
-				<Property Name="Source[0].tag" Type="Ref">/My Computer/S4ACS.vi</Property>
-				<Property Name="Source[0].type" Type="Str">File</Property>
-				<Property Name="Source[1].dest" Type="Str">{1D4468FB-CFC8-4451-A6A4-BB37DBE3A109}</Property>
-				<Property Name="Source[1].name" Type="Str">CH1_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[1].tag" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[1].type" Type="Str">File</Property>
-				<Property Name="Source[2].dest" Type="Str">{1D4468FB-CFC8-4451-A6A4-BB37DBE3A109}</Property>
-				<Property Name="Source[2].name" Type="Str">CH1_Save_Header.vi</Property>
-				<Property Name="Source[2].tag" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
-				<Property Name="Source[2].type" Type="Str">File</Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="Source[0].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[0].File[0].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[0].File[0].name" Type="Str">ACS.exe</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">ACS</Property>
+				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">ACS</Property>
+				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
+				<Property Name="Source[0].File[0].tag" Type="Str">{A2BA6095-6D2D-49C8-9CF6-24A881229297}</Property>
+				<Property Name="Source[0].File[0].unlock" Type="Bool">true</Property>
+				<Property Name="Source[0].FileCount" Type="Int">1</Property>
+				<Property Name="Source[0].name" Type="Str">ACS</Property>
+				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/ACS</Property>
+				<Property Name="Source[0].type" Type="Str">EXE</Property>
+				<Property Name="SourceCount" Type="Int">1</Property>
 			</Item>
 			<Item Name="GEI Installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">SPARC4_AC</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
-				<Property Name="Destination[0].tag" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
+				<Property Name="Destination[0].tag" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
 				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
@@ -572,45 +471,41 @@
 				<Property Name="INST_buildLocation" Type="Path">../builds/GEI Installer</Property>
 				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
 				<Property Name="INST_buildSpecName" Type="Str">GEI Installer</Property>
-				<Property Name="INST_defaultDir" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
+				<Property Name="INST_defaultDir" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
 				<Property Name="INST_productName" Type="Str">GEI Installer</Property>
 				<Property Name="INST_productVersion" Type="Str">1.0.1</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">18008007</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
-				<Property Name="MSI_distID" Type="Str">{4A3F8583-A1C2-40F2-8A3B-CED1F1842EBF}</Property>
+				<Property Name="MSI_distID" Type="Str">{DEE7EF4A-CBDC-42E3-BF70-42F786686AB5}</Property>
 				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>
-				<Property Name="MSI_upgradeCode" Type="Str">{C69D2EE9-B574-4AE8-B4DC-407D4A3FC7C3}</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{17373605-A9C9-44E0-936C-6FE1E8FDF4BD}</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
 				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
 				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
 				<Property Name="RegDestCount" Type="Int">1</Property>
-				<Property Name="Source[0].dest" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
+				<Property Name="Source[0].dest" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
 				<Property Name="Source[0].name" Type="Str">SPARC4_GEI.vi</Property>
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/SPARC4_GEI.vi</Property>
 				<Property Name="Source[0].type" Type="Str">File</Property>
-				<Property Name="Source[1].dest" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
-				<Property Name="Source[1].name" Type="Str">TCS_Rx.vi</Property>
-				<Property Name="Source[1].tag" Type="Ref">/My Computer/TCS Comm/TCS_Rx.vi</Property>
+				<Property Name="Source[1].dest" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
+				<Property Name="Source[1].name" Type="Str">GUI_CH1_Comm_Stream.vi</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/GEI RxTx/GUI_CH1_Comm_Stream.vi</Property>
 				<Property Name="Source[1].type" Type="Str">File</Property>
-				<Property Name="Source[2].dest" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
-				<Property Name="Source[2].name" Type="Str">TCS_Rx_VISA.vi</Property>
-				<Property Name="Source[2].tag" Type="Ref">/My Computer/TCS Comm/TCS_Rx_VISA.vi</Property>
+				<Property Name="Source[2].dest" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
+				<Property Name="Source[2].name" Type="Str">FWCS_Communication.vi</Property>
+				<Property Name="Source[2].tag" Type="Ref">/My Computer/GEI RxTx/FWCS_Communication.vi</Property>
 				<Property Name="Source[2].type" Type="Str">File</Property>
-				<Property Name="Source[3].dest" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
-				<Property Name="Source[3].name" Type="Str">TCS_Tx.vi</Property>
-				<Property Name="Source[3].tag" Type="Ref">/My Computer/TCS Comm/TCS_Tx.vi</Property>
+				<Property Name="Source[3].dest" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
+				<Property Name="Source[3].name" Type="Str">TCS_Rx_VISA.vi</Property>
+				<Property Name="Source[3].tag" Type="Ref">/My Computer/TCS Comm/TCS_Rx_VISA.vi</Property>
 				<Property Name="Source[3].type" Type="Str">File</Property>
-				<Property Name="Source[4].dest" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
+				<Property Name="Source[4].dest" Type="Str">{FBC3ECE0-9F33-4FE2-8847-30A8F44E38CB}</Property>
 				<Property Name="Source[4].name" Type="Str">TCS_Tx_VISA.vi</Property>
 				<Property Name="Source[4].tag" Type="Ref">/My Computer/TCS Comm/TCS_Tx_VISA.vi</Property>
 				<Property Name="Source[4].type" Type="Str">File</Property>
-				<Property Name="Source[5].dest" Type="Str">{A1A32A03-59BA-4071-9ED9-7DE91F0D707A}</Property>
-				<Property Name="Source[5].name" Type="Str">CH1_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[5].tag" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[5].type" Type="Str">File</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
+				<Property Name="SourceCount" Type="Int">5</Property>
 			</Item>
 		</Item>
 	</Item>
