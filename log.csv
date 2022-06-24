@@ -1,3 +1,4 @@
+b9b3a9c; observer; 2022-06-24; The IP configuration can be done by the front panel of the ACS and GEI. The TCS COM port can be set in the GEI front panel
 79596fd; observer; 2022-06-23; The image path is a variable of the front panel
 2e55e9c; observer; 2022-06-23; The third image dimension was removed
 a7be59d; observer; 2022-06-19; Fixing the problem with the frame exposure time
