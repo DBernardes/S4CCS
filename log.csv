@@ -1,3 +1,4 @@
+22302b7; observer; 2022-06-27; small fixes
 0b5d47f; observer; 2022-06-27; Fixing the problem of the image header
 1942864; observer; 2022-06-27; Implementing the IP configuration of the FWCS
 b9b3a9c; observer; 2022-06-24; The IP configuration can be done by the front panel of the ACS and GEI. The TCS COM port can be set in the GEI front panel
