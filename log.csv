@@ -1,3 +1,4 @@
+ba1254b; observer; 2022-06-29; The TCS communication was separated  of the sending the GEI status to the ACS
 b65e298; observer; 2022-06-27; Update ACS.exe
 a636b3b; observer; 2022-06-27; the CCD status was added to the control panel
 22302b7; observer; 2022-06-27; small fixes
