@@ -1,3 +1,4 @@
+9ac35d2; observer; 2022-06-30; small fixes
 ebdff12; observer; 2022-06-29; a SET buttom was added to write the camera configuration
 9a4871a; observer; 2022-06-29; The ACS creates just 1 channel per instance
 ba1254b; observer; 2022-06-29; The TCS communication was separated  of the sending the GEI status to the ACS
