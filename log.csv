@@ -1,3 +1,4 @@
+d0e2bec; observer; 2022-07-01; The shutter transfer time can be 0 just for the OPEN mode
 770e073; observer; 2022-07-01; The problem with the filter info in the image header was fixed
 18afd31; observer; 2022-06-30; Fixing the problems found by Eder during observations
 2759824; observer; 2022-06-30; Refactoring the communication with the FWCS
