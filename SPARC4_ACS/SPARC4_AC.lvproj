@@ -29,6 +29,9 @@
 		<Item Name="ACS RxTx" Type="Folder">
 			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
 			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH2_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH3_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
@@ -289,7 +292,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{BC4F78AE-1AD6-4DF8-84A1-957EAE627C2D}</Property>
-				<Property Name="Bld_version.build" Type="Int">18</Property>
+				<Property Name="Bld_version.build" Type="Int">19</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">GEI.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/GEI/GEI.exe</Property>
