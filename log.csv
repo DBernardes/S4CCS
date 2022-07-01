@@ -1,3 +1,4 @@
+250d6db; observer; 2022-07-01; Updating EXEs
 3fd968a; observer; 2022-07-01; The ACS does not allow to set the operation mode if it founds an inconsistency in the parameters
 d0e2bec; observer; 2022-07-01; The shutter transfer time can be 0 just for the OPEN mode
 770e073; observer; 2022-07-01; The problem with the filter info in the image header was fixed
