@@ -1,3 +1,4 @@
+770e073; observer; 2022-07-01; The problem with the filter info in the image header was fixed
 18afd31; observer; 2022-06-30; Fixing the problems found by Eder during observations
 2759824; observer; 2022-06-30; Refactoring the communication with the FWCS
 9ac35d2; observer; 2022-06-30; small fixes
