@@ -1,7 +1,10 @@
 # This is a basic workflow to help you get started with Actions
 
 name: Update log file
-on: push 
+on: 
+  push:
+    branches:
+      - '**'
 jobs:  
   update_log:    
     runs-on: ubuntu-latest    
