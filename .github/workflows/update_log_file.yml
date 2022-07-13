@@ -15,8 +15,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}  
           fetch-depth: 0
       - name: update the log file
-        run: |          
-          git log --invert-grep --grep="Updating the log.csv file" --grep="Merge branch" --pretty=format:"%h; %an; %as; %s" > log.csv
+        run: |   
+          printf "ACS version " > log.csv
+          git describe --tags --abbrev=0 >> log.csv
+          printf $'\n'
+          git log --invert-grep --grep="Updating the log.csv file" --grep="Merge branch" --pretty=format:"%h; %an; %as; %s" >> log.csv
           git add .
           git config --local user.name "DBernardes"          
           git commit -m "Updating the log.csv file"
