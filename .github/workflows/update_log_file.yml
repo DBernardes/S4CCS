@@ -16,9 +16,7 @@ jobs:
           fetch-depth: 0
       - name: update the log file
         run: |   
-          printf "ACS version " > log.csv
-          git describe --tags --abbrev=0 >> log.csv
-          printf $'\n'
+          git describe --tags --abbrev=0 > SPARC4_ACS/ACS_version.txt
           git log --invert-grep --grep="Updating the log.csv file" --grep="Merge branch" --pretty=format:"%h; %an; %as; %s" >> log.csv
           git add .
           git config --local user.name "DBernardes"          
