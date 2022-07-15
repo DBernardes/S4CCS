@@ -101,5 +101,4 @@ SD      		 Sideral Day
 FILTER  		 The filter used in the observation: UBVRI      
 ACSVRSN 		 The version of the ACS                         
 CTRLINTE		 Graphical control interface of the ACS         
-TCSDATE 		 TCS Date in local hour                         
-END                                                                             		
+TCSDATE 		 TCS Date in local hour                                                        		
