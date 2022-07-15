@@ -71,6 +71,7 @@
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
 		<Item Name="ACS_version.txt" Type="Document" URL="../ACS_version.txt"/>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
+		<Item Name="header_content.csv" Type="Document" URL="../Simulated_Header/header_content.csv"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
