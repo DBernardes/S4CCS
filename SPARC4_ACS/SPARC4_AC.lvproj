@@ -48,6 +48,9 @@
 			<Item Name="CH4_Save_Header.vi" Type="VI" URL="../CH4_Save_Header.vi"/>
 			<Item Name="CH2_Save_Header.vi" Type="VI" URL="../CH2_Save_Header.vi"/>
 		</Item>
+		<Item Name="Spreadsheets" Type="Folder" URL="../Spreadsheets">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
@@ -244,7 +247,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{087D12CD-A58E-47D5-87AD-D9A085229171}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{13FCC3B7-CB09-41AA-ACC1-1C37A249C49B}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -264,6 +267,15 @@
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[12].itemID" Type="Ref">/My Computer/ACS_version.txt</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[13].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Spreadsheets</Property>
+				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[13].type" Type="Str">Container</Property>
+				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
+				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -300,7 +312,7 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header.vi</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">13</Property>
+				<Property Name="SourceCount" Type="Int">15</Property>
 				<Property Name="TgtF_companyName" Type="Str">INPE</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">ACS</Property>
@@ -481,7 +493,15 @@
 				<Property Name="Source[2].name" Type="Str">ATMCD32D.dll</Property>
 				<Property Name="Source[2].tag" Type="Ref">/My Computer/ATMCD32D.dll</Property>
 				<Property Name="Source[2].type" Type="Str">File</Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="Source[3].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[3].File[0].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[3].File[0].name" Type="Str">header_content.csv</Property>
+				<Property Name="Source[3].File[0].tag" Type="Ref"></Property>
+				<Property Name="Source[3].FileCount" Type="Int">1</Property>
+				<Property Name="Source[3].name" Type="Str">Spreadsheets</Property>
+				<Property Name="Source[3].tag" Type="Ref">/My Computer/Spreadsheets</Property>
+				<Property Name="Source[3].type" Type="Str">Folder</Property>
+				<Property Name="SourceCount" Type="Int">4</Property>
 			</Item>
 			<Item Name="GEI Installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">SPARC4_AC</Property>

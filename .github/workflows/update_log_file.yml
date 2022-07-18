@@ -4,7 +4,7 @@ name: Update log file
 on: 
   push:
     branches:
-      - '**'
+      - main
 jobs:  
   update_log:    
     runs-on: ubuntu-latest    
