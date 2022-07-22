@@ -47,6 +47,7 @@
 			<Item Name="CH3_Save_Header.vi" Type="VI" URL="../CH3_Save_Header.vi"/>
 			<Item Name="CH4_Save_Header.vi" Type="VI" URL="../CH4_Save_Header.vi"/>
 			<Item Name="CH2_Save_Header.vi" Type="VI" URL="../CH2_Save_Header.vi"/>
+			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
 		</Item>
 		<Item Name="Spreadsheets" Type="Folder" URL="../Spreadsheets">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
@@ -54,6 +55,8 @@
 		<Item Name="python scripts" Type="Folder" URL="../python scripts">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="ACS_version.txt" Type="Document" URL="../ACS_version.txt"/>
+		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
@@ -75,8 +78,6 @@
 		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
 		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
-		<Item Name="ACS_version.txt" Type="Document" URL="../ACS_version.txt"/>
-		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="GetSizeOfCircularBuffer.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetSizeOfCircularBuffer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
