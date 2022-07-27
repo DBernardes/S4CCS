@@ -21,9 +21,22 @@ def reformat_string(string):
 	string = str(string)[2:-1]
 	return string
 
+
+
+def save_image(file, data):
+	fits.writeto(file, data, overwrite= True)
+	return
+	
 #image = np.zeros((1000,1000))
 #fits.writeto("image.fits", image, clobber=True)
 #file = r"C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\Spreadsheets\header_content.csv"
 #ss = pd.read_csv(file, delimiter='\t', header=None, squeeze=True, keep_default_na=False)
 #header_content = [["AAA", "STRING", "", "COMMENT"]]
 #write_header("image.fits", header_content)
+
+# path = r"C:\Users\observer\Desktop"
+# file = "image.fits"
+# image = np.zeros((1000,1000))
+# fits.writeto(path+"\\"+file, image, clobber=True)
+# hdu = fits.open(path+"\\"+file)
+# print(hdu[0])
