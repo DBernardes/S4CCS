@@ -24,9 +24,10 @@ def reformat_string(string):
 
 
 def save_image(file, data):
+	file = reformat_string(file)
 	fits.writeto(file, data, overwrite= True)
 	return
-	
+
 #image = np.zeros((1000,1000))
 #fits.writeto("image.fits", image, clobber=True)
 #file = r"C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\Spreadsheets\header_content.csv"
