@@ -243,7 +243,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">27</Property>
+				<Property Name="Bld_version.build" Type="Int">29</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -252,7 +252,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A52C8A51-AE17-4359-8A61-0EEF5068D6B3}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{B01CCF47-711E-4EC4-AA18-48652A2359F2}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -263,33 +263,20 @@
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header.vi</Property>
-				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header.vi</Property>
-				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[11].type" Type="Str">VI</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[12].itemID" Type="Ref">/My Computer/ACS_version.txt</Property>
-				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[13].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Spreadsheets</Property>
-				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">Container</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header_Python.vi</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[15].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[15].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/python scripts</Property>
-				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[15].type" Type="Str">Container</Property>
+				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
@@ -321,9 +308,8 @@
 				<Property Name="Source[8].type" Type="Str">VI</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header.vi</Property>
-				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">16</Property>
+				<Property Name="SourceCount" Type="Int">15</Property>
 				<Property Name="TgtF_companyName" Type="Str">INPE</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">ACS</Property>
@@ -471,7 +457,7 @@
 				<Property Name="INST_buildSpecName" Type="Str">ACS Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
 				<Property Name="INST_productName" Type="Str">ACS Installer</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.6</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.7</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">18008007</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
@@ -497,17 +483,33 @@
 				<Property Name="Source[0].tag" Type="Ref">/My Computer/Build Specifications/ACS</Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
 				<Property Name="Source[1].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
-				<Property Name="Source[1].name" Type="Str">ACS_version.txt</Property>
-				<Property Name="Source[1].tag" Type="Ref">/My Computer/ACS_version.txt</Property>
-				<Property Name="Source[1].type" Type="Str">File</Property>
+				<Property Name="Source[1].File[0].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[1].File[0].name" Type="Str">header_content.csv</Property>
+				<Property Name="Source[1].File[0].tag" Type="Ref">/My Computer/Spreadsheets/header_content.csv</Property>
+				<Property Name="Source[1].FileCount" Type="Int">1</Property>
+				<Property Name="Source[1].name" Type="Str">Spreadsheets</Property>
+				<Property Name="Source[1].tag" Type="Ref">/My Computer/Spreadsheets</Property>
+				<Property Name="Source[1].type" Type="Str">Folder</Property>
 				<Property Name="Source[2].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
-				<Property Name="Source[2].name" Type="Str">ATMCD32D.dll</Property>
-				<Property Name="Source[2].tag" Type="Ref">/My Computer/ATMCD32D.dll</Property>
-				<Property Name="Source[2].type" Type="Str">File</Property>
+				<Property Name="Source[2].File[0].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[2].File[0].name" Type="Str">header_routines.py</Property>
+				<Property Name="Source[2].File[0].tag" Type="Ref">/My Computer/python scripts/header_routines.py</Property>
+				<Property Name="Source[2].FileCount" Type="Int">1</Property>
+				<Property Name="Source[2].name" Type="Str">python scripts</Property>
+				<Property Name="Source[2].tag" Type="Ref">/My Computer/python scripts</Property>
+				<Property Name="Source[2].type" Type="Str">Folder</Property>
+				<Property Name="Source[3].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
 				<Property Name="Source[3].File[0].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
 				<Property Name="Source[3].File[0].name" Type="Str">header_content.csv</Property>
 				<Property Name="Source[3].File[0].tag" Type="Ref"></Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="Source[3].name" Type="Str">ACS_version.txt</Property>
+				<Property Name="Source[3].tag" Type="Ref">/My Computer/ACS_version.txt</Property>
+				<Property Name="Source[3].type" Type="Str">File</Property>
+				<Property Name="Source[4].dest" Type="Str">{4A1A0AD3-6A37-4513-8508-4718D196961C}</Property>
+				<Property Name="Source[4].name" Type="Str">ATMCD32D.dll</Property>
+				<Property Name="Source[4].tag" Type="Ref">/My Computer/ATMCD32D.dll</Property>
+				<Property Name="Source[4].type" Type="Str">File</Property>
+				<Property Name="SourceCount" Type="Int">5</Property>
 			</Item>
 			<Item Name="GEI Installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">SPARC4_AC</Property>
