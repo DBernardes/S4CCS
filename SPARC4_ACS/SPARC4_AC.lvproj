@@ -48,6 +48,9 @@
 			<Item Name="CH4_Save_Header.vi" Type="VI" URL="../CH4_Save_Header.vi"/>
 			<Item Name="CH2_Save_Header.vi" Type="VI" URL="../CH2_Save_Header.vi"/>
 			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
+			<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../CH2_Save_Header_Python.vi"/>
+			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
+			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
 		</Item>
 		<Item Name="Spreadsheets" Type="Folder" URL="../Spreadsheets">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
@@ -343,7 +346,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/GEI/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{291B3988-8B3D-4C51-9ACD-AB53E9432E47}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{55B0EC18-08BE-4765-B542-8BB1A821C5D3}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SPARC4_GEI.vi</Property>
