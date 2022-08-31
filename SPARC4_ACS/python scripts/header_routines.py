@@ -7,15 +7,20 @@ import os
 		
 
 def write_header(file, header_content):
-	header_content = np.asarray(header_content)
-	file = reformat_string(file)		
-	with fits.open(file, mode='update') as hdu:				
-		for i in range(np.shape(header_content)[0]):
-			line = [reformat_string(value) for value in header_content[i]]
-			_type = line[1]
-			card = tuple(np.delete(line,1))			
-			hdu[0].header.append(card)
-	return
+
+	status = "OK"
+	try :
+		header_content = np.asarray(header_content)
+		file = reformat_string(file)		
+		with fits.open(file, mode='update') as hdu:				
+			for i in range(np.shape(header_content)[0]):
+				line = [reformat_string(value) for value in header_content[i]]
+				_type = line[1]
+				card = tuple(np.delete(line,1))			
+				hdu[0].header.append(card)
+	except :
+		status = "WRITE_HEADER_FAILED" 
+	return status
 
 def reformat_string(string):
 	string = str(string)[2:-1]
