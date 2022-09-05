@@ -8710,4 +8710,358 @@ cb7a756; Denis; 2020-09-15; v1.0 15/09
 25d0f3d; Denis; 2020-09-15; Teste da função Pull
 b247613; Denis; 2020-09-15; Biblioteca GetData16 editada
 4bbe6d8; Denis; 2020-09-15; Update Treat Command.vi
+24f1091; Denis; 2020-09-15; Initial commit8d5e122; observer; 2022-09-05; fixing the problem with header
+f820ca6; observer; 2022-08-31; Update ACS.exe
+138d996; observer; 2022-08-31; The error message of the SAVE VI is being send to the ACS
+ff88316; observer; 2022-08-30; updating EXEs
+520d2ee; observer; 2022-08-26; Update ACS.exe
+888939e; observer; 2022-08-23; The bug related to the single scan error was fixes
+6de7ae6; observer; 2022-08-22; The Trigger Mode was fixed in the range 0 to 1
+cfea201; observer; 2022-08-17; updating EXE
+615eb30; observer; 2022-08-17; creating EXE
+2e682ab; observer; 2022-08-17; The python path was added to the Save Image VI
+58c3c1a; observer; 2022-08-17; A path for the python.exe file was added
+2dcf937; observer; 2022-08-16; Fixing the installer
+337e824; observer; 2022-08-08; The ACS find the index of the image name when executed
+71acc0e; observer; 2022-08-05; small fixes
+7ca8373; Denis; 2022-08-05; Merge pull request #12 from DBernardes/Write-header-using-python
+783b858; observer; 2022-07-28; The problem of the image path and the #cubes were fixed
+f629d12; observer; 2022-07-27; The image is being saved using python
+24e7d34; observer; 2022-07-27; The python class was added to the Channel
+211c094; observer; 2022-07-25; Update Save Image.lvclass
+6a95934; observer; 2022-07-25; small fixes
+9d54f80; observer; 2022-07-25; Problem related to the repeated header was fixed
+f1c2ddf; observer; 2022-07-22; Fixing bugs
+0a347e2; observer; 2022-07-22; The first image using python was saved
+b8a6f4e; observer; 2022-07-22; STOP commando was implemented for the Save Header VI
+7cdcd0c; observer; 2022-07-22; Python session of opening and closing
+9d2693b; observer; 2022-07-22; Python script to edit the header is working
+a6e8457; observer; 2022-07-21; Tha Python Toolkit class was implemented
+90830c1; observer; 2022-07-20; small fixes
+ee0059e; observer; 2022-07-20; The problem of the DATE of each image was fixed
+10b0b3b; observer; 2022-07-19; small fixes
+23e9193; observer; 2022-07-19; Fixing the bug related to the exptime
+7208205; observer; 2022-07-19; The problem of the DATE_OBS was fixed
+9d6d196; observer; 2022-07-18; The VSHIFT value is being written correctly
+7954723; observer; 2022-07-18; Update update_log_file.yml
+3c4037e; observer; 2022-07-18; small fixes
+ea995c0; Denis; 2022-07-18; Merge pull request #11 from DBernardes/Refactoring-Header-CSV
+329d181; observer; 2022-07-18; Update update_log_file.yml
+ca79561; observer; 2022-07-18; A new column with the type of the variable was added into the header contents table
+d9b8942; observer; 2022-07-15; fixing the problem with the preamp gain and read noise
+e93db7e; observer; 2022-07-15; the float and integer values are being written into the header
+bf55395; observer; 2022-07-15; The float values are not being written yet
+02625b7; observer; 2022-07-15; The refactored header is working with some problems
+3b1130a; observer; 2022-07-14; small fixes
+9869b84; observer; 2022-07-13; The ACS version is updated automatically
+c2f8a6c; Denis; 2022-07-13; Update update_log_file.yml
+d9af853; Denis; 2022-07-13; Update update_log_file.yml
+124778e; observer; 2022-07-13; bug fixes
+096fa05; observer; 2022-07-12; This version is the first ACS release
+25676c5; observer; 2022-07-12; The VIs for the communication with all the channels was added to the EXE
+a2566b3; Denis; 2022-07-01; Update README.md
+3bf9721; observer; 2022-07-01; Updating images
+250d6db; observer; 2022-07-01; Updating EXEs
+3fd968a; observer; 2022-07-01; The ACS does not allow to set the operation mode if it founds an inconsistency in the parameters
+d0e2bec; observer; 2022-07-01; The shutter transfer time can be 0 just for the OPEN mode
+770e073; observer; 2022-07-01; The problem with the filter info in the image header was fixed
+18afd31; observer; 2022-06-30; Fixing the problems found by Eder during observations
+2759824; observer; 2022-06-30; Refactoring the communication with the FWCS
+9ac35d2; observer; 2022-06-30; small fixes
+ebdff12; observer; 2022-06-29; a SET buttom was added to write the camera configuration
+9a4871a; observer; 2022-06-29; The ACS creates just 1 channel per instance
+ba1254b; observer; 2022-06-29; The TCS communication was separated  of the sending the GEI status to the ACS
+b65e298; observer; 2022-06-27; Update ACS.exe
+a636b3b; observer; 2022-06-27; the CCD status was added to the control panel
+22302b7; observer; 2022-06-27; small fixes
+0b5d47f; observer; 2022-06-27; Fixing the problem of the image header
+1942864; observer; 2022-06-27; Implementing the IP configuration of the FWCS
+b9b3a9c; observer; 2022-06-24; The IP configuration can be done by the front panel of the ACS and GEI. The TCS COM port can be set in the GEI front panel
+79596fd; observer; 2022-06-23; The image path is a variable of the front panel
+2e55e9c; observer; 2022-06-23; The third image dimension was removed
+a7be59d; observer; 2022-06-19; Fixing the problem with the frame exposure time
+913185c; Denis; 2022-06-19; Merge pull request #9 from DBernardes/Filter-Wheel-Communication
+bf17791; Denis; 2022-06-18; Update citation.cff
+c1a742b; observer; 2022-06-18; Updating images
+5ba97b5; observer; 2022-06-11; A stop button was added in the iterator
+2cd9e4a; observer; 2022-06-10; the image suffix was added to the iterator
+2cb0f24; observer; 2022-06-09; The iterator is controlling the filter and the ACS
+0117b8d; observer; 2022-06-08; the iterator is setting the filter
+312c70e; observer; 2022-06-08; small fixes
+dfb239e; observer; 2022-06-07; Adding the suffix in the iterator
+b2a42ec; observer; 2022-06-03; adding the iterator of FWCS and ACS
+7b73a23; observer; 2022-06-03; GEI is receiving status from FWCS
+4d99b45; observer; 2022-06-03; configuration of the filter using GEI is working
+f686580; observer; 2022-06-02; small fixes
+8e8d737; observer; 2022-06-02; The communication between GEI and FWCS was implemented
+59ce6ec; observer; 2022-06-02; Implementing Filter Wheel Communication
+e269f98; Denis; 2022-06-02; Merge pull request #8 from DBernardes/slice-image-cube
+1676d67; observer; 2022-06-02; Fixing the simulated mode
+280aaf5; observer; 2022-06-01; small fixes
+46ae318; observer; 2022-05-30; small fixes
+1bc1432; observer; 2022-05-27; The EXE of the ACS and GEI were created
+1d592b3; observer; 2022-05-26; Bug with the image date was fixed
+b2bee92; observer; 2022-05-26; The correct date information for each frame was implemented
+b1397f6; observer; 2022-05-25; The cubes are being saved in frames
+9e59be0; observer; 2022-05-25; small fixes
+b84a0a9; observer; 2022-05-25; Small fixes in the communication structure
+c91ccff; observer; 2022-05-23; The delays of the images are being written in the image header in steps of 10 items
+3a354f5; observer; 2022-05-19; Update S4ACS.vi
+7533f67; observer; 2022-05-19; The problem with the communication was fixed
+e32cb91; observer; 2022-05-17; Problem with the communication
+d5561b4; observer; 2022-05-17; The TCS date information was added to the header
+31fd267; observer; 2022-05-17; The parameter FRAMES_DONE was corrected
+a08b7d3; observer; 2022-05-17; GEI was initializing in the EM mode
+05b87da; observer; 2022-05-09; The problem with the communication was fixed
+e04cdd4; observer; 2022-05-06; SMALL FIXES
+0dc5143; observer; 2022-05-04; the problem with the temperature in the image header was fixed
+523ea4d; observer; 2022-05-04; The FRAME_EXPOSURE_TIME was being send to the GUI as an integer
+e5f80e8; observer; 2022-05-02; small fixes
+950aaa3; observer; 2022-04-29; fixing problem with the communication
+61b6f36; observer; 2022-04-27; Fixing the ACS with Orlando
+23edf50; observer; 2022-04-25; The ACS was updated based on the commissioning mission of 04/2022
+c736d12; observer; 2022-04-25; A timeout for the TCS status was implemented
+370451c; observer; 2022-04-20; small fixes
+116b8ef; observer; 2022-04-20; Fixing the problem with the TCPIP communication
+b074fb5; observer; 2022-04-20; Update Get Message.vi
+f959463; observer; 2022-04-20; Update verify related parameters.vi
+cfc631b; observer; 2022-04-20; Update Calc Currente Exposure Time.vi
+0b8b0b0; observer; 2022-04-20; small fixes
+003d343; observer; 2022-04-13; Fixing problem with the image header
+2973287; observer; 2022-04-13; Fixing problems related to importing the Interface class
+07b5ae3; observer; 2022-04-13; The problem with the STOP and ABORT buttons was fixed
+a1388e5; observer; 2022-04-12; Fixing the problem with the RxTx dependencies!!
+7c80086; observer; 2022-04-11; Small fixes
+c510768; observer; 2022-04-11; Thei GEI does not start the ACS anymore
+c508a24; observer; 2022-04-08; Small fixes
+c5ac1a3; observer; 2022-04-07; The keyword CRTLINTE was added to the image header
+c84a55b; observer; 2022-04-06; A timeout was added into the GET_STATUS state of the GEI
+86332ce; observer; 2022-04-06; Now, there is step to verify the coherence of the related CCD parameters
+111a29c; observer; 2022-04-06; A button to chose between the simulated or real TCS was added
+3e688b4; observer; 2022-04-05; Verification of the CCD parameters
+57d53ea; observer; 2022-04-05; Implementing the restart communication procedure
+6cf2b74; observer; 2022-04-05; The problem with the communication was fixed
+1e2382a; observer; 2022-04-04; There are problems with the Communication (RxTx))
+ec2a956; observer; 2022-04-01; This version allows to create an exe file
+efa76af; observer; 2022-04-01; The problem with the STATUS was fixed
+bba2424; observer; 2022-03-31; Fixing the problem with the status message  of the camera
+74d1019; Denis; 2022-03-31; Update update_log_file.yml
+96b79f9; Denis; 2022-03-31; Create citation.cff
+82fa7ff; Denis; 2022-03-31; A fluxogram of the communication system was created
+66e3e3b; Denis; 2022-03-30; updating the fluxogram of the acquisition states
+962d62a; observer; 2022-03-30; Update SPARC4_ACS_GEI.png
+49edb84; Denis; 2022-03-30; Update README.md
+ae6b51b; observer; 2022-03-28; Updating the image of the ACS front pannel
+ef7c816; observer; 2022-03-25; Now, the GEI is communicating with the ACS using TCPIP
+6c4abc5; observer; 2022-03-25; The TCPIP communication was fixed
+f067afe; observer; 2022-03-23; The GEI is using stream comm and the GUI is using TCPIP
+d08fd88; observer; 2022-03-23; Problem with the TCPIP communication in the same machine
+65bef80; observer; 2022-03-22; TCPIP communication is working
+abfdba4; Denis; 2022-03-21; Update update_log_file.yml
+9b5015d; Denis; 2022-03-21; Update update_log_file.yml
+5e1bbf6; Denis; 2022-03-18; Update update_log_file.yml
+307c3cc; Denis; 2022-03-18; Update update_log_file.yml
+e137206; Denis; 2022-03-18; Update update_log_file.yml
+c46d6ca; Denis; 2022-03-18; Create update_log_file.yml
+e8cb8d1; Denis; 2022-03-18; The acquisition states fluxogram was updated
+33d8a52; observer; 2022-03-17; The problem with the real header class was fixed
+eb54caa; observer; 2022-03-17; The problem with the extra HDU was fixed
+525a1a2; Denis; 2022-03-17; Delete .github/workflows directory
+c3749e0; Denis; 2022-03-17; Update update_log_file.yml
+47c8a11; Denis; 2022-03-17; Update update_log_file.yml
+c4fbe21; Denis; 2022-03-17; Update update_log_file.yml
+356543a; Denis; 2022-03-17; Update update_log_file.yml
+df60d3f; Denis; 2022-03-17; Update update_log_file.yml
+0dd3778; Denis; 2022-03-17; Update update_log_file.yml
+7d7ab12; Denis; 2022-03-17; Create update_log_file.yml
+dbb7776; Denis; 2022-03-16; Small fixes
+7a4cbf0; Denis; 2022-03-15; Implementing the TCPIP communication
+6a9a6b8; Denis; 2022-03-15; small fixes
+e64a6ad; Denis; 2022-03-15; The Stream VI were refactored
+d980a25; Denis; 2022-03-14; The parameters of the operation mode were refactored
+9d4d771; Denis; 2022-03-11; The solution for the repeated image header was found
+8e48b52; Denis; 2022-03-10; The version of the ACS was added in the image header
+bea23fc; Denis; 2022-03-10; The unused files were removed
+05643f0; Denis; 2022-03-10; WRITE Setup command uses the flat to JSON function now
+aa39cba; Denis; 2022-03-09; Refactoring the writing header information
+f5931f1; Denis; 2022-03-09; creating the spreadsheets with the gain and the read noise
+9ebaccb; Denis; 2022-03-08; The FOCUS and the DARK buttons were implemented
+37f589c; Denis; 2022-03-08; Updating the ACS images
+cd64eca; Denis; 2022-03-07; The STOP and ABORT buttons were fixed
+3e61f7d; Denis; 2022-03-07; The COMMENT and SUFFIX were implemented
+b0ba432; Denis; 2022-03-07; Additional digit in the image name
+c69a119; Denis; 2022-03-04; updating the states related to the image acquisition
+3573e0f; Denis; 2022-03-04; Updating the classes diagram
+bcf6d17; Denis; 2022-02-25; The header is saved in parallel in another VI
+b54f05f; Denis; 2022-02-24; Refactoring the way to save the header
+cfa6c39; Denis; 2022-02-24; The ACS close the image after the end of the acquisition
+4e5bf42; Denis; 2022-02-10; Now, the ACS close the FITS file at the and of the acquisition
+6733043; Denis; 2022-02-04; small fixes
+5dffd03; Denis; 2022-02-04; small fixes
+f8748b9; Denis; 2022-02-04; Finxing communication with TCS
+53a7e62; Denis; 2022-02-03; Fixing bugs with the filter of the CCD parameters
+aeb03df; Denis; 2022-02-02; small fixes
+00b45dd; Denis; 2022-02-02; The ACS verifies each CCD parameter before set. Also, the Image_Constructor class was removed
+d62be04; Denis; 2022-01-31; small fixes
+9d6012c; Denis; 2022-01-31; The TCS is updated every 1 s during an acquisition
+0be6407; Denis; 2022-01-28; small fixes
+c218c3a; Denis; 2022-01-28; I found a way to save the header with strings, floats and integers
+21eabb9; Denis; 2022-01-27; The WRITE_SETUP command does not start an acquisition anymore
+dcdf949; Denis; 2022-01-27; Fixing the communication with the TCS
+5e50471; Denis; 2022-01-26; searching a solution for the variant conversion
+ab584ac; Denis; 2022-01-26; small fixes
+68b988d; Denis; 2022-01-25; small fixes
+188af16; Denis; 2022-01-25; Now the process to save the header is a state machine
+02ce9a7; Denis; 2022-01-25; the keywrods JD and SD were added. Also, the VCLOCK and the ADCHNNL were fixed
+916f532; Denis; 2022-01-24; small fixes
+94c02f7; Denis; 2022-01-24; Header updated with the Juliano's version
+82f6ec0; Denis; 2022-01-24; Merge pull request #7 from DBernardes/Refactoring-header-class
+f29088f; Denis; 2022-01-24; The save header process is working without bugs
+5cc5161; Denis; 2022-01-21; Header has been refactored with some bugs
+74ca16c; Denis; 2022-01-21; Now, the header has all the CCD parameters
+1dfcb59; Denis; 2022-01-21; Working with header
+cc45868; Denis; 2022-01-20; The ACS is saving the TCS data into the image header
+dd06080; Denis; 2022-01-19; Implementing the TCS communication
+9f8daa1; Denis; 2022-01-19; Receiving status form the simulated TCS
+9e52851; Denis; 2022-01-19; small fixes
+102858c; Denis; 2021-12-29; Problem with the channel/serial number
+6215f74; Denis; 2021-12-27; updating the interface image
+fa81592; Denis; 2021-12-21; small fixes
+d53febe; Denis; 2021-12-21; small fixes
+fba0895; Denis; 2021-12-20; small fixes
+b1f9b81; Denis; 2021-12-17; The ACS is working with 4 cameras
+acefe40; Denis; 2021-12-17; The image relative path was fixed
+930822a; Denis; 2021-12-16; ACS is working with four real cameras
+66c874f; Denis; 2021-12-15; Update Set Temperature.vi
+1e7dc21; Denis; 2021-12-15; fixing the pull resquest: wait ACS reconnection
+c928b26; Denis; 2021-12-15; after the pull resquest
+5afcbf0; Denis; 2021-12-15; Merge pull request #5 from DBernardes/ACS-wait-camera-reconnection
+e746b77; Denis; 2021-12-15; All ACS functionalities are working
+35a65ca; Denis; 2021-11-29; 1 thousand frames version
+04f2110; Denis; 2021-11-26; the names of the CCD configuration were updated
+3ace81a; Denis; 2021-11-26; The parameters of the CCD config and the CCD status were refactored
+c25bfa2; Denis; 2021-11-23; The state wait the CCD reconnection was inplemented
+dfbb249; Denis; 2021-11-23; small fixes
+d98699e; Denis; 2021-11-23; small fixes
+50533ef; Denis; 2021-11-18; Rearranging the repo structure
+e83193e; Denis; 2021-11-17; small fixes
+9dfca44; Denis; 2021-11-17; Small fixes
+c3d5f90; Denis; 2021-11-17; The interface class was added as one of the CCD camera class attibutes
+ca3827d; Denis; 2021-11-16; Fixes in the Tx and Rx VIs
+86eb053; Denis; 2021-11-12; small fixes
+c6c640f; Denis; 2021-11-12; Refactoring the ACS
+c9cef99; Denis; 2021-11-11; fixing RxTx class
+89e7e4f; Denis; 2021-11-11; fixing RxTx class
+38aab4c; Denis; 2021-10-13; Merge pull request #4 from DBernardes/Refactoring-the-header-class
+ab57ebd; Denis; 2021-10-13; fixing the keyword written per iteration
+2a714ee; Denis; 2021-10-13; Save image class has a array of header classes
+ee05fe3; Denis; 2021-10-08; Fixing the Stream communication
+52b8747; Denis; 2021-10-07; Deleting those VIs that are not used anymore
+79afca8; Denis; 2021-10-04; The IP of the computer was corrected
+5c13c2c; Denis; 2021-09-30; Update README.md
+fdcee6a; Denis; 2021-09-30; Update README.md
+aac4ef7; Denis; 2021-09-24; State send status was removed from the state machine
+36dd01f; Denis; 2021-09-24; small fixes
+501df3d; Denis; 2021-09-23; DS9 was setting the number of cubes
+7d03086; Denis; 2021-09-21; small fixes
+48cc61f; Denis; 2021-09-21; Small fixes
+025a21e; Denis; 2021-09-21; The image header was configured as presented in the ACS document
+f7e9aa6; Denis; 2021-09-20; small fixes
+4188a85; Denis; 2021-09-20; The image name was configured to the YYYYMMDDTHHMMSS format
+bd06ab5; Denis; 2021-09-17; small fixes in the simulated camera class
+bc6a97b; Denis; 2021-09-17; The simulated mode of the CCD cameras was implemented
+b9d7476; Denis; 2021-09-16; chaging the inheritance: from simulated to the real one
+49f0718; Denis; 2020-12-28; Update README.md
+4b8af5a; Denis; 2020-12-23; Update Channel.lvclass
+bd5daca; Denis; 2020-12-23; syncbox removed
+0fc1171; Denis; 2020-11-19; Update Set Camera Configuration.vi
+dada1c5; Denis; 2020-11-13; Update Treat Command.vi
+0232b0e; Denis; 2020-11-13; add sync box
+0eef284; Denis; 2020-11-10; removi gerenciamento pinos IO
+8cd71c6; Denis; 2020-11-06; Update Set Camera Configuration.vi
+c564bba; Denis; 2020-11-04; retirei o gerenciamento dos pinos I/O
+47d2982; Denis; 2020-11-04; Update README.md
+970bba3; Denis; 2020-10-29; Arrumei erro IO
+e926ed6; Denis; 2020-10-23; Update README.md
+1e38d94; Denis; 2020-10-23; update GEI image
+9ad1760; Denis; 2020-10-23; Adicionei os estados que farão o controle das entradas IO do CCD
+fd8c353; Denis; 2020-10-22; Implementação da opção trigger interno
+f2a73a3; Denis; 2020-10-20; update
+a870dff; Denis; 2020-10-13; ajustes finais
+6e471de; Denis; 2020-10-13; Merge pull request #3 from DBernardes/SDK-atualizado
+ac0386c; Denis; 2020-10-13; SDK atualizado sem problemas
+d318ed6; Denis; 2020-10-13; Voltei a permitir ligar mais de 1 camera
+c424b9a; Denis; 2020-10-09; ACS inicia apenas 1 canal
+d504c36; Denis; 2020-10-09; Atualização Figura GEI
+bc414dd; Denis; 2020-10-09; Atualização upstream
+869cbe9; Denis; 2020-10-09; Ajuste Header + Stop + Abort Buttons
+c3f094e; Denis; 2020-10-08; Update Run.vi
+27b31f1; Denis; 2020-10-08; Std hdr salvo em partes
+ac5d63f; Denis; 2020-10-08; Update README.md
+56d3ec4; Denis; 2020-10-08; Update README.md
+455fee4; Denis; 2020-10-08; readaptei a GEI
+a44c53a; Denis; 2020-10-08; teste sinc
+69a52b3; Denis; 2020-10-07; Create teste.txt
+e46d869; Denis; 2020-10-07; teste do sincronia
+3cabde2; Denis; 2020-10-07; Create teste.txt
+1f036a8; Denis; 2020-10-07; Merge pull request #2 from sparc4-dev/master
+29b944a; Denis; 2020-10-07; v1.4
+19c2cbe; Denis; 2020-10-06; V1.4
+e908830; Denis; 2020-10-06; v1.4
+a973df0; Denis; 2020-10-02; Update README.md
+fa8afb4; Denis; 2020-10-02; V1.4
+8db170e; Denis; 2020-10-02; v1.4
+c4377f1; Denis; 2020-10-01; Update README.md
+34abb67; Denis; 2020-10-01; Update README.md
+340375c; Denis; 2020-10-01; v1.4 1/10
+fc745b8; Denis; 2020-10-01; v1.4  1/10
+65df28c; Denis; 2020-10-01; Update README.md
+f3644e6; Denis; 2020-10-01; v1.4 1/10
+82cb8b0; Denis; 2020-09-30; v1.4 30/09
+f9ea582; Denis; 2020-09-29; v1.4 29/09
+483cb52; Denis; 2020-09-29; v1.3 29/09
+09ed4cd; Denis; 2020-09-29; Update README.md
+7e55b5d; Denis; 2020-09-29; v1.3 29/09
+923d7d0; Denis; 2020-09-25; v1.3 25/09
+0cca99c; Denis; 2020-09-25; v1.3 25/09
+7a60223; Denis; 2020-09-25; Update README.md
+2c430e4; Denis; 2020-09-25; Update README.md
+fc3ebec; Denis; 2020-09-25; Update README.md
+6a13b57; Denis; 2020-09-25; Update README.md
+e0ea1f8; Denis; 2020-09-25; Update README.md
+866bc24; Denis; 2020-09-25; Merge pull request #1 from DBernardes/Salva-Header-Enquanto-IDLE
+c9b91bd; Denis; 2020-09-24; v1.3 24/09
+59deeae; Denis; 2020-09-22; v1.3 22/09
+a282335; Denis; 2020-09-22; v1.3 22/09
+7dba1b5; Denis; 2020-09-22; v1.3 22/09
+e232e1d; Denis; 2020-09-21; v1.3 21/09
+ce31e77; Denis; 2020-09-21; v1.2 21/09
+9f9912e; Denis; 2020-09-21; v1.3 21/09
+b093f62; Denis; 2020-09-21; v1.3 21/09
+a51733c; Denis; 2020-09-21; v1.2 21/09
+004732b; Denis; 2020-09-21; Arquivos desnecessários
+deb2671; Denis; 2020-09-18; Update README.md
+cf0b147; Denis; 2020-09-18; Update README.md
+024de86; Denis; 2020-09-18; Update GUI_LabView.png
+c81d1a5; Denis; 2020-09-18; Update GUI_LabView.png
+ca86763; Denis; 2020-09-18; Update GUI_LabView.png
+eb60bf3; Denis; 2020-09-18; Update README.md
+c67bef0; Denis; 2020-09-18; Update README.md
+1195059; Denis; 2020-09-18; v1.2
+e4504d3; Denis; 2020-09-18; v1.2 18/09
+7bf2e84; Denis; 2020-09-17; v1.1.1 17/09
+3320c79; Denis; 2020-09-17; Update README.md
+b7e67b0; Denis; 2020-09-17; Update README.md
+e6cfb16; Denis; 2020-09-17; Update README.md
+64759e7; Denis; 2020-09-17; GUI LabView
+be32c92; Denis; 2020-09-17; Update README.md
+df47b2c; Denis; 2020-09-17; Update GUI_LabView.png
+a85f6bf; Denis; 2020-09-17; v1.1.1 17/09
+b7c3146; Denis; 2020-09-17; SPARC4 General User Interface
+271d71d; Denis; 2020-09-17; v1.1.1 17/09
+c5fabde; Denis; 2020-09-16; v1.1 16/09
+cb7a756; Denis; 2020-09-15; v1.0 15/09
+25d0f3d; Denis; 2020-09-15; Teste da função Pull
+b247613; Denis; 2020-09-15; Biblioteca GetData16 editada
+4bbe6d8; Denis; 2020-09-15; Update Treat Command.vi
 24f1091; Denis; 2020-09-15; Initial commit
