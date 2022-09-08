@@ -17,7 +17,7 @@ def write_header(file, header_content):
         elif _type == "BOOLEAN":
             value = bool(value)
         else:
-            1
+            pass
         new_header[keyword] = (value, comment)
     file = reformat_string(file)
     temp_file = file.split('.fits')[0] + '_temp.fits'
