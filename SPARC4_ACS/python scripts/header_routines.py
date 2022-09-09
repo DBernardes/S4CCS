@@ -13,7 +13,10 @@ def write_header(file, header_content):
         if _type == "INTERGER":
             value = int(value)
         elif _type == "FLOAT":
-            value = float(value)
+            try:
+                value = float(value)
+            except:
+                value = float(value.replace(',', '.'))
         elif _type == "BOOLEAN":
             value = bool(value)
         else:

@@ -51,13 +51,9 @@
 			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
 			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
 		</Item>
-		<Item Name="Spreadsheets" Type="Folder" URL="../Spreadsheets">
+		<Item Name="data" Type="Folder" URL="../data">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="python scripts" Type="Folder" URL="../python scripts">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
-		<Item Name="ACS_version.txt" Type="Document" URL="../ACS_version.txt"/>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
@@ -246,7 +242,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">43</Property>
+				<Property Name="Bld_version.build" Type="Int">48</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -255,7 +251,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{46E75DE7-44C1-4DD0-9B4C-5E0E270CA2B2}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{8AD4CF52-E134-4C9E-9808-CE5F46EB739A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -265,23 +261,32 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
+				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header_Python.vi</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[11].type" Type="Str">VI</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[12].type" Type="Str">VI</Property>
 				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
 				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">VI</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[14].type" Type="Str">VI</Property>
+				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/data/header_routines.py</Property>
+				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[16].itemID" Type="Ref">/My Computer/data/preamp_gains.csv</Property>
+				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[17].itemID" Type="Ref">/My Computer/data/read_noises.csv</Property>
+				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
@@ -314,8 +319,10 @@
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].type" Type="Str">VI</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/ACS_version.txt</Property>
-				<Property Name="SourceCount" Type="Int">15</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header_Python.vi</Property>
+				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[9].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">18</Property>
 				<Property Name="TgtF_companyName" Type="Str">INPE</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">ACS</Property>
@@ -664,27 +671,13 @@
 				<Property Name="Source[1].name" Type="Str">ATMCD32D.dll</Property>
 				<Property Name="Source[1].tag" Type="Ref">/My Computer/ATMCD32D.dll</Property>
 				<Property Name="Source[1].type" Type="Str">File</Property>
-				<Property Name="Source[2].dest" Type="Str">{638D7438-3189-4C65-A11F-AB3224593056}</Property>
 				<Property Name="Source[2].File[0].dest" Type="Str">{638D7438-3189-4C65-A11F-AB3224593056}</Property>
 				<Property Name="Source[2].File[0].name" Type="Str">header_routines.py</Property>
-				<Property Name="Source[2].File[0].tag" Type="Ref">/My Computer/python scripts/header_routines.py</Property>
-				<Property Name="Source[2].FileCount" Type="Int">1</Property>
-				<Property Name="Source[2].name" Type="Str">python scripts</Property>
-				<Property Name="Source[2].tag" Type="Ref">/My Computer/python scripts</Property>
-				<Property Name="Source[2].type" Type="Str">Folder</Property>
-				<Property Name="Source[3].dest" Type="Str">{638D7438-3189-4C65-A11F-AB3224593056}</Property>
+				<Property Name="Source[2].File[0].tag" Type="Ref"></Property>
 				<Property Name="Source[3].File[0].dest" Type="Str">{638D7438-3189-4C65-A11F-AB3224593056}</Property>
 				<Property Name="Source[3].File[0].name" Type="Str">header_content.csv</Property>
-				<Property Name="Source[3].File[0].tag" Type="Ref">/My Computer/Spreadsheets/header_content.csv</Property>
-				<Property Name="Source[3].FileCount" Type="Int">1</Property>
-				<Property Name="Source[3].name" Type="Str">Spreadsheets</Property>
-				<Property Name="Source[3].tag" Type="Ref">/My Computer/Spreadsheets</Property>
-				<Property Name="Source[3].type" Type="Str">Folder</Property>
-				<Property Name="Source[4].dest" Type="Str">{638D7438-3189-4C65-A11F-AB3224593056}</Property>
-				<Property Name="Source[4].name" Type="Str">ACS_version.txt</Property>
-				<Property Name="Source[4].tag" Type="Ref">/My Computer/ACS_version.txt</Property>
-				<Property Name="Source[4].type" Type="Str">File</Property>
-				<Property Name="SourceCount" Type="Int">5</Property>
+				<Property Name="Source[3].File[0].tag" Type="Ref"></Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 			</Item>
 		</Item>
 	</Item>
