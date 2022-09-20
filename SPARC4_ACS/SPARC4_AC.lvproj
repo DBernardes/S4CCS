@@ -252,7 +252,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8AD4CF52-E134-4C9E-9808-CE5F46EB739A}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{9DFDDDFC-DA25-402E-81B7-AE29AC943A8E}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -274,7 +274,7 @@
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[12].type" Type="Str">VI</Property>
 				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
+				<Property Name="Source[13].itemID" Type="Ref"></Property>
 				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
