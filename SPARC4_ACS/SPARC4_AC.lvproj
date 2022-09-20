@@ -130,6 +130,7 @@
 				<Item Name="SetTemperature.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetTemperature.vi"/>
 				<Item Name="SaveAsFITS.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SaveAsFITS.vi"/>
 				<Item Name="FITS_type typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/FITS_type typedef.ctl"/>
+				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -242,7 +243,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">48</Property>
+				<Property Name="Bld_version.build" Type="Int">49</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -347,7 +348,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{BC4F78AE-1AD6-4DF8-84A1-957EAE627C2D}</Property>
-				<Property Name="Bld_version.build" Type="Int">23</Property>
+				<Property Name="Bld_version.build" Type="Int">24</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">GEI.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/GEI/GEI.exe</Property>
