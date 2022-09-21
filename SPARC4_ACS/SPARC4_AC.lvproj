@@ -131,6 +131,7 @@
 				<Item Name="SaveAsFITS.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SaveAsFITS.vi"/>
 				<Item Name="FITS_type typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/FITS_type typedef.ctl"/>
 				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
+				<Item Name="GetNumberIO.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetNumberIO.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -243,7 +244,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">49</Property>
+				<Property Name="Bld_version.build" Type="Int">50</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -252,7 +253,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{9DFDDDFC-DA25-402E-81B7-AE29AC943A8E}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{917713CD-E0AB-4392-A2F1-2ACB8A159902}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -262,31 +263,31 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
 				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/data/header_routines.py</Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[11].type" Type="Str">VI</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/data/preamp_gains.csv</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[12].type" Type="Str">VI</Property>
 				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref"></Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/data/read_noises.csv</Property>
 				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/data/header_routines.py</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/data/preamp_gains.csv</Property>
+				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
 				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[16].type" Type="Str">VI</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/data/read_noises.csv</Property>
+				<Property Name="Source[17].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
 				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
