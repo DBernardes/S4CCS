@@ -11,24 +11,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="GEI Classes" Type="Folder">
-			<Item Name="TCS.lvclass" Type="LVClass" URL="../TCS/TCS.lvclass"/>
-			<Item Name="Channel GEI.lvclass" Type="LVClass" URL="../Channel GUI/Channel GEI.lvclass"/>
-			<Item Name="SPARC4_GEI.lvclass" Type="LVClass" URL="../SPARC4_GUI/SPARC4_GEI.lvclass"/>
-			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
-			<Item Name="Filter_Wheel.lvclass" Type="LVClass" URL="../Filter_Wheel/Filter_Wheel.lvclass"/>
-			<Item Name="FWCS_ACS_Iterator.lvclass" Type="LVClass" URL="../FWCS_ACS_Iterator/FWCS_ACS_Iterator.lvclass"/>
-		</Item>
-		<Item Name="GEI RxTx" Type="Folder">
-			<Item Name="FWCS_Stream.vi" Type="VI" URL="../FWCS_Stream.vi"/>
-			<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../FWCS_TCPIP.vi"/>
-			<Item Name="GUI_CH1_Comm_Stream.vi" Type="VI" URL="../GUI_CH1_Comm_Stream.vi"/>
-			<Item Name="GUI_CH1_Comm_TCPIP.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP.vi"/>
-			<Item Name="GUI_CH1_Comm_ZEROMQ.vi" Type="VI" URL="../GUI_CH1_Comm_ZEROMQ.vi"/>
-			<Item Name="GUI_CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../GUI_CH1_Comm_TCPIP_NEW.vi"/>
-		</Item>
 		<Item Name="ACS RxTx" Type="Folder">
-			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
 			<Item Name="CH1_Comm_TCPIP.vi" Type="VI" URL="../CH1_Comm_TCPIP.vi"/>
 			<Item Name="CH1_Comm_ZEROMQ.vi" Type="VI" URL="../CH1_Comm_ZEROMQ.vi"/>
 			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
@@ -37,12 +20,7 @@
 			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
 		</Item>
 		<Item Name="TCS Comm" Type="Folder">
-			<Item Name="TCS_Rx.vi" Type="VI" URL="../TCS_Rx.vi"/>
-			<Item Name="TCS_Tx.vi" Type="VI" URL="../TCS_Tx.vi"/>
 			<Item Name="TCS_VISA.vi" Type="VI" URL="../TCS_VISA.vi"/>
-			<Item Name="TCS_Stream.vi" Type="VI" URL="../TCS_Stream.vi"/>
-			<Item Name="TCS_Rx_VISA.vi" Type="VI" URL="../TCS_Rx_VISA.vi"/>
-			<Item Name="TCS_Tx_VISA.vi" Type="VI" URL="../TCS_Tx_VISA.vi"/>
 		</Item>
 		<Item Name="Save Header" Type="Folder">
 			<Item Name="CH1_Save_Header.vi" Type="VI" URL="../CH1_Save_Header.vi"/>
@@ -55,7 +33,6 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
-		<Item Name="SPARC4_GEI.vi" Type="VI" URL="../SPARC4_GEI.vi"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
 		<Item Name="old tests.vi" Type="VI" URL="../old tests.vi"/>
@@ -66,17 +43,11 @@
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
 		<Item Name="Header.lvclass" Type="LVClass" URL="../Header/Header.lvclass"/>
 		<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
-		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
 		<Item Name="TCS_ACS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS_ACS.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
-		<Item Name="TCPIP.lvclass" Type="LVClass" URL="../TCPIP/TCPIP.lvclass"/>
-		<Item Name="Configuration File.lvclass" Type="LVClass" URL="../Configuration File/Configuration File.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
-		<Item Name="SetDDGTriggerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetDDGTriggerMode.vi"/>
-		<Item Name="GetVSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSSpeed.vi"/>
 		<Item Name="SetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetVerticalSpeed.vi"/>
-		<Item Name="GetSizeOfCircularBuffer.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetSizeOfCircularBuffer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -118,7 +89,6 @@
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="GetTemperature.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetTemperature.vi"/>
-				<Item Name="DDGTriggerMode_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/DDGTriggerMode_mode typedef.ctl"/>
 				<Item Name="GetRelativeImageTimes.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetRelativeImageTimes.vi"/>
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
 				<Item Name="Initialize.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Initialize.vi"/>
@@ -130,8 +100,6 @@
 				<Item Name="SetTemperature.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetTemperature.vi"/>
 				<Item Name="SaveAsFITS.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SaveAsFITS.vi"/>
 				<Item Name="FITS_type typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/FITS_type typedef.ctl"/>
-				<Item Name="GetIOLevel.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetIOLevel.vi"/>
-				<Item Name="GetNumberIO.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetNumberIO.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -227,6 +195,9 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
+			<Item Name="Configuration File.lvclass" Type="LVClass" URL="../Configuration File/Configuration File.lvclass"/>
+			<Item Name="TCPIP.lvclass" Type="LVClass" URL="../TCPIP/TCPIP.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="ACS" Type="EXE">
@@ -287,7 +258,7 @@
 				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[16].type" Type="Str">VI</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
+				<Property Name="Source[17].itemID" Type="Ref"></Property>
 				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header.vi</Property>
@@ -297,11 +268,11 @@
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_Stream.vi</Property>
+				<Property Name="Source[4].itemID" Type="Ref"></Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
 				<Property Name="Source[5].Container.applyProperties" Type="Bool">true</Property>
 				<Property Name="Source[5].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/GEI Classes</Property>
+				<Property Name="Source[5].itemID" Type="Ref"></Property>
 				<Property Name="Source[5].properties[0].type" Type="Str">Run when opened</Property>
 				<Property Name="Source[5].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[5].properties[1].type" Type="Str">Allow debugging</Property>
@@ -361,35 +332,35 @@
 				<Property Name="Source[0].itemID" Type="Str">{9B1740D6-356E-4AFE-8B41-2C91E3DDD6ED}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SPARC4_GEI.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref"></Property>
 				<Property Name="Source[1].properties[0].type" Type="Str">Run when opened</Property>
 				<Property Name="Source[1].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[1].propertiesCount" Type="Int">1</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/GEI RxTx/FWCS_TCPIP.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref"></Property>
 				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Rx_VISA.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref"></Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Tx_VISA.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref"></Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/GEI RxTx/FWCS_Stream.vi</Property>
+				<Property Name="Source[4].itemID" Type="Ref"></Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/GEI RxTx/GUI_CH1_Comm_TCPIP_NEW.vi</Property>
+				<Property Name="Source[5].itemID" Type="Ref"></Property>
 				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].type" Type="Str">VI</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/GEI RxTx/GUI_CH1_Comm_Stream.vi</Property>
+				<Property Name="Source[6].itemID" Type="Ref"></Property>
 				<Property Name="Source[6].type" Type="Str">VI</Property>
 				<Property Name="Source[7].Container.applyProperties" Type="Bool">true</Property>
 				<Property Name="Source[7].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/GEI Classes</Property>
+				<Property Name="Source[7].itemID" Type="Ref"></Property>
 				<Property Name="Source[7].properties[0].type" Type="Str">Run when opened</Property>
 				<Property Name="Source[7].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[7].properties[1].type" Type="Str">Allow debugging</Property>
@@ -401,7 +372,7 @@
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].type" Type="Str">VI</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/TCS Comm/TCS_Stream.vi</Property>
+				<Property Name="Source[9].itemID" Type="Ref"></Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">11</Property>
