@@ -25,7 +25,7 @@ def write_header(file, header_content):
     file = reformat_string(file)
     temp_file = file.split('.fits')[0] + '_temp.fits'
     data = fits.getdata(temp_file)
-    fits.writeto(file, data, new_header)
+    fits.writeto(file, data, new_header, overwrite=True)
     os.remove(temp_file)
     return
 
