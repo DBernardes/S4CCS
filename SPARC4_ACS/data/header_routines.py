@@ -1,7 +1,9 @@
+from email import header
 import astropy.io.fits as fits
 import numpy as np
 import pandas as pd
 import os
+import json
 
 
 def write_header(file, header_content):
@@ -35,12 +37,14 @@ def reformat_string(string):
     return string
 
 
-def save_image(file, data):
+def save_image(file, data, header_content):
     file = reformat_string(file)
-    fits.writeto(file, data, overwrite=True)
+    header_content = fits.Header(
+        cards=json.loads((reformat_string(header_content))))
+    fits.writeto(file, data, header_content, overwrite=True)
     return
 
 
-#csv_path = r'C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\Spreadsheets\header_content.csv'
-#ss = pd.read_csv(csv_path, sep='\t')
-#write_header('a', ss)
+# csv_path = r'C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\Spreadsheets\header_content.csv'
+# ss = pd.read_csv(csv_path, sep='\t')
+# write_header('a', ss)

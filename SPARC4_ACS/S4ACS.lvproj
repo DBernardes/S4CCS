@@ -46,7 +46,6 @@
 		<Item Name="TCS_ACS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS_ACS.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
-		<Item Name="SetCoolerMode.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCoolerMode.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Shutter_mode typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Shutter_mode typedef.ctl"/>
@@ -97,7 +96,6 @@
 				<Item Name="GetNumberNewImages.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetNumberNewImages.vi"/>
 				<Item Name="SetExposureTime.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetExposureTime.vi"/>
 				<Item Name="SetNumberKinetics.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetNumberKinetics.vi"/>
-				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -196,8 +194,6 @@
 			<Item Name="TCPIP.lvclass" Type="LVClass" URL="../TCPIP/TCPIP.lvclass"/>
 			<Item Name="Flatten Time to String.vi" Type="VI" URL="../Save Image/Flatten Time to String.vi"/>
 			<Item Name="Create Image Name.vi" Type="VI" URL="../Save Image/Create Image Name.vi"/>
-			<Item Name="Read First Header Class.vi" Type="VI" URL="../Save Image/Read First Header Class.vi"/>
-			<Item Name="Read Interface.lvclass.vi" Type="VI" URL="../Save Image/Read Interface.lvclass.vi"/>
 			<Item Name="Read Last Header Class.vi" Type="VI" URL="../Save Image/Read Last Header Class.vi"/>
 			<Item Name="Write Last Header Class.vi" Type="VI" URL="../Save Image/Write Last Header Class.vi"/>
 		</Item>
