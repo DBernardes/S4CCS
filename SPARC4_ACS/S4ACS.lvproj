@@ -43,7 +43,7 @@
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
 		<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
-		<Item Name="TCS_ACS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS_ACS.lvclass"/>
+		<Item Name="TCS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
