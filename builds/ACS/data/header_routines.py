@@ -1,35 +1,16 @@
-from email import header
 import astropy.io.fits as fits
-import numpy as np
 import pandas as pd
-import os
 import json
 
-
-def write_header(file, header_content):
-    new_header = fits.PrimaryHDU().header
-    header_content = np.asarray(header_content)
-    for line in header_content:
-        line = [reformat_string(value) for value in line]
-        keyword, _type, value, comment = line[0], line[1], line[2], line[3]
-        if _type == "INTERGER":
-            value = int(value)
-        elif _type == "FLOAT":
-            try:
-                value = float(value)
-            except:
-                value = float(value.replace(',', '.'))
-        elif _type == "BOOLEAN":
-            value = bool(value)
-        else:
-            pass
-        new_header[keyword] = (value, comment)
-    file = reformat_string(file)
-    temp_file = file.split('.fits')[0] + '_temp.fits'
-    data = fits.getdata(temp_file)
-    fits.writeto(file, data, new_header, overwrite=True)
-    os.remove(temp_file)
-    return
+readouts_em = ['30', '20', '10', '1']
+readouts_conv = ['1', '0.1']
+vsspeeds = ['0.6', '1.13', '2.2', '4.33']
+preamps = ['Gain 1', 'Gain 2']
+emmode = ['Electron Multiplying', 'Conventional']
+shutter_mode = ['Auto', 'Open', 'Closed']
+shutter_ttl = ['High', "Low"]
+vertical_clock_amp = ['Normal', '+1', '+2', '+3', '+4']
+acquisition_mode = ['Single', 'Accumulate', "Kinetic"]
 
 
 def reformat_string(string):
@@ -37,10 +18,57 @@ def reformat_string(string):
     return string
 
 
+def find_index_tab(header_content):
+    index = 2 * header_content['READOUT']
+    if header_content['EMMODE'] == 1:
+        index += 8
+    index += header_content['PREAMP']
+    return index
+
+
+def get_ccd_gain(index, serial_number):
+    ss = pd.read_csv('preamp_gains.csv')
+    values = ss[str(serial_number)]
+    ccd_gain = values[index]
+    return ccd_gain
+
+
+def get_read_noise(index, serial_number):
+    ss = pd.read_csv('read_noises.csv')
+    values = ss[str(serial_number)]
+    ccd_gain = values[index]
+    return ccd_gain
+
+
 def save_image(file, data, header_content):
     file = reformat_string(file)
-    header_content = fits.Header(
-        cards=json.loads((reformat_string(header_content))))
+    header_content = json.loads(reformat_string(header_content))
+    index = find_index_tab(header_content)
+    header_content['GAIN'] = get_ccd_gain(index, header_content['SERN'])
+    header_content['RDNOISE'] = get_read_noise(index, header_content['SERN'])
+
+    header_content['PREAMP'] = preamps[header_content['PREAMP']]
+    header_content['VSHIFT'] = vsspeeds[header_content['VSHIFT']] + ' usec'
+    if header_content["EMMODE"] == 0:
+        header_content["READOUT"] = readouts_em[header_content['READOUT']] + ' MHz'
+    else:
+        header_content["READOUT"] = readouts_conv[header_content['READOUT']] + ' MHz'
+    header_content['EMMODE'] = emmode[header_content['EMMODE']]
+    header_content['SHUTTER'] = shutter_mode[header_content['SHUTTER']]
+    header_content['SHTTTL'] = shutter_ttl[header_content['SHTTTL']]
+    header_content['READMODE'] = 'Image'
+    header_content['VCLKAMP'] = vertical_clock_amp[header_content['VCLKAMP']]
+    header_content['ACQMODE'] = acquisition_mode[header_content['ACQMODE']]
+    if header_content['TRIGGER'] == 0:
+        header_content['TRIGGER'] = 'Internal'
+    else:
+        header_content['TRIGGER'] == 'External'
+    if header_content['COOLER'] == 0:
+        header_content['COOLER'] = 'OFF'
+    else:
+        header_content['COOLER'] == 'ON'
+
+    header_content = fits.Header(header_content)
     fits.writeto(file, data, header_content, overwrite=True)
     return
 
