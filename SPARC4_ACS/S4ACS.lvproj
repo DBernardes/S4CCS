@@ -190,7 +190,6 @@
 			<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 			<Item Name="Write Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Write Interface.lvclass.vi"/>
 			<Item Name="Read Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Read Interface.lvclass.vi"/>
-			<Item Name="Find tab index.vi" Type="VI" URL="../Save Image/Find tab index.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="ACS" Type="EXE">
@@ -269,7 +268,7 @@
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].type" Type="Str">VI</Property>
 				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
+				<Property Name="Source[7].itemID" Type="Ref"></Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[8].itemID" Type="Ref">/My Computer/data/header_routines.py</Property>
