@@ -13,6 +13,12 @@ vertical_clock_amp = ['Normal', '+1', '+2', '+3', '+4']
 acquisition_mode = ['Single', 'Accumulate', "Kinetic"]
 
 
+ss = pd.read_csv('header_content.csv', delimiter='\t')
+cards = [(keyword, '', comment)
+         for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
+header_content = fits.Header(cards)
+
+
 def reformat_string(string):
     string = str(string)[2:-1]
     return string
@@ -40,12 +46,15 @@ def get_read_noise(index, serial_number):
     return ccd_gain
 
 
-def save_image(file, data, header_content):
+def save_image(file, data, channel_information):
     file = reformat_string(file)
-    header_content = json.loads(reformat_string(header_content))
+    channel_information = json.loads(reformat_string(channel_information))
+    for key, value in channel_information.items():
+        header_content[key] = value
     index = find_index_tab(header_content)
     header_content['GAIN'] = get_ccd_gain(index, header_content['SERN'])
-    header_content['RDNOISE'] = get_read_noise(index, header_content['SERN'])
+    header_content['RDNOISE'] = get_read_noise(
+        index, header_content['SERN'])
 
     header_content['PREAMP'] = preamps[header_content['PREAMP']]
     header_content['VSHIFT'] = vsspeeds[header_content['VSHIFT']] + ' usec'
@@ -58,7 +67,7 @@ def save_image(file, data, header_content):
     header_content['SHTTTL'] = shutter_ttl[header_content['SHTTTL']]
     header_content['READMODE'] = 'Image'
     header_content['VCLKAMP'] = vertical_clock_amp[header_content['VCLKAMP']]
-    header_content['ACQMODE'] = acquisition_mode[header_content['ACQMODE']]
+    header_content['ACQMODE'] = acquisition_mode[header_content['ACQMODE'] - 1]
     if header_content['TRIGGER'] == 0:
         header_content['TRIGGER'] = 'Internal'
     else:
@@ -68,7 +77,6 @@ def save_image(file, data, header_content):
     else:
         header_content['COOLER'] == 'ON'
 
-    header_content = fits.Header(header_content)
     fits.writeto(file, data, header_content, overwrite=True)
     return
 
