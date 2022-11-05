@@ -1,3 +1,4 @@
+d62ab7f; observer; 2022-11-05; updating EXE
 6849029; observer; 2022-11-05; The bugs of Full memory and the COMMENT keyword were fixed
 d02d718; observer; 2022-10-21; fixing problems related to the DONE message and the flattened string sent to the SAVE HEADER vi
 d4b6875; observer; 2022-10-20; fixing the READ_SETUP command
