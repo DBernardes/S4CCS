@@ -13,9 +13,9 @@ vertical_clock_amp = ['Normal', '+1', '+2', '+3', '+4']
 acquisition_mode = ['Single', 'Accumulate', "Kinetic"]
 
 
-# ss = pd.read_csv('header_content.csv', delimiter='\t')
-# cards = [(keyword, '', comment)
-#          for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
+ss = pd.read_csv('header_content.csv', delimiter='\t')
+cards = [(keyword, '', comment)
+         for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
 # header_content = fits.Header(cards)
 
 
@@ -47,9 +47,6 @@ def get_read_noise(index, serial_number):
 
 
 def save_image(file, data, channel_information):
-    ss = pd.read_csv('header_content.csv', delimiter='\t')
-    cards = [(keyword, '', comment)
-             for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
     header_content = fits.Header(cards)
     file = reformat_string(file)
     channel_information = json.loads(reformat_string(channel_information))
@@ -81,7 +78,9 @@ def save_image(file, data, channel_information):
     else:
         header_content['COOLER'] == 'ON'
 
-    fits.writeto(file, data, header_content, overwrite=True)
+    # fazer um IF
+
+    fits.writeto(file, data, header_content)
     return
 
 
