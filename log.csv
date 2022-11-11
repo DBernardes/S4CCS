@@ -1,3 +1,4 @@
+d80fccb; observer; 2022-11-11; The image header was refactored
 c897919; observer; 2022-11-11; The parameters verification was refactored
 cee02ec; observer; 2022-11-11; bug: date of the image name
 b2bca2e; observer; 2022-11-08; fixing JSON 0.00
