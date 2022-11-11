@@ -190,6 +190,7 @@
 			<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 			<Item Name="Write Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Write Interface.lvclass.vi"/>
 			<Item Name="Read Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Read Interface.lvclass.vi"/>
+			<Item Name="Verify Parameters.vi" Type="VI" URL="../Simulated_CCD_Camera/Verify Parameters.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="ACS" Type="EXE">
