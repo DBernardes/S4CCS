@@ -1,103 +1,57 @@
 Keyword	Comment
-FILENAME	 File name at acquisition                 
 OBSERVER	 Name of the observer                           
-PROGRID 	 Program ID                                     
-OBJECT  	 Object name                                    
-NIGHTDIR	 Night directory name                           
-CHANNEL 	 Instrument channel                             
+OBJECT  	 Object name                                                                                           
 INSTRUME	 Instrument                                     
-NEXPSEQ 	 Total number of exposures in sequence          
-SEQINDEX	 Exposure index in the sequence                 
 OBSTYPE 	 Image type: OBJECT, BIAS, FLAT, DARK           
-READMOD 	 Read out mode: fast, normal, slow              
-READMODE	 CCD read mode                                  
+CHANNEL 	 Instrument channel   
+SERN    	 Serial Number of the CCD  
+FILENAME	 File name at acquisition     
+DATE-OBS	 Acquisition date (YY/MM/DD:HH:MM:SS.sssss)  
+NCYCLES 	Number of cycles
+CYCLIND 	Index of the cycle in the sequence
+NFRAMES  	Number of frames in the cycle
+FRAMEIND	Index of the frame in the cycle
+EXPTIME 	 Exposure time of the frame in seconds   
+CYCLTEXP	Cycle exposure time in seconds                                                                
 ACQMODE 	 Acquisition Mode                               
 PREAMP  	 Pre-amplifier gain                             
-READOUT 	 Readout Rate                                   
+READRATE 	 Readout Rate                                   
 VSHIFT  	 Vertical Shift Speed                           
 TRIGGER 	 Trigger Mode                                   
 EMMODE  	 Output amplifier mode                        
-EMGAIN  	 EM Gain                                        
+EMGAIN  	 EM Gain  
 VBIN    	 Vertical binning                               
 HBIN    	 Horizontal binning                             
 INITLIN 	 Initial Line                                   
 INITCOL 	 Initial Column                                 
 FINALLIN	 Final Line                                     
 FINALCOL	 Final Column                                   
-KSERLEN 	 Kinetic Series Length                          
-SHUTTER 	 Shutter Mode (OPEN, CLOSED, or AUTO)           
-OPENSHT 	 Time to open the shutter (ms)                  
-CLOSESHT	 Time to close the shutter (ms)                 
-DATE    	 File date (YY/MM/DD:HH:MM:SS.sssss)
-DATE-OBS	 Acquisition date (YY/MM/DD:HH:MM:SS.sssss)
-GAIN    	 Gain (e-/ADU)
-GAINERR 	  Gain error (e-/ADU)
-RDNOISE 	 Read noise (e-)                                
-RNOISERR	 Read noise error (e-)                          
-UTDATE  	 UT date at start of exposure                   
-LOCTIME 	 LT date at start of exposure                   
-MJD     	 Modified Julian Date at start of exposure      
-OBSALT  	 Observatory elevation above sea level (m)      
-EXPTIME 	 Exposure time (s)                              
-TELRA   	 TCS right ascension: HH:MM:SS.SSS              
-TELDEC  	 TCS declination: +-DD:MM:SS.SSS                
-RA      	 Requested right Ascension: HH:MM:SS.SSS        
-DEC     	 Requested Declination: +- DD:MM:SS.SSS         
-RA_DEG  	 Requested Right Ascension (deg)                
-DEC_DEG 	 Requested Declination (deg)                    
-EPOCH   	 Epoch for Target coordinates                   
-HA      	 Hour Angle (Sexagesimal)                       
-HAD     	 Hour Angle (deg)                               
-AIRMASS 	 Mean airmass for the observation               
-AMSTART 	 Airmass at start of exposure                   
-AMEND   	 Airmass at end of exposure                     
-XOFFSET 	 Telescope RA offset in arcsec                  
-YOFFSET 	 Telescope DEC offset in arcsec                 
-PA      	 Current Rotator Position Angle (degree)        
-CAMFOC  	 Camera focus position (mm)                     
-TELFOC  	 Telescope focus position (mm)                  
-TCSUT   	 TCS Universal Time                             
-TCSST   	 TCS Sideral Time                               
-MOONDIST	 Moon angular distance to object (deg)          
-MOONALT 	 Moon elevation above horizon (deg)             
-MOONPHAS	 Moon elevation above horizon (deg)             
-ADC     	 Atmospheric Dispersion Corrector: ON or OFF    
-ADCSPEED	 ADC motor speed (rpm)                          
-CALMIRR 	 Calibration mirror position: IN or OUT         
-GUIDING 	 Guider status: ON or OFF                       
-GUIDTEXP	 Guider exposure time (s)                       
-GUIDFREQ	 Guiding frequency (Hz)                         
-GUIDOBJX	 Guiding object x position (pixel)              
-GUIDOBJY	 Guiding object y position (pixel)              
-AVGYCORR	 Average correction in RA (arcsec)              
-AVGXCORR	 Average correction in DEC (arcsec)             
-GFOCUS  	 Guider focus position (mm)                     
-THARLAMP	 Thorium-Argon lamp state: ON or OFF            
-HALLAMP 	 Halogen lamp state: ON or OFF                  
-AGITATOR	 Fiber agitator: ON or OFF                      
-THARMIRR	 Th-Ar mirror position: SPECTROGRAPH or TELESCOP
-DSTATUS 	 Dome Status: OPEN or CLOSED                    
-DPOS    	 Dome position (deg)                            
-DTEMP   	 Dome temperature (deg C)                       
-DHUM    	 Dome humidity (per cent)                       
-DLAMP   	 Dome lamp: ON or OFF                           
-DFLAT   	 Dome flat lamp: ON or OFF                      
-EXTTEMP	 External temperature (celsius degree)                   
-PRESSURE	 Pressure (mbar)                                
-HUMIDITY	 Humidity (per cent)                            
-WINDDIR 	 Wind direction: North-eastward (deg)           
-WINSPEED	 Wind Speed (km/h)
-SHTTTL  	 Shutter TTL                                    
+SHUTTER 	 Shutter Mode (OPEN or CLOSED)  
 COOLER  	 CCD cooler: ON or OFF                          
-TEMP    	 CCD temperature                                
+CCDTEMP    	 CCD temperature     
+TGTEMP  	Target temperature in celsius degrees                             
 TEMPST  	 Temperature status                             
-SERN    	 Serial Number                                  
-FRAME_T 	 Frame Transfer: ON or OFF                      
-VCLKAMP	 Vertical Clock Amplitude: 0, +1, +2, +3, +4    
-ADCHNNL 	 Analogical to Digital Channel                  
-JD      	 Julian Day                                     
-SD      	 Sideral Day                                    
-FILTER  	 The filter used in the observation: UBVRI      
+FRAMETRF 	 Frame Transfer: ON or OFF                      
+VCLKAMP 	 Vertical Clock Amplitude: 0, +1, +2, +3, +4    
+GAIN    	 Gain in e-/ADU
+RDNOISE 	 Read noise in e-
+RA      	 Right Ascension: HH:MM:SS.SSS        
+DEC     	 Declination: +- HH:MM:SS.SSS         
+EQUINOX 	 Equinox for the target coordinates 
+JD      	 Julian Day                                                       
+HA      	 Hour Angle (Sexagesimal)                       
+TELFOCUS  	 Telescope focus position
+TCSST   	 TCS Sidereal Time  
+TCSDATE 	 TCS date in UT                                     
+GFOCUS  	 Guider focus position 
+GUIDEAR  	AR of the guider object
+GUIDEDEC 	DEC of the guider object            
+EXTTEMP 	External temperature in celsius degrees
+AIRMASS 	Airmass in the start of the exposure                
+PRESSURE	 Pressure in mbar
+HUMIDITY	 Humidity in percent
 ACSVRSN 	 The version of the ACS                         
-CTRLINTE	 Graphical control interface of the ACS         
-TCSDATE 	 TCS Date in local hour                                
+CTRLINTE	 Graphical control interface of the ACS    
+ACSMODE 	 Mode of the ACS (simulated or real)
+ICSMODE 	 Mode of the ICS (simulated or real)
+TCSMODE 	 Mode of the TCS (simulated or real)

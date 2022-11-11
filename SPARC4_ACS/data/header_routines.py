@@ -8,7 +8,6 @@ vsspeeds = ['0.6', '1.13', '2.2', '4.33']
 preamps = ['Gain 1', 'Gain 2']
 emmode = ['Electron Multiplying', 'Conventional']
 shutter_mode = ['Auto', 'Open', 'Closed']
-shutter_ttl = ['High', "Low"]
 vertical_clock_amp = ['Normal', '+1', '+2', '+3', '+4']
 acquisition_mode = ['Single', 'Accumulate', "Kinetic"]
 
@@ -25,7 +24,7 @@ def reformat_string(string):
 
 
 def find_index_tab(header_content):
-    index = 2 * header_content['READOUT']
+    index = 2 * header_content['READRATE']
     if header_content['EMMODE'] == 1:
         index += 8
     index += header_content['PREAMP']
@@ -60,13 +59,11 @@ def save_image(file, data, channel_information):
     header_content['PREAMP'] = preamps[header_content['PREAMP']]
     header_content['VSHIFT'] = vsspeeds[header_content['VSHIFT']] + ' usec'
     if header_content["EMMODE"] == 0:
-        header_content["READOUT"] = readouts_em[header_content['READOUT']] + ' MHz'
+        header_content["READRATE"] = readouts_em[header_content['READRATE']] + ' MHz'
     else:
-        header_content["READOUT"] = readouts_conv[header_content['READOUT']] + ' MHz'
+        header_content["READRATE"] = readouts_conv[header_content['READRATE']] + ' MHz'
     header_content['EMMODE'] = emmode[header_content['EMMODE']]
     header_content['SHUTTER'] = shutter_mode[header_content['SHUTTER']]
-    header_content['SHTTTL'] = shutter_ttl[header_content['SHTTTL']]
-    header_content['READMODE'] = 'Image'
     header_content['VCLKAMP'] = vertical_clock_amp[header_content['VCLKAMP']]
     header_content['ACQMODE'] = acquisition_mode[header_content['ACQMODE'] - 1]
     if header_content['TRIGGER'] == 0:
@@ -77,6 +74,11 @@ def save_image(file, data, channel_information):
         header_content['COOLER'] = 'OFF'
     else:
         header_content['COOLER'] == 'ON'
+    if header_content['ACSMODE']:
+        header_content['ACSMODE'] = 'Simulated'
+    else:
+        header_content['ACSMODE'] == 'Real'
+    header_content['CYCLIND'] += 1
 
     # fazer um IF
 
