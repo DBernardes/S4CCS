@@ -79,6 +79,7 @@ def save_image(file, data, channel_information):
     else:
         header_content['ACSMODE'] == 'Real'
     header_content['CYCLIND'] += 1
+    header_content['INSTRUME'] = 'SPARC4'
 
     # fazer um IF
 
