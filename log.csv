@@ -1,3 +1,4 @@
+4d32d96; observer; 2022-11-17; sliders were added to the control of the image graph
 69de6ff; observer; 2022-11-17; The READ_SETUP command was refactored
 49dacc2; observer; 2022-11-11; updating EXE
 c84ef00; observer; 2022-11-11; Now, the date-obs is in UTC
