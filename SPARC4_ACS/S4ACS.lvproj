@@ -246,7 +246,7 @@
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
+				<Property Name="Source[15].itemID" Type="Ref"></Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
