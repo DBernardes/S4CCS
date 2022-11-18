@@ -1,3 +1,4 @@
+f7073ab; observer; 2022-11-18; check if the fits file already exists
 5f746ec; observer; 2022-11-18; The video mode was added
 4d32d96; observer; 2022-11-17; sliders were added to the control of the image graph
 69de6ff; observer; 2022-11-17; The READ_SETUP command was refactored
