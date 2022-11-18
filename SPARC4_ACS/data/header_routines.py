@@ -100,7 +100,7 @@ def save_image(file, data, channel_information):
         header_content['EQUINOX'] = float(header_content['EQUINOX'])
 
     if os.path.isfile(file):
-        now = datetime.now()
+        now = datetime.utcnow()
         date_time = now.strftime("%Y%m%dT%H%M%S%f")
         file = file.replace('.fits', f'_{date_time[:-4]}.fits')
 
