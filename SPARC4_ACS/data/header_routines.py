@@ -1,6 +1,9 @@
 import astropy.io.fits as fits
 import pandas as pd
 import json
+import os
+from datetime import datetime
+
 
 readouts_em = [30, 20, 10, 1]
 readouts_conv = [1, 0.1]
@@ -96,7 +99,10 @@ def save_image(file, data, channel_information):
     if header_content['EQUINOX'] != '':
         header_content['EQUINOX'] = float(header_content['EQUINOX'])
 
-    # fazer um IF no nome do arquivo
+    if os.path.isfile(file):
+        now = datetime.now()
+        date_time = now.strftime("%Y%m%dT%H%M%S%f")
+        file = file.replace('.fits', f'_{date_time[:-4]}.fits')
 
     fits.writeto(file, data, header_content)
     return
