@@ -1,5 +1,7 @@
 Keyword	Comment
-OBSERVER	Name of the observer                           
+NAXIS1  	Number of columns
+NAXIS2  	Number of rows
+OBSERVER	Name of the observer
 OBJECT  	Object name                                                                                           
 INSTRUME	Instrument                                     
 OBSTYPE 	Image type: OBJECT, ZERO, FLAT, DARK, NONE          
