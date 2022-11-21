@@ -1,57 +1,59 @@
 Keyword	Comment
-OBSERVER	 Name of the observer                           
-OBJECT  	 Object name                                                                                           
-INSTRUME	 Instrument                                     
-OBSTYPE 	 Image type: OBJECT, BIAS, FLAT, DARK           
-CHANNEL 	 Instrument channel   
-SERN    	 Serial Number of the CCD  
-FILENAME	 File name at acquisition     
-DATE-OBS	 Acquisition date (YY/MM/DD:HH:MM:SS.sssss)  
+NAXIS1  	Number of columns
+NAXIS2  	Number of rows
+OBSERVER	Name of the observer
+OBJECT  	Object name                                                                                           
+INSTRUME	Instrument                                     
+OBSTYPE 	Image type: OBJECT, ZERO, FLAT, DARK, NONE          
+CHANNEL 	Instrument channel   
+SERN    	Serial Number of the CCD  
+FILENAME	File name 
+DATE-OBS	Acquisition date in UTC (ISO8601)
+UTTIME  	Acquisition UTC time 
+UTDATE  	Acquisition UTC date 
 NCYCLES 	Number of cycles
 CYCLIND 	Index of the cycle in the sequence
 NFRAMES  	Number of frames in the cycle
 FRAMEIND	Index of the frame in the cycle
-EXPTIME 	 Exposure time of the frame in seconds   
+EXPTIME 	Exposure time of the frame in seconds   
 CYCLTEXP	Cycle exposure time in seconds                                                                
-ACQMODE 	 Acquisition Mode                               
-PREAMP  	 Pre-amplifier gain                             
-READRATE 	 Readout Rate                                   
-VSHIFT  	 Vertical Shift Speed                           
-TRIGGER 	 Trigger Mode                                   
-EMMODE  	 Output amplifier mode                        
-EMGAIN  	 EM Gain  
-VBIN    	 Vertical binning                               
-HBIN    	 Horizontal binning                             
-INITLIN 	 Initial Line                                   
-INITCOL 	 Initial Column                                 
-FINALLIN	 Final Line                                     
-FINALCOL	 Final Column                                   
-SHUTTER 	 Shutter Mode (OPEN or CLOSED)  
-COOLER  	 CCD cooler: ON or OFF                          
-CCDTEMP    	 CCD temperature     
+ACQMODE 	Acquisition Mode                               
+PREAMP  	Pre-amplifier gain                             
+READRATE 	Readout Rate in MHz                               
+VSHIFT  	Vertical Shift Speed in microseconds                      
+TRIGGER 	Trigger Mode
+EMMODE  	Output amplifier mode                        
+EMGAIN  	EM Gain  
+VBIN    	Vertical binning                               
+HBIN    	Horizontal binning                             
+INITLIN 	Initial Line                                   
+INITCOL 	Initial Column                                 
+FINALLIN	Final Line                                     
+FINALCOL	Final Column                                   
+SHUTTER 	Shutter Mode
+COOLER  	CCD cooler: ON or OFF                          
+CCDTEMP    	CCD temperature in celsius degrees   
 TGTEMP  	Target temperature in celsius degrees                             
-TEMPST  	 Temperature status                             
-FRAMETRF 	 Frame Transfer: ON or OFF                      
-VCLKAMP 	 Vertical Clock Amplitude: 0, +1, +2, +3, +4    
-GAIN    	 Gain in e-/ADU
-RDNOISE 	 Read noise in e-
-RA      	 Right Ascension: HH:MM:SS.SSS        
-DEC     	 Declination: +- HH:MM:SS.SSS         
-EQUINOX 	 Equinox for the target coordinates 
-JD      	 Julian Day                                                       
-HA      	 Hour Angle (Sexagesimal)                       
-TELFOCUS  	 Telescope focus position
-TCSST   	 TCS Sidereal Time  
-TCSDATE 	 TCS date in UT                                     
-GFOCUS  	 Guider focus position 
+TEMPST  	Temperature status                             
+FRAMETRF 	Frame Transfer: ON or OFF                      
+VCLKAMP 	Vertical Clock Amplitude: Normal, +1, +2, +3, +4    
+GAIN    	Gain in e-/ADU
+RDNOISE 	Read noise in e-
+RA      	Right Ascension: HH:MM:SS       
+DEC     	Declination: +- HH:MM:SS
+EQUINOX 	Equinox for the target coordinates                                                    
+TELFOCUS  	Telescope focus position
+TCSHA      	TCS hour angle
+TCSDATE 	TCS date in UT                                     
+GFOCUS  	Guider focus position 
 GUIDEAR  	AR of the guider object
 GUIDEDEC 	DEC of the guider object            
 EXTTEMP 	External temperature in celsius degrees
 AIRMASS 	Airmass in the start of the exposure                
-PRESSURE	 Pressure in mbar
-HUMIDITY	 Humidity in percent
-ACSVRSN 	 The version of the ACS                         
-CTRLINTE	 Graphical control interface of the ACS    
-ACSMODE 	 Mode of the ACS (simulated or real)
-ICSMODE 	 Mode of the ICS (simulated or real)
-TCSMODE 	 Mode of the TCS (simulated or real)
+PRESSURE	Pressure in mbar
+HUMIDITY	Humidity in percent
+ACSVRSN 	The version of the ACS                         
+CTRLINTE	Graphical control interface of the ACS    
+ACSMODE 	Mode of the ACS (simulated or real)
+ICSMODE 	Mode of the ICS (simulated or real)
+TCSMODE 	Mode of the TCS (simulated or real)

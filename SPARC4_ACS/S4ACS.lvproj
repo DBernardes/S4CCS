@@ -208,7 +208,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">85</Property>
+				<Property Name="Bld_version.build" Type="Int">86</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -217,7 +217,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{0D7473E1-59D1-4D7A-BEA6-EA0644FA3519}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D83BA0AD-3726-4976-BA98-E53CE78000C1}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -246,7 +246,7 @@
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/header_content.csv</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref"></Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>

@@ -1,10 +1,13 @@
 import astropy.io.fits as fits
 import pandas as pd
 import json
+import os
+from datetime import datetime
 
-readouts_em = ['30', '20', '10', '1']
-readouts_conv = ['1', '0.1']
-vsspeeds = ['0.6', '1.13', '2.2', '4.33']
+
+readouts_em = [30, 20, 10, 1]
+readouts_conv = [1, 0.1]
+vsspeeds = [0.6, 1.13, 2.2, 4.33]
 preamps = ['Gain 1', 'Gain 2']
 emmode = ['Electron Multiplying', 'Conventional']
 shutter_mode = ['Auto', 'Open', 'Closed']
@@ -57,11 +60,11 @@ def save_image(file, data, channel_information):
         index, header_content['SERN'])
 
     header_content['PREAMP'] = preamps[header_content['PREAMP']]
-    header_content['VSHIFT'] = vsspeeds[header_content['VSHIFT']] + ' usec'
+    header_content['VSHIFT'] = vsspeeds[header_content['VSHIFT']]
     if header_content["EMMODE"] == 0:
         header_content["READRATE"] = readouts_em[header_content['READRATE']] + ' MHz'
     else:
-        header_content["READRATE"] = readouts_conv[header_content['READRATE']] + ' MHz'
+        header_content["READRATE"] = readouts_conv[header_content['READRATE']]
     header_content['EMMODE'] = emmode[header_content['EMMODE']]
     header_content['SHUTTER'] = shutter_mode[header_content['SHUTTER']]
     header_content['VCLKAMP'] = vertical_clock_amp[header_content['VCLKAMP']]
@@ -80,8 +83,26 @@ def save_image(file, data, channel_information):
         header_content['ACSMODE'] == 'Real'
     header_content['CYCLIND'] += 1
     header_content['INSTRUME'] = 'SPARC4'
+    if header_content['TELFOCUS'] != '':
+        header_content['TELFOCUS'] = int(
+            header_content['TELFOCUS'].replace('S', ''))
+    if header_content['OBSTYPE'] == '':
+        header_content['OBSTYPE'] = 'NONE'
+    if header_content['EXTTEMP'] != '':
+        header_content['EXTTEMP'] = float(
+            header_content['EXTTEMP'].replace(',', '.'))
+    if header_content['PRESSURE'] != '':
+        header_content['PRESSURE'] = float(
+            header_content['PRESSURE'].replace(',', '.'))
+    if header_content['HUMIDITY'] != '':
+        header_content['HUMIDITY'] = float(header_content['HUMIDITY'])
+    if header_content['EQUINOX'] != '':
+        header_content['EQUINOX'] = float(header_content['EQUINOX'])
 
-    # fazer um IF
+    if os.path.isfile(file):
+        now = datetime.utcnow()
+        date_time = now.strftime("%Y%m%dT%H%M%S%f")
+        file = file.replace('.fits', f'_{date_time[:-4]}.fits')
 
     fits.writeto(file, data, header_content)
     return
