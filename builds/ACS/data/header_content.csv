@@ -40,7 +40,7 @@ VCLKAMP 	Vertical Clock Amplitude: Normal, +1, +2, +3, +4
 GAIN    	Gain in e-/ADU
 RDNOISE 	Read noise in e-
 RA      	Right Ascension: HH:MM:SS       
-DEC     	Declination: +- HH:MM:SS
+DEC     	Declination: +- DD:MM:SS
 EQUINOX 	Equinox for the target coordinates                                                    
 TELFOCUS  	Telescope focus position
 TCSHA      	TCS hour angle
