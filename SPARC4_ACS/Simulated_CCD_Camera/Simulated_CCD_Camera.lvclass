@@ -331,13 +331,13 @@
 		<Property Name="NI.ClassItem.State" Type="Int">1082401280</Property>
 	</Item>
 	<Item Name="Initialize Camera.vi" Type="VI" URL="../Initialize Camera.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">'!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%W!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$:!=!!?!!!?(&amp;.J&lt;86M982F:&amp;^$1U2@1W&amp;N:8*B,GRW9WRB=X-!!!V$1U2$97VF=G%A&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!$5!'!!&gt;D;'&amp;O&lt;G6M!$:!=!!?!!!?(&amp;.J&lt;86M982F:&amp;^$1U2@1W&amp;N:8*B,GRW9WRB=X-!!!R$1U2$97VF=G%A;7Y!!&amp;1!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!A!!?!!!$1A!!!!!!!!!!!!!D1M!!!!!!!!!!!!!!!!!!!!!!!!)!!!!!!!!!!I!!!#3!!!!!!%!#1!!!!!</Property>
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">'!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!(\!!!!#Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!-6!&amp;Q!9!V"%112J7'^O"%F$1U1&amp;25V$1U1$1U.%"7F4&gt;'&amp;S%H2I;8*E)("B=H2Z)'.B&lt;76S912J2(6T"EZF&gt;X2P&lt;A:4&gt;8*D97U)66.#)%F$1U1%4(6D91B3:8.F=H:F:!2J3W^O"EFO2W&amp;"=Q2J6G&amp;D$&amp;6O=(*P:X*B&lt;7VF:!6$&lt;'&amp;S91F65U)A;6.U98)'5WFN1W&amp;N!UZF&lt;QJJ7'^O)&amp;6M&gt;(*B"F:P&lt;'VP=QJJ6G&amp;D)&amp;6M&gt;(*B!!!+1W&amp;N:8*B6(FQ:1!!.E"Q!"Y!!"Y=5WFN&gt;7RB&gt;'6E8U.$2&amp;^$97VF=G%O&lt;(:D&lt;'&amp;T=Q!!$5.$2%.B&lt;76S93"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!.1!9!"W.I97ZO:7Q!.E"Q!"Y!!"Y=5WFN&gt;7RB&gt;'6E8U.$2&amp;^$97VF=G%O&lt;(:D&lt;'&amp;T=Q!!$%.$2%.B&lt;76S93"J&lt;A!!6!$Q!!Q!!Q!%!!5!"A!%!!1!"!!%!!=!"!!)!!E#!!"Y!!!.#!!!!!!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!#A!!!*)!!!!!!1!+!!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 	</Item>
 	<Item Name="Shutdown Camera.vi" Type="VI" URL="../Shutdown Camera.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">'!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%J!!!!#1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$:!=!!?!!!?(&amp;.J&lt;86M982F:&amp;^$1U2@1W&amp;N:8*B,GRW9WRB=X-!!!V$1U2$97VF=G%A&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!.E"Q!"Y!!"Y=5WFN&gt;7RB&gt;'6E8U.$2&amp;^$97VF=G%O&lt;(:D&lt;'&amp;T=Q!!$%.$2%.B&lt;76S93"J&lt;A!!6!$Q!!Q!!Q!%!!1!"1!%!!1!"!!%!!9!"!!%!!=#!!"Y!!!.#!!!!!!!!!!!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!*!!!!!!!1!)!!!!!!</Property>
