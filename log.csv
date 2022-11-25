@@ -1,3 +1,4 @@
+f15b628; observer; 2022-11-25; ACS verifies if the camera is an iXon or iXon Ultra
 53ad145; observer; 2022-11-24; updating EXE
 ed65c4d; observer; 2022-11-22; The context_name was added to the stream VI
 fd92fec; observer; 2022-11-22; video mode is set to OFF when the user choose the front panel of the ACS
