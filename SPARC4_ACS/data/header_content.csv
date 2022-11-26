@@ -57,3 +57,9 @@ CTRLINTE	Graphical control interface of the ACS
 ACSMODE 	Mode of the ACS (simulated or real)
 ICSMODE 	Mode of the ICS (simulated or real)
 TCSMODE 	Mode of the TCS (simulated or real)
+WPSEL	Waveplate: L/2, L/4, or NONE
+WPROT	Position of the waveplate
+CALW	Calibration wheel: POLARIZER, DEPOLARIZER, NONE
+ASEL	Analiser: ON or OFF
+GMIR	Rotation angle of the guiding mirror in degrees
+GFOC	Guiding focus in mm
