@@ -8,7 +8,7 @@ OBSTYPE 	Image type: OBJECT, ZERO, FLAT, DARK, NONE
 CHANNEL 	Instrument channel   
 SERN    	Serial Number of the CCD  
 FILENAME	File name 
-DATE-OBS	Acquisition date in UTC (ISO8601)
+DATE-OBS	Acquisition date in UTC (ISOT)
 UTTIME  	Acquisition UTC time 
 UTDATE  	Acquisition UTC date 
 NCYCLES 	Number of cycles
