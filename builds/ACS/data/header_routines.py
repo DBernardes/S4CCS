@@ -71,8 +71,10 @@ def save_image(file, data, channel_information):
     header_content['ACQMODE'] = acquisition_mode[header_content['ACQMODE'] - 1]
     if header_content['TRIGGER'] == 0:
         header_content['TRIGGER'] = 'Internal'
+    elif header_content['TRIGGER'] == 6:
+        header_content['TRIGGER'] = 'External'
     else:
-        header_content['TRIGGER'] == 'External'
+        header_content['TRIGGER'] = 'Uknown'
     if header_content['COOLER'] == 0:
         header_content['COOLER'] = 'OFF'
     else:
