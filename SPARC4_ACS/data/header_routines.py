@@ -62,7 +62,7 @@ def save_image(file, data, channel_information):
     header_content['PREAMP'] = preamps[header_content['PREAMP']]
     header_content['VSHIFT'] = vsspeeds[header_content['VSHIFT']]
     if header_content["EMMODE"] == 0:
-        header_content["READRATE"] = readouts_em[header_content['READRATE']] + ' MHz'
+        header_content["READRATE"] = readouts_em[header_content['READRATE']]
     else:
         header_content["READRATE"] = readouts_conv[header_content['READRATE']]
     header_content['EMMODE'] = emmode[header_content['EMMODE']]
