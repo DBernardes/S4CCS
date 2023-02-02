@@ -96,7 +96,6 @@
 				<Item Name="SetNumberKinetics.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetNumberKinetics.vi"/>
 				<Item Name="U32 Array To AndorCapabilities.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 Array To AndorCapabilities.vi"/>
 				<Item Name="AndorCapabilities typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/AndorCapabilities typedef.ctl"/>
-				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
 				<Item Name="GetCameraHandle.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraHandle.vi"/>
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
@@ -105,6 +104,8 @@
 				<Item Name="GetEMCCDGain.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetEMCCDGain.vi"/>
 				<Item Name="GetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVerticalSpeed.vi"/>
 				<Item Name="GetVSAmplitudeValue.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSAmplitudeValue.vi"/>
+				<Item Name="PrepareAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/PrepareAcquisition.vi"/>
+				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
