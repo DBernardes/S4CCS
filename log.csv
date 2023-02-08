@@ -1,3 +1,4 @@
+8529d0b; observer; 2023-02-08; error management of the CCD parameters
 be59d12; observer; 2023-02-02; implementing the option of setting an specific ccd parameter
 158afb9; observer; 2023-02-02; the Pause button was implemented
 6dd3d3f; observer; 2023-02-02; an error in ccd config does not allow the exposure anymore
