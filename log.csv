@@ -1,3 +1,7 @@
+be59d12; observer; 2023-02-02; implementing the option of setting an specific ccd parameter
+158afb9; observer; 2023-02-02; the Pause button was implemented
+6dd3d3f; observer; 2023-02-02; an error in ccd config does not allow the exposure anymore
+7c1b721; observer; 2023-02-01; small fixes
 ec4397c; observer; 2022-12-14; updating EXE
 da906e5; observer; 2022-12-02; Update Interprete message.vi
 62bfc0f; observer; 2022-12-02; updating EXE
