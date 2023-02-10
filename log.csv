@@ -1,3 +1,6 @@
+d428183; observer; 2023-02-10; updating exe
+a7d1301; observer; 2023-02-10; small fixes
+42e57ae; observer; 2023-02-08; An image orientation routine was added
 8529d0b; observer; 2023-02-08; error management of the CCD parameters
 be59d12; observer; 2023-02-02; implementing the option of setting an specific ccd parameter
 158afb9; observer; 2023-02-02; the Pause button was implemented
