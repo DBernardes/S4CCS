@@ -99,11 +99,6 @@
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
 				<Item Name="GetCameraHandle.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraHandle.vi"/>
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
-				<Item Name="GetPreAmpGain.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetPreAmpGain.vi"/>
-				<Item Name="GetHSSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetHSSpeed.vi"/>
-				<Item Name="GetEMCCDGain.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetEMCCDGain.vi"/>
-				<Item Name="GetVerticalSpeed.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVerticalSpeed.vi"/>
-				<Item Name="GetVSAmplitudeValue.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetVSAmplitudeValue.vi"/>
 				<Item Name="PrepareAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/PrepareAcquisition.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 			</Item>
@@ -222,7 +217,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">97</Property>
+				<Property Name="Bld_version.build" Type="Int">98</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
