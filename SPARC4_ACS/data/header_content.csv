@@ -11,6 +11,7 @@ FILENAME	File name
 DATE-OBS	Acquisition date in UTC (ISOT)
 UTTIME  	Acquisition UTC time 
 UTDATE  	Acquisition UTC date 
+FILTER  	The used filter (U, B, V, R, I, CLEAR, or NONE)
 NCYCLES 	Number of cycles
 CYCLIND 	Index of the cycle in the sequence
 NFRAMES  	Number of frames in the cycle
