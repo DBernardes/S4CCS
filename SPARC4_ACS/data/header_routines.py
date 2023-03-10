@@ -78,10 +78,10 @@ def save_image(file, data, channel_information):
             data, invert_x=False, invert_y=False, nrot90deg=2)
     elif header_content['CHANNEL'] == 3:
         data = fix_image_orientation(
-            data, invert_x=True, invert_y=False, nrot90deg=3)
+            data, invert_x=True, invert_y=False, nrot90deg=1)
     elif header_content['CHANNEL'] == 4:
         data = fix_image_orientation(
-            data, invert_x=False, invert_y=False, nrot90deg=3)
+            data, invert_x=False, invert_y=False, nrot90deg=1)
     else:
         raise ValueError(
             f'The provided channel does not exit: {header_content["CHANNEL"]}')
