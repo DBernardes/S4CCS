@@ -18,24 +18,35 @@ def save_image(file, data, channel_information):
     channel_information = json.loads(reformat_string(channel_information))
     for key, value in channel_information.items():
         header_content[key] = value
+
+    # ---------------------------------------------------
+    header_content['OBSLONG'] = -45.5825
+    header_content['OBSLAT'] = -22.53444444444445
+    header_content['OBSALT'] = 1864.0
     # ---------------------------------------------------
     index = find_index_tab(header_content)
     header_content['GAIN'] = get_ccd_gain(index, header_content['SERN'])
     header_content['RDNOISE'] = get_read_noise(
         index, header_content['SERN'])
+    header_content['INSTRUME'] = 'SPARC4'
+    header_content['CYCLIND'] += 1
     # ---------------------------------------------------
     header_content['PREAMP'] = vpc['preamps'][header_content['PREAMP']]
     header_content['VSHIFT'] = vpc['vsspeeds'][header_content['VSHIFT']]
+
+    header_content["READRATE"] = vpc['readouts_conv'][header_content['READRATE']]
     if header_content["EMMODE"] == 0:
         header_content["READRATE"] = vpc['readouts_em'][header_content['READRATE']]
-    else:
-        header_content["READRATE"] = vpc['readouts_conv'][header_content['READRATE']]
+
     header_content['EMMODE'] = vpc['emmode'][header_content['EMMODE']]
     header_content['SHUTTER'] = vpc['shutter_mode'][header_content['SHUTTER']]
     header_content['VCLKAMP'] = vpc['vertical_clock_amp'][header_content['VCLKAMP']]
     header_content['ACQMODE'] = vpc['acquisition_mode'][header_content['ACQMODE'] - 1]
-    header_content['CYCLIND'] += 1
-    header_content['INSTRUME'] = 'SPARC4'
+
+    header_content['FRAMETRF'] = 'OFF'
+    if header_content['FRAMETRF']:
+        header_content['FRAMETRF'] = 'ON'
+
     # ---------------------------------------------------
     if header_content['TRIGGER'] == 0:
         header_content['TRIGGER'] = 'Internal'
@@ -89,7 +100,6 @@ def save_image(file, data, channel_information):
     if os.path.isfile(file):
         now = datetime.utcnow()
         date_time = now.strftime("%Y%m%dT%H%M%S%f")
-        #file = file.replace('.fits', f'_{date_time[:-4]}.fits')
         image_name = file.split('_')
         img_index = image_name.pop()
         file = ''
