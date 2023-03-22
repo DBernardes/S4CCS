@@ -217,7 +217,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">104</Property>
+				<Property Name="Bld_version.build" Type="Int">105</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -226,7 +226,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{5FA817A3-238D-4BFA-BD02-C2CB31352DB7}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{27F15D05-1C7B-40B2-ACF5-4E54C4EC1045}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
