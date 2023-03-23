@@ -33,12 +33,11 @@
 		<Item Name="TESTE.vi" Type="VI" URL="../TESTE.vi"/>
 		<Item Name="old tests.vi" Type="VI" URL="../old tests.vi"/>
 		<Item Name="Simulated_CCD_Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated_CCD_Camera.lvclass"/>
-		<Item Name="Simulated_Header.lvclass" Type="LVClass" URL="../Simulated_Header/Simulated_Header.lvclass"/>
 		<Item Name="CCDCamera.lvclass" Type="LVClass" URL="../CCDCamera/CCDCamera.lvclass"/>
 		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
-		<Item Name="TCS.lvclass" Type="LVClass" URL="../TCS_ACS/TCS.lvclass"/>
+		<Item Name="Header content.lvclass" Type="LVClass" URL="../Header content/Header content.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
@@ -188,8 +187,6 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="TCPIP.lvclass" Type="LVClass" URL="../TCPIP/TCPIP.lvclass"/>
-			<Item Name="Flatten Time to String.vi" Type="VI" URL="../Save Image/Flatten Time to String.vi"/>
-			<Item Name="Create Image Name.vi" Type="VI" URL="../Save Image/Create Image Name.vi"/>
 			<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 			<Item Name="Write Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Write Interface.lvclass.vi"/>
 			<Item Name="Read Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Read Interface.lvclass.vi"/>
@@ -255,7 +252,7 @@
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/utils.py</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/data/ACS_version.txt</Property>
+				<Property Name="Source[15].itemID" Type="Ref"></Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>

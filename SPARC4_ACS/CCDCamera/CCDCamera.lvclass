@@ -1,5 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <LVClass LVVersion="18008000">
+	<Property Name="NI.Lib.Description" Type="Str">CCDCamera class. This class uses the Software Developmet Kit (SDK) made available by Andor Technolgy, to control the EMCCDs of the SPARC4. </Property>
+	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">'!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)N!!!*Q(C=\&gt;8"&lt;2MR%)8BJ]#(8*5+$(514!?"4DE'5!P4AHT553U-E!L5AFJY,;A&amp;N;$]J!:S%"A7%.B)$O;;K^8DEPT%*&gt;&lt;3,*_F"VXOF;&gt;8SROWT]NROPQ:8K`'X`0JJ@&lt;HU]PNL`;`.``@`LY\22`FI`T&lt;MLO\3&gt;^^TSYU8E255YO;V.#9[G*SEZP=Z#9X?:%8?:%8?:%8?:)H?:)H?:)H?:!(?:!(?:!(_4T)23ZSE5-SEZO*T+"G!(-T&amp;*G4]2C0]2A08W5]RG-]RG-]X#,D-2\D-2\DI:O-RXC-RXC-B['GR0-ARW-]$+`#5XA+4_%J0%SJQF-!CMG+A9N"9+BI,#Y+4_%J0&amp;SK]"3?QF.Y#A`.+DS&amp;J`!5HM*$F\EK.48D)-@$-%I]C3@R**\%Q^"+0)EH]33?R-.U3DS**U%E%S;$1V$3+&lt;EB_:*Y%A]@3DS**`%EHM2$UXR#/6&gt;G;-:"DC@Q"*\!%XA#$U-I]!3?Q".Y!A`$+P!%HM!4?!)05SHQ"*\!%U##3:F?Q7""R_#G)!A]`-X&gt;%P-JV:4%0+4?P/J.K&gt;ZM[EWEXBTKB[Z_G/K(J&amp;Z]^;+K&amp;UO^#/I@JU;L-?J*V*X(D4JT0F'0V!.V4^V3.^1V&gt;56&gt;DKZP@/0Z@.&lt;J&gt;.,R?.4B=."_P^&gt;WO^6GM^&amp;[P&gt;:KN&gt;*SO&lt;S^"BYZ&lt;C_%[XNJR`7N@PWZW(X`M&gt;B^_X,^(._\\:X_F`Y(\U:^UO`DME;`!.RER&lt;!!!!!!</Property>
 	<Property Name="NI.Lib.SourceVersion" Type="Int">402685952</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.89</Property>
@@ -262,7 +264,7 @@
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1342972432</Property>
 	</Item>
-	<Item Name="Get Number New Images.vi" Type="VI" URL="../Get Number New Images.vi">
+	<Item Name="Verify new image.vi" Type="VI" URL="../Verify new image.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">'!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%D!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!"*!)1R/:8=A37VB:W6T)$]!!#J!=!!?!!!4%5.$2%.B&lt;76S93ZM&gt;G.M98.T!!V$1U2$97VF=G%A&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!+E"Q!"Y!!"-21U.%1W&amp;N:8*B,GRW9WRB=X-!$%.$2%.B&lt;76S93"J&lt;A!!6!$Q!!Q!!Q!%!!5!"A!%!!1!"!!%!!=!"!!%!!A$!!"Y!!!.#!!!!!!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!I!!!!!!!!!!!!!!*!!!!!!!1!*!!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
