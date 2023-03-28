@@ -30,6 +30,7 @@ def save_image(file, data, channel_information):
         index, header_content['SERN'])
     header_content['INSTRUME'] = 'SPARC4'
     header_content['CYCLIND'] += 1
+    header_content['SEQINDEX'] += 1
     # ---------------------------------------------------
     header_content['PREAMP'] = vpc['preamps'][header_content['PREAMP']]
     header_content['VSHIFT'] = vpc['vsspeeds'][header_content['VSHIFT']]
