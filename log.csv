@@ -1,3 +1,4 @@
+cdfc65c; observer; 2023-03-28; Adding a procedure to wait the EXPOSE command of the S4GUI
 bdb6f68; observer; 2023-03-28; small fixes
 c3f3c35; observer; 2023-03-28; fixing header
 4b101dc; observer; 2023-03-28; implementing the SET SEQ command
