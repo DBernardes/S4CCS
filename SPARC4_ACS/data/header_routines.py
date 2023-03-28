@@ -8,95 +8,109 @@ from utils import values_parameters_ccd as vpc
 
 
 ss = pd.read_csv('header_content.csv', delimiter='\t')
-cards = [(keyword, '', comment)
+cards = [(keyword, 'Unknow', comment)
          for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
 
 
 def save_image(file, data, channel_information):
-    header_content = fits.Header(cards)
+    hdr = fits.Header(cards)
     file = reformat_string(file)
     channel_information = json.loads(reformat_string(channel_information))
     for key, value in channel_information.items():
-        header_content[key] = value
+        if value == '':
+            continue
+        hdr[key] = value
 
     # ---------------------------------------------------
-    header_content['OBSLONG'] = -45.5825
-    header_content['OBSLAT'] = -22.53444444444445
-    header_content['OBSALT'] = 1864.0
+    hdr['OBSLONG'] = -45.5825
+    hdr['OBSLAT'] = -22.53444444444445
+    hdr['OBSALT'] = 1864.0
     # ---------------------------------------------------
-    index = find_index_tab(header_content)
-    header_content['GAIN'] = get_ccd_gain(index, header_content['SERN'])
-    header_content['RDNOISE'] = get_read_noise(
-        index, header_content['SERN'])
-    header_content['INSTRUME'] = 'SPARC4'
-    header_content['CYCLIND'] += 1
-    header_content['SEQINDEX'] += 1
-    # ---------------------------------------------------
-    header_content['PREAMP'] = vpc['preamps'][header_content['PREAMP']]
-    header_content['VSHIFT'] = vpc['vsspeeds'][header_content['VSHIFT']]
-
-    header_content["READRATE"] = vpc['readouts_conv'][header_content['READRATE']]
-    if header_content["EMMODE"] == 0:
-        header_content["READRATE"] = vpc['readouts_em'][header_content['READRATE']]
-
-    header_content['EMMODE'] = vpc['emmode'][header_content['EMMODE']]
-    header_content['SHUTTER'] = vpc['shutter_mode'][header_content['SHUTTER']]
-    header_content['VCLKAMP'] = vpc['vertical_clock_amp'][header_content['VCLKAMP']]
-    header_content['ACQMODE'] = vpc['acquisition_mode'][header_content['ACQMODE'] - 1]
-
-    header_content['FRAMETRF'] = 'OFF'
-    if header_content['FRAMETRF']:
-        header_content['FRAMETRF'] = 'ON'
+    index = find_index_tab(hdr)
+    hdr['GAIN'] = get_ccd_gain(index, hdr['SERN'])
+    hdr['RDNOISE'] = get_read_noise(
+        index, hdr['SERN'])
+    hdr['INSTRUME'] = 'SPARC4'
+    hdr['CYCLIND'] += 1
+    hdr['SEQINDEX'] += 1
+    if hdr['INSTMODE'] == 'Unknow':
+        hdr['INSTMODE'] = 'PHOT'
 
     # ---------------------------------------------------
-    if header_content['TRIGGER'] == 0:
-        header_content['TRIGGER'] = 'Internal'
-    elif header_content['TRIGGER'] == 6:
-        header_content['TRIGGER'] = 'External'
+    hdr['PREAMP'] = vpc['preamps'][hdr['PREAMP']]
+    hdr['VSHIFT'] = vpc['vsspeeds'][hdr['VSHIFT']]
+
+    hdr["READRATE"] = vpc['readouts_conv'][hdr['READRATE']]
+    if hdr["EMMODE"] == 0:
+        hdr["READRATE"] = vpc['readouts_em'][hdr['READRATE']]
+
+    hdr['EMMODE'] = vpc['emmode'][hdr['EMMODE']]
+    hdr['SHUTTER'] = vpc['shutter_mode'][hdr['SHUTTER']]
+    hdr['VCLKAMP'] = vpc['vertical_clock_amp'][hdr['VCLKAMP']]
+    hdr['ACQMODE'] = vpc['acquisition_mode'][hdr['ACQMODE'] - 1]
+
+    hdr['FRAMETRF'] = 'OFF'
+    if hdr['FRAMETRF']:
+        hdr['FRAMETRF'] = 'ON'
+
+    # ---------------------------------------------------
+    if hdr['TRIGGER'] == 0:
+        hdr['TRIGGER'] = 'Internal'
+    elif hdr['TRIGGER'] == 6:
+        hdr['TRIGGER'] = 'External'
     else:
-        header_content['TRIGGER'] = 'Uknown'
+        hdr['TRIGGER'] = 'Uknown'
     # ---------------------------------------------------
-    if header_content['COOLER'] == 0:
-        header_content['COOLER'] = 'OFF'
+    if hdr['COOLER'] == 0:
+        hdr['COOLER'] = 'OFF'
     else:
-        header_content['COOLER'] == 'ON'
+        hdr['COOLER'] == 'ON'
     # ---------------------------------------------------
-    if header_content['ACSMODE']:
-        header_content['ACSMODE'] = 'Simulated'
+    if hdr['ACSMODE']:
+        hdr['ACSMODE'] = 'Simulated'
     else:
-        header_content['ACSMODE'] == 'Real'
-    if header_content['OBSTYPE'] == '':
-        header_content['OBSTYPE'] = 'NONE'
+        hdr['ACSMODE'] == 'Real'
+    if hdr['OBSTYPE'] == '':
+        hdr['OBSTYPE'] = 'NONE'
     # ---------------------------------------------------
-    if header_content['TELFOCUS'] != '':
-        header_content['TELFOCUS'] = int(
-            header_content['TELFOCUS'].replace('S', ''))
-    if header_content['EXTTEMP'] != '':
-        header_content['EXTTEMP'] = float(
-            header_content['EXTTEMP'].replace(',', '.'))
-    if header_content['PRESSURE'] != '':
-        header_content['PRESSURE'] = float(
-            header_content['PRESSURE'].replace(',', '.'))
-    if header_content['HUMIDITY'] != '':
-        header_content['HUMIDITY'] = float(header_content['HUMIDITY'])
-    if header_content['EQUINOX'] != '':
-        header_content['EQUINOX'] = float(header_content['EQUINOX'])
+    if hdr['TELFOCUS'] != 'Unknow':
+        hdr['TELFOCUS'] = int(
+            hdr['TELFOCUS'].replace('S', ''))
+    if hdr['EXTTEMP'] != 'Unknow':
+        hdr['EXTTEMP'] = float(
+            hdr['EXTTEMP'].replace(',', '.'))
+    if hdr['PRESSURE'] != 'Unknow':
+        hdr['PRESSURE'] = float(
+            hdr['PRESSURE'].replace(',', '.'))
+    if hdr['HUMIDITY'] != 'Unknow':
+        hdr['HUMIDITY'] = float(hdr['HUMIDITY'])
+    if hdr['EQUINOX'] != 'Unknow':
+        hdr['EQUINOX'] = float(hdr['EQUINOX'])
     # ---------------------------------------------------
-    if header_content['CHANNEL'] == 1:
+    if hdr['WPSEL'] == 'Unknow':
+        hdr['WPSEL'] = 'None'
+    if hdr['CALW'] == 'Unknow':
+        hdr['CALW'] = 'None'
+    if hdr['ASEL']:
+        hdr['ASEL'] = 'ON'
+    else:
+        hdr['ASEL'] = 'OFF'
+    # ---------------------------------------------------
+    if hdr['CHANNEL'] == 1:
         data = fix_image_orientation(
             data, invert_x=False, invert_y=True, nrot90deg=0)
-    elif header_content['CHANNEL'] == 2:
+    elif hdr['CHANNEL'] == 2:
         data = fix_image_orientation(
             data, invert_x=False, invert_y=False, nrot90deg=2)
-    elif header_content['CHANNEL'] == 3:
+    elif hdr['CHANNEL'] == 3:
         data = fix_image_orientation(
             data, invert_x=True, invert_y=False, nrot90deg=1)
-    elif header_content['CHANNEL'] == 4:
+    elif hdr['CHANNEL'] == 4:
         data = fix_image_orientation(
             data, invert_x=False, invert_y=False, nrot90deg=1)
     else:
         raise ValueError(
-            f'The provided channel does not exit: {header_content["CHANNEL"]}')
+            f'The provided channel does not exit: {hdr["CHANNEL"]}')
     # ---------------------------------------------------
     if os.path.isfile(file):
         now = datetime.utcnow()
@@ -108,7 +122,7 @@ def save_image(file, data, channel_information):
             file += value + '_'
         file += f'{date_time[:-4]}' + '_' + img_index
 
-    fits.writeto(file, data, header_content)
+    fits.writeto(file, data, hdr)
     return
 
 

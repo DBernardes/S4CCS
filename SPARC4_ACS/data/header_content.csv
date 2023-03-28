@@ -16,15 +16,13 @@ FILENAME	File name
 DATE-OBS	UTC at start of observation (isot)
 UTTIME  	UTC time at start of observation 
 UTDATE  	UTC date at start of observation
-FILTER  	The used filter (U, B, V, R, I, CLEAR, or NONE)
 NCYCLES 	Number of cycles
-CYCLIND 	Cycle index in sequence
-NSEQ    	Total number of exposures in sequence
-SEQINDEX	Exposure index in sequence
-NFRAMES  	Frame index in the cycle
-FRAMEIND	Index of the frame in the cycle
-EXPTIME 	Exposure time (s)   
-CYCLTEXP	Total cycle exposure time (s)                                                               
+CYCLIND 	Cycle index
+NSEQ    	Total number of sequences in cycle
+SEQINDEX	Sequence index in cycle
+NFRAMES  	Total number of frames in sequence
+FRAMEIND	Frame index in sequence
+EXPTIME 	Exposure time (s)                                                               
 ACQMODE 	Acquisition mode                               
 PREAMP  	Pre-amplifier gain                             
 READRATE 	Readout rate (MHz)                             
@@ -65,9 +63,9 @@ CTRLINTE	Graphical control interface of ACS
 ACSMODE 	ACS in simulated mode
 ICSMODE 	ICS in simulated mode
 TCSMODE 	TCS in simulated mode 
-WPSEL   	Waveplate: L2 (half-wave), L4 (quarter-wave), or None
+WPSEL   	Waveplate: half-wave, quarter-wave, or None
 WPPOS   	Position of the waveplate
 CALW    	Calibration wheel: POLARIZER, DEPOLARIZER, None
-ASEL    	Analiser: ON or OFF
+ASEL    	Analizer: ON or OFF
 GMIR    	Rotation angle of the guiding mirror (deg)
 GFOC    	Guiding focus position (mm)
