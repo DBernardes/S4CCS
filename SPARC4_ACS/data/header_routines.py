@@ -40,18 +40,20 @@ def save_image(file, data, channel_information):
     hdr['PREAMP'] = vpc['preamps'][hdr['PREAMP']]
     hdr['VSHIFT'] = vpc['vsspeeds'][hdr['VSHIFT']]
 
-    hdr["READRATE"] = vpc['readouts_conv'][hdr['READRATE']]
     if hdr["EMMODE"] == 0:
         hdr["READRATE"] = vpc['readouts_em'][hdr['READRATE']]
+    else:
+        hdr["READRATE"] = vpc['readouts_conv'][hdr['READRATE']]
 
     hdr['EMMODE'] = vpc['emmode'][hdr['EMMODE']]
     hdr['SHUTTER'] = vpc['shutter_mode'][hdr['SHUTTER']]
     hdr['VCLKAMP'] = vpc['vertical_clock_amp'][hdr['VCLKAMP']]
     hdr['ACQMODE'] = vpc['acquisition_mode'][hdr['ACQMODE'] - 1]
 
-    hdr['FRAMETRF'] = 'OFF'
     if hdr['FRAMETRF']:
         hdr['FRAMETRF'] = 'ON'
+    else:
+        hdr['FRAMETRF'] = 'OFF'
 
     # ---------------------------------------------------
     if hdr['TRIGGER'] == 0:
@@ -69,8 +71,8 @@ def save_image(file, data, channel_information):
     if hdr['ACSMODE']:
         hdr['ACSMODE'] = 'Simulated'
     else:
-        hdr['ACSMODE'] == 'Real'
-    if hdr['OBSTYPE'] == '':
+        hdr['ACSMODE'] = 'Real'
+    if hdr['OBSTYPE'] == 'Unknow':
         hdr['OBSTYPE'] = 'NONE'
     # ---------------------------------------------------
     if hdr['TELFOCUS'] != 'Unknow':
