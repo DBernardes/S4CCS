@@ -100,16 +100,16 @@ def save_image(file, data, channel_information):
     # ---------------------------------------------------
     if hdr['CHANNEL'] == 1:
         data = fix_image_orientation(
-            data, invert_x=False, invert_y=True, nrot90deg=0)
+            data, invert_x=False, invert_y=True, nrot90deg=2)
     elif hdr['CHANNEL'] == 2:
         data = fix_image_orientation(
-            data, invert_x=False, invert_y=False, nrot90deg=2)
+            data, invert_x=False, invert_y=False, nrot90deg=0)
     elif hdr['CHANNEL'] == 3:
         data = fix_image_orientation(
-            data, invert_x=True, invert_y=False, nrot90deg=1)
+            data, invert_x=True, invert_y=False, nrot90deg=-1)
     elif hdr['CHANNEL'] == 4:
         data = fix_image_orientation(
-            data, invert_x=False, invert_y=False, nrot90deg=1)
+            data, invert_x=False, invert_y=False, nrot90deg=-1)
     else:
         raise ValueError(
             f'The provided channel does not exit: {hdr["CHANNEL"]}')
