@@ -22,14 +22,14 @@ def save_image(file, data, channel_information):
         hdr[key] = value
 
     # ---------------------------------------------------
-    hdr['OBSLONG'] = -45.5825
+    hdr['OBSLONG'] = 314.4175
     hdr['OBSLAT'] = -22.53444444444445
     hdr['OBSALT'] = 1864.0
     # ---------------------------------------------------
     index = find_index_tab(hdr)
-    hdr['GAIN'] = get_ccd_gain(index, hdr['SERN'])
+    hdr['GAIN'] = get_ccd_gain(index, hdr['CCDSERN'])
     hdr['RDNOISE'] = get_read_noise(
-        index, hdr['SERN'])
+        index, hdr['CCDSERN'])
     hdr['INSTRUME'] = 'SPARC4'
     hdr['CYCLIND'] += 1
     hdr['SEQINDEX'] += 1
