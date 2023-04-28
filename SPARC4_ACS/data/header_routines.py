@@ -21,10 +21,12 @@ def save_image(file, data, channel_information):
             continue
         hdr[key] = value
 
+    hdr['NAXIS'] = 2        
     # ---------------------------------------------------
-    hdr['OBSLONG'] = 314.4175
+    hdr['OBSLONG'] = -45.5825
     hdr['OBSLAT'] = -22.53444444444445
     hdr['OBSALT'] = 1864.0
+    hdr['EQUINOX'] = 2000.0
     # ---------------------------------------------------
     index = find_index_tab(hdr)
     hdr['GAIN'] = get_ccd_gain(index, hdr['CCDSERN'])
@@ -51,9 +53,9 @@ def save_image(file, data, channel_information):
     hdr['ACQMODE'] = vpc['acquisition_mode'][hdr['ACQMODE'] - 1]
 
     if hdr['FRAMETRF']:
-        hdr['FRAMETRF'] = 'ON'
+        hdr['FRAMETRF'] = True
     else:
-        hdr['FRAMETRF'] = 'OFF'
+        hdr['FRAMETRF'] = False
 
     # ---------------------------------------------------
     if hdr['TRIGGER'] == 0:
@@ -63,17 +65,13 @@ def save_image(file, data, channel_information):
     else:
         hdr['TRIGGER'] = 'Uknown'
     # ---------------------------------------------------
-    if hdr['COOLER'] == 0:
-        hdr['COOLER'] = 'OFF'
+    if hdr['COOLER']:
+        hdr['COOLER'] = True
     else:
-        hdr['COOLER'] == 'ON'
+        hdr['COOLER'] = False
     # ---------------------------------------------------
-    if hdr['ACSMODE']:
-        hdr['ACSMODE'] = 'Simulated'
-    else:
-        hdr['ACSMODE'] = 'Real'
     if hdr['OBSTYPE'] == 'Unknow':
-        hdr['OBSTYPE'] = 'NONE'
+        hdr['OBSTYPE'] = 'OBJECT'
     # ---------------------------------------------------
     if hdr['TELFOCUS'] != 'Unknow':
         hdr['TELFOCUS'] = int(
@@ -88,15 +86,21 @@ def save_image(file, data, channel_information):
         hdr['HUMIDITY'] = float(hdr['HUMIDITY'])
     if hdr['EQUINOX'] != 'Unknow':
         hdr['EQUINOX'] = float(hdr['EQUINOX'])
+    if hdr['AIRMASS'] != 'Unknow':
+        hdr['AIRMASS'] = float(hdr['AIRMASS'])
+    if hdr['TCSDATE'] != 'Unknow':
+        tmp = hdr['TCSDATE'].split('/')
+        hdr['TCSDATE'] = f"{hdr['UTDATE'][:2]}{tmp[2][:2]}-{tmp[1]}-{tmp[0]}{tmp[2][2:]}.000"
+        
     # ---------------------------------------------------
     if hdr['WPSEL'] == 'Unknow':
-        hdr['WPSEL'] = 'None'
+        hdr['WPSEL'] = 'NONE'
     if hdr['CALW'] == 'Unknow':
-        hdr['CALW'] = 'None'
+        hdr['CALW'] = 'NONE'
     if hdr['ASEL']:
-        hdr['ASEL'] = 'ON'
+        hdr['ASEL'] = True
     else:
-        hdr['ASEL'] = 'OFF'
+        hdr['ASEL'] = False
     # ---------------------------------------------------
     if hdr['CHANNEL'] == 1:
         data = fix_image_orientation(
@@ -124,7 +128,7 @@ def save_image(file, data, channel_information):
             file += value + '_'
         file += f'{date_time[:-4]}' + '_' + img_index
 
-    fits.writeto(file, data, hdr)
+    fits.writeto(file, data, hdr, output_verify='fix')
     return
 
 
