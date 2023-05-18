@@ -8,7 +8,7 @@ from utils import values_parameters_ccd as vpc
 
 
 ss = pd.read_csv('header_content.csv', delimiter='\t')
-cards = [(keyword, 'Unknow', comment)
+cards = [(keyword, 'Unknown', comment)
          for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
 
 
@@ -35,7 +35,7 @@ def save_image(file, data, channel_information):
     hdr['INSTRUME'] = 'SPARC4'
     hdr['CYCLIND'] += 1
     hdr['SEQINDEX'] += 1
-    if hdr['INSTMODE'] == 'Unknow':
+    if hdr['INSTMODE'] == 'Unknown':
         hdr['INSTMODE'] = 'PHOT'
 
     # ---------------------------------------------------
@@ -70,32 +70,32 @@ def save_image(file, data, channel_information):
     else:
         hdr['COOLER'] = False
     # ---------------------------------------------------
-    if hdr['OBSTYPE'] == 'Unknow':
+    if hdr['OBSTYPE'] == 'Unknown':
         hdr['OBSTYPE'] = 'OBJECT'
     # ---------------------------------------------------
-    if hdr['TELFOCUS'] != 'Unknow':
+    if hdr['TELFOCUS'] != 'Unknown':
         hdr['TELFOCUS'] = int(
             hdr['TELFOCUS'].replace('S', ''))
-    if hdr['EXTTEMP'] != 'Unknow':
+    if hdr['EXTTEMP'] != 'Unknown':
         hdr['EXTTEMP'] = float(
             hdr['EXTTEMP'].replace(',', '.'))
-    if hdr['PRESSURE'] != 'Unknow':
+    if hdr['PRESSURE'] != 'Unknown':
         hdr['PRESSURE'] = float(
             hdr['PRESSURE'].replace(',', '.'))
-    if hdr['HUMIDITY'] != 'Unknow':
+    if hdr['HUMIDITY'] != 'Unknown':
         hdr['HUMIDITY'] = float(hdr['HUMIDITY'])
-    if hdr['EQUINOX'] != 'Unknow':
+    if hdr['EQUINOX'] != 'Unknown':
         hdr['EQUINOX'] = float(hdr['EQUINOX'])
-    if hdr['AIRMASS'] != 'Unknow':
+    if hdr['AIRMASS'] != 'Unknown':
         hdr['AIRMASS'] = float(hdr['AIRMASS'])
-    if hdr['TCSDATE'] != 'Unknow':
+    if hdr['TCSDATE'] != 'Unknown':
         tmp = hdr['TCSDATE'].split('/')
-        hdr['TCSDATE'] = f"{hdr['UTDATE'][:2]}{tmp[2][:2]}-{tmp[1]}-{tmp[0]}{tmp[2][2:]}.000"
+        hdr['TCSDATE'] = f"{hdr['UTDATE'][:2]}T{tmp[2][:2]}-{tmp[1]}-{tmp[0]}{tmp[2][2:]}"
         
     # ---------------------------------------------------
-    if hdr['WPSEL'] == 'Unknow':
+    if hdr['WPSEL'] == 'Unknown':
         hdr['WPSEL'] = 'NONE'
-    if hdr['CALW'] == 'Unknow':
+    if hdr['CALW'] == 'Unknown':
         hdr['CALW'] = 'NONE'
     if hdr['ASEL']:
         hdr['ASEL'] = True
