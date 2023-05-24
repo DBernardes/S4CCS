@@ -1,3 +1,7 @@
+38fba5b; observer; 2023-05-24; updating exe
+5ca720e; observer; 2023-05-23; If there is a problem with the TCS message, a warning is created
+f08455c; observer; 2023-05-23; ACS writes a warning into the log file when it ignores an EXPOSE command
+f162de7; observer; 2023-05-23; See comment
 7c81051; observer; 2023-05-22; A panel with the camera config was added to the ACS
 4349646; observer; 2023-05-18; adding the keyword for the ICS components
 b0eea7d; observer; 2023-05-12; updating exe
