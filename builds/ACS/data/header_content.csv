@@ -67,7 +67,12 @@ HUMIDITY	Relative humidity (%), weather tower
 ACSVRSN 	Software version of ACS
 CTRLINTE	Graphical control interface of ACS    
 ACSMODE 	ACS in real (T) or simulated (F) mode
-ICSMODE 	ICS in real (T) or simulated (F) mode
+WPROMODE	Rotator of the waveplate in real (T) or simulated (F) mode
+WPSEMODE	Selector of the waveplate in real (T) or simulated (F) mode
+ANMODE  	Analyzer in real (T) or simulated (F) mode
+CALWMODE	Calibration wheel in real (T) or simulated (F) mode
+GMIRMODE	Guiding mirror in real (T) or simulated (F) mode
+GFOCMODE	Guiding focuser in real (T) or simulated (F) mode
 TCSMODE 	TCS in real (T) or simulated (F) mode
 WPSEL   	Waveplate: half-wave, quarter-wave or None
 WPPOS   	Waveplate index position from 1 to 16, 0 if none
