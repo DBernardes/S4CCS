@@ -359,7 +359,7 @@
 				<Property Name="INST_buildSpecName" Type="Str">ACS Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{638D7438-3189-4C65-A11F-AB3224593056}</Property>
 				<Property Name="INST_productName" Type="Str">ACS installer</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.4</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.5</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">18008007</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
