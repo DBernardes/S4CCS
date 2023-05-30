@@ -1,3 +1,6 @@
+eac7d71; observer; 2023-05-30; adding GUIDERA and GUIDEDEC to the telemetry message
+497a521; observer; 2023-05-30; implementing the wait expose command
+631856d; observer; 2023-05-30; adding an initial configuration file
 38fba5b; observer; 2023-05-24; updating exe
 5ca720e; observer; 2023-05-23; If there is a problem with the TCS message, a warning is created
 f08455c; observer; 2023-05-23; ACS writes a warning into the log file when it ignores an EXPOSE command
