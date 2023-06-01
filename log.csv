@@ -1,3 +1,4 @@
+a9d1e6c; observer; 2023-06-01; updating exe
 eac7d71; observer; 2023-05-30; adding GUIDERA and GUIDEDEC to the telemetry message
 497a521; observer; 2023-05-30; implementing the wait expose command
 631856d; observer; 2023-05-30; adding an initial configuration file
