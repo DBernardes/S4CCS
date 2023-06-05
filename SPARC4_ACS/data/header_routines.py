@@ -73,9 +73,15 @@ def save_image(file, data, channel_information):
     if hdr['OBSTYPE'] == 'Unknown':
         hdr['OBSTYPE'] = 'OBJECT'
     # ---------------------------------------------------
-    if hdr['TELFOCUS'] != 'Unknown':
-        hdr['TELFOCUS'] = int(
-            hdr['TELFOCUS'].replace('S', ''))
+    tel_focus = hdr['TELFOCUS']
+    if tel_focus != 'Unknown':
+        if 'S' in tel_focus:
+            tel_focus = int(tel_focus.replace('S', ''))
+        elif 'M' in tel_focus:
+            tel_focus = int(tel_focus.replace('M', ''))
+        else:
+            pass
+        hdr['TELFOCUS'] = tel_focus
     if hdr['EXTTEMP'] != 'Unknown':
         hdr['EXTTEMP'] = float(
             hdr['EXTTEMP'].replace(',', '.'))
@@ -90,7 +96,7 @@ def save_image(file, data, channel_information):
         hdr['AIRMASS'] = float(hdr['AIRMASS'])
     if hdr['TCSDATE'] != 'Unknown':
         tmp = hdr['TCSDATE'].split('/')
-        hdr['TCSDATE'] = f"{hdr['UTDATE'][:2]}T{tmp[2][:2]}-{tmp[1]}-{tmp[0]}{tmp[2][2:]}"
+        hdr['TCSDATE'] = f"{hdr['UTDATE'][:2]}{tmp[2][:2]}-{tmp[1]}-{tmp[0]}T{tmp[2][3:]}"
         
     # ---------------------------------------------------
     if hdr['WPSEL'] == 'Unknown':
