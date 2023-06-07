@@ -58,6 +58,7 @@ TELFOCUS  	Telescope focus position (arbitrary units)
 TCSHA      	TCS hour angle: HH:MM:SS
 TCSDATE 	TCS UT date (isot)
 GFOC    	Guiding focus position (mm)
+GMIR    	Rotation angle of the guiding mirror (deg)
 GUIDERA 	RA of guider object
 GUIDEDEC 	DEC of guider object            
 EXTTEMP 	Temperature (deg C), weather tower
@@ -78,5 +79,3 @@ WPSEL   	Waveplate: half-wave, quarter-wave or None
 WPPOS   	Waveplate index position from 1 to 16, 0 if none
 CALW    	Selected element in calibration wheel
 ASEL    	Savart prism analyzer selected
-GMIR    	Rotation angle of the guiding mirror (deg)
-GFOC    	Guiding focus position (mm)
