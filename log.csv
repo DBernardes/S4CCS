@@ -1,3 +1,4 @@
+b1b029c; observer; 2023-10-02; ABORT command can be used for the WAITING_EXPOSE_COMMAND status
 8896425; observer; 2023-10-02; fix: ACS stuck in the WAIT_EXPOSE_COOMAND state
 9cbad4c; observer; 2023-09-25; updating exe
 1a8f0eb; observer; 2023-09-25; WAITING_EXPOSURE_COMMAND status
