@@ -12,13 +12,13 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="ACS RxTx" Type="Folder">
-			<Item Name="CH1_Comm_ZEROMQ.vi" Type="VI" URL="../CH1_Comm_ZEROMQ.vi"/>
+			<Item Name="publish_ACS_status.vi" Type="VI" URL="../publish_ACS_status.vi"/>
 			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
 			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH2_Comm_TCPIP_NEW.vi"/>
-			<Item Name="publish_ACS_status.vi" Type="VI" URL="../publish_ACS_status.vi"/>
 			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH3_Comm_TCPIP_NEW.vi"/>
 			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
 			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
+			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
 		</Item>
 		<Item Name="Save Header" Type="Folder">
 			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
