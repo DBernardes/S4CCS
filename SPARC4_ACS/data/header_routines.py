@@ -6,11 +6,15 @@ from datetime import datetime
 from utils import get_read_noise, get_ccd_gain, reformat_string, find_index_tab, fix_image_orientation
 from utils import values_parameters_ccd as vpc
 import warnings
+import numpy as np
 
 
 ss = pd.read_csv('header_content.csv', delimiter='\t')
 cards = [(keyword, 'Unknown', comment)
          for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
+
+
+_json = '{"CYCLIND":0,"FILENAME":"20240202_s4c1_000005.fits","FRAMEIND":1,"CCDTEMP":20,"TEMPST":"TEMPERATURE_OFF","CCDSERN":9914,"SEQINDEX":0,"WPPOS":0,"PREAMP":0,"READRATE":0,"EMGAIN":2,"VSHIFT":3,"FRAMETRF":true,"VCLKAMP":0,"ACQMODE":3,"EMMODE":1,"SHUTTER":2,"TRIGGER":0,"VBIN":1,"INITLIN":1,"INITCOL":1,"FINALLIN":1024,"FINALCOL":1024,"HBIN":1,"EXPTIME":1.5,"COMMENT":"","OBSTYPE":"","OBJECT":"","OBSERVER":"","FILTER":"","CTRLINTE":"","INSTMODE":"","TCSMODE":false,"INSTROT":0,"NFRAMES":1,"NCYCLES":1,"NSEQ":1,"TGTEMP":20,"ACSVRSN":"v1.42.7","CHANNEL":1,"ACSMODE":false,"WPSEMODE":false,"CALWMODE":false,"ANMODE":false,"GMIRMODE":false,"GFOCMODE":false,"WPROMODE":false,"absolute": true, "alarm": 0, "broker": "Focuser160", "cmd": {"clientId": 0, "clientTransactionId": 0, "clientName": "", "action": ""}, "connected": true, "controller": "Focuser160", "device": "2ndMirror", "error": "", "homing": false, "initialized": true, "isMoving": false, "maxSpeed": 500, "maxStep": 50700, "position": 30510, "tempComp": false, "tempCompAvailable": false, "temperature": 0, "timestamp": "2024-02-02T14:47:16.026", "version": "1.0.0","broker": "Weather160", "version": "1.0.0", "date": "2/02/24", "hour": "14:45", "outTemp": "13.5", "hiTemp": "13.7", "lowTemp": "13.5", "outHumidity": "83", "dewOut": "10.7", "windSpeed": "29.0", "windDirection": "W", "windRun": "2.41", "hiSpeed": "37.0", "hiDir": "W", "windChill": "9.7", "heatIndex": "13.4", "THWIndex": "9.6", "THSWIndex": "---", "pressure": "760.6", "rain": "0.00", "rainRate": "0.0", "solarRad": "246", "solarEnergy": "1.76", "hiSolarRad": "253", "UVIndex": "1.9", "UVDose": "0.07", "hiUV": "1.9", "headDD": "0.017", "coolDD": "0.000", "inTemp": "21.4", "inHumidity": "60", "dewIn": "13.4", "inHeat": "21.2", "inEMC": "11.04", "inAirDensity": "1.1816", "2ndTemp": "17.2", "2ndHumidity": "68", "ET": "0.00", "leaf": "0", "windSamp": "115", "windTx": "1", "ISSRecept": "100.0", "arcInt": "5","DATE-OBS":"2024-02-02T17:47:17.000","UTTIME":"17:47:17.000","UTDATE":"2024-02-02"}'
 
 
 def edit_header_telemetry(hdr):
@@ -40,12 +44,13 @@ def edit_header_telemetry(hdr):
         hdr['TCSDATE'] = f"{hdr['UTDATE'][:2]}{tmp[2][:2]}-{tmp[1]}-{tmp[0]}T{tmp[2][3:]}"
     return hdr
 
+
 def edit_header_ccd_info(hdr):
     index = find_index_tab(hdr)
     hdr['GAIN'] = get_ccd_gain(index, hdr['CCDSERN'])
     hdr['RDNOISE'] = get_read_noise(
         index, hdr['CCDSERN'])
-    #------------------------------------------------------
+    # ------------------------------------------------------
     hdr['PREAMP'] = vpc['preamps'][hdr['PREAMP']]
     hdr['VSHIFT'] = vpc['vsspeeds'][hdr['VSHIFT']]
     if hdr["EMMODE"] == 0:
@@ -72,25 +77,26 @@ def edit_header_ccd_info(hdr):
         hdr['COOLER'] = True
     else:
         hdr['COOLER'] = False
-        
 
     return hdr
 
+
 def edit_header_miscelaneous(hdr):
-    hdr['NAXIS'] = 2          
+    hdr['NAXIS'] = 2
     hdr['OBSLONG'] = -45.5825
     hdr['OBSLAT'] = -22.53444444444445
     hdr['OBSALT'] = 1864.0
-    hdr['EQUINOX'] = 2000.0    
+    hdr['EQUINOX'] = 2000.0
     hdr['INSTRUME'] = 'SPARC4'
     if hdr['INSTMODE'] == 'Unknown':
         hdr['INSTMODE'] = 'PHOT'
     if hdr['OBSTYPE'] == 'Unknown':
         hdr['OBSTYPE'] = 'OBJECT'
     hdr['CYCLIND'] += 1
-    hdr['SEQINDEX'] += 1 
-    
+    hdr['SEQINDEX'] += 1
+
     return hdr
+
 
 def edit_header_polarimetry(hdr):
     if hdr['WPSEL'] == 'Unknown':
@@ -103,6 +109,7 @@ def edit_header_polarimetry(hdr):
         hdr['ASEL'] = False
     return hdr
 
+
 def verify_file_already_exists(file):
     if os.path.isfile(file):
         now = datetime.utcnow()
@@ -114,6 +121,7 @@ def verify_file_already_exists(file):
             file += value + '_'
         file += f'{date_time[:-4]}' + '_' + img_index
     return file
+
 
 def correct_image_orientation(channel, data):
     if channel == 1:
@@ -133,23 +141,34 @@ def correct_image_orientation(channel, data):
     return data
 
 
+def fix_json(_json):
+    del _json['cmd']
+    keys = _json.keys()
+    new_json = {key: _json[key] for key in keys if len(key) <= 8}
+    return new_json
+
+
 def save_image(file, data, channel_information):
     hdr = fits.Header(cards)
     file = reformat_string(file)
-    channel_information = json.loads(reformat_string(channel_information))
+    # channel_information = json.loads(reformat_string(channel_information))
+    channel_information = json.loads(channel_information)
+    channel_information = fix_json(channel_information)
     for key, value in channel_information.items():
         if value == '':
             continue
         hdr[key] = value
-    
-    hdr = edit_header_miscelaneous(hdr)                    
-    hdr = edit_header_ccd_info(hdr)          
-    hdr = edit_header_telemetry(hdr)         
-    hdr = edit_header_polarimetry(hdr)         
-    data = correct_image_orientation(hdr['CHANNEL'], data)      
-    file = verify_file_already_exists(file)       
+
+    hdr = edit_header_miscelaneous(hdr)
+    hdr = edit_header_ccd_info(hdr)
+    hdr = edit_header_telemetry(hdr)
+    hdr = edit_header_polarimetry(hdr)
+    data = correct_image_orientation(hdr['CHANNEL'], data)
+    file = verify_file_already_exists(file)
 
     fits.writeto(file, data, hdr, output_verify='fix')
 
     return
 
+
+save_image("file.fits", np.zeros((10, 10)), _json)
