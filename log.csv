@@ -1,3 +1,5 @@
+579f38b; observer; 2024-02-02; fixing the problem of the date of the image name
+967fe3a; observer; 2024-02-02; subs all the sub-systems
 3ba9a5a; observer; 2024-02-01; implementing ZeroMQ subs
 f3235c0; observer; 2024-02-01; pub status
 b1456e0; observer; 2023-10-02; updating exe
