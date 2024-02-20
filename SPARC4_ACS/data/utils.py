@@ -1,21 +1,19 @@
 """This file has all the functions needed to save the acquired images and to edit the image headers"""
 
+import json
+import os
+from datetime import datetime, timezone
+
+import astropy.io.fits as fits
 import numpy as np
 import pandas as pd
 
-values_parameters_ccd = {
-    'readouts_em': [30, 20, 10, 1],
-    'readouts_conv': [1, 0.1],
-    'vsspeeds': [0.6, 1.13, 2.2, 4.33],
-    'preamps': ['Gain 1', 'Gain 2'],
-    'emmode': ['Electron Multiplying', 'Conventional'],
-    'shutter_mode': ['Auto', 'Open', 'Closed'],
-    'vertical_clock_amp': ['Normal', '+1', '+2', '+3', '+4'],
-    'acquisition_mode': ['Single', 'Accumulate', "Kinetic"]
-}
+ss = pd.read_csv(os.path.join('csvs', 'header_content.csv'), delimiter='\t')
+cards = [(keyword, 'Unknown', comment)
+         for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
 
 
-def fix_image_orientation(img_data, invert_x=False, invert_y=False, nrot90deg=0):
+def rotate_image(img_data, invert_x=False, invert_y=False, nrot90deg=0):
     """ Tool to fix image orientation of an image array.
 
     Parameters
@@ -44,28 +42,53 @@ def fix_image_orientation(img_data, invert_x=False, invert_y=False, nrot90deg=0)
     return img_data
 
 
-def reformat_string(string):
+def format_string(string):
     string = str(string)[2:-1]
     return string
 
 
-def find_index_tab(header_content):
-    index = 2 * header_content['READRATE']
-    if header_content['EMMODE'] == 1:
-        index += 8
-    index += header_content['PREAMP']
-    return index
+def prepare_json(header_json):
+    hdr = fits.Header(cards)
+    header_json = format_string(header_json)
+    try:
+        header_json.replace('true', 'True')
+    except:
+        pass
+    try:
+        header_json.replace('false', 'False')
+    except:
+        pass
+    header_json = json.loads(header_json)
+    try:
+        del header_json['cmd']
+    except:
+        pass
+    for kw in hdr.keys():
+        try:
+            if header_json[kw] != "":
+                hdr[kw] = header_json[kw]
+        except:
+            pass
+    return header_json, hdr
 
 
-def get_ccd_gain(index, serial_number):
-    ss = pd.read_csv('preamp_gains.csv')
-    values = ss[str(serial_number)]
-    ccd_gain = values[index]
-    return ccd_gain
+def fix_image_orientation(channel, data):
+    setup = {1: [False, True, 2],
+             2: [False, False, 0],
+             3: [True, False, -1],
+             4: [False, False, -1]}
+    invert_x, invert_y, nrot = setup[channel]
+    return rotate_image(data, invert_x, invert_y, nrot)
 
 
-def get_read_noise(index, serial_number):
-    ss = pd.read_csv('read_noises.csv')
-    values = ss[str(serial_number)]
-    ccd_gain = values[index]
-    return ccd_gain
+def verify_file_already_exists(file):
+    if os.path.isfile(file):
+        now = datetime.now(timezone.utc)
+        date_time = now.strftime("%Y%m%dT%H%M%S%f")
+        image_name = file.split('_')
+        img_index = image_name.pop()
+        file = ''
+        for value in image_name:
+            file += value + '_'
+        file += f'{date_time[:-4]}' + '_' + img_index
+    return file
