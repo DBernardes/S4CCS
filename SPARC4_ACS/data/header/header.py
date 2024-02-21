@@ -1,3 +1,4 @@
+import logging
 import os
 from abc import ABC, abstractmethod
 from datetime import datetime
@@ -18,45 +19,50 @@ class Header(ABC):
     replace_str = {}
     delete_str = {}
 
-    def __init__(self, _json, hdr) -> None:
+    def __init__(self, _json, hdr, night_dir) -> None:
         self.json_string = _json
         self.hdr = hdr
+        self.log_file = os.path.join(night_dir, 'error_acs.log')
         return
 
     def _convert_to_float(self):
         for kw in self.to_float_kws:
             try:
+                self._check_type(kw, float)
                 self.hdr[kw] = float(self.hdr[kw])
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _replace_comma(self):
         for kw in self.comma_kws:
             try:
+                self._search_unwanted_kw(kw, ',')
                 self.hdr[kw] = self.hdr[kw].replace(',', '.')
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _replace_str(self):
         for kw, (prev, new) in self.replace_str.items():
             try:
+                self._search_unwanted_kw(kw, prev)
                 self.hdr[kw] = self.hdr[kw].replace(prev, new)
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _delete_str(self):
         for kw, _str in self.delete_str.items():
             try:
+                self._search_unwanted_kw(kw, _str)
                 self.hdr[kw] = self.hdr[kw].replace(_str, '')
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _substitute_val_kw(self):
         for kw, dict in self.subs_to_val_kws.items():
             try:
                 self.hdr[kw] = dict[self.hdr[kw]]
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _boolean_kws(self):
         for kw in self.boolean_kws:
@@ -68,30 +74,30 @@ class Header(ABC):
                     self.hdr[kw] = True
                 else:
                     pass
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _subs_val_in_list(self):
         for kw, _list in self.subs_val_in_list.items():
             try:
                 self.hdr[kw] = _list[self.hdr[kw]]
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def _replace_unknown_str(self):
         for kw, val in self.replace_unknow_kws.items():
             try:
                 if self.hdr[kw] == 'Unknown':
                     self.hdr[kw] = val
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
 
     def extract_info(self):
         for json_kw, hdr_kw in self.keywords:
             try:
                 self.hdr[hdr_kw] = self.json_string[json_kw]
-            except Exception:
-                pass
+            except Exception as e:
+                self._write_log_file(repr(e), hdr_kw)
 
     def fix_keywords(self):
         """Fix header keywords.
@@ -103,35 +109,53 @@ class Header(ABC):
         self._boolean_kws()
         self._subs_val_in_list()
         self._substitute_val_kw()
-        self._replace_unknown_str()
         self._replace_str()
         self._delete_str()
+        self._replace_unknown_str()
+
+    def _write_log_file(self, message, keyword):
+        with open(self.log_file, 'a') as file:
+            now = str(datetime.now())
+            file.write(now + ' - ' + f'KEYWORD={keyword} - ' +
+                       message + '\n')
+
+    def _check_type(self, kw, tp):
+        if not isinstance(self.hdr[kw], tp):
+            self._write_log_file(
+                f'Keyword value is not an instance of {repr(tp)}', kw)
+
+    def _search_unwanted_kw(self, kw, _str):
+        if _str in self.hdr[kw]:
+            self._write_log_file(
+                f'An unwanted string was found in keyword value: {_str}', kw)
 
 
 class Focuser(Header):
 
-    keywords = []
+    keywords = [('focus', 'focus')]
 
 
 class Weather_Station(Header):
 
     keywords = [('outHumidity', 'humidity'),
-                ('pressure', 'pressure'), ('outTemp', 'exttemp'), ('airMass', 'airmass')]
-    to_float_kws = ['pressure', 'airmass', 'humidity', 'exttemp']
+                ('pressure', 'pressure'), ('outTemp', 'exttemp')]
+    to_float_kws = ['pressure', 'humidity', 'exttemp']
+    comma_kws = ['pressure']
 
 
 class ICS(Header):
 
-    keywords = []
+    keywords = [("gfoc", 'gfoc'), ("gmir", 'gmir'),
+                ('guidera', 'guidera'), ('guidedec', 'guidedec'),
+                ('wpsel', 'wpsel'), ('wppos', 'wppos'), ('calw', 'calw'), ('asel', 'asel')]
+    # TODO: ICS manda o modo de cada componentes polarimetrico
     replace_unknow_kws = {'WPSEL': 'NONE', 'CALW': 'NONE'}
     boolean_kws = ['ASEL']
 
 
 class TCS(Header):
     keywords = [('rightAscention', 'ra'),
-                ('declination', 'dec'), ('hourAngle', 'tcsha')]
-    to_float_kws = ['exttemp', 'pressure', 'humidity', 'equinox', 'airmass']
-    comma_kws = ['exttemp', 'pressure']
+                ('declination', 'dec'), ('hourAngle', 'tcsha'), ('airmass', 'airmass')]
     replace_str = {'ra': (' ', ':'), 'dec': (' ', ':')}
     delete_str = {'dec': ','}
 
@@ -144,13 +168,15 @@ class TCS(Header):
             tmp = [int(val) for val in date + time]
             tmp[0] += 2000
             self.hdr['TCSDATE'] = Time(datetime(*tmp)).isot
-        except Exception:
-            pass
+        except Exception as e:
+            self._write_log_file(repr(e), 'TCSDATE')
 
 
 class S4GUI(Header):
 
-    keywords = []
+    keywords = [('observer', 'observer'), ('object',
+                                           'object'), ('ctrlinte', 'ctrlint')]
+    replace_unknow_kws = {'filter': 'CLEAR'}
 
 
 class CCD(Header):
@@ -175,8 +201,8 @@ class CCD(Header):
 
         try:
             self.hdr['readrate'] = _list[self.hdr['readrate']]
-        except Exception:
-            pass
+        except Exception as e:
+            self._write_log_file(repr(e), 'readrate')
 
         idx = self.find_index_tab()
         self.hdr['gain'] = self.ss_gains[f"{self.hdr['ccdsern']}"][idx]
@@ -206,6 +232,9 @@ class General_KWs(Header):
         super().fix_keywords()
         try:
             self.hdr['CYCLIND'] += 1
+        except Exception as e:
+            self._write_log_file(repr(e), 'CYCLIND')
+        try:
             self.hdr['SEQINDEX'] += 1
-        except Exception:
-            pass
+        except Exception as e:
+            self._write_log_file(repr(e), 'SEQINDEX')

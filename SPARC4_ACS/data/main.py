@@ -9,11 +9,13 @@ from utils import (fix_image_orientation, format_string, prepare_json,
                    verify_file_already_exists)
 
 
-def save_image(file, data, header_json):
+def main(night_dir, file, data, header_json):
     file = format_string(file)
+    night_dir = format_string(night_dir)
+    file = os.path.join(night_dir, file)
     header_json, hdr = prepare_json(header_json)
     for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
-        obj = cls(header_json, hdr)
+        obj = cls(header_json, hdr, night_dir)
         obj.fix_keywords()
         hdr = obj.hdr
 
