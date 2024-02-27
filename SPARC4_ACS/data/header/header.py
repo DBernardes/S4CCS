@@ -230,6 +230,7 @@ class General_KWs(Header):
 
     def fix_keywords(self):
         super().fix_keywords()
+        for kw in ['CYCLIND', 'SEQINDEX']
         try:
             self.hdr['CYCLIND'] += 1
         except Exception as e:

@@ -1,6 +1,0 @@
-Security error: 10_24_2023 4_36_46
-22 Exposure time is out of range
-
-Security error: 10_24_2023 4_36_53
-22 Exposure time is out of range
-

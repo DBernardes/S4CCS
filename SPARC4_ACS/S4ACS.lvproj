@@ -30,8 +30,37 @@
 			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
 			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
 		</Item>
-		<Item Name="data" Type="Folder" URL="../data">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="python files" Type="Folder">
+			<Item Name="__pycache__" Type="Folder">
+				<Item Name="header_routines.cpython-36.pyc" Type="Document" URL="../python files/__pycache__/header_routines.cpython-36.pyc"/>
+				<Item Name="main.cpython-36.pyc" Type="Document" URL="../python files/__pycache__/main.cpython-36.pyc"/>
+				<Item Name="utils.cpython-310.pyc" Type="Document" URL="../python files/__pycache__/utils.cpython-310.pyc"/>
+				<Item Name="utils.cpython-36.pyc" Type="Document" URL="../python files/__pycache__/utils.cpython-36.pyc"/>
+			</Item>
+			<Item Name="csvs" Type="Folder">
+				<Item Name="header_content.csv" Type="Document" URL="../python files/csvs/header_content.csv"/>
+				<Item Name="preamp_gains.csv" Type="Document" URL="../python files/csvs/preamp_gains.csv"/>
+				<Item Name="read_noises.csv" Type="Document" URL="../python files/csvs/read_noises.csv"/>
+				<Item Name="readout_times.csv" Type="Document" URL="../python files/csvs/readout_times.csv"/>
+			</Item>
+			<Item Name="header" Type="Folder">
+				<Item Name="__pycache__" Type="Folder">
+					<Item Name="__init__.cpython-310.pyc" Type="Document" URL="../python files/header/__pycache__/__init__.cpython-310.pyc"/>
+					<Item Name="__init__.cpython-36.pyc" Type="Document" URL="../python files/header/__pycache__/__init__.cpython-36.pyc"/>
+					<Item Name="header.cpython-310.pyc" Type="Document" URL="../python files/header/__pycache__/header.cpython-310.pyc"/>
+					<Item Name="header.cpython-36.pyc" Type="Document" URL="../python files/header/__pycache__/header.cpython-36.pyc"/>
+				</Item>
+				<Item Name="__init__.py" Type="Document" URL="../python files/header/__init__.py"/>
+				<Item Name="header.py" Type="Document" URL="../python files/header/header.py"/>
+			</Item>
+			<Item Name="main.py" Type="Document" URL="../python files/main.py"/>
+			<Item Name="temp.py" Type="Document" URL="../python files/temp.py"/>
+			<Item Name="tests.py" Type="Document" URL="../python files/tests.py"/>
+			<Item Name="utils.py" Type="Document" URL="../python files/utils.py"/>
+		</Item>
+		<Item Name="init files" Type="Folder">
+			<Item Name="acs_config.cfg" Type="Document" URL="../init files/acs_config.cfg"/>
+			<Item Name="ACS_version.txt" Type="Document" URL="../init files/ACS_version.txt"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
@@ -221,16 +250,22 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">121</Property>
+				<Property Name="Bld_version.build" Type="Int">132</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/ACS/data</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{DFBFA8F7-09CC-40A9-BB6E-1D20DF057897}</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/ACS</Property>
+				<Property Name="Destination[2].destName" Type="Str">init files</Property>
+				<Property Name="Destination[2].path" Type="Path">../builds/ACS/init files</Property>
+				<Property Name="Destination[2].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[3].destName" Type="Str">python files</Property>
+				<Property Name="Destination[3].path" Type="Path">../builds/ACS/python files</Property>
+				<Property Name="Destination[3].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="DestinationCount" Type="Int">4</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7F5C2A5C-A58D-4813-A833-1D27BCE78DC3}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -240,69 +275,64 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
-				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_Stream.vi</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[11].type" Type="Str">VI</Property>
-				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
+				<Property Name="Source[12].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[12].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[12].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[12].destinationIndex" Type="Int">3</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/python files</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[12].type" Type="Str">VI</Property>
+				<Property Name="Source[12].type" Type="Str">Container</Property>
+				<Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[13].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_Stream.vi</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Save Header</Property>
 				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">VI</Property>
+				<Property Name="Source[13].type" Type="Str">Container</Property>
+				<Property Name="Source[14].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[14].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/data/utils.py</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/ACS RxTx</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref"></Property>
+				<Property Name="Source[14].type" Type="Str">Container</Property>
+				<Property Name="Source[15].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[15].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[15].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[15].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/init files</Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[16].itemID" Type="Ref"></Property>
-				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/data/acs_config.cfg</Property>
-				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[18].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[18].itemID" Type="Ref"></Property>
-				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[19].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[19].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
-				<Property Name="Source[19].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[15].type" Type="Str">Container</Property>
+				<Property Name="Source[16].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[16].itemID" Type="Ref">/My Computer/init files/acs_config.cfg</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/ACS RxTx/CH2_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ACS RxTx/CH3_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[5].itemID" Type="Ref">/My Computer/ACS RxTx/CH4_Comm_TCPIP_NEW.vi</Property>
-				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].type" Type="Str">VI</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header_Python.vi</Property>
-				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].type" Type="Str">VI</Property>
 				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/data/header_routines.py</Property>
-				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
+				<Property Name="Source[7].type" Type="Str">VI</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref"></Property>
-				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
+				<Property Name="Source[8].type" Type="Str">VI</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref"></Property>
-				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">20</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
+				<Property Name="Source[9].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">17</Property>
 				<Property Name="TgtF_companyName" Type="Str">INPE</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">ACS</Property>
