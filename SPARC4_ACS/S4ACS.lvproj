@@ -11,56 +11,50 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="ACS RxTx" Type="Folder">
-			<Item Name="publish_ACS_status.vi" Type="VI" URL="../publish_ACS_status.vi"/>
-			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH2_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH3_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
-			<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ZEROMQ_FOCUSER.vi"/>
-			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
-			<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ZEROMQ_S4GUI.vi"/>
-			<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ZEROMQ_ICS.vi"/>
-			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
+		<Item Name="ACS Comm" Type="Folder">
+			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH1_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH2_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH3_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH4_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH1_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH1_ZEROMQ_PULL.vi"/>
+			<Item Name="CH2_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH2_ZEROMQ_PULL.vi"/>
+			<Item Name="CH3_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH3_ZEROMQ_PULL.vi"/>
+			<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH4_ZEROMQ_PULL.vi"/>
+			<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_FOCUSER.vi"/>
+			<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_ICS.vi"/>
+			<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_S4GUI.vi"/>
+			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_TCS.vi"/>
+			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_WS.vi"/>
+			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../ACS files/Communication/CH1_Comm_Stream.vi"/>
+			<Item Name="FWCS_Stream.vi" Type="VI" URL="../ACS files/Communication/FWCS_Stream.vi"/>
+			<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../ACS files/Communication/FWCS_TCPIP.vi"/>
+			<Item Name="publish_ACS_status.vi" Type="VI" URL="../ACS files/Communication/publish_ACS_status.vi"/>
 		</Item>
 		<Item Name="Save Header" Type="Folder">
-			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
-			<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../CH2_Save_Header_Python.vi"/>
-			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
-			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
+			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH1_Save_Header_Python.vi"/>
+			<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH2_Save_Header_Python.vi"/>
+			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH3_Save_Header_Python.vi"/>
+			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH4_Save_Header_Python.vi"/>
 		</Item>
-		<Item Name="python files" Type="Folder">
-			<Item Name="__pycache__" Type="Folder">
-				<Item Name="header_routines.cpython-36.pyc" Type="Document" URL="../python files/__pycache__/header_routines.cpython-36.pyc"/>
-				<Item Name="main.cpython-36.pyc" Type="Document" URL="../python files/__pycache__/main.cpython-36.pyc"/>
-				<Item Name="utils.cpython-310.pyc" Type="Document" URL="../python files/__pycache__/utils.cpython-310.pyc"/>
-				<Item Name="utils.cpython-36.pyc" Type="Document" URL="../python files/__pycache__/utils.cpython-36.pyc"/>
-			</Item>
+		<Item Name="Python files" Type="Folder">
 			<Item Name="csvs" Type="Folder">
-				<Item Name="header_content.csv" Type="Document" URL="../python files/csvs/header_content.csv"/>
-				<Item Name="preamp_gains.csv" Type="Document" URL="../python files/csvs/preamp_gains.csv"/>
-				<Item Name="read_noises.csv" Type="Document" URL="../python files/csvs/read_noises.csv"/>
-				<Item Name="readout_times.csv" Type="Document" URL="../python files/csvs/readout_times.csv"/>
+				<Item Name="header_content.csv" Type="Document" URL="../ACS files/Python/csvs/header_content.csv"/>
+				<Item Name="preamp_gains.csv" Type="Document" URL="../ACS files/Python/csvs/preamp_gains.csv"/>
+				<Item Name="read_noises.csv" Type="Document" URL="../ACS files/Python/csvs/read_noises.csv"/>
+				<Item Name="readout_times.csv" Type="Document" URL="../ACS files/Python/csvs/readout_times.csv"/>
 			</Item>
 			<Item Name="header" Type="Folder">
-				<Item Name="__pycache__" Type="Folder">
-					<Item Name="__init__.cpython-310.pyc" Type="Document" URL="../python files/header/__pycache__/__init__.cpython-310.pyc"/>
-					<Item Name="__init__.cpython-36.pyc" Type="Document" URL="../python files/header/__pycache__/__init__.cpython-36.pyc"/>
-					<Item Name="header.cpython-310.pyc" Type="Document" URL="../python files/header/__pycache__/header.cpython-310.pyc"/>
-					<Item Name="header.cpython-36.pyc" Type="Document" URL="../python files/header/__pycache__/header.cpython-36.pyc"/>
-				</Item>
-				<Item Name="__init__.py" Type="Document" URL="../python files/header/__init__.py"/>
-				<Item Name="header.py" Type="Document" URL="../python files/header/header.py"/>
+				<Item Name="__init__.py" Type="Document" URL="../ACS files/Python/header/__init__.py"/>
+				<Item Name="header.py" Type="Document" URL="../ACS files/Python/header/header.py"/>
 			</Item>
-			<Item Name="main.py" Type="Document" URL="../python files/main.py"/>
-			<Item Name="temp.py" Type="Document" URL="../python files/temp.py"/>
-			<Item Name="tests.py" Type="Document" URL="../python files/tests.py"/>
-			<Item Name="utils.py" Type="Document" URL="../python files/utils.py"/>
+			<Item Name="main.py" Type="Document" URL="../ACS files/Python/main.py"/>
+			<Item Name="temp.py" Type="Document" URL="../ACS files/Python/temp.py"/>
+			<Item Name="tests.py" Type="Document" URL="../ACS files/Python/tests.py"/>
+			<Item Name="utils.py" Type="Document" URL="../ACS files/Python/utils.py"/>
 		</Item>
-		<Item Name="init files" Type="Folder">
-			<Item Name="acs_config.cfg" Type="Document" URL="../init files/acs_config.cfg"/>
-			<Item Name="ACS_version.txt" Type="Document" URL="../init files/ACS_version.txt"/>
+		<Item Name="Init files" Type="Folder">
+			<Item Name="acs_config.cfg" Type="Document" URL="../ACS files/Initialization/acs_config.cfg"/>
+			<Item Name="ACS_version.txt" Type="Document" URL="../ACS files/Initialization/ACS_version.txt"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
@@ -75,6 +69,7 @@
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
+		<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		<Item Name="SetCameraStatusEnable.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCameraStatusEnable.vi"/>
 		<Item Name="GetCapabilities.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCapabilities.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -215,6 +210,9 @@
 				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 				<Item Name="Is Path and Not Empty.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Is Path and Not Empty.vi"/>
 				<Item Name="Error Logger.lvlib" Type="Library" URL="/&lt;vilib&gt;/CPE Systems NZ Ltd/Error Logger/Error Logger.lvlib"/>
+				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
+				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
+				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
 			</Item>
 			<Item Name="User32.dll" Type="Document" URL="User32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -275,7 +273,7 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_Stream.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref"></Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[11].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
@@ -284,7 +282,7 @@
 				<Property Name="Source[12].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[12].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/python files</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Python files</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[12].type" Type="Str">Container</Property>
 				<Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
@@ -296,41 +294,41 @@
 				<Property Name="Source[14].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[14].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/ACS RxTx</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/ACS Comm</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].type" Type="Str">Container</Property>
 				<Property Name="Source[15].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[15].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[15].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/init files</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Init files</Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].type" Type="Str">Container</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/init files/acs_config.cfg</Property>
+				<Property Name="Source[16].itemID" Type="Ref"></Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ACS RxTx/CH1_Comm_TCPIP_NEW.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref"></Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/ACS RxTx/CH2_Comm_TCPIP_NEW.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref"></Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ACS RxTx/CH3_Comm_TCPIP_NEW.vi</Property>
+				<Property Name="Source[4].itemID" Type="Ref"></Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/ACS RxTx/CH4_Comm_TCPIP_NEW.vi</Property>
+				<Property Name="Source[5].itemID" Type="Ref"></Property>
 				<Property Name="Source[5].type" Type="Str">VI</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Save Header/CH1_Save_Header_Python.vi</Property>
+				<Property Name="Source[6].itemID" Type="Ref"></Property>
 				<Property Name="Source[6].type" Type="Str">VI</Property>
 				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Save Header/CH2_Save_Header_Python.vi</Property>
+				<Property Name="Source[7].itemID" Type="Ref"></Property>
 				<Property Name="Source[7].type" Type="Str">VI</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Save Header/CH3_Save_Header_Python.vi</Property>
+				<Property Name="Source[8].itemID" Type="Ref"></Property>
 				<Property Name="Source[8].type" Type="Str">VI</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Save Header/CH4_Save_Header_Python.vi</Property>
+				<Property Name="Source[9].itemID" Type="Ref"></Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">17</Property>
 				<Property Name="TgtF_companyName" Type="Str">INPE</Property>
