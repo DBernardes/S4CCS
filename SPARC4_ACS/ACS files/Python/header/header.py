@@ -155,7 +155,7 @@ class ICS(Header):
 
 class TCS(Header):
     keywords = [('raAcquis', 'ra'),
-                ('decAcquis', 'dec'), ('hourAngle', 'tcsha'), ('airMass', 'airmass')]
+                ('decAcquis', 'dec'), ('hourAngle', 'tcsha'), ('airMass', 'airmass'), ('guideAng', 'instrot')]
 
     to_float_kws = ['airmass']
 
