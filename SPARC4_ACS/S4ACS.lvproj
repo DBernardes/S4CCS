@@ -32,6 +32,10 @@
 			<Item Name="ACS_version.txt" Type="Document" URL="../ACS files/Initialization/ACS_version.txt"/>
 		</Item>
 		<Item Name="Comm" Type="Folder">
+			<Item Name="publish_C1_ACS_status.vi" Type="VI" URL="../publish_C1_ACS_status.vi"/>
+			<Item Name="publish_C2_ACS_status.vi" Type="VI" URL="../publish_C2_ACS_status.vi"/>
+			<Item Name="publish_C3_ACS_status.vi" Type="VI" URL="../publish_C3_ACS_status.vi"/>
+			<Item Name="publish_C4_ACS_status.vi" Type="VI" URL="../publish_C4_ACS_status.vi"/>
 			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
 			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
 			<Item Name="CH1_Comm_ZEROMQ.vi" Type="VI" URL="../CH1_Comm_ZEROMQ.vi"/>
@@ -48,7 +52,6 @@
 			<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../CH4_ZEROMQ_PULL.vi"/>
 			<Item Name="FWCS_Stream.vi" Type="VI" URL="../FWCS_Stream.vi"/>
 			<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../FWCS_TCPIP.vi"/>
-			<Item Name="publish_ACS_status.vi" Type="VI" URL="../publish_ACS_status.vi"/>
 			<Item Name="TCS_Stream.vi" Type="VI" URL="../TCS_Stream.vi"/>
 			<Item Name="TCS_VISA.vi" Type="VI" URL="../TCS_VISA.vi"/>
 			<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ZEROMQ_FOCUSER.vi"/>
