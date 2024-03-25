@@ -11,31 +11,6 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="ACS Comm" Type="Folder">
-			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH1_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH2_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH3_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../ACS files/Communication/CH4_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH1_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH1_ZEROMQ_PULL.vi"/>
-			<Item Name="CH2_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH2_ZEROMQ_PULL.vi"/>
-			<Item Name="CH3_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH3_ZEROMQ_PULL.vi"/>
-			<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../ACS files/Communication/CH4_ZEROMQ_PULL.vi"/>
-			<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_FOCUSER.vi"/>
-			<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_ICS.vi"/>
-			<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_S4GUI.vi"/>
-			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_TCS.vi"/>
-			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ACS files/Communication/ZEROMQ_WS.vi"/>
-			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../ACS files/Communication/CH1_Comm_Stream.vi"/>
-			<Item Name="FWCS_Stream.vi" Type="VI" URL="../ACS files/Communication/FWCS_Stream.vi"/>
-			<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../ACS files/Communication/FWCS_TCPIP.vi"/>
-			<Item Name="publish_ACS_status.vi" Type="VI" URL="../ACS files/Communication/publish_ACS_status.vi"/>
-		</Item>
-		<Item Name="Save Header" Type="Folder">
-			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH1_Save_Header_Python.vi"/>
-			<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH2_Save_Header_Python.vi"/>
-			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH3_Save_Header_Python.vi"/>
-			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../ACS files/Communication/CH4_Save_Header_Python.vi"/>
-		</Item>
 		<Item Name="Python files" Type="Folder">
 			<Item Name="csvs" Type="Folder">
 				<Item Name="header_content.csv" Type="Document" URL="../ACS files/Python/csvs/header_content.csv"/>
@@ -55,6 +30,43 @@
 		<Item Name="Init files" Type="Folder">
 			<Item Name="acs_config.cfg" Type="Document" URL="../ACS files/Initialization/acs_config.cfg"/>
 			<Item Name="ACS_version.txt" Type="Document" URL="../ACS files/Initialization/ACS_version.txt"/>
+		</Item>
+		<Item Name="Comm" Type="Folder">
+			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
+			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH1_Comm_ZEROMQ.vi" Type="VI" URL="../CH1_Comm_ZEROMQ.vi"/>
+			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
+			<Item Name="CH1_ZEROMQ_PULL.vi" Type="VI" URL="../CH1_ZEROMQ_PULL.vi"/>
+			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH2_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../CH2_Save_Header_Python.vi"/>
+			<Item Name="CH2_ZEROMQ_PULL.vi" Type="VI" URL="../CH2_ZEROMQ_PULL.vi"/>
+			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH3_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
+			<Item Name="CH3_ZEROMQ_PULL.vi" Type="VI" URL="../CH3_ZEROMQ_PULL.vi"/>
+			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
+			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
+			<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../CH4_ZEROMQ_PULL.vi"/>
+			<Item Name="FWCS_Stream.vi" Type="VI" URL="../FWCS_Stream.vi"/>
+			<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../FWCS_TCPIP.vi"/>
+			<Item Name="publish_ACS_status.vi" Type="VI" URL="../publish_ACS_status.vi"/>
+			<Item Name="TCS_Stream.vi" Type="VI" URL="../TCS_Stream.vi"/>
+			<Item Name="TCS_VISA.vi" Type="VI" URL="../TCS_VISA.vi"/>
+			<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ZEROMQ_FOCUSER.vi"/>
+			<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ZEROMQ_ICS.vi"/>
+			<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ZEROMQ_S4GUI.vi"/>
+			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
+			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
+		</Item>
+		<Item Name="zeroqmq" Type="Folder">
+			<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
+			<Item Name="libsodium.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libsodium.dll"/>
+			<Item Name="libzmq-v120-mt-4_3_2.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libzmq-v120-mt-4_3_2.dll"/>
+			<Item Name="libzmq-v120-mt-4_3_2.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libzmq-v120-mt-4_3_2.lib"/>
+			<Item Name="lvzmq32.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.dll"/>
+			<Item Name="lvzmq32.exp" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.exp"/>
+			<Item Name="lvzmq32.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.lib"/>
+			<Item Name="msvcp120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcp120.dll"/>
+			<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcr120.dll"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
@@ -187,7 +199,6 @@
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="High Resolution Relative Seconds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/High Resolution Relative Seconds.vi"/>
-				<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
 				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
 				<Item Name="Python Integration Toolkit.lvlib" Type="Library" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/Python Integration Toolkit.lvlib"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
@@ -248,7 +259,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">133</Property>
+				<Property Name="Bld_version.build" Type="Int">146</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
@@ -256,14 +267,11 @@
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/ACS</Property>
-				<Property Name="Destination[2].destName" Type="Str">init files</Property>
-				<Property Name="Destination[2].path" Type="Path">../builds/ACS/init files</Property>
+				<Property Name="Destination[2].destName" Type="Str">ACS files</Property>
+				<Property Name="Destination[2].path" Type="Path">../builds/ACS/ACS files</Property>
 				<Property Name="Destination[2].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[3].destName" Type="Str">python files</Property>
-				<Property Name="Destination[3].path" Type="Path">../builds/ACS/python files</Property>
-				<Property Name="Destination[3].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="DestinationCount" Type="Int">4</Property>
-				<Property Name="Source[0].itemID" Type="Str">{7F5C2A5C-A58D-4813-A833-1D27BCE78DC3}</Property>
+				<Property Name="DestinationCount" Type="Int">3</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C6CD7A60-F55D-4F78-A92B-2D10F67572CF}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -272,65 +280,37 @@
 				<Property Name="Source[1].propertiesCount" Type="Int">1</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref"></Property>
-				<Property Name="Source[10].type" Type="Str">VI</Property>
-				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
-				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[12].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[12].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[12].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[12].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Python files</Property>
-				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[12].type" Type="Str">Container</Property>
-				<Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[13].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Save Header</Property>
-				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">Container</Property>
-				<Property Name="Source[14].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[14].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/ACS Comm</Property>
-				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[14].type" Type="Str">Container</Property>
-				<Property Name="Source[15].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[15].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[15].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[15].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Init files</Property>
-				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[15].type" Type="Str">Container</Property>
-				<Property Name="Source[16].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[16].itemID" Type="Ref"></Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref"></Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref"></Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref"></Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[3].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Python files</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].type" Type="Str">Container</Property>
+				<Property Name="Source[4].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[4].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[4].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Init files</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].type" Type="Str">Container</Property>
+				<Property Name="Source[5].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[5].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[5].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref"></Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Comm</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[5].type" Type="Str">Container</Property>
+				<Property Name="Source[6].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[6].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref"></Property>
-				<Property Name="Source[6].type" Type="Str">VI</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref"></Property>
-				<Property Name="Source[7].type" Type="Str">VI</Property>
-				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref"></Property>
-				<Property Name="Source[8].type" Type="Str">VI</Property>
-				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref"></Property>
-				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">17</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/zeroqmq</Property>
+				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[6].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">7</Property>
 				<Property Name="TgtF_companyName" Type="Str">INPE</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">ACS</Property>

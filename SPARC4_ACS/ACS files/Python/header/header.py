@@ -182,7 +182,6 @@ class S4GUI(Header):
                 ('instmode', 'instmode'),
                 ('filter', 'filter'),
                 ('obstype', 'obstype'),
-                ('instrot', 'instrot'),
                 ('channel 1', 'channel1'),
                 ('channel 2', 'channel2'),
                 ('channel 3', 'channel3'),
