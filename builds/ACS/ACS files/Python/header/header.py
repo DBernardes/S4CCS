@@ -194,7 +194,7 @@ class CCD(Header):
     subs_to_val_kws = {'trigger': {0: 'Internal', 6: 'External'},
                        'acqmode': {1: 'Single', 2: 'Accumulate', 3: "Kinetic"}, }
     subs_val_in_list = {
-        'emmode': ['Conventional', 'Electron Multiplying'],
+        'emmode': ['Electron Multiplying', 'Conventional'],
         'shutter': ['Auto', 'Open', 'Closed'],
         'vclkamp': ['Normal', '+1', '+2', '+3', '+4'],
         'vshift': [0.6, 1.13, 2.2, 4.33],
