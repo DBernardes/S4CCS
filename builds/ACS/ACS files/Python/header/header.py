@@ -130,6 +130,7 @@ class Header(ABC):
                 f'An unwanted string was found in keyword value: {_str}', kw)
 
 
+
 class Focuser(Header):
 
     keywords = [('position', 'telfocus')]

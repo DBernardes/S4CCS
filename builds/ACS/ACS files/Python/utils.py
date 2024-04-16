@@ -2,6 +2,7 @@
 
 import json
 import os
+import warnings
 from datetime import datetime, timezone
 
 import astropy.io.fits as fits
@@ -47,23 +48,31 @@ def format_string(string):
     return string
 
 
-def prepare_json(header_json):
-    hdr = fits.Header(cards)
+def load_json(header_json):
     header_json = format_string(header_json)
     header_json.replace("true", "True")
     header_json.replace("false", "False")
-    header_json = json.loads(header_json)
     try:
-        del header_json['cmd']
+        return json.loads(header_json)
     except:
-        pass
+        return {}
+
+
+def prepare_json(header_json):
+    if 'cmd' in header_json.keys():
+        del header_json['cmd']
+    return header_json
+
+
+def set_image_header(header_json):
+    hdr = fits.Header(cards)
     for kw in hdr.keys():
         try:
             if header_json[kw] != "":
                 hdr[kw] = header_json[kw]
         except:
             pass
-    return header_json, hdr
+    return hdr
 
 
 def fix_image_orientation(channel, data):
