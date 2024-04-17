@@ -130,7 +130,6 @@ class Header(ABC):
                 f'An unwanted string was found in keyword value: {_str}', kw)
 
 
-
 class Focuser(Header):
 
     keywords = [('position', 'telfocus')]
@@ -148,8 +147,9 @@ class ICS(Header):
 
     keywords = [("gfoc", 'gfoc'), ("gmir", 'gmir'),
                 ('guidera', 'guidera'), ('guidedec', 'guidedec'),
-                ('wpsel', 'wpsel'), ('wppos', 'wppos'), ('calw', 'calw'), ('asel', 'asel')]
-    # TODO: ICS manda o modo de cada componentes polarimetrico
+                ('wpsel', 'wpsel'), ('wprot', 'wppos'), ('calw', 'calw'), ('asel', 'asel'), ('wprot_mode', 'WPROMODE'), ('wpsel_mode',
+                                                                                                                         'WPSEMODE'), ('asel_mode', 'ANMODE'), ('calw_mode', 'CALWMODE'), ('gmir_mode', 'GMIRMODE'), ('gfoc_mode', 'GFOCMODE')]
+
     replace_unknow_kws = {'WPSEL': 'NONE', 'CALW': 'NONE'}
     boolean_kws = ['ASEL']
 

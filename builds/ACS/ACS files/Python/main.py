@@ -27,7 +27,7 @@ def main(night_dir, file, data, header_json):
             obj = cls(header_json, hdr, night_dir)
             obj.fix_keywords()
             hdr = obj.hdr
-            data = fix_image_orientation(hdr['CHANNEL'], data)
+        data = fix_image_orientation(hdr['CHANNEL'], data)
 
     file = verify_file_already_exists(file)
     fits.writeto(file, data, hdr, output_verify='fix')

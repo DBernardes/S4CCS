@@ -59,6 +59,8 @@
 			<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ZEROMQ_S4GUI.vi"/>
 			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
 			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
+			<Item Name="fix_ICS_msg.vi" Type="VI" URL="../fix_ICS_msg.vi"/>
+			<Item Name="ZEROMQ_ICS_2.vi" Type="VI" URL="../ZEROMQ_ICS_2.vi"/>
 		</Item>
 		<Item Name="zeroqmq" Type="Folder">
 			<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
@@ -262,7 +264,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{77B8811B-88C5-4D06-B0B4-2511D9D9BCC5}</Property>
-				<Property Name="Bld_version.build" Type="Int">151</Property>
+				<Property Name="Bld_version.build" Type="Int">152</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/ACS/ACS.exe</Property>
