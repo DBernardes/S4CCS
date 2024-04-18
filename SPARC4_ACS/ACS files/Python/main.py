@@ -1,8 +1,6 @@
 import os
 
 import astropy.io.fits as fits
-import numpy as np
-import pandas as pd
 
 from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
 from utils import (fix_image_orientation, format_string, load_json,

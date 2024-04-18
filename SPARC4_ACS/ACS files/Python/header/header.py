@@ -132,38 +132,38 @@ class Header(ABC):
 
 class Focuser(Header):
 
-    keywords = [('position', 'telfocus')]
+    keywords = [('POSITION', 'TELFOCUS')]
 
 
 class Weather_Station(Header):
 
-    keywords = [('outHumidity', 'humidity'),
-                ('pressure', 'pressure'), ('outTemp', 'exttemp')]
-    to_float_kws = ['pressure', 'humidity', 'exttemp']
-    comma_kws = ['pressure']
+    keywords = [('OUTHUMIDITY', 'HUMIDITY'),
+                ('OUTTEMP', 'EXTTEMP')]
+    to_float_kws = ['PRESSURE', 'HUMIDITY', 'EXTTEMP']
+    comma_kws = ['PRESSURE']
 
 
 class ICS(Header):
 
-    keywords = [("gfoc", 'gfoc'), ("gmir", 'gmir'),
-                ('guidera', 'guidera'), ('guidedec', 'guidedec'),
-                ('wpsel', 'wpsel'), ('wprot', 'wppos'), ('calw', 'calw'), ('asel', 'asel'), ('wprot_mode', 'WPROMODE'), ('wpsel_mode',
-                                                                                                                         'WPSEMODE'), ('asel_mode', 'ANMODE'), ('calw_mode', 'CALWMODE'), ('gmir_mode', 'GMIRMODE'), ('gfoc_mode', 'GFOCMODE')]
+    keywords = [
+
+        ('WPROT', 'WPPOS'), ('WPROT_MODE', 'WPROMODE'), ('WPSEL_MODE', 'WPSEMODE'),
+        ('ASEL_MODE', 'ANMODE'), ('CALW_MODE', 'CALWMODE'), ('GMIR_MODE', 'GMIRMODE'), ('GFOC_MODE', 'GFOCMODE')]
 
     replace_unknow_kws = {'WPSEL': 'NONE', 'CALW': 'NONE'}
     boolean_kws = ['ASEL']
 
 
 class TCS(Header):
-    keywords = [('raAcquis', 'ra'),
-                ('decAcquis', 'dec'), ('hourAngle', 'tcsha'), ('airMass', 'airmass'), ('guideAng', 'instrot')]
+    keywords = [('RAACQUIS', 'RA'),
+                ('DECACQUIS', 'DEC'), ('HOURANGLE', 'TCSHA'), ('GUIDEANG', 'INSTROT')]
 
-    to_float_kws = ['airmass']
+    to_float_kws = ['AIRMASS']
 
     def fix_keywords(self):
         super().fix_keywords()
         try:
-            date, time = self.json_string['date'], self.json_string['time']
+            date, time = self.json_string['DATE'], self.json_string['TIME']
             date = date.split('/')[::-1]
             time = time.split(':')
             tmp = [int(val) for val in date + time]
@@ -175,32 +175,24 @@ class TCS(Header):
 
 class S4GUI(Header):
 
-    keywords = [('observer', 'observer'),
-                ('object', 'object'),
-                ('ctrlinte', 'ctrlint'),
-                ('projid', 'projid'),
-                ('syncmode', 'syncmode'),
-                ('instmode', 'instmode'),
-                ('filter', 'filter'),
-                ('obstype', 'obstype'),
-                ('channel 1', 'channel1'),
-                ('channel 2', 'channel2'),
-                ('channel 3', 'channel3'),
-                ('channel 4', 'channel4'),
-                ('tcsmode', 'tcsmode')]
-    replace_unknow_kws = {'filter': 'CLEAR'}
+    keywords = [
+        ('CHANNEL 1', 'CHANNEL1'),
+        ('CHANNEL 2', 'CHANNEL2'),
+        ('CHANNEL 3', 'CHANNEL3'),
+        ('CHANNEL 4', 'CHANNEL4'),]
+    replace_unknow_kws = {'FILTER': 'CLEAR'}
 
 
 class CCD(Header):
-    subs_to_val_kws = {'trigger': {0: 'Internal', 6: 'External'},
-                       'acqmode': {1: 'Single', 2: 'Accumulate', 3: "Kinetic"}, }
+    subs_to_val_kws = {'TRIGGER': {0: 'Internal', 6: 'External'},
+                       'ACQMODE': {1: 'Single', 2: 'Accumulate', 3: "Kinetic"}, }
     subs_val_in_list = {
-        'emmode': ['Electron Multiplying', 'Conventional'],
-        'shutter': ['Auto', 'Open', 'Closed'],
-        'vclkamp': ['Normal', '+1', '+2', '+3', '+4'],
-        'vshift': [0.6, 1.13, 2.2, 4.33],
-        'preamp': ['Gain 1', 'Gain 2'], }
-    boolean_kws = ['cooler', 'frametrf']
+        'EMMODE': ['Electron Multiplying', 'Conventional'],
+        'SHUTTER': ['Auto', 'Open', 'Closed'],
+        'VCLKAMP': ['Normal', '+1', '+2', '+3', '+4'],
+        'VSHIFT': [0.6, 1.13, 2.2, 4.33],
+        'PREAMP': ['Gain 1', 'Gain 2'], }
+    boolean_kws = ['COOLER', 'FRAMETRF']
 
     ss_gains = pd.read_csv(os.path.join('csvs', 'preamp_gains.csv'))
     ss_read_noise = pd.read_csv(os.path.join('csvs', 'read_noises.csv'))
@@ -208,17 +200,17 @@ class CCD(Header):
     def fix_keywords(self):
         super().fix_keywords()
         _list = [30, 20, 10, 1]
-        if self.hdr['emmode'] == 'Conventional':
+        if self.hdr['EMMODE'] == 'Conventional':
             _list = [1, 0.1]
 
         try:
-            self.hdr['readrate'] = _list[self.hdr['readrate']]
+            self.hdr['READRATE'] = _list[self.hdr['READRATE']]
         except Exception as e:
-            self._write_log_file(repr(e), 'readrate')
+            self._write_log_file(repr(e), 'READRATE')
 
         idx = self.find_index_tab()
-        self.hdr['gain'] = self.ss_gains[f"{self.hdr['ccdsern']}"][idx]
-        self.hdr['rdnoise'] = self.ss_read_noise[f"{self.hdr['ccdsern']}"][idx]
+        self.hdr['GAIN'] = self.ss_gains[f"{self.hdr['CCDSERN']}"][idx]
+        self.hdr['RDNOISE'] = self.ss_read_noise[f"{self.hdr['CCDSERN']}"][idx]
 
     def find_index_tab(self):
         json_string = self.json_string

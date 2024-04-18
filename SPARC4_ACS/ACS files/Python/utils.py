@@ -59,6 +59,7 @@ def load_json(header_json):
 
 
 def prepare_json(header_json):
+    header_json = {k.upper(): v for k, v in header_json.items()}
     if 'cmd' in header_json.keys():
         del header_json['cmd']
     return header_json
@@ -155,5 +156,5 @@ WS_json = {"broker": "Weather160", "version": "1.0.0", "date": "21/02/24", "hour
            "2ndTemp": "19.4", "2ndHumidity": "73", "ET": "0.00", "leaf": "0", "windSamp": "115", "windTx": "1",
            "ISSRecept": "100.0", "arcInt": "5"}
 
-s4gui_json = {"observer": "", "object": "", "ctrlinte": "S4GUI", "projid": "", "syncmode": "SYNC", "instmode": "PHOT", "filter": "CLEAR", "obstype": "",
-              "instrot": "", "channel 1": True, "channel 2": True, "channel 3": True, "channel 4": True, "tcsmode": True, "comments": "", "suffix": "", "broker": "S4GUI"}
+s4gui_json = {"OBSERVER": "AAA", "OBJECT": "BBB", "CTRLINTE": "S4GUI", "PROJID": "CCC", "SYNCMODE": "SYNC", "INSTMODE": "POL", "FILTER": "CLEAR",
+              "OBSTYPE": "EEE", "CHANNEL 1": True, "CHANNEL 2": False, "CHANNEL 3": False, "CHANNEL 4": False, "TCSMODE": True, "COMMENT": "DDD", "BROKER": "S4GUI"}
