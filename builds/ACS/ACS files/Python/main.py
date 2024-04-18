@@ -21,11 +21,10 @@ def main(night_dir, file, data, header_json):
         hdr = fits.Header()
         error_str = 'Warning: a wrong formatting was found in the header content.'
     else:
-        # [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
-        # for cls in []:
-        #     obj = cls(header_json, hdr, night_dir)
-        #     obj.fix_keywords()
-        #     hdr = obj.hdr
+        for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
+            obj = cls(header_json, hdr, night_dir)
+            obj.fix_keywords()
+            hdr = obj.hdr
         data = fix_image_orientation(hdr['CHANNEL'], data)
 
     file = verify_file_already_exists(file)

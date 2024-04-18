@@ -209,7 +209,7 @@ class CCD(Header):
             self._write_log_file(repr(e), 'READRATE')
 
         idx = self.find_index_tab()
-        self.hdr['GAIN'] = self.ss_gains[f"{self.hdr['CDDSERN']}"][idx]
+        self.hdr['GAIN'] = self.ss_gains[f"{self.hdr['CCDSERN']}"][idx]
         self.hdr['RDNOISE'] = self.ss_read_noise[f"{self.hdr['CCDSERN']}"][idx]
 
     def find_index_tab(self):
