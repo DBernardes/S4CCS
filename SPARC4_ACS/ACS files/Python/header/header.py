@@ -152,6 +152,7 @@ class ICS(Header):
 
     replace_unknow_kws = {'WPSEL': 'NONE', 'CALW': 'NONE'}
     boolean_kws = ['ASEL']
+    to_float_kws = ['GMIR', 'GFOC']
 
 
 class TCS(Header):
