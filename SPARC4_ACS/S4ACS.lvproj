@@ -278,7 +278,7 @@
 				<Property Name="Destination[3].destName" Type="Str">data</Property>
 				<Property Name="Destination[3].path" Type="Path">../builds/ACS/data</Property>
 				<Property Name="DestinationCount" Type="Int">4</Property>
-				<Property Name="Source[0].itemID" Type="Str">{613542B7-CEA3-48A9-BDD4-355CED293B7F}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{4392C9C7-365A-4E2C-9404-1EFA4726065D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -420,6 +420,19 @@
 				<Property Name="Source[3].File[0].name" Type="Str">header_content.csv</Property>
 				<Property Name="Source[3].File[0].tag" Type="Ref"></Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
+			</Item>
+			<Item Name="ACS zip" Type="Zip File">
+				<Property Name="Absolute[0]" Type="Bool">false</Property>
+				<Property Name="BuildName" Type="Str">ACS zip</Property>
+				<Property Name="Comments" Type="Str"></Property>
+				<Property Name="DestinationID[0]" Type="Str">{32AD97CA-D686-437F-A049-93DB64247A01}</Property>
+				<Property Name="DestinationItemCount" Type="Int">1</Property>
+				<Property Name="DestinationName[0]" Type="Str">Destination Directory</Property>
+				<Property Name="IncludedItemCount" Type="Int">1</Property>
+				<Property Name="IncludedItems[0]" Type="Ref">/My Computer/Build Specifications/ACS</Property>
+				<Property Name="IncludeProject" Type="Bool">false</Property>
+				<Property Name="Path[0]" Type="Path">../../builds/ACS.zip</Property>
+				<Property Name="ZipBase" Type="Str">NI_zipbasedefault</Property>
 			</Item>
 		</Item>
 	</Item>
