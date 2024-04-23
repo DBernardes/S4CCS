@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Zip Folder
         run: |
-          cd builds
+          cd ../../builds
           rm -rf ACS.zip
           zip -r ACS
       # - name: Create Release
