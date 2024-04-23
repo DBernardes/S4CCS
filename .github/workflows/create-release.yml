@@ -28,6 +28,3 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
-          run: del ACS.zip
-
-# TESTE
