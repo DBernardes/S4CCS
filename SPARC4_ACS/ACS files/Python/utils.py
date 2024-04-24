@@ -69,7 +69,7 @@ def set_image_header(header_json):
     hdr = fits.Header(cards)
     for kw in hdr.keys():
         try:
-            if header_json[kw] != "":
+            if header_json[kw] != '':
                 hdr[kw] = header_json[kw]
         except:
             pass

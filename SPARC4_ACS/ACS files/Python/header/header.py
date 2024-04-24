@@ -11,6 +11,7 @@ class Header(ABC):
 
     keywords = []
     to_float_kws = []
+    to_int_str = []
     comma_kws = []
     subs_to_val_kws = {}
     subs_val_in_list = {}
@@ -30,6 +31,14 @@ class Header(ABC):
             try:
                 self._check_type(kw, float)
                 self.hdr[kw] = float(self.hdr[kw])
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
+
+    def _convert_to_int(self):
+        for kw in self.to_int_str:
+            try:
+                self._check_type(kw, int)
+                self.hdr[kw] = int(self.hdr[kw])
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -105,13 +114,14 @@ class Header(ABC):
         """
         self.extract_info()
         self._replace_comma()
-        self._convert_to_float()
         self._boolean_kws()
         self._subs_val_in_list()
         self._substitute_val_kw()
         self._replace_str()
         self._delete_str()
         self._replace_unknown_str()
+        self._convert_to_float()
+        self._convert_to_int()
 
     def _write_log_file(self, message, keyword):
         with open(self.log_file, 'a') as file:
@@ -150,16 +160,37 @@ class ICS(Header):
         ('WPROT', 'WPPOS'), ('WPROT_MODE', 'WPROMODE'), ('WPSEL_MODE', 'WPSEMODE'),
         ('ASEL_MODE', 'ANMODE'), ('CALW_MODE', 'CALWMODE'), ('GMIR_MODE', 'GMIRMODE'), ('GFOC_MODE', 'GFOCMODE')]
 
-    replace_unknow_kws = {'WPSEL': 'NONE', 'CALW': 'NONE'}
-    boolean_kws = ['ASEL']
+    subs_to_val_kws = {'WPSEL': {'OFF': 'None', 'L/2': 'L2', 'L/4': 'L4'},
+                       }
+    replace_str = {'CALW': ('OFF', 'None')}
+
+    replace_unknow_kws = {'WPSEL': 'None', 'CALW': 'None', 'ICSVRSN': 'v0.0.0'}
     to_float_kws = ['GMIR', 'GFOC']
+
+    def fix_keywords(self):
+        super().fix_keywords()
+        for kw in ['WPROMODE', 'WPSEMODE', 'ANMODE', 'CALWMODE', 'GMIRMODE', 'GFOCMODE']:
+            if 'ACTIVE' in self.hdr[kw]:
+                self.hdr[kw] = True
+            else:
+                self.hdr[kw] = False
+        if 'ON' in self.hdr['ASEL']:
+            self.hdr['ASEL'] = True
+        else:
+            self.hdr['ASEL'] = False
+        if 'NONE' in self.hdr['WPPOS']:
+            self.hdr['WPPOS'] = 'None'
+        elif 'WP' in self.hdr['WPPOS']:
+            self.hdr['WPPOS'] = int(self.hdr['WPPOS'][2:])
+        else:
+            pass
 
 
 class TCS(Header):
     keywords = [('RAACQUIS', 'RA'),
                 ('DECACQUIS', 'DEC'), ('HOURANGLE', 'TCSHA'), ('GUIDEANG', 'INSTROT')]
 
-    to_float_kws = ['AIRMASS']
+    to_float_kws = ['AIRMASS', 'INSTROT']
 
     def fix_keywords(self):
         super().fix_keywords()
@@ -181,28 +212,30 @@ class S4GUI(Header):
         ('CHANNEL 2', 'CHANNEL2'),
         ('CHANNEL 3', 'CHANNEL3'),
         ('CHANNEL 4', 'CHANNEL4'),]
-    replace_unknow_kws = {'FILTER': 'CLEAR'}
+    replace_unknow_kws = {'OBJECT': '', 'OBSERVER': '',
+                          'PROJID': '', 'TCSMODE': False, 'FILTER': 'CLEAR', 'GUIVRSN': 'v0.0.0'}
 
 
 class CCD(Header):
     subs_to_val_kws = {'TRIGGER': {0: 'Internal', 6: 'External'},
-                       'ACQMODE': {1: 'Single', 2: 'Accumulate', 3: "Kinetic"}, }
+                       'ACQMODE': {1: 'Single Scan', 2: 'Accumulate', 3: "Kinetic"}, }
     subs_val_in_list = {
         'EMMODE': ['Electron Multiplying', 'Conventional'],
-        'SHUTTER': ['Auto', 'Open', 'Closed'],
+        'SHUTTER': ['Open', 'Closed', 'Auto'],
         'VCLKAMP': ['Normal', '+1', '+2', '+3', '+4'],
         'VSHIFT': [0.6, 1.13, 2.2, 4.33],
         'PREAMP': ['Gain 1', 'Gain 2'], }
     boolean_kws = ['COOLER', 'FRAMETRF']
+    to_float_kws = ['EXPTIME']
 
     ss_gains = pd.read_csv(os.path.join('csvs', 'preamp_gains.csv'))
     ss_read_noise = pd.read_csv(os.path.join('csvs', 'read_noises.csv'))
 
     def fix_keywords(self):
         super().fix_keywords()
-        _list = [30, 20, 10, 1]
+        _list = [30., 20., 10., 1.]
         if self.hdr['EMMODE'] == 'Conventional':
-            _list = [1, 0.1]
+            _list = [1., 0.1]
 
         try:
             self.hdr['READRATE'] = _list[self.hdr['READRATE']]

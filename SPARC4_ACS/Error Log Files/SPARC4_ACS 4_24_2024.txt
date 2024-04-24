@@ -1,0 +1,21 @@
+Execution error: 4_24_2024 2_12_33
+1003 Invoke Node in Channel.lvclass:Initialize Save Images VI.vi->Channel.lvclass:Initialize.vi->S4ACS.vi
+<APPEND>
+Method Name: <b>Run VI</b>
+
+VI Path: <b>C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\CH1_Save_Header_Python.vi</b>
+
+Execution error: 4_24_2024 2_14_08
+1003 Invoke Node in Channel.lvclass:Initialize Save Images VI.vi->Channel.lvclass:Initialize.vi->S4ACS.vi
+<APPEND>
+Method Name: <b>Run VI</b>
+
+VI Path: <b>C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\CH1_Save_Header_Python.vi</b>
+
+Execution error: 4_24_2024 2_14_43
+1003 Invoke Node in Channel.lvclass:Initialize Save Images VI.vi->Channel.lvclass:Initialize.vi->S4ACS.vi
+<APPEND>
+Method Name: <b>Run VI</b>
+
+VI Path: <b>C:\Users\observer\Desktop\SPARC4_ACS\SPARC4_ACS\CH1_Save_Header_Python.vi</b>
+

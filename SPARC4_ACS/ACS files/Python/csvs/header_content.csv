@@ -35,6 +35,7 @@ SEQINDEX	Sequence index in cycle
 NFRAMES  	Number of frames in sequence
 FRAMEIND	Frame index in sequence
 EXPTIME 	Exposure time (s)                                                               
+PSETMODE	CCD present mode: ROI, binning, temp
 ACQMODE 	Acquisition mode                               
 PREAMP  	Pre-amplifier gain
 READRATE 	Readout rate (MHz)                             
@@ -49,11 +50,11 @@ INITCOL 	Initial column (pix)
 FINALLIN	Final line (pix)
 FINALCOL	Final column (pix)
 SHUTTER 	Shutter mode
-COOLER  	CCD cooler: T or F
+COOLER  	CCD cooler on: T or F
 CCDTEMP    	CCD temperature (deg C) 
 TGTEMP  	CCD target temperature (deg C)                          
 TEMPST  	CCD temperature status                             
-FRAMETRF 	Frame transfer: T or F
+FRAMETRF 	Frame transfer on: T or F
 VCLKAMP 	Clock amplitude: Normal, +1, +2, +3, +4
 GAIN    	Gain (e-/ADU)
 RDNOISE 	Read noise (e-)
@@ -65,13 +66,15 @@ TCSHA      	TCS hour angle: HH:MM:SS
 TCSDATE 	TCS UT date (isot)
 GFOC    	Guiding focus position (mm)
 GMIR    	Rotation angle of the guiding mirror (deg)
-GUIDERA 	RA of guider object
-GUIDEDEC 	DEC of guider object            
+GUIDERA 	RA of guider field
+GUIDEDEC 	DEC of guider field            
 EXTTEMP 	Temperature (deg C), weather tower
 AIRMASS 	Airmass at start of observation                
 PRESSURE	Barometric pressure (mb), weather tower
 HUMIDITY	Relative humidity (%), weather tower
-ACSVRSN 	Software version of ACS
+ACSVRSN 	S4ACS software version
+ICSVRSN	S4ICS software version
+GUIVRSN	S4GUI software version
 CTRLINTE	Graphical control interface of ACS    
 ACSMODE 	ACS in real (T) or simulated (F) mode
 WPROMODE	Rotator of the waveplate in real (T) or simulated (F) mode
@@ -81,7 +84,7 @@ CALWMODE	Calibration wheel in real (T) or simulated (F) mode
 GMIRMODE	Guiding mirror in real (T) or simulated (F) mode
 GFOCMODE	Guiding focuser in real (T) or simulated (F) mode
 TCSMODE 	TCS in real (T) or simulated (F) mode
-WPSEL   	Waveplate: half-wave, quarter-wave or None
+WPSEL   	Waveplate: half-wave (L2), quarter-wave (L4)
 WPPOS   	Waveplate index position from 1 to 16, 0 if none
 CALW    	Selected element in calibration wheel
 ASEL    	Savart prism analyzer selected
