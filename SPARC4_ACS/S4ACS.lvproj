@@ -88,6 +88,7 @@
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		<Item Name="Log File.lvclass" Type="LVClass" URL="../Log File/Log File.lvclass"/>
+		<Item Name="Error log.lvclass" Type="LVClass" URL="../Error log/Error log.lvclass"/>
 		<Item Name="SetCameraStatusEnable.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCameraStatusEnable.vi"/>
 		<Item Name="GetCapabilities.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCapabilities.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -148,6 +149,7 @@
 				<Item Name="PrepareAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/PrepareAcquisition.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 				<Item Name="GetCameraEventStatus.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraEventStatus.vi"/>
+				<Item Name="GetImages.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetImages.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -230,6 +232,7 @@
 				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
 				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
+				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 			</Item>
 			<Item Name="User32.dll" Type="Document" URL="User32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -241,7 +244,6 @@
 			<Item Name="Interface.lvclass" Type="LVClass" URL="../Interface/Interface.lvclass"/>
 			<Item Name="Write Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Write Interface.lvclass.vi"/>
 			<Item Name="Read Interface.lvclass.vi" Type="VI" URL="../Simulated_CCD_Camera/Read Interface.lvclass.vi"/>
-			<Item Name="Verify Parameters.vi" Type="VI" URL="../Simulated_CCD_Camera/Verify Parameters.vi"/>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>

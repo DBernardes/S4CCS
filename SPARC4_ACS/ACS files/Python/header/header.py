@@ -107,6 +107,7 @@ class Header(ABC):
                 self.hdr[hdr_kw] = self.json_string[json_kw]
             except Exception as e:
                 self._write_log_file(repr(e), hdr_kw)
+# TODO: -9999999, strin "",
 
     def fix_keywords(self):
         """Fix header keywords.
@@ -169,21 +170,39 @@ class ICS(Header):
 
     def fix_keywords(self):
         super().fix_keywords()
+        self._write_WPPOS()
+        self._write_ASEL()
+        self._write_ICS_mode()
+
+    def _write_ICS_mode(self):
         for kw in ['WPROMODE', 'WPSEMODE', 'ANMODE', 'CALWMODE', 'GMIRMODE', 'GFOCMODE']:
-            if 'ACTIVE' in self.hdr[kw]:
-                self.hdr[kw] = True
+            try:
+                if 'ACTIVE' in self.hdr[kw]:
+                    self.hdr[kw] = True
+                else:
+                    self.hdr[kw] = False
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
+
+    def _write_ASEL(self):
+        try:
+            if 'ON' in self.hdr['ASEL']:
+                self.hdr['ASEL'] = True
             else:
-                self.hdr[kw] = False
-        if 'ON' in self.hdr['ASEL']:
-            self.hdr['ASEL'] = True
-        else:
-            self.hdr['ASEL'] = False
-        if 'NONE' in self.hdr['WPPOS']:
-            self.hdr['WPPOS'] = 'None'
-        elif 'WP' in self.hdr['WPPOS']:
-            self.hdr['WPPOS'] = int(self.hdr['WPPOS'][2:])
-        else:
-            pass
+                self.hdr['ASEL'] = False
+        except Exception as e:
+            self._write_log_file(repr(e), 'ASEL')
+
+    def _write_WPPOS(self):
+        try:
+            if 'NONE' in self.hdr['WPPOS']:
+                self.hdr['WPPOS'] = 'None'
+            elif 'WP' in self.hdr['WPPOS']:
+                self.hdr['WPPOS'] = int(self.hdr['WPPOS'][2:])
+            else:
+                pass
+        except Exception as e:
+            self._write_log_file(repr(e), 'WPPOS')
 
 
 class TCS(Header):
@@ -194,6 +213,9 @@ class TCS(Header):
 
     def fix_keywords(self):
         super().fix_keywords()
+        self._write_TCSDATE()
+
+    def _write_TCSDATE(self):
         try:
             date, time = self.json_string['DATE'], self.json_string['TIME']
             date = date.split('/')[::-1]
@@ -233,15 +255,7 @@ class CCD(Header):
 
     def fix_keywords(self):
         super().fix_keywords()
-        _list = [30., 20., 10., 1.]
-        if self.hdr['EMMODE'] == 'Conventional':
-            _list = [1., 0.1]
-
-        try:
-            self.hdr['READRATE'] = _list[self.hdr['READRATE']]
-        except Exception as e:
-            self._write_log_file(repr(e), 'READRATE')
-
+        self._write_READRATE()
         idx = self.find_index_tab()
         self.hdr['GAIN'] = self.ss_gains[f"{self.hdr['CCDSERN']}"][idx]
         self.hdr['RDNOISE'] = self.ss_read_noise[f"{self.hdr['CCDSERN']}"][idx]
@@ -253,6 +267,15 @@ class CCD(Header):
             index += 8
         index += json_string['PREAMP']
         return index
+
+    def _write_READRATE(self):
+        _list = [30., 20., 10., 1.]
+        if self.hdr['EMMODE'] == 'Conventional':
+            _list = [1., 0.1]
+        try:
+            self.hdr['READRATE'] = _list[self.hdr['READRATE']]
+        except Exception as e:
+            self._write_log_file(repr(e), 'READRATE')
 
 
 class General_KWs(Header):
