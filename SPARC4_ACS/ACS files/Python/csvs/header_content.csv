@@ -1,90 +1,90 @@
-Keyword	Comment
-SIMPLE  	Conforms to FITS standard
-BSCALE  	Linear factor in scaling equation
-BZERO   	Zero point in scaling equation
-BITPIX  	Bits per data value
-NAXIS   	Number of array dimensions
-NAXIS1  	Number of columns
-NAXIS2  	Number of rows
-PROJID  	Project identification code
-OBSERVER	Name(s) of observer(s)
-OBJECT  	Object name    
-OBSLONG 	Observatory East Longitude (DEG, -180 to 180)
-OBSLAT  	Observatory North Latitude (DEG, -90 to 90)
-OBSALT  	Observatory elevation above sea level (m)                                                                                       
-INSTRUME	Instrument name
-INSTMODE	Instrument mode: PHOT or POLAR
-SYNCMODE	Synchronism of the start of the acquisition in the channels
-INSTROT 	Instrument rotator angle in degrees
-FILTER  	Filter
-OBSTYPE 	Image type: OBJECT, ZERO, FLAT, DARK, FOCUS
-CHANNEL 	Instrument channel: 1 (g), 2 (r), 3 (i), 4 (z)   
-CHANNEL1	Channel 1 is on (T) or off (F)
-CHANNEL2	Channel 2 is on (T) or off (F)
-CHANNEL3	Channel 3 is on (T) or off (F)
-CHANNEL4	Channel 4 is on (T) or off (F)
-CCDSERN    	CCD serial number
-FILENAME	File name 
-DATE-OBS	UTC at start of observation (isot)
-UTTIME  	UTC time at start of observation 
-UTDATE  	UTC date at start of observation
-NCYCLES 	Number of cycles
-CYCLIND 	Cycle index
-NSEQ    	Number of sequences in one cycle
-SEQINDEX	Sequence index in cycle
-NFRAMES  	Number of frames in sequence
-FRAMEIND	Frame index in sequence
-EXPTIME 	Exposure time (s)                                                               
-PSETMODE	CCD present mode: ROI, binning, temp
-ACQMODE 	Acquisition mode                               
-PREAMP  	Pre-amplifier gain
-READRATE 	Readout rate (MHz)                             
-VSHIFT  	Vertical shift speed (ms)                     
-TRIGGER 	Trigger mode
-EMMODE  	Output amplifier mode                        
-EMGAIN  	Electron multiplier gain 
-VBIN    	Vertical binning (pix)                       
-HBIN    	Horizontal binning (pix)                         
-INITLIN 	Initial line (pix)
-INITCOL 	Initial column (pix)
-FINALLIN	Final line (pix)
-FINALCOL	Final column (pix)
-SHUTTER 	Shutter mode
-COOLER  	CCD cooler on: T or F
-CCDTEMP    	CCD temperature (deg C) 
-TGTEMP  	CCD target temperature (deg C)                          
-TEMPST  	CCD temperature status                             
-FRAMETRF 	Frame transfer on: T or F
-VCLKAMP 	Clock amplitude: Normal, +1, +2, +3, +4
-GAIN    	Gain (e-/ADU)
-RDNOISE 	Read noise (e-)
-RA      	Right ascension: HH:MM:SS       
-DEC     	Declination: +- DD:MM:SS
-EQUINOX 	Equinox of coordinates
-TELFOCUS  	Telescope focus position (arbitrary units)
-TCSHA      	TCS hour angle: HH:MM:SS
-TCSDATE 	TCS UT date (isot)
-GFOC    	Guiding focus position (mm)
-GMIR    	Rotation angle of the guiding mirror (deg)
-GUIDERA 	RA of guider field
-GUIDEDEC 	DEC of guider field            
-EXTTEMP 	Temperature (deg C), weather tower
-AIRMASS 	Airmass at start of observation                
-PRESSURE	Barometric pressure (mb), weather tower
-HUMIDITY	Relative humidity (%), weather tower
-ACSVRSN 	S4ACS software version
-ICSVRSN	S4ICS software version
-GUIVRSN	S4GUI software version
-CTRLINTE	Graphical control interface of ACS    
-ACSMODE 	ACS in real (T) or simulated (F) mode
-WPROMODE	Rotator of the waveplate in real (T) or simulated (F) mode
-WPSEMODE	Selector of the waveplate in real (T) or simulated (F) mode
-ANMODE  	Analyzer in real (T) or simulated (F) mode
-CALWMODE	Calibration wheel in real (T) or simulated (F) mode
-GMIRMODE	Guiding mirror in real (T) or simulated (F) mode
-GFOCMODE	Guiding focuser in real (T) or simulated (F) mode
-TCSMODE 	TCS in real (T) or simulated (F) mode
-WPSEL   	Waveplate: half-wave (L2), quarter-wave (L4)
-WPPOS   	Waveplate index position from 1 to 16, 0 if none
-CALW    	Selected element in calibration wheel
-ASEL    	Savart prism analyzer selected
+Keyword;Comment
+SIMPLE;Conforms to FITS standard
+BSCALE;Linear factor in scaling equation
+BZERO;Zero point in scaling equation
+BITPIX;Bits per data value
+NAXIS;Number of array dimensions
+NAXIS1;Number of columns
+NAXIS2;Number of rows
+PROJID;Project identification code
+OBSERVER;Name(s) of observer(s)
+OBJECT;Object name    
+OBSLONG;Observatory East Longitude (DEG, -180 to 180)
+OBSLAT;Observatory North Latitude (DEG, -90 to 90)
+OBSALT;Observatory elevation above sea level (m)                                                                                       
+INSTRUME;Instrument name
+INSTMODE;Instrument mode: PHOT or POLAR
+SYNCMODE;Synchronism of the start of the acquisition in the channels
+INSTROT;Instrument rotator angle in degrees
+FILTER;Filter
+OBSTYPE;Image type: OBJECT, ZERO, FLAT, DARK, FOCUS
+CHANNEL;Instrument channel: 1 (g), 2 (r), 3 (i), 4 (z)   
+CHANNEL1;Channel 1 is on (T) or off (F)
+CHANNEL2;Channel 2 is on (T) or off (F)
+CHANNEL3;Channel 3 is on (T) or off (F)
+CHANNEL4;Channel 4 is on (T) or off (F)
+CCDSERN;CCD serial number
+FILENAME;File name 
+DATE-OBS;UTC at start of observation (isot)
+UTTIME;UTC time at start of observation 
+UTDATE;UTC date at start of observation
+NCYCLES;Number of cycles
+CYCLIND;Cycle index
+NSEQ;Number of sequences in one cycle
+SEQINDEX;Sequence index in cycle
+NFRAMES;Number of frames in sequence
+FRAMEIND;Frame index in sequence
+EXPTIME;Exposure time (s)                                                               
+PSETMODE;CCD present mode: ROI, binning, temp
+ACQMODE;Acquisition mode                               
+PREAMP;Pre-amplifier gain
+READRATE;Readout rate (MHz)                             
+VSHIFT;Vertical shift speed (ms)                     
+TRIGGER;Trigger mode
+EMMODE;Output amplifier mode                        
+EMGAIN;Electron multiplier gain 
+VBIN;Vertical binning (pix)                       
+HBIN;Horizontal binning (pix)                         
+INITLIN;Initial line (pix)
+INITCOL;Initial column (pix)
+FINALLIN;Final line (pix)
+FINALCOL;Final column (pix)
+SHUTTER;Shutter mode
+COOLER;CCD cooler on: T or F
+CCDTEMP;CCD temperature (deg C) 
+TGTEMP;CCD target temperature (deg C)                          
+TEMPST;CCD temperature status                             
+FRAMETRF;Frame transfer on: T or F
+VCLKAMP;Clock amplitude: Normal, +1, +2, +3, +4
+GAIN;Gain (e-/ADU)
+RDNOISE;Read noise (e-)
+RA;Right ascension: HH:MM:SS       
+DEC;Declination: +- DD:MM:SS
+EQUINOX;Equinox of coordinates
+TELFOCUS;Telescope focus position (arbitrary units)
+TCSHA;TCS hour angle: HH:MM:SS
+TCSDATE;TCS UT date (isot)
+GFOC;Guiding focus position (mm)
+GMIR;Rotation angle of the guiding mirror (deg)
+GUIDERA;RA of guider field
+GUIDEDEC;DEC of guider field            
+EXTTEMP ;Temperature (deg C), weather tower
+AIRMASS ;Airmass at start of observation                
+PRESSURE;Barometric pressure (mb), weather tower
+HUMIDITY;Relative humidity (%), weather tower
+ACSVRSN;S4ACS software version
+ICSVRSN;S4ICS software version
+GUIVRSN;S4GUI software version
+CTRLINTE;Graphical control interface of ACS    
+ACSMODE;ACS in real (T) or simulated (F) mode
+WPROMODE;Rotator of the waveplate in real (T) or simulated (F) mode
+WPSEMODE;Selector of the waveplate in real (T) or simulated (F) mode
+ANMODE;Analyzer in real (T) or simulated (F) mode
+CALWMODE;Calibration wheel in real (T) or simulated (F) mode
+GMIRMODE;Guiding mirror in real (T) or simulated (F) mode
+GFOCMODE;Guiding focuser in real (T) or simulated (F) mode
+TCSMODE;TCS in real (T) or simulated (F) mode
+WPSEL;Waveplate: half-wave (L2), quarter-wave (L4)
+WPPOS;Waveplate index position from 1 to 16, 0 if none
+CALW;Selected element in calibration wheel
+ASEL;Savart prism analyzer selected

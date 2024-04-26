@@ -9,10 +9,6 @@ import astropy.io.fits as fits
 import numpy as np
 import pandas as pd
 
-ss = pd.read_csv(os.path.join('csvs', 'header_content.csv'), delimiter='\t')
-cards = [(keyword, 'Unknown', comment)
-         for keyword, comment in zip(ss['Keyword'], ss['Comment'])]
-
 
 def rotate_image(img_data, invert_x=False, invert_y=False, nrot90deg=0):
     """ Tool to fix image orientation of an image array.
@@ -65,15 +61,15 @@ def prepare_json(header_json):
     return header_json
 
 
-def set_image_header(header_json):
-    hdr = fits.Header(cards)
-    for kw in hdr.keys():
-        try:
-            if header_json[kw] != '':
-                hdr[kw] = header_json[kw]
-        except:
-            pass
-    return hdr
+# def set_image_header(header_json):
+#     hdr = fits.Header(cards)
+#     for kw in hdr.keys():
+#         try:
+#             if header_json[kw] != '':
+#                 hdr[kw] = header_json[kw]
+#         except:
+#             pass
+#     return hdr
 
 
 def fix_image_orientation(channel, data):
@@ -157,4 +153,10 @@ WS_json = {"broker": "Weather160", "version": "1.0.0", "date": "21/02/24", "hour
            "ISSRecept": "100.0", "arcInt": "5"}
 
 s4gui_json = {"OBSERVER": "AAA", "OBJECT": "BBB", "CTRLINTE": "S4GUI", "PROJID": "CCC", "SYNCMODE": "SYNC", "INSTMODE": "POL", "FILTER": "CLEAR",
-              "OBSTYPE": "EEE", "CHANNEL 1": True, "CHANNEL 2": False, "CHANNEL 3": False, "CHANNEL 4": False, "TCSMODE": True, "COMMENT": "DDD", "BROKER": "S4GUI"}
+              "OBSTYPE": "ZERO", "CHANNEL 1": True, "CHANNEL 2": False, "CHANNEL 3": False, "CHANNEL 4": False, "TCSMODE": True, "COMMENT": "DDD", "BROKER": "S4GUI"}
+general_kw = {"FILENAME": "20240426_s4c1_000003.fits", "SEQINDEX": 0,
+              "NCYCLES": 1, "NSEQ": 1, 'CYCLIND': 1, "ACSVRSN": "v1.46.14", "ACSMODE": False, }
+ccd_kw = {"FRAMEIND": 1, "CCDTEMP": 20, "TEMPST": "TEMPERATURE_OFF", "CCDSERN": 9914, "PREAMP": 0, "READRATE": 0, "EMGAIN": 2, "VSHIFT": 3, "FRAMETRF": True, "VCLKAMP": 0, "ACQMODE": 3, "EMMODE": 1, "SHUTTER": 2, "TRIGGER": 0, "VBIN": 1, "INITLIN": 1,
+          "INITCOL": 1, "FINALLIN": 1024, "FINALCOL": 1024, "HBIN": 1, "EXPTIME": 1.5, "NFRAMES": 1, "TGTEMP": 20, "COOLER": 0,  "CHANNEL": 1, "DATE-OBS": "2024-04-26T17:35:31.001", "UTTIME": "17:35:31.001", "UTDATE": "2024-04-26"}
+ics_kw = {"WPROT": "WP8", "WPROT_MODE": "SIMULATED", "WPSEL": "L/2", "WPSEL_MODE": "SIMULATED", "CALW": "NONE", "CALW_MODE": "SIMULATED",
+          "ASEL": "ON", "ASEL_MODE": "SIMULATED", "GMIR": "0.000", "GMIR_MODE": "SIMULATED", "GFOC": "0.000", "GFOC_MODE": "SIMULATED"}

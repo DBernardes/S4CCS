@@ -1,7 +1,6 @@
 import os
 
 import astropy.io.fits as fits
-
 from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
 from utils import (fix_image_orientation, format_string, load_json,
                    prepare_json, set_image_header, verify_file_already_exists)
@@ -14,7 +13,6 @@ def main(night_dir, file, data, header_json):
 
     header_json = load_json(header_json)
     header_json = prepare_json(header_json)
-    hdr = set_image_header(header_json)
 
     error_str = ''
     if hdr == {}:
@@ -22,7 +20,7 @@ def main(night_dir, file, data, header_json):
         error_str = 'Warning: a wrong formatting was found in the header content.'
     else:
         for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
-            obj = cls(header_json, hdr, night_dir)
+            obj = cls(header_json, night_dir)
             obj.fix_keywords()
             hdr = obj.hdr
         data = fix_image_orientation(hdr['CHANNEL'], data)
