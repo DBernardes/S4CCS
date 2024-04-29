@@ -49,27 +49,13 @@ def load_json(header_json):
     header_json.replace("true", "True")
     header_json.replace("false", "False")
     try:
-        return json.loads(header_json)
+        header_json = json.loads(header_json)
+        header_json = {k.upper(): v for k, v in header_json.items()}
+        if 'cmd' in header_json.keys():
+            del header_json['cmd']
+        return header_json
     except:
-        return {}
-
-
-def prepare_json(header_json):
-    header_json = {k.upper(): v for k, v in header_json.items()}
-    if 'cmd' in header_json.keys():
-        del header_json['cmd']
-    return header_json
-
-
-# def set_image_header(header_json):
-#     hdr = fits.Header(cards)
-#     for kw in hdr.keys():
-#         try:
-#             if header_json[kw] != '':
-#                 hdr[kw] = header_json[kw]
-#         except:
-#             pass
-#     return hdr
+        return None
 
 
 def fix_image_orientation(channel, data):
@@ -92,6 +78,15 @@ def verify_file_already_exists(file):
             file += value + '_'
         file += f'{date_time[:-4]}' + '_' + img_index
     return file
+
+
+def write_error_log(message, night_dir):
+    log_file = os.path.join(night_dir, 'acs_errors.log')
+    with open(log_file, 'a') as file:
+        now = str(datetime.now())
+        file.write(now + ' - ' + message + '\n')
+
+# --------------------------------------------------------------------------------------------------------------------------
 
 
 tcs_json = {

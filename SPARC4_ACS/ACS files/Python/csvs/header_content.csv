@@ -14,7 +14,7 @@ OBSLAT;Observatory North Latitude (DEG, -90 to 90)
 OBSALT;Observatory elevation above sea level (m)                                                                                       
 INSTRUME;Instrument name
 INSTMODE;Instrument mode: PHOT or POLAR
-SYNCMODE;Synchronism of the start of the acquisition in the channels
+SYNCMODE;Synchronization across channels at start of acq.
 INSTROT;Instrument rotator angle in degrees
 FILTER;Filter
 OBSTYPE;Image type: OBJECT, ZERO, FLAT, DARK, FOCUS
@@ -31,11 +31,11 @@ UTDATE;UTC date at start of observation
 NCYCLES;Number of cycles
 CYCLIND;Cycle index
 NSEQ;Number of sequences in one cycle
-SEQINDEX;Sequence index in cycle
+SEQINDEX;Sequence index in the cycle
 NFRAMES;Number of frames in sequence
 FRAMEIND;Frame index in sequence
 EXPTIME;Exposure time (s)                                                               
-PSETMODE;CCD present mode: ROI, binning, temp
+PSETMODE;CCD preset mode: ROI, binning, temp
 ACQMODE;Acquisition mode                               
 PREAMP;Pre-amplifier gain
 READRATE;Readout rate (MHz)                             
@@ -76,15 +76,15 @@ ACSVRSN;S4ACS software version
 ICSVRSN;S4ICS software version
 GUIVRSN;S4GUI software version
 CTRLINTE;Graphical control interface of ACS    
-ACSMODE;ACS in real (T) or simulated (F) mode
-WPROMODE;Rotator of the waveplate in real (T) or simulated (F) mode
-WPSEMODE;Selector of the waveplate in real (T) or simulated (F) mode
-ANMODE;Analyzer in real (T) or simulated (F) mode
-CALWMODE;Calibration wheel in real (T) or simulated (F) mode
-GMIRMODE;Guiding mirror in real (T) or simulated (F) mode
-GFOCMODE;Guiding focuser in real (T) or simulated (F) mode
-TCSMODE;TCS in real (T) or simulated (F) mode
+ACSMODE;ACS: real (T) or simulated (F)
+WPROMODE;Waveplate rotator: real (T) or simulated (F)
+WPSEMODE;Waveplate selector: real (T) or simulated (F)
+ANMODE;Analyzer: real (T) or simulated (F)
+CALWMODE;Calibration wheel: real (T) or simulated (F)
+GMIRMODE;Guiding mirror: real (T) or simulated (F)
+GFOCMODE;Guiding focuser: real (T) or simulated (F)
+TCSMODE;TCS: real (T) or simulated (F)
 WPSEL;Waveplate: half-wave (L2), quarter-wave (L4)
-WPPOS;Waveplate index position from 1 to 16, 0 if none
+WPPOS;Waveplate idx position from 1 to 16, 0 if none
 CALW;Selected element in calibration wheel
 ASEL;Savart prism analyzer selected

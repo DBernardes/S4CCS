@@ -1,9 +1,10 @@
 import os
 
 import astropy.io.fits as fits
+import numpy as np
 from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
 from utils import (fix_image_orientation, format_string, load_json,
-                   prepare_json, set_image_header, verify_file_already_exists)
+                   verify_file_already_exists, write_error_log)
 
 
 def main(night_dir, file, data, header_json):
@@ -12,24 +13,26 @@ def main(night_dir, file, data, header_json):
     file = os.path.join(night_dir, file)
 
     header_json = load_json(header_json)
-    header_json = prepare_json(header_json)
 
-    error_str = ''
-    if hdr == {}:
+    if header_json == None:
         hdr = fits.Header()
-        error_str = 'Warning: a wrong formatting was found in the header content.'
+        error_str = '[WARNNING] A wrong formatting was found for the header content.'
+        write_error_log(error_str, night_dir)
     else:
         for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
             obj = cls(header_json, night_dir)
             obj.fix_keywords()
             hdr = obj.hdr
-        data = fix_image_orientation(hdr['CHANNEL'], data)
+        try:
+            data = fix_image_orientation(hdr['CHANNEL'], data)
+        except:
+            error_str = '[WARNNING] The "CHANNEL" keyword was not found.'
+            write_error_log(error_str, night_dir)
 
     file = verify_file_already_exists(file)
-    fits.writeto(file, data, hdr, output_verify='fix')
-    return error_str
+    fits.writeto(file, data, hdr, output_verify='ignore')
+    return
 
 
-# path = os.path.join('tttrash', '20240213_s4c1_000001_zero.fitss')
 # data = np.zeros((100, 100))
-# save_image(path, data, header_json)
+# main(r'EEE:\images\todayy', '20240213_s4c1_000001_zero.fitss', data, s4gui_json)

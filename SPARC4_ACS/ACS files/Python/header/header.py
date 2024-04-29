@@ -1,4 +1,3 @@
-import logging
 import os
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
@@ -23,7 +22,7 @@ class Header(ABC):
     def __init__(self, _json, night_dir) -> None:
 
         self.kw_dataclass = self._initialize_kw_dataclass()
-        self.log_file = os.path.join(night_dir, 'error_acs.log')
+        self.log_file = os.path.join(night_dir, 'keywords_log.log')
         self.json_string = self.extract_info(_json)
 
         return
@@ -94,7 +93,7 @@ class Header(ABC):
                     self.hdr[kw] = True
                 else:
                     self._write_log_file(
-                        f'The expected values for keyword are ({off}, {on}). {val} was found.')
+                        f'The expected values for keyword are ({off}, {on}). {val} was found.', kw)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -166,6 +165,13 @@ class Header(ABC):
             self._write_log_file(
                 f'An unexpected string was found in the keyword value: {_str}', kw)
 
+    def reset_header(self):
+        for kw in self.hdr.keys():
+            self.hdr[kw] = ''
+
+    def return_empty_header(self):
+        return fits.Header(cards)
+
 
 class Focuser(Header):
 
@@ -214,7 +220,7 @@ class ICS(Header):
             ("ICSVRSN", "ICSVRSN", str),
         ]
         idx_in_dict = {'WPSEL': {'OFF': 'None', 'L/2': 'L2', 'L/4': 'L4'},
-                       'CALW': {'NONE': 'None', 'POLARIZER': 'POLARIZER', 'DEPOLARIZER': 'DEPOLARIZER'}}
+                       }
         to_float_kws = ['GMIR', 'GFOC']
         to_bool_with_condition = {'WPROMODE': ('SIMULATED', 'ACTIVE'),
                                   'WPSEMODE': ('SIMULATED', 'ACTIVE'),
@@ -237,19 +243,36 @@ class ICS(Header):
         self._convert_to_bool_with_condition()
         self._write_any_string()
         self._write_WPPOS()
+        self._write_CALW()
 
     def _write_WPPOS(self):
         try:
             val = self.json_string['WPPOS']
             if 'NONE' in val:
-                self.hdr['WPPOS'] = 'None'
+                self.hdr['WPPOS'] = 0
             elif 'WP' in val:
                 self.hdr['WPPOS'] = int(val[2:])
             else:
                 self._write_log_file(
-                    f'The expected values for keyword are (NONE, WP1, ..., WP16). {val} was found.')
+                    f'The expected values for keyword are (NONE, WP1, ..., WP16). {val} was found.', 'WPPOS')
         except Exception as e:
             self._write_log_file(repr(e), 'WPPOS')
+
+    def _write_CALW(self):
+        try:
+            val = self.json_string['CALW']
+            expected_values = ['POLARIZER',
+                               'DEPOLARIZER', 'NONE', 'PINHOLE', 'POS5']
+            if val in expected_values:
+                self.hdr['CALW'] = val
+                if self.hdr['CALW'] == 'NONE':
+                    self.hdr['CALW'] = 'None'
+            else:
+                self._write_log_file(
+                    f'The expected values for keyword are {expected_values}. {val} was found.', 'CALW')
+        except Exception as e:
+            self._write_log_file(repr(e), 'CALW')
+        return
 
 
 class TCS(Header):
@@ -365,11 +388,12 @@ class CCD(Header):
             'VSHIFT': [0.6, 1.13, 2.2, 4.33],
             'PREAMP': ['Gain 1', 'Gain 2'], }
         to_bool_kws = ['COOLER', 'FRAMETRF']
-        to_float_kws = ['EXPTIME', 'CCDTEMP', 'TGTEMP']
+        to_float_kws = ['EXPTIME']
         to_int_kws = ['VBIN', 'HBIN', 'FINALCOL', 'FINALLIN', 'INITCOL',
-                      'INITLIN', 'FRAMEIND', 'CCDSERN', 'EMGAIN', 'NFRAMES', 'CHANNEL', ]
+                      'INITLIN', 'FRAMEIND', 'CCDSERN', 'EMGAIN', 'NFRAMES', 'CHANNEL', 'CCDTEMP', 'TGTEMP']
         write_predefined_str = {'TEMPST': {
-            'TEMPERATURE_OFF', 'TEMPERATURE_STABILIZED', 'TEMPERATURE_NOT_STABILIZED'}}
+            'TEMPERATURE_OFF', 'TEMPERATURE_NOT_REACHED', 'TEMPERATURE_NOT_STABILIZED', 'TEMPERATURE_STABILIZED'
+        }}
         write_any_str = ['DATE-OBS', 'UTDATE', 'UTTIME']
 
         return Keywords_Dataclass(keywords=keywords,
@@ -390,10 +414,24 @@ class CCD(Header):
         self._write_any_string()
         self._write_predefined_string()
         self._write_READRATE()
-        idx = self.find_index_tab()
-        self.hdr['GAIN'] = gains[f"{self.hdr['CCDSERN']}"][idx]
-        self.hdr['RDNOISE'] = read_noise[f"{self.hdr['CCDSERN']}"][idx]
+        self._write_ccd_gain()
+        self._write_read_noise()
+
         return
+
+    def _write_read_noise(self):
+        try:
+            idx = self.find_index_tab()
+            self.hdr['RDNOISE'] = read_noise[f"{self.hdr['CCDSERN']}"][idx]
+        except Exception as e:
+            self._write_log_file(repr(e), 'RDNOISE')
+
+    def _write_ccd_gain(self):
+        try:
+            idx = self.find_index_tab()
+            self.hdr['GAIN'] = gains[f"{self.hdr['CCDSERN']}"][idx]
+        except Exception as e:
+            self._write_log_file(repr(e), 'GAIN')
 
     def find_index_tab(self):
         json_string = self.json_string
@@ -404,10 +442,10 @@ class CCD(Header):
         return index
 
     def _write_READRATE(self):
-        _list = [30., 20., 10., 1.]
-        if self.json_string['EMMODE'] == 1:
-            _list = [1., 0.1]
         try:
+            _list = [30., 20., 10., 1.]
+            if self.json_string['EMMODE'] == 1:
+                _list = [1., 0.1]
             self.hdr['READRATE'] = _list[self.json_string['READRATE']]
         except Exception as e:
             self._write_log_file(repr(e), 'READRATE')
@@ -434,7 +472,11 @@ class General_KWs(Header):
             'OBSLAT': -22.534,
             'OBSALT': 1864.0,
             'EQUINOX': 2000.0,
-            'INSTRUME': 'SPARC4'}
+            'INSTRUME': 'SPARC4',
+            'SIMPLE': True,
+            'BSCALE': 1,
+            'BZERO': 32768,
+            'BITPIX': 16}
         return Keywords_Dataclass(keywords=keywords,
                                   replace_empty_kws=replace_empty_kws,
                                   to_bool_kws=to_bool_kw,
@@ -444,14 +486,20 @@ class General_KWs(Header):
         self._replace_empty_str()
         self._write_any_string()
         self._convert_to_boolean()
-        try:
-            self.hdr['CYCLIND'] += 1
-        except Exception as e:
-            self._write_log_file(repr(e), 'CYCLIND')
+        self._write_CYCLIND()
+        self._write_SEQINDEX()
+
+    def _write_SEQINDEX(self):
         try:
             self.hdr['SEQINDEX'] += 1
         except Exception as e:
             self._write_log_file(repr(e), 'SEQINDEX')
+
+    def _write_CYCLIND(self):
+        try:
+            self.hdr['CYCLIND'] += 1
+        except Exception as e:
+            self._write_log_file(repr(e), 'CYCLIND')
 
 
 @dataclass
