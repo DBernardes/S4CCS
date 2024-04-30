@@ -17,6 +17,7 @@
 				<Item Name="preamp_gains.csv" Type="Document" URL="../ACS files/Python/csvs/preamp_gains.csv"/>
 				<Item Name="read_noises.csv" Type="Document" URL="../ACS files/Python/csvs/read_noises.csv"/>
 				<Item Name="readout_times.csv" Type="Document" URL="../ACS files/Python/csvs/readout_times.csv"/>
+				<Item Name="limit_values_parameters.csv" Type="Document" URL="../ACS files/Python/csvs/limit_values_parameters.csv"/>
 			</Item>
 			<Item Name="header" Type="Folder">
 				<Item Name="__init__.py" Type="Document" URL="../ACS files/Python/header/__init__.py"/>
@@ -84,10 +85,10 @@
 		<Item Name="Header content.lvclass" Type="LVClass" URL="../Header content/Header content.lvclass"/>
 		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
-		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
-		<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		<Item Name="Log File.lvclass" Type="LVClass" URL="../Log File/Log File.lvclass"/>
 		<Item Name="Error log.lvclass" Type="LVClass" URL="../Error log/Error log.lvclass"/>
+		<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
+		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="SetCameraStatusEnable.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCameraStatusEnable.vi"/>
 		<Item Name="GetCapabilities.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCapabilities.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
