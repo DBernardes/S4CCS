@@ -60,7 +60,6 @@
 			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
 			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
 			<Item Name="fix_ICS_msg.vi" Type="VI" URL="../fix_ICS_msg.vi"/>
-			<Item Name="ZEROMQ_ICS_2.vi" Type="VI" URL="../ZEROMQ_ICS_2.vi"/>
 		</Item>
 		<Item Name="zeroqmq" Type="Folder">
 			<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
@@ -106,7 +105,6 @@
 				<Item Name="StartAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/StartAcquisition.vi"/>
 				<Item Name="GetStatus.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetStatus.vi"/>
 				<Item Name="AbortAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/AbortAcquisition.vi"/>
-				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
 				<Item Name="Add ECO For DLL.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Add ECO For DLL.vi"/>
 				<Item Name="Error Code Offset global.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Error Code Offset global.vi"/>
 				<Item Name="Get Error Source.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/Get Error Source.vi"/>
@@ -150,6 +148,7 @@
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 				<Item Name="GetCameraEventStatus.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraEventStatus.vi"/>
 				<Item Name="GetImages.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetImages.vi"/>
+				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
