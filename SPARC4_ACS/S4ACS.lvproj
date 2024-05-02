@@ -58,7 +58,7 @@
 				<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../CH4_ZEROMQ_PULL.vi"/>
 				<Item Name="CH1_ZEROMQ_PULL.vi" Type="VI" URL="../CH1_ZEROMQ_PULL.vi"/>
 				<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ZEROMQ_FOCUSER.vi"/>
-				<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ZEROMQ_ICS.vi"/>
+				<Item Name="ZEROMQ_S4ICS.vi" Type="VI" URL="../ZEROMQ_S4ICS.vi"/>
 				<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ZEROMQ_S4GUI.vi"/>
 				<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
 				<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
