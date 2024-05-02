@@ -33,33 +33,43 @@
 			<Item Name="ACS_version.txt" Type="Document" URL="../ACS files/Initialization/ACS_version.txt"/>
 		</Item>
 		<Item Name="Comm" Type="Folder">
-			<Item Name="publish_C1_ACS_status.vi" Type="VI" URL="../publish_C1_ACS_status.vi"/>
-			<Item Name="publish_C2_ACS_status.vi" Type="VI" URL="../publish_C2_ACS_status.vi"/>
-			<Item Name="publish_C3_ACS_status.vi" Type="VI" URL="../publish_C3_ACS_status.vi"/>
-			<Item Name="publish_C4_ACS_status.vi" Type="VI" URL="../publish_C4_ACS_status.vi"/>
-			<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
-			<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH1_Comm_ZEROMQ.vi" Type="VI" URL="../CH1_Comm_ZEROMQ.vi"/>
-			<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
-			<Item Name="CH1_ZEROMQ_PULL.vi" Type="VI" URL="../CH1_ZEROMQ_PULL.vi"/>
-			<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH2_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../CH2_Save_Header_Python.vi"/>
-			<Item Name="CH2_ZEROMQ_PULL.vi" Type="VI" URL="../CH2_ZEROMQ_PULL.vi"/>
-			<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH3_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
-			<Item Name="CH3_ZEROMQ_PULL.vi" Type="VI" URL="../CH3_ZEROMQ_PULL.vi"/>
-			<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
-			<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
-			<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../CH4_ZEROMQ_PULL.vi"/>
-			<Item Name="FWCS_Stream.vi" Type="VI" URL="../FWCS_Stream.vi"/>
-			<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../FWCS_TCPIP.vi"/>
-			<Item Name="TCS_Stream.vi" Type="VI" URL="../TCS_Stream.vi"/>
+			<Item Name="Stream" Type="Folder">
+				<Item Name="CH1_Comm_Stream.vi" Type="VI" URL="../CH1_Comm_Stream.vi"/>
+				<Item Name="FWCS_Stream.vi" Type="VI" URL="../FWCS_Stream.vi"/>
+				<Item Name="TCS_Stream.vi" Type="VI" URL="../TCS_Stream.vi"/>
+			</Item>
+			<Item Name="ACS status" Type="Folder">
+				<Item Name="publish_C1_ACS_status.vi" Type="VI" URL="../publish_C1_ACS_status.vi"/>
+				<Item Name="publish_C2_ACS_status.vi" Type="VI" URL="../publish_C2_ACS_status.vi"/>
+				<Item Name="publish_C3_ACS_status.vi" Type="VI" URL="../publish_C3_ACS_status.vi"/>
+				<Item Name="publish_C4_ACS_status.vi" Type="VI" URL="../publish_C4_ACS_status.vi"/>
+			</Item>
+			<Item Name="TCPIP" Type="Folder">
+				<Item Name="CH1_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH1_Comm_TCPIP_NEW.vi"/>
+				<Item Name="CH2_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH2_Comm_TCPIP_NEW.vi"/>
+				<Item Name="CH3_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH3_Comm_TCPIP_NEW.vi"/>
+				<Item Name="CH4_Comm_TCPIP_NEW.vi" Type="VI" URL="../CH4_Comm_TCPIP_NEW.vi"/>
+				<Item Name="FWCS_TCPIP.vi" Type="VI" URL="../FWCS_TCPIP.vi"/>
+			</Item>
+			<Item Name="zeroMQ" Type="Folder">
+				<Item Name="CH1_Comm_ZEROMQ.vi" Type="VI" URL="../CH1_Comm_ZEROMQ.vi"/>
+				<Item Name="CH2_ZEROMQ_PULL.vi" Type="VI" URL="../CH2_ZEROMQ_PULL.vi"/>
+				<Item Name="CH3_ZEROMQ_PULL.vi" Type="VI" URL="../CH3_ZEROMQ_PULL.vi"/>
+				<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../CH4_ZEROMQ_PULL.vi"/>
+				<Item Name="CH1_ZEROMQ_PULL.vi" Type="VI" URL="../CH1_ZEROMQ_PULL.vi"/>
+				<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ZEROMQ_FOCUSER.vi"/>
+				<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ZEROMQ_ICS.vi"/>
+				<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ZEROMQ_S4GUI.vi"/>
+				<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
+				<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
+			</Item>
+			<Item Name="Save Header VI" Type="Folder">
+				<Item Name="CH1_Save_Header_Python.vi" Type="VI" URL="../CH1_Save_Header_Python.vi"/>
+				<Item Name="CH2_Save_Header_Python.vi" Type="VI" URL="../CH2_Save_Header_Python.vi"/>
+				<Item Name="CH3_Save_Header_Python.vi" Type="VI" URL="../CH3_Save_Header_Python.vi"/>
+				<Item Name="CH4_Save_Header_Python.vi" Type="VI" URL="../CH4_Save_Header_Python.vi"/>
+			</Item>
 			<Item Name="TCS_VISA.vi" Type="VI" URL="../TCS_VISA.vi"/>
-			<Item Name="ZEROMQ_FOCUSER.vi" Type="VI" URL="../ZEROMQ_FOCUSER.vi"/>
-			<Item Name="ZEROMQ_ICS.vi" Type="VI" URL="../ZEROMQ_ICS.vi"/>
-			<Item Name="ZEROMQ_S4GUI.vi" Type="VI" URL="../ZEROMQ_S4GUI.vi"/>
-			<Item Name="ZEROMQ_TCS.vi" Type="VI" URL="../ZEROMQ_TCS.vi"/>
-			<Item Name="ZEROMQ_WS.vi" Type="VI" URL="../ZEROMQ_WS.vi"/>
 			<Item Name="fix_ICS_msg.vi" Type="VI" URL="../fix_ICS_msg.vi"/>
 		</Item>
 		<Item Name="zeroqmq" Type="Folder">
@@ -90,6 +100,7 @@
 		<Item Name="Keywords Log File.lvclass" Type="LVClass" URL="../Keywords Log File/Keywords Log File.lvclass"/>
 		<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
+		<Item Name="Server.lvclass" Type="LVClass" URL="../Server/Server.lvclass"/>
 		<Item Name="SetCameraStatusEnable.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCameraStatusEnable.vi"/>
 		<Item Name="GetCapabilities.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCapabilities.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
