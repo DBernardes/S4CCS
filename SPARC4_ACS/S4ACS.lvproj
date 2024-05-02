@@ -87,6 +87,7 @@
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
 		<Item Name="Log File.lvclass" Type="LVClass" URL="../Log File/Log File.lvclass"/>
 		<Item Name="Error log.lvclass" Type="LVClass" URL="../Error log/Error log.lvclass"/>
+		<Item Name="Keywords Log File.lvclass" Type="LVClass" URL="../Keywords Log File/Keywords Log File.lvclass"/>
 		<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
 		<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 		<Item Name="SetCameraStatusEnable.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCameraStatusEnable.vi"/>
