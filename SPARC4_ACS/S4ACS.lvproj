@@ -87,6 +87,8 @@
 			<Item Name="Test all.vi" Type="VI" URL="../Unit tests/Test all.vi"/>
 			<Item Name="State Machine.vi" Type="VI" URL="../Unit tests/State Machine.vi"/>
 			<Item Name="RW State Machine.vi" Type="VI" URL="../Unit tests/RW State Machine.vi"/>
+			<Item Name="RW RxTx.vi" Type="VI" URL="../Unit tests/RW RxTx.vi"/>
+			<Item Name="RxTx.vi" Type="VI" URL="../Unit tests/RxTx.vi"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
