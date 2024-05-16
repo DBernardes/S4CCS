@@ -79,21 +79,21 @@ class Header(ABC):
     def _convert_to_boolean(self):
         for kw in self.kw_dataclass.to_bool_kws:
             try:
-                self.hdr[kw] = bool(self.json_string[kw])
+                val = self.json_string[kw]
+                self.hdr[kw] = bool(val)                
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _convert_to_bool_with_condition(self):
         for kw, (off, on) in self.kw_dataclass.to_bool_with_condition.items():
             try:
-                val = self.json_string[kw]
+                val = self.json_string[kw]                
                 if val == off:
                     self.hdr[kw] = False
                 elif val == on:
                     self.hdr[kw] = True
                 else:
-                    self._write_log_file(
-                        f'The expected values for keyword are ({off}, {on}). {val} was found.', kw)
+                    pass                                 
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -123,7 +123,7 @@ class Header(ABC):
                 self._write_log_file(repr(e), hdr_kw)
         return new_json
 
-    def _write_any_string(self):
+    def _write_any_value(self):
         for kw in self.kw_dataclass.write_any_str:
             try:
                 self.hdr[kw] = self.json_string[kw]
@@ -158,7 +158,7 @@ class Header(ABC):
     def _check_type(self, kw, val, _type):
         if not isinstance(val, _type):
             self._write_log_file(
-                f'Keyword value is not an instance of {repr(_type)}: {val}', kw)
+                f'Keyword value is not an instance of {repr(_type)}: "{val}" was found.', kw)
 
     def _search_unwanted_kw(self, kw, _str):
         if _str in self.json_string[kw]:
@@ -241,7 +241,7 @@ class ICS(Header):
         self._convert_to_float()
         self._substitute_idx_in_dict()
         self._convert_to_bool_with_condition()
-        self._write_any_string()
+        self._write_any_value()
         self._write_WPPOS()
         self._write_CALW()
 
@@ -269,7 +269,7 @@ class ICS(Header):
                     self.hdr['CALW'] = 'None'
             else:
                 self._write_log_file(
-                    f'The expected values for keyword are {expected_values}. {val} was found.', 'CALW')
+                    f'The expected values for this keyword are {expected_values}. "{val}" was found.', 'CALW')
         except Exception as e:
             self._write_log_file(repr(e), 'CALW')
         return
@@ -292,7 +292,7 @@ class TCS(Header):
 
     def fix_keywords(self):
         self._convert_to_float()
-        self._write_any_string()
+        self._write_any_value()
         return
 
     def _write_TCSDATE(self):
@@ -343,7 +343,7 @@ class S4GUI(Header):
 
     def fix_keywords(self):
         self._convert_to_boolean()
-        self._write_any_string()
+        self._write_any_value()
         self._write_predefined_string()
         return
 
@@ -383,7 +383,7 @@ class CCD(Header):
                        'ACQMODE': {1: 'Single Scan', 2: 'Accumulate', 3: "Kinetic"}, }
         idx_in_list = {
             'EMMODE': ['Electron Multiplying', 'Conventional'],
-            'SHUTTER': ['Open', 'Closed', 'Auto'],
+            'SHUTTER': ['Auto', 'Open', 'Closed'],
             'VCLKAMP': ['Normal', '+1', '+2', '+3', '+4'],
             'VSHIFT': [0.6, 1.13, 2.2, 4.33],
             'PREAMP': ['Gain 1', 'Gain 2'], }
@@ -411,7 +411,7 @@ class CCD(Header):
         self._convert_to_int()
         self._subs_idx_in_list()
         self._substitute_idx_in_dict()
-        self._write_any_string()
+        self._write_any_value()
         self._write_predefined_string()
         self._write_READRATE()
         self._write_ccd_gain()
@@ -464,7 +464,7 @@ class General_KWs(Header):
             ('ACSMODE', 'ACSMODE', bool),
         ]
 
-        write_any_str = ['FILENAME', 'ACSVRSN']
+        write_any_str = ['FILENAME', 'ACSVRSN', 'NSEQ', 'NCYCLES']
         to_bool_kw = ['ACSMODE']
         replace_empty_kws = {
             'NAXIS': 2,
@@ -484,20 +484,20 @@ class General_KWs(Header):
 
     def fix_keywords(self):
         self._replace_empty_str()
-        self._write_any_string()
+        self._write_any_value()
         self._convert_to_boolean()
         self._write_CYCLIND()
         self._write_SEQINDEX()
 
     def _write_SEQINDEX(self):
         try:
-            self.hdr['SEQINDEX'] += 1
+            self.hdr['SEQINDEX'] = self.json_string['SEQINDEX'] + 1
         except Exception as e:
             self._write_log_file(repr(e), 'SEQINDEX')
 
     def _write_CYCLIND(self):
         try:
-            self.hdr['CYCLIND'] += 1
+            self.hdr['CYCLIND'] = self.json_string['CYCLIND'] + 1
         except Exception as e:
             self._write_log_file(repr(e), 'CYCLIND')
 
