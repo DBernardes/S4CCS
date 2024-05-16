@@ -23,6 +23,7 @@ def main(night_dir, file, data, header_json):
             obj = cls(header_json, night_dir)
             obj.fix_keywords()
             hdr = obj.hdr
+        # obj.reset_header()
         try:
             data = fix_image_orientation(hdr['CHANNEL'], data)
         except:

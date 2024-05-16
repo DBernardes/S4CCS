@@ -259,8 +259,8 @@ class ICS(Header):
             self._write_log_file(repr(e), 'WPPOS')
 
     def _write_CALW(self):
+        val = self.json_string['CALW']
         try:
-            val = self.json_string['CALW']
             expected_values = ['POLARIZER',
                                'DEPOLARIZER', 'NONE', 'PINHOLE', 'POS5']
             if val in expected_values:
@@ -268,6 +268,8 @@ class ICS(Header):
                 if self.hdr['CALW'] == 'NONE':
                     self.hdr['CALW'] = 'None'
             else:
+                if val == 'OFF':
+                    self.hdr['CALW'] = 'None'
                 self._write_log_file(
                     f'The expected values for this keyword are {expected_values}. "{val}" was found.', 'CALW')
         except Exception as e:
@@ -282,7 +284,9 @@ class TCS(Header):
                     ('DECACQUIS', 'DEC', str),
                     ('HOURANGLE', 'TCSHA', str),
                     ('GUIDEANG', 'INSTROT', float),
-                    ('AIRMASS', 'AIRMASS', float)]
+                    ('AIRMASS', 'AIRMASS', float),
+                    ('DATE', 'DATE', str),
+                    ('TIME', 'TIME', str)]
         to_float_kws = ['AIRMASS', 'INSTROT']
         write_any_str = ['RA', 'DEC', 'TCSHA']
 
@@ -293,6 +297,7 @@ class TCS(Header):
     def fix_keywords(self):
         self._convert_to_float()
         self._write_any_value()
+        self._write_TCSDATE()
         return
 
     def _write_TCSDATE(self):
@@ -325,17 +330,16 @@ class S4GUI(Header):
             ('SYNCMODE', 'SYNCMODE', str),
             ('INSTMODE', 'INSTMODE', str),
             ('OBSTYPE', 'OBSTYPE', str),
-            ('COMMENT', 'COMMENT', str)]
+            ('COMMENT', 'COMMENT', str),
+            ('GUIVRSN', 'GUIVRSN', str)]
         to_bool_kw = ['CHANNEL1', 'CHANNEL2',
                       'CHANNEL3', 'CHANNEL4', 'TCSMODE']
-        write_any_str = ['OBJECT', 'OBSERVER', 'PROJID']
+        write_any_str = ['OBJECT', 'OBSERVER', 'PROJID', 'GUIVRSN']
         write_predefined_str = {'FILTER': ['CLEAR', 'B', 'V', 'R', 'I'],
                                 'CTRLINTE': ['S4GUI', 'S4GEI'],
                                 'SYNCMODE': ['SYNC', 'ASYNC'],
                                 'INSTMODE': ['POL', 'PHOT'],
-                                'OBSTYPE': ['ZERO', 'DARK', 'FLAT', 'OBJECT', 'FOCUS']}
-        # replace_unknow_kws = {'OBJECT': '', 'OBSERVER': '',
-        #                     'PROJID': '', 'TCSMODE': False, 'FILTER': 'CLEAR', 'GUIVRSN': 'v0.0.0'}
+                                'OBSTYPE': ['ZERO', 'DARK', 'FLAT', 'OBJECT', 'FOCUS']}        
         return Keywords_Dataclass(keywords=keywords,
                                   to_bool_kws=to_bool_kw,
                                   write_any_str=write_any_str,
