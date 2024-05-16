@@ -328,7 +328,7 @@ class S4GUI(Header):
             ('COMMENT', 'COMMENT', str)]
         to_bool_kw = ['CHANNEL1', 'CHANNEL2',
                       'CHANNEL3', 'CHANNEL4', 'TCSMODE']
-        write_any_str = ['OBJECT', 'OBSERVER', 'PROJID', 'COMMENT']
+        write_any_str = ['OBJECT', 'OBSERVER', 'PROJID']
         write_predefined_str = {'FILTER': ['CLEAR', 'B', 'V', 'R', 'I'],
                                 'CTRLINTE': ['S4GUI', 'S4GEI'],
                                 'SYNCMODE': ['SYNC', 'ASYNC'],
@@ -341,10 +341,21 @@ class S4GUI(Header):
                                   write_any_str=write_any_str,
                                   write_predefined_str=write_predefined_str)
 
+    def _write_COMMENT(self):
+        kw = 'COMMENT'
+        try:
+            if kw in self.hdr.keys():
+                del self.hdr[kw]
+            self.hdr[kw] = self.json_string[kw]
+        except Exception as e:
+            self._write_log_file(repr(e), kw)
+        return
+
     def fix_keywords(self):
         self._convert_to_boolean()
         self._write_any_value()
         self._write_predefined_string()
+        self._write_COMMENT()
         return
 
 

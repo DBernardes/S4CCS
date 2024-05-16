@@ -149,7 +149,7 @@ WS_json = {"broker": "Weather160", "version": "1.0.0", "date": "21/02/24", "hour
            "ISSRecept": "100.0", "arcInt": "5"}
 
 s4gui_json = {"OBSERVER": "AAA", "OBJECT": "BBB", "CTRLINTE": "S4GUI", "PROJID": "CCC", "SYNCMODE": "SYNC", "INSTMODE": "POL", "FILTER": "CLEAR",
-              "OBSTYPE": "ZERO", "CHANNEL 1": True, "CHANNEL 2": False, "CHANNEL 3": False, "CHANNEL 4": False, "TCSMODE": True, "COMMENT": "DDD", "BROKER": "S4GUI"}
+              "OBSTYPE": "ZERO", "CHANNEL 1": True, "CHANNEL 2": False, "CHANNEL 3": False, "CHANNEL 4": False, "TCSMODE": True, "COMMENT": "", "BROKER": "S4GUI"}
 general_kw = {"FILENAME": "20240426_s4c1_000003.fits", "SEQINDEX": 0,
               "NCYCLES": 1, "NSEQ": 1, 'CYCLIND': 1, "ACSVRSN": "v1.46.14", "ACSMODE": False, }
 ccd_kw = {"FRAMEIND": 1, "CCDTEMP": 20, "TEMPST": "TEMPERATURE_OFF", "CCDSERN": 9914, "PREAMP": 0, "READRATE": 0, "EMGAIN": 2, "VSHIFT": 3, "FRAMETRF": True, "VCLKAMP": 0, "ACQMODE": 3, "EMMODE": 1, "SHUTTER": 2, "TRIGGER": 0, "VBIN": 1, "INITLIN": 1,
