@@ -73,6 +73,7 @@ class Header(ABC):
         for kw, dict in self.kw_dataclass.idx_in_dict.items():
             try:
                 self.hdr[kw] = dict[self.json_string[kw]]
+                self._write_log_file(f'The expected values for this keyword are ({dict.values()}). "{self.json_string[kw]}" was found.', kw)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -101,6 +102,7 @@ class Header(ABC):
         for kw, _list in self.kw_dataclass.idx_in_list.items():
             try:
                 self.hdr[kw] = _list[self.json_string[kw]]
+                self._write_log_file(f'The expected values for this keyword are ({_list}). "{self.json_string[kw]}" was found.', kw)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -158,7 +160,7 @@ class Header(ABC):
     def _check_type(self, kw, val, _type):
         if not isinstance(val, _type):
             self._write_log_file(
-                f'Keyword value is not an instance of {repr(_type)}: "{val}" was found.', kw)
+                f'Keyword value "{val}" is not an instance of {repr(_type)}.', kw)
 
     def _search_unwanted_kw(self, kw, _str):
         if _str in self.json_string[kw]:
@@ -259,8 +261,8 @@ class ICS(Header):
             self._write_log_file(repr(e), 'WPPOS')
 
     def _write_CALW(self):
-        val = self.json_string['CALW']
         try:
+            val = self.json_string['CALW']
             expected_values = ['POLARIZER',
                                'DEPOLARIZER', 'NONE', 'PINHOLE', 'POS5']
             if val in expected_values:
@@ -337,9 +339,9 @@ class S4GUI(Header):
         write_any_str = ['OBJECT', 'OBSERVER', 'PROJID', 'GUIVRSN']
         write_predefined_str = {'FILTER': ['CLEAR', 'B', 'V', 'R', 'I'],
                                 'CTRLINTE': ['S4GUI', 'S4GEI'],
-                                'SYNCMODE': ['SYNC', 'ASYNC'],
-                                'INSTMODE': ['POL', 'PHOT'],
-                                'OBSTYPE': ['ZERO', 'DARK', 'FLAT', 'OBJECT', 'FOCUS']}        
+                                'SYNCMODE': ['SYNC', 'ASYNC'],                                
+                                'OBSTYPE': ['ZERO', 'DARK', 'FLAT', 'OBJECT', 'FOCUS'],
+                                'INSTMODE': ['PHOT', 'POLAR']}        
         return Keywords_Dataclass(keywords=keywords,
                                   to_bool_kws=to_bool_kw,
                                   write_any_str=write_any_str,
