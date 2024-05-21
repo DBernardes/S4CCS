@@ -217,7 +217,7 @@ class ICS(Header):
             ("ASEL_MODE", "ANMODE", bool),
             ("GMIR", "GMIR", float),
             ("GMIR_MODE", "GMIRMODE", bool),
-            ("GFOC", "GFOC", bool),
+            ("GFOC", "GFOC", float),
             ("GFOC_MODE", "GFOCMODE", bool),
             ("ICSVRSN", "ICSVRSN", str),
         ]
