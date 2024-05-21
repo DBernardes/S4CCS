@@ -25,10 +25,9 @@ def main(night_dir, file, data, header_json):
             hdr = obj.hdr
         # obj.reset_header()
         try:
-            data = fix_image_orientation(hdr['CHANNEL'], data)
-        except:
-            error_str = '[WARNNING] The "CHANNEL" keyword was not found.'
-            write_error_log(error_str, night_dir)
+            data = fix_image_orientation(hdr['CHANNEL'], hdr['EMMODE'], data)
+        except Exception as e:            
+            write_error_log(repr(e), night_dir)
 
     file = verify_file_already_exists(file)
     fits.writeto(file, data, hdr, output_verify='ignore')

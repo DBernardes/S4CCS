@@ -59,12 +59,18 @@ def load_json(header_json):
         return None
 
 
-def fix_image_orientation(channel, data):
-    setup = {1: [False, True, 2],
+def fix_image_orientation(channel, em_mode, data):
+    setup = {'Conventional': 
+             {1: [False, True, 2],
              2: [False, False, 0],
              3: [True, False, -1],
-             4: [False, False, -1]}
-    invert_x, invert_y, nrot = setup[channel]
+             4: [False, False, -1]},
+             'Electron Multiplying': 
+             {1: [True, True, 2],
+             2: [True, False, 0],
+             3: [True, True, -1],
+             4: [False, True, -1]}}
+    invert_x, invert_y, nrot = setup[em_mode][channel]
     return rotate_image(data, invert_x, invert_y, nrot)
 
 
