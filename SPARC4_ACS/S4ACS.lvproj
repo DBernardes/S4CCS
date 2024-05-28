@@ -84,11 +84,19 @@
 			<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcr120.dll"/>
 		</Item>
 		<Item Name="Unit Tests" Type="Folder">
+			<Item Name="R/W" Type="Folder">
+				<Item Name="RW State Machine.vi" Type="VI" URL="../Unit tests/RW State Machine.vi"/>
+				<Item Name="RW RxTx.vi" Type="VI" URL="../Unit tests/RW RxTx.vi"/>
+				<Item Name="RW Log File.vi" Type="VI" URL="../Unit tests/RW Log File.vi"/>
+				<Item Name="RW Error Log File.vi" Type="VI" URL="../Unit tests/RW Error Log File.vi"/>
+				<Item Name="RW Keywords Log File.vi" Type="VI" URL="../Unit tests/RW Keywords Log File.vi"/>
+			</Item>
 			<Item Name="Test all.vi" Type="VI" URL="../Unit tests/Test all.vi"/>
 			<Item Name="State Machine.vi" Type="VI" URL="../Unit tests/State Machine.vi"/>
-			<Item Name="RW State Machine.vi" Type="VI" URL="../Unit tests/RW State Machine.vi"/>
-			<Item Name="RW RxTx.vi" Type="VI" URL="../Unit tests/RW RxTx.vi"/>
 			<Item Name="RxTx.vi" Type="VI" URL="../Unit tests/RxTx.vi"/>
+			<Item Name="Keywords Log file.vi" Type="VI" URL="../Unit tests/Keywords Log file.vi"/>
+			<Item Name="Log file.vi" Type="VI" URL="../Unit tests/Log file.vi"/>
+			<Item Name="Error log.vi" Type="VI" URL="../Unit tests/Error log.vi"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
