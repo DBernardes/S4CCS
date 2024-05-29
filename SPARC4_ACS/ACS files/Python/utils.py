@@ -54,9 +54,42 @@ def load_json(header_json):
             if kw in header_json.keys():
                 del header_json[kw]
         header_json = {k.upper(): v for k, v in header_json.items()}        
+        header_json = fix_ccd_parameters(header_json)        
         return header_json
     except:
         return None
+    
+def fix_ccd_parameters(header_json):
+    try:
+        trigger_modes = {0: 'Internal', 6:'External'}
+        acq_modes = {1: 'Single Scan', 3: 'Kinetics'}
+        em_modes = ['Electron Multiplying','Conventional']
+        shutter_modes = ['Auto','Open', 'Closed']
+        vclock_modes = ['Normal','+1','+2','+3','+4']
+        preamp_modes = ['Gain 1', 'Gain 2']
+        vshift_modes = [0.6,1.13,2.2,4.33]
+        header_json['READRATE'] = write_READRATE(header_json)
+        header_json['TRIGGER'] = trigger_modes[header_json['TRIGGER']]
+        header_json['ACQMODE'] = acq_modes[header_json['ACQMODE']]
+        header_json['EMMODE'] = em_modes[header_json['EMMODE']]
+        header_json['SHUTTER'] = shutter_modes[header_json['SHUTTER']]
+        header_json['VCLKAMP'] = vclock_modes[header_json['VCLKAMP']]
+        header_json['PREAMP'] = preamp_modes[header_json['PREAMP']]   
+        header_json['VSHIFT'] = vshift_modes[header_json['VSHIFT']]   
+        header_json['COOLER'] = header_json['COOLER'] == 1
+        header_json['SEQINDEX'] = header_json['SEQINDEX'] + 1
+        header_json['CYCLIND'] = header_json['CYCLIND'] + 1
+    except:
+        pass
+                       
+    return header_json
+
+def write_READRATE(json_string):        
+            _list = [30., 20., 10., 1.]
+            if json_string['EMMODE'] == 1:
+                _list = [1., 0.1]
+            return  _list[json_string['READRATE']]
+        
 
 
 def fix_image_orientation(channel, em_mode, data):
@@ -170,4 +203,4 @@ ics_kw = {"WPROT": "WP8", "WPROT_MODE": "SIMULATED", "WPSEL": "L/2", "WPSEL_MODE
 
 everthing_json = {"CYCLIND":0,"FILENAME":"20240515_s4c1_000008_test1.fits","FRAMEIND":1,"CCDTEMP":-60,"TEMPST":"TEMPERATURE_STABILIZED","CCDSERN":9914,"SEQINDEX":0,"WPPOS":0,"PREAMP":0,"READRATE":0,"EMGAIN":2,"VSHIFT":3,"FRAMETRF":True,"VCLKAMP":0,"ACQMODE":3,"EMMODE":1,"SHUTTER":2,"TRIGGER":0,"VBIN":1,"INITLIN":1,"INITCOL":1,"FINALLIN":1024,"FINALCOL":1024,"HBIN":1,"EXPTIME":1.2000000476837158203,"NFRAMES":1,"NCYCLES":1,"NSEQ":1,"TGTEMP":-60,"COOLER":1,"ACSVRSN":"v1.46.14","CHANNEL":1,"ACSMODE":True,"OBSERVER":"","OBJECT":"","CTRLINTE":"S4GUI","PROJID":"","SYNCMODE":"ASYNC","INSTMODE":"PHOT","FILTER":"CLEAR","OBSTYPE":"OBJECT","CHANNEL 1":True,"CHANNEL 2":False,"CHANNEL 3":False,"CHANNEL 4":False,"TCSMODE":True,"COMMENT":"","BROKER":"S4GUI","GUIVRSN":"v. 2024.05.15","WPROT":"NONE","WPROT_MODE":"ACTIVE","WPSEL":"OFF","WPSEL_MODE":"NONE","CALW":"OFF","CALW_MODE":"ACTIVE","ASEL":"OFF","ASEL_MODE":"ACTIVE","GMIR":"0.000","GMIR_MODE":"ACTIVE","GFOC":"0.000","GFOC_MODE":"ACTIVE","broker": "TCSPD160","version": "20240131","cmd": "","objectName": "               ","raAcquis": "        ","decAcquis": "        ","epochAcquis": "","airMass": "1.001","julianDate": "2460446.24348","sideralTime": "06:24:02","hourAngle": "00:00:00","date": "15/05/24","time": "14:50:37","rightAscention": "06 24 02","declination": "-24 50 43","wsDefault": "OFF","guideStr": "15/05/24 06:24:02 06 24 02 -24 50 43","guideAng": "   0.10","guideNor": " 180.00","guideEsp": "S","guideCas": "S","guidePlaca": "0.200","statShutter": "","posCup": "","raOnTarget": False,"decOnTarget": False,"dome": False,"domeOnTarget": False,"guider": False,"mount": False,"grossMovement": False,"fineMovement": False,"objCentrado": False,"varTracking": False,"shutter": False,"absolute": True, "alarm": 0, "broker": "Focuser160", "cmd": {"clientId": 0, "clientTransactionId": 0, "clientName": "", "action": ""}, "connected": True, "controller": "Focuser160", "device": "2ndMirror", "error": "", "homing": False, "initialized": False, "isMoving": False, "maxSpeed": 500, "maxStep": 50700, "position": 0, "tempComp": False, "tempCompAvailable": False, "temperature": 0, "timestamp": "2024-05-15T14:50:48.242", "version": "1.0.0","broker": "Weather160", "version": "1.0.0", "date": "15/05/24", "hour": "14:45", "outTemp": "17.2", "hiTemp": "17.5", "lowTemp": "17.2", "outHumidity": "85", "dewOut": "14.6", "windSpeed": "6.4", "windDirection": "WSW", "windRun": "0.54", "hiSpeed": "14.5", "hiDir": "W", "windChill": "17.2", "heatIndex": "17.4", "THWIndex": "17.4", "THSWIndex": "---", "pressure": "758.1", "rain": "0.00", "rainRate": "0.0", "solarRad": "298", "solarEnergy": "2.14", "hiSolarRad": "355", "UVIndex": "1.8", "UVDose": "0.06", "hiUV": "1.8", "headDD": "0.004", "coolDD": "0.000", "inTemp": "22.1", "inHumidity": "62", "dewIn": "14.5", "inHeat": "22.1", "inEMC": "11.31", "inAirDensity": "1.1737", "2ndTemp": "---", "2ndHumidity": "---", "ET": "0.00", "leaf": "0", "windSamp": "115", "windTx": "1", "ISSRecept": "100.0", "arcInt": "5","DATE-OBS":"2024-05-15T17:50:37.609000","UTTIME":"17:50:37.609000","UTDATE":"2024-05-15"}
 
-test_json = {"CYCLIND":0,"FILENAME":"20240516_s4c1_000001.fits","FRAMEIND":1,"CCDTEMP":19,"TEMPST":"TEMPERATURE_OFF","CCDSERN":9914,"SEQINDEX":0,"WPPOS":0,"PREAMP":0,"READRATE":0,"EMGAIN":2,"VSHIFT":3,"FRAMETRF":True,"VCLKAMP":0,"ACQMODE":3,"EMMODE":1,"SHUTTER":2,"TRIGGER":0,"VBIN":1,"INITLIN":1,"INITCOL":1,"FINALLIN":1024,"FINALCOL":1024,"HBIN":1,"EXPTIME":1.5,"NFRAMES":1,"NCYCLES":1,"NSEQ":1,"TGTEMP":20,"COOLER":0,"ACSVRSN":"v1.46.14","CHANNEL":1,"ACSMODE":True,"broker": "TCSPD160","version": "20240131","cmd": "","objectName": "HR6659         ","raAcquis": "17:51:59","decAcquis": "-01:14:12","epochAcquis": "2000.0","airMass": "1.000","julianDate": "2460447.18521","sideralTime": "05:03:45","hourAngle": "00:00:00","date": "16/05/24","time": "13:26:43","rightAscention": "05 03 45","declination": "-22 32 04","wsDefault": "OFF","guideStr": "16/05/24 05:03:45 05 03 45 -22 32 04","guideAng": "   0.10","guideNor": " 180.00","guideEsp": "S","guideCas": "S","guidePlaca": "0.200","statShutter": "","posCup": "","raOnTarget": True,"decOnTarget": True,"dome": False,"domeOnTarget": True,"guider": False,"mount": False,"grossMovement": False,"fineMovement": False,"objCentrado": False,"varTracking": False,"shutter": False,"absolute": True, "alarm": 0, "broker": "Focuser160", "cmd": {"clientId": 0, "clientTransactionId": 0, "clientName": "", "action": ""}, "connected": True, "controller": "Focuser160", "device": "2ndMirror", "error": "", "homing": False, "initialized": True, "isMoving": False, "maxSpeed": 500, "maxStep": 50700, "position": 14150, "tempComp": False, "tempCompAvailable": False, "temperature": 0, "timestamp": "2024-05-16T13:26:48.243", "version": "1.0.0","DATE-OBS":"2024-05-16T16:26:44.066000","UTTIME":"16:26:44.066000","UTDATE":"2024-05-16"}
+test_json = {"CYCLIND":0,"FILENAME":"20240528_s4c1_000005.fits","FRAMEIND":1,"CCDTEMP":20,"TEMPST":"TEMPERATURE_OFF","CCDSERN":9914,"SEQINDEX":0,"WPPOS":0,"PREAMP":0,"READRATE":0,"EMGAIN":2,"VSHIFT":3,"FRAMETRF":True,"VCLKAMP":0,"ACQMODE":3,"EMMODE":1,"SHUTTER":2,"TRIGGER":0,"VBIN":1,"INITLIN":1,"INITCOL":1,"FINALLIN":1024,"FINALCOL":1024,"HBIN":1,"EXPTIME":1.5,"NFRAMES":1,"NCYCLES":1,"NSEQ":1,"TGTEMP":20,"COOLER":0,"ACSVRSN":"v1.47.2","CHANNEL":1,"ACSMODE":False,"broker": "TCSPD160","version": "20240131","cmd": "","objectName": "HR0591         ","raAcquis": "01:58:46","decAcquis": "-61:34:11","epochAcquis": "2000.0","airMass": "1.000","julianDate": "2460460.07144","sideralTime": "03:10:50","hourAngle": "-0:00:00","date": "29/05/24","time": "10:42:53","rightAscention": "03 10 50","declination": "-22 32 03","wsDefault": "OFF","guideStr": "29/05/24 03:10:50 03 10 50 -22 32 03","guideAng": "   0.10","guideNor": " 180.00","guideEsp": "S","guideCas": "S","guidePlaca": "0.200","statShutter": "","posCup": "","raOnTarget": True,"decOnTarget": True,"dome": False,"domeOnTarget": True,"guider": False,"mount": False,"grossMovement": False,"fineMovement": False,"objCentrado": False,"varTracking": False,"shutter": False,"absolute": True, "alarm": 0, "broker": "Focuser160", "cmd": {"clientId": 0, "clientTransactionId": 0, "clientName": "", "action": ""}, "connected": True, "controller": "Focuser160", "device": "2ndMirror", "error": "", "homing": False, "initialized": True, "isMoving": False, "maxSpeed": 500, "maxStep": 50700, "position": 34500, "tempComp": False, "tempCompAvailable": False, "temperature": 0, "timestamp": "2024-05-29T10:43:00.242", "version": "1.0.0","broker": "Weather160", "version": "1.0.0", "date": "29/05/24", "hour": "10:40", "outTemp": "11.4", "hiTemp": "11.4", "lowTemp": "11.3", "outHumidity": "92", "dewOut": "10.2", "windSpeed": "12.9", "windDirection": "W", "windRun": "1.07", "hiSpeed": "20.9", "hiDir": "W", "windChill": "9.8", "heatIndex": "11.6", "THWIndex": "9.9", "THSWIndex": "---", "pressure": "762.9", "rain": "0.00", "rainRate": "0.0", "solarRad": "636", "solarEnergy": "4.56", "hiSolarRad": "657", "UVIndex": "3.7", "UVDose": "0.13", "hiUV": "3.9", "headDD": "0.024", "coolDD": "0.000", "inTemp": "17.7", "inHumidity": "65", "dewIn": "11.1", "inHeat": "17.3", "inEMC": "11.97", "inAirDensity": "1.2030", "2ndTemp": "---", "2ndHumidity": "---", "ET": "0.00", "leaf": "0", "windSamp": "114", "windTx": "1", "ISSRecept": "100.0", "arcInt": "5","DATE-OBS":"2024-05-29T13:42:54.334162","UTTIME":"13:42:54.334162","UTDATE":"2024-05-29"}

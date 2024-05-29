@@ -16,7 +16,12 @@ read_noise = pd.read_csv(os.path.join('csvs', 'read_noises.csv'))
 
 allowed_kw_values = {k:v for (k,v) in zip(ss['Keyword'], ss['Allowed values'])}
 for kw,values in allowed_kw_values.items():    
-    if values != '' and keyword_types[kw] in ['interger', 'float', 'string']:
-        allowed_kw_values[kw] = allowed_kw_values[kw].split(',')
-
-print(allowed_kw_values)
+    if values != '':
+        val = allowed_kw_values[kw].split(',')
+        if 'inf' in val:            
+            val[val.index('inf')] = np.infty       
+        if keyword_types[kw] in ['integer', 'float']:
+            val  = [float(v) for v in val]
+        if keyword_types[kw] == 'boolean':
+            val  = [v == 'true' for v in val]
+        allowed_kw_values[kw] = val
