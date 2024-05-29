@@ -15,6 +15,7 @@ class Header(ABC):
 
     hdr = fits.Header(cards)
     kw_types = {'integer': int, 'boolean':bool, 'float':float, 'string':str}
+    sub_system = 'HEADER'
 
     def __init__(self, _json, night_dir) -> None:
 
@@ -119,11 +120,8 @@ class Header(ABC):
             try:
                 val = self.json_string[kw]
                 self.hdr[kw] = dict[val]
-                #? Retirar
-                self._write_log_file(f'The expected values for this keyword are ({dict.values()}). "{val}" was found.', kw)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
-
 
     def _subs_idx_in_list(self):
         for kw in self.kw_dataclass.idx_in_list:
@@ -131,12 +129,8 @@ class Header(ABC):
                 _list = allowed_kw_values[kw]
                 val = self.json_string[kw]
                 self.hdr[kw] = _list[val]
-                #? Retirar
-                self._write_log_file(f'The expected values for this keyword are ({_list}). "{val}" was found.', kw)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
-
-    
 
     def extract_info(self, _json):
         new_json = {}
@@ -194,8 +188,6 @@ class Header(ABC):
                 self._write_log_file(f'The expected values for this keyword are {a_values}. "{val}" was found.', hdr_kw)
         return
 
- 
-
     @abstractmethod
     def fix_keywords(self):
         """Fix header keywords.
@@ -206,7 +198,7 @@ class Header(ABC):
     def _write_log_file(self, message, keyword):
         with open(self.log_file, 'a') as file:
             now = str(datetime.now())
-            file.write(now + ' - ' + f'KEYWORD={keyword} - ' +
+            file.write(now + ' - ' + f'SUB-SYTEM={self.sub_system}, KEYWORD={keyword} - ' +
                        message + '\n')
 
 
@@ -226,6 +218,9 @@ class Header(ABC):
 
 class Focuser(Header):
 
+    sub_system = 'FOCUSER'
+
+
     def _initialize_kw_dataclass(self):
         keywords = ['TELFOCUS']
         to_int_kws = ['TELFOCUS']
@@ -237,6 +232,9 @@ class Focuser(Header):
 
 
 class Weather_Station(Header):
+
+    sub_system = 'WEATHER STATION'
+
 
     def _initialize_kw_dataclass(self):
         keywords = ['HUMIDITY', 'EXTTEMP','PRESSURE']
@@ -251,6 +249,9 @@ class Weather_Station(Header):
 
 
 class ICS(Header):
+
+    sub_system = 'ICS'
+
 
     def _initialize_kw_dataclass(self):
         keywords = ['WPANG','WPPOS','WPROMODE','WPSEL','WPSELPO','WPSEMODE','CALW',
@@ -314,6 +315,8 @@ class ICS(Header):
 
 class TCS(Header):
 
+    sub_system = 'TCS'
+
     def __init__(self, _json, night_dir) -> None:
         super().__init__(_json, night_dir)
         self.json_string['TCSDATE'] = self._write_TCSDATE(_json)
@@ -351,6 +354,9 @@ class TCS(Header):
 
 class S4GUI(Header):
 
+    sub_system = 'S4GUI'
+
+
     def _initialize_kw_dataclass(self):
         keywords = ['CHANNEL1','CHANNEL2','CHANNEL3','CHANNEL4','OBJECT','OBSERVER','PROJID',
                     'TCSMODE','FILTER','GUIVRSN','CTRLINTE','SYNCMODE','INSTMODE','OBSTYPE','COMMENT','GUIVRSN']
@@ -382,17 +388,19 @@ class S4GUI(Header):
 
 class CCD(Header):
 
+    sub_system = 'CCD'
+
     def _initialize_kw_dataclass(self):
         keywords = ['FRAMEIND','CCDTEMP','TEMPST','CCDSERN','PREAMP','READRATE','EMGAIN','VSHIFT',
                     'FRAMETRF','VCLKAMP','ACQMODE','EMMODE','SHUTTER','TRIGGER','VBIN','INITLIN',
                     'INITCOL','FINALLIN','FINALCOL','HBIN','EXPTIME','NFRAMES','TGTEMP','COOLER',
-                    'CHANNEL','DATE-OBS','UTTIME','UTDATE']
+                    'CHANNEL','DATE-OBS','UTTIME','UTDATE', 'SEQINDEX', 'CYCLIND']
 
         to_bool_kws = ['COOLER', 'FRAMETRF']
         to_float_kws = ['EXPTIME']
         to_int_kws = ['VBIN', 'HBIN', 'FINALCOL', 'FINALLIN', 'INITCOL',
-                      'INITLIN', 'FRAMEIND', 'CCDSERN', 'EMGAIN', 'NFRAMES', 'CHANNEL', 'CCDTEMP', 'TGTEMP']
-        write_predefined_value = ['TEMPST', 'TRIGGER', 'ACQMODE', 'EMMODE', 'SHUTTER', 'VSHIFT', 'READRATE']
+                      'INITLIN', 'FRAMEIND', 'CCDSERN', 'EMGAIN', 'NFRAMES', 'CHANNEL', 'CCDTEMP', 'TGTEMP', 'SEQINDEX', 'CYCLIND']
+        write_predefined_value = ['TEMPST', 'TRIGGER', 'ACQMODE', 'EMMODE', 'SHUTTER', 'VSHIFT', 'READRATE', 'PREAMP', 'VCLKAMP']
         write_any_str = ['DATE-OBS', 'UTDATE', 'UTTIME']
 
         return Keywords_Dataclass(keywords=keywords,
@@ -443,6 +451,9 @@ class CCD(Header):
 
 
 class General_KWs(Header):
+
+    sub_system = 'GENERAL_KW'
+
 
     def _initialize_kw_dataclass(self):
         keywords = ['FILENAME','SEQINDEX','NCYCLES','NSEQ','CYCLIND','ACSVRSN','ACSMODE']

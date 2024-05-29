@@ -79,6 +79,7 @@ def fix_ccd_parameters(header_json):
         header_json['COOLER'] = header_json['COOLER'] == 1
         header_json['SEQINDEX'] = header_json['SEQINDEX'] + 1
         header_json['CYCLIND'] = header_json['CYCLIND'] + 1
+        header_json['EXPTIME'] = float(header_json['EXPTIME'])
     except:
         pass
                        
