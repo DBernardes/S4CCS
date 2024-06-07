@@ -102,8 +102,8 @@ def fix_image_orientation(channel, em_mode, data):
              'Electron Multiplying': 
              {1: [True, True, 2],
              2: [True, False, 0],
-             3: [True, True, -1],
-             4: [False, True, -1]}}
+             3: [False, False, -1],
+             4: [True, False, -1]}}
     invert_x, invert_y, nrot = setup[em_mode][channel]
     return rotate_image(data, invert_x, invert_y, nrot)
 

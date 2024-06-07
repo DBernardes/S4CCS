@@ -444,7 +444,7 @@ class CCD(Header):
         if json_string['EMMODE'] == 'Conventional':
             index += 8
         readout_modes = [1., 0.1]
-        index = 2 * readout_modes.index(json_string['READRATE'])
+        index += 2 * readout_modes.index(json_string['READRATE'])
         index += float(json_string['PREAMP'][-1])
         return index
 
