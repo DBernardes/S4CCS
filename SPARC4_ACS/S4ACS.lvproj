@@ -173,7 +173,6 @@
 				<Item Name="gfitsio-open-create-replace-file.vi" Type="VI" URL="/&lt;userlib&gt;/gfitsio/gfitsio-open-create-replace-file.vi"/>
 				<Item Name="gfitsio-read-image-subset.vi" Type="VI" URL="/&lt;userlib&gt;/gfitsio/gfitsio-read-image-subset.vi"/>
 				<Item Name="gfitsio-read-image-subset-i32-2d.vi" Type="VI" URL="/&lt;userlib&gt;/gfitsio/gfitsio-read-image-subset-i32-2d.vi"/>
-				<Item Name="GetImages.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetImages.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -230,15 +229,6 @@
 				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
 				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
-				<Item Name="Call.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Call.vi"/>
-				<Item Name="Close Session.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Close Session.vi"/>
-				<Item Name="New Session.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/New Session.vi"/>
-				<Item Name="Pack.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Pack.vi"/>
-				<Item Name="Unpack.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Unpack.vi"/>
-				<Item Name="Unpack String Array.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Unpack String Array.vi"/>
-				<Item Name="Unpack String.vi" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Unpack String.vi"/>
-				<Item Name="Session ID.ctl" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Session ID.ctl"/>
-				<Item Name="Python Objects.ctl" Type="VI" URL="/&lt;vilib&gt;/Enthought/Python Integration Toolkit/api/Python Objects.ctl"/>
 				<Item Name="Caraya.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/Caraya/Caraya.lvlib"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Timestamp to ISO8601 UTC DateTime.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Timestamp to ISO8601 UTC DateTime.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Local UTC Offset.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Local UTC Offset.vi"/>
@@ -339,7 +329,6 @@
 			</Item>
 			<Item Name="Stream.lvclass" Type="LVClass" URL="../Stream/Stream.lvclass"/>
 			<Item Name="Serial Communication.lvclass" Type="LVClass" URL="../Serial Communication/Serial Communication.lvclass"/>
-			<Item Name="Write ACSVRSN.vi" Type="VI" URL="../Channel/Write ACSVRSN.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="ACS" Type="EXE">
