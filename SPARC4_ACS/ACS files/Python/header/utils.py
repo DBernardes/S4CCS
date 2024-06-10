@@ -4,8 +4,9 @@ import os
 import numpy as np
 import pandas as pd
 
-cwd = r"C:\Users\Denis\Desktop\S4ACS\SPARC4_ACS\ACS files\Python"
-csv_path = os.path.join(cwd, "csvs", "header_content.csv")
+cwd = os.path.dirname(os.path.realpath(__file__))
+base_path = os.path.join(cwd, "..")
+csv_path = os.path.join(base_path, "csvs", "header_content.csv")
 ss = pd.read_csv(csv_path, delimiter=";", keep_default_na=False)
 cards = [
     (keyword, "", comment) for keyword, comment in zip(ss["Keyword"], ss["Comment"])
@@ -13,8 +14,8 @@ cards = [
 
 keyword_types = {k: v for (k, v) in zip(ss["Keyword"], ss["Type"])}
 expected_kw_names = {k: v for (k, v) in zip(ss["Keyword"], ss["Expected name"])}
-gains = pd.read_csv(os.path.join(cwd, "csvs", "preamp_gains.csv"))
-read_noise = pd.read_csv(os.path.join(cwd, "csvs", "read_noises.csv"))
+gains = pd.read_csv(os.path.join(base_path, "csvs", "preamp_gains.csv"))
+read_noise = pd.read_csv(os.path.join(base_path, "csvs", "read_noises.csv"))
 
 allowed_kw_values = {k: v for (k, v) in zip(ss["Keyword"], ss["Allowed values"])}
 for kw, values in allowed_kw_values.items():
