@@ -5,20 +5,26 @@ import astropy.io.fits as fits
 import pandas as pd
 from astropy.time import Time
 from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
-from utils import (WS_json, ccd_kw, focuser_json, general_kw, ics_kw,
-                   s4gui_json, tcs_json, test_json)
+from utils import (
+    WS_json,
+    ccd_kw,
+    everthing_json,
+    fix_ccd_parameters,
+    focuser_json,
+    general_kw,
+    ics_kw,
+    s4gui_json,
+    tcs_json,
+    test_json,
+)
 
-for kw in general_kw.keys():
-    print(f'({kw},{kw}),')
-night_dir = r'E:\images\today'
-del test_json['shutter']
-s4gui_json = {k.upper(): v for k, v in s4gui_json.items()}
-tcs = S4GUI(s4gui_json, night_dir)
-tcs.fix_keywords()
-print(repr(tcs.json_string))
-print(repr(tcs.hdr))
-tcs = S4GUI(s4gui_json, night_dir)
-tcs.fix_keywords()
-print(repr(tcs.json_string))
-print(repr(tcs.hdr))
-
+night_dir = r"C:\images\today"
+s4gui_json = {k.upper(): v for k, v in test_json.items()}
+s4gui_json = fix_ccd_parameters(s4gui_json)
+del s4gui_json["CMD"]
+s4gui_json["SHUTTER"] = "Closed"
+for cls in [CCD, TCS, Focuser, Weather_Station]:
+    tcs = cls(s4gui_json, night_dir)
+    tcs.fix_keywords()
+    # print(repr(tcs.json_string))
+# print(repr(tcs.hdr))
