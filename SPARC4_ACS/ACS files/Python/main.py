@@ -5,7 +5,6 @@ import numpy as np
 from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
 from utils import (
     fix_image_orientation,
-    format_string,
     load_json,
     verify_file_already_exists,
     write_error_log,
@@ -13,8 +12,24 @@ from utils import (
 
 
 def main(night_dir, file, data, header_json):
-    # file = format_string(file)
-    # night_dir = format_string(night_dir)
+    try:
+        data = np.asarray(data)
+        file = os.path.join(night_dir, file)
+        header_json = load_json(header_json)
+        for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
+            obj = cls(header_json, night_dir)
+            obj.fix_keywords()
+            hdr = obj.hdr
+        data = fix_image_orientation(hdr["CHANNEL"], hdr["EMMODE"], data)
+        file = verify_file_already_exists(file)
+        fits.writeto(file, data, hdr, output_verify="ignore")
+        return 0
+    except Exception as e:
+        write_error_log(repr(e), night_dir)
+        return 1
+
+
+def main_1(night_dir, file, data, header_json):
     data = np.asarray(data)
     file = os.path.join(night_dir, file)
     header_json = load_json(header_json)
@@ -36,7 +51,3 @@ def main(night_dir, file, data, header_json):
     file = verify_file_already_exists(file)
     fits.writeto(file, data, hdr, output_verify="ignore")
     return
-
-
-# data = np.zeros((100, 100))
-# main(r'EEE:\images\todayy', '20240213_s4c1_000001_zero.fitss', data, s4gui_json)

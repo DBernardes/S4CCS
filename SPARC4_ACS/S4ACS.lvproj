@@ -165,7 +165,6 @@
 				<Item Name="GetAvailableCameras.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetAvailableCameras.vi"/>
 				<Item Name="GetCameraHandle.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraHandle.vi"/>
 				<Item Name="SetCurrentCamera.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/SetCurrentCamera.vi"/>
-				<Item Name="PrepareAcquisition.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/PrepareAcquisition.vi"/>
 				<Item Name="Error Code Handler.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal/Error Code Handler.vi"/>
 				<Item Name="GetCameraSerialNumber.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/GetCameraSerialNumber.vi"/>
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
