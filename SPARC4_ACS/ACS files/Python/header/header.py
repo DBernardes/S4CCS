@@ -1,3 +1,4 @@
+import json
 import math
 import os
 from abc import ABC, abstractmethod
@@ -24,8 +25,9 @@ class Header(ABC):
     kw_types = {"integer": int, "boolean": bool, "float": float, "string": str}
     sub_system = "HEADER"
 
-    def __init__(self, _json, night_dir) -> None:
+    def __init__(self, dict_header_jsons, night_dir) -> None:
 
+        _json = self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
         self.log_file = os.path.join(night_dir, "keywords_log.log")
         self.json_string = self.extract_info(_json)
@@ -33,6 +35,18 @@ class Header(ABC):
         self._check_allowed_values()
 
         return
+
+    def _load_json(self, dict_header_jsons):
+        json_string = dict_header_jsons[self.sub_system]
+        try:
+            if json_string != "":
+                return json.loads(json_string)
+            else:
+                return {}
+        except:
+            raise ValueError(
+                f"{self.sub_system}: There was an error when loading the JSON data --> {json_string}."
+            )
 
     @abstractmethod
     def _initialize_kw_dataclass(self):
@@ -249,7 +263,7 @@ class Focuser(Header):
 
 class Weather_Station(Header):
 
-    sub_system = "WEATHER STATION"
+    sub_system = "WSTATION"
 
     def _initialize_kw_dataclass(self):
         keywords = ["HUMIDITY", "EXTTEMP", "PRESSURE"]
@@ -267,7 +281,7 @@ class Weather_Station(Header):
 
 class ICS(Header):
 
-    sub_system = "ICS"
+    sub_system = "S4ICS"
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -483,7 +497,6 @@ class CCD(Header):
             "NFRAMES",
             "TGTEMP",
             "COOLER",
-            "CHANNEL",
             "DATE-OBS",
             "UTTIME",
             "UTDATE",
@@ -573,7 +586,7 @@ class CCD(Header):
 
 class General_KWs(Header):
 
-    sub_system = "GENERAL_KW"
+    sub_system = "GENERAL KW"
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -584,6 +597,7 @@ class General_KWs(Header):
             "CYCLIND",
             "ACSVRSN",
             "ACSMODE",
+            "CHANNEL",
         ]
 
         write_any_str = ["FILENAME", "ACSVRSN", "NSEQ", "NCYCLES"]
