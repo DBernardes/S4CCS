@@ -1,12 +1,11 @@
 import json
-import math
 import os
+import traceback
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime
 
 import astropy.io.fits as fits
-import pandas as pd
 from astropy.time import Time
 
 from .utils import (
@@ -39,13 +38,11 @@ class Header(ABC):
     def _load_json(self, dict_header_jsons):
         json_string = dict_header_jsons[self.sub_system]
         try:
-            if json_string != "":
-                return json.loads(json_string)
-            else:
-                return {}
-        except:
-            raise ValueError(
+            return json.loads(json_string)
+        except Exception as e:
+            raise Exception(
                 f"{self.sub_system}: There was an error when loading the JSON data --> {json_string}."
+                + repr(e)
             )
 
     @abstractmethod

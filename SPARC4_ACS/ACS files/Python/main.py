@@ -1,4 +1,5 @@
 import os
+import traceback
 
 import astropy.io.fits as fits
 import numpy as np
@@ -26,7 +27,8 @@ def main(night_dir, file, data, tuple_header_jsons):
         fits.writeto(file, data, hdr, output_verify="ignore")
         return 0
     except Exception as e:
-        write_error_log(repr(e), night_dir)
+        write_error_log(traceback.format_exc(), night_dir)
+        # write_error_log(repr(e), night_dir)
         return 1
 
 
