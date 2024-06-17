@@ -37,8 +37,12 @@ class Header(ABC):
 
     def _load_json(self, dict_header_jsons):
         json_string = dict_header_jsons[self.sub_system]
+        if json_string == "":
+            return {}
         try:
-            return json.loads(json_string)
+            _json = json.loads(json_string)
+            _json = {k.upper(): v for k, v in _json.items()}
+            return _json
         except Exception as e:
             raise Exception(
                 f"{self.sub_system}: There was an error when loading the JSON data --> {json_string}."
@@ -117,7 +121,7 @@ class Header(ABC):
                 self._write_log_file(repr(e), kw)
 
     def _write_any_value(self):
-        for kw in self.kw_dataclass.write_any_str:
+        for kw in self.kw_dataclass.write_any_val:
             try:
                 self.hdr[kw] = self.json_string[kw]
             except Exception as e:
@@ -311,14 +315,14 @@ class ICS(Header):
             "GFOCMODE": ("SIMULATED", "ACTIVE"),
             "ASEL": ("OFF", "ON"),
         }
-        wrtie_any_str = ["ICSVRSN"]
+        write_any_val = ["ICSVRSN"]
 
         return Keywords_Dataclass(
             keywords=keywords,
             to_float_kws=to_float_kws,
             idx_in_dict=idx_in_dict,
             to_bool_with_condition=to_bool_with_condition,
-            write_any_str=wrtie_any_str,
+            write_any_val=write_any_val,
         )
 
     def fix_keywords(self):
@@ -375,10 +379,10 @@ class TCS(Header):
     def _initialize_kw_dataclass(self):
         keywords = ["RA", "DEC", "TCSHA", "INSTROT", "AIRMASS"]
         to_float_kws = ["AIRMASS", "INSTROT"]
-        write_any_str = ["RA", "DEC", "TCSHA", "TCSDATE"]
+        write_any_val = ["RA", "DEC", "TCSHA", "TCSDATE"]
 
         return Keywords_Dataclass(
-            keywords=keywords, to_float_kws=to_float_kws, write_any_str=write_any_str
+            keywords=keywords, to_float_kws=to_float_kws, write_any_val=write_any_val
         )
 
     def fix_keywords(self):
@@ -431,7 +435,7 @@ class S4GUI(Header):
             "GUIVRSN",
         ]
         to_bool_kw = ["CHANNEL1", "CHANNEL2", "CHANNEL3", "CHANNEL4", "TCSMODE"]
-        write_any_str = ["OBJECT", "OBSERVER", "PROJID", "GUIVRSN"]
+        write_any_val = ["OBJECT", "OBSERVER", "PROJID", "GUIVRSN"]
         write_predefined_value = [
             "FILTER",
             "CTRLINTE",
@@ -442,7 +446,7 @@ class S4GUI(Header):
         return Keywords_Dataclass(
             keywords=keywords,
             to_bool_kws=to_bool_kw,
-            write_any_str=write_any_str,
+            write_any_val=write_any_val,
             write_predefined_value=write_predefined_value,
         )
 
@@ -467,6 +471,17 @@ class S4GUI(Header):
 class CCD(Header):
 
     sub_system = "CCD"
+    trigger_modes = {0: "Internal", 6: "External"}
+    acq_modes = {1: "Single Scan", 3: "Kinetics"}
+    em_modes = ["Electron Multiplying", "Conventional"]
+    shutter_modes = ["Auto", "Open", "Closed"]
+    vclock_modes = ["Normal", "+1", "+2", "+3", "+4"]
+    preamp_modes = ["Gain 1", "Gain 2"]
+    vshift_modes = [0.6, 1.13, 2.2, 4.33]
+
+    def _load_json(self, dict_header_jsons):
+        _json = super()._load_json(dict_header_jsons)
+        return self._fix_ccd_parameters(_json)
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -497,8 +512,6 @@ class CCD(Header):
             "DATE-OBS",
             "UTTIME",
             "UTDATE",
-            "SEQINDEX",
-            "CYCLIND",
         ]
 
         to_bool_kws = ["COOLER", "FRAMETRF"]
@@ -514,11 +527,8 @@ class CCD(Header):
             "CCDSERN",
             "EMGAIN",
             "NFRAMES",
-            "CHANNEL",
             "CCDTEMP",
             "TGTEMP",
-            "SEQINDEX",
-            "CYCLIND",
         ]
         write_predefined_value = [
             "TEMPST",
@@ -531,7 +541,7 @@ class CCD(Header):
             "PREAMP",
             "VCLKAMP",
         ]
-        write_any_str = ["DATE-OBS", "UTDATE", "UTTIME"]
+        write_any_val = ["DATE-OBS", "UTDATE", "UTTIME"]
 
         return Keywords_Dataclass(
             keywords=keywords,
@@ -539,7 +549,7 @@ class CCD(Header):
             to_float_kws=to_float_kws,
             to_int_kws=to_int_kws,
             write_predefined_value=write_predefined_value,
-            write_any_str=write_any_str,
+            write_any_val=write_any_val,
         )
 
     def fix_keywords(self):
@@ -580,6 +590,26 @@ class CCD(Header):
         index += float(json_string["PREAMP"][-1])
         return index
 
+    def _fix_ccd_parameters(self, _json):
+        _json["READRATE"] = self._write_READRATE(_json)
+        _json["TRIGGER"] = self.trigger_modes[_json["TRIGGER"]]
+        _json["ACQMODE"] = self.acq_modes[_json["ACQMODE"]]
+        _json["EMMODE"] = self.em_modes[_json["EMMODE"]]
+        _json["SHUTTER"] = self.shutter_modes[_json["SHUTTER"]]
+        _json["VCLKAMP"] = self.vclock_modes[_json["VCLKAMP"]]
+        _json["PREAMP"] = self.preamp_modes[_json["PREAMP"]]
+        _json["VSHIFT"] = self.vshift_modes[_json["VSHIFT"]]
+        _json["COOLER"] = _json["COOLER"] == 1
+        _json["EXPTIME"] = float(_json["EXPTIME"])
+        return _json
+
+    @staticmethod
+    def _write_READRATE(_json):
+        _list = [30.0, 20.0, 10.0, 1.0]
+        if _json["EMMODE"] == 1:
+            _list = [1.0, 0.1]
+        return _list[_json["READRATE"]]
+
 
 class General_KWs(Header):
 
@@ -597,7 +627,15 @@ class General_KWs(Header):
             "CHANNEL",
         ]
 
-        write_any_str = ["FILENAME", "ACSVRSN", "NSEQ", "NCYCLES"]
+        write_any_val = [
+            "FILENAME",
+            "ACSVRSN",
+            "NSEQ",
+            "NCYCLES",
+            "CHANNEL",
+            "SEQINDEX",
+            "CYCLIND",
+        ]
         to_bool_kw = ["ACSMODE"]
         replace_empty_kws = {
             "NAXIS": 2,
@@ -615,8 +653,18 @@ class General_KWs(Header):
             keywords=keywords,
             replace_empty_kws=replace_empty_kws,
             to_bool_kws=to_bool_kw,
-            write_any_str=write_any_str,
+            write_any_val=write_any_val,
         )
+
+    def _load_json(self, dict_header_jsons):
+        _json = super()._load_json(dict_header_jsons)
+        return self._fix_parameters(_json)
+
+    @staticmethod
+    def _fix_parameters(_json):
+        _json["SEQINDEX"] = _json["SEQINDEX"] + 1
+        _json["CYCLIND"] = _json["CYCLIND"] + 1
+        return _json
 
     def fix_keywords(self):
         self._replace_empty_str()
@@ -637,7 +685,7 @@ class Keywords_Dataclass:
     replace_str: dict = field(default_factory=dict)
     delete_str: dict = field(default_factory=dict)
 
-    write_any_str: list = field(default_factory=list)
+    write_any_val: list = field(default_factory=list)
     write_predefined_value: dict = field(default_factory=dict)
 
     idx_in_dict: dict = field(default_factory=dict)

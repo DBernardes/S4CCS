@@ -35,4 +35,4 @@ for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
     tcs = cls(dicts, night_dir)
     tcs.fix_keywords()
     print(repr(tcs.json_string))
-print(repr(tcs.hdr))
+# print(repr(tcs.hdr))

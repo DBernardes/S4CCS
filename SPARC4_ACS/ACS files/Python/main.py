@@ -6,7 +6,6 @@ import numpy as np
 from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
 from utils import (
     fix_image_orientation,
-    load_json,
     sub_systems,
     verify_file_already_exists,
     write_error_log,
@@ -28,7 +27,6 @@ def main(night_dir, file, data, tuple_header_jsons):
         return 0
     except Exception as e:
         write_error_log(traceback.format_exc(), night_dir)
-        # write_error_log(repr(e), night_dir)
         return 1
 
 
