@@ -29,23 +29,23 @@ class Header(ABC):
         _json = self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
         self.log_file = os.path.join(night_dir, "keywords_log.log")
-        self.json_string = self.extract_info(_json)
+        self._json = self.extract_info(_json)
         self._check_type()
         self._check_allowed_values()
 
         return
 
     def _load_json(self, dict_header_jsons):
-        json_string = dict_header_jsons[self.sub_system]
-        if json_string == "":
+        self.json_string = dict_header_jsons[self.sub_system]
+        if self.json_string == "":
             return {}
         try:
-            _json = json.loads(json_string)
+            _json = json.loads(self.json_string)
             _json = {k.upper(): v for k, v in _json.items()}
             return _json
         except Exception as e:
             raise Exception(
-                f"{self.sub_system}: There was an error when loading the JSON data --> {json_string}."
+                f"{self.sub_system}: There was an error when loading the JSON data --> {self.json_string}."
                 + repr(e)
             )
 
@@ -56,21 +56,21 @@ class Header(ABC):
     def _convert_to_float(self):
         for kw in self.kw_dataclass.to_float_kws:
             try:
-                self.hdr[kw] = float(self.json_string[kw])
+                self.hdr[kw] = float(self._json[kw])
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _convert_to_int(self):
         for kw in self.kw_dataclass.to_int_kws:
             try:
-                self.hdr[kw] = int(self.json_string[kw])
+                self.hdr[kw] = int(self._json[kw])
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _convert_to_boolean(self):
         for kw in self.kw_dataclass.to_bool_kws:
             try:
-                val = self.json_string[kw]
+                val = self._json[kw]
                 self.hdr[kw] = bool(val)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
@@ -78,7 +78,7 @@ class Header(ABC):
     def _convert_to_bool_with_condition(self):
         for kw, (off, on) in self.kw_dataclass.to_bool_with_condition.items():
             try:
-                val = self.json_string[kw]
+                val = self._json[kw]
                 if val == off:
                     self.hdr[kw] = False
                 elif val == on:
@@ -92,7 +92,7 @@ class Header(ABC):
         for kw in self.kw_dataclass.comma_kws:
             try:
                 self._search_unwanted_kw(kw, ",")
-                self.json_string[kw] = self.json_string[kw].replace(",", ".")
+                self._json[kw] = self._json[kw].replace(",", ".")
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -100,7 +100,7 @@ class Header(ABC):
         for kw, (prev, new) in self.kw_dataclass.replace_str.items():
             try:
                 self._search_unwanted_kw(kw, prev)
-                self.hdr[kw] = self.json_string[kw].replace(prev, new)
+                self.hdr[kw] = self._json[kw].replace(prev, new)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -123,14 +123,14 @@ class Header(ABC):
     def _write_any_value(self):
         for kw in self.kw_dataclass.write_any_val:
             try:
-                self.hdr[kw] = self.json_string[kw]
+                self.hdr[kw] = self._json[kw]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _write_predefined_value(self):
         for kw in self.kw_dataclass.write_predefined_value:
             try:
-                val = self.json_string[kw]
+                val = self._json[kw]
                 _list = allowed_kw_values[kw]
                 if val in _list:
                     self.hdr[kw] = val
@@ -140,7 +140,7 @@ class Header(ABC):
     def _substitute_idx_in_dict(self):
         for kw, dict in self.kw_dataclass.idx_in_dict.items():
             try:
-                val = self.json_string[kw]
+                val = self._json[kw]
                 self.hdr[kw] = dict[val]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
@@ -149,7 +149,7 @@ class Header(ABC):
         for kw in self.kw_dataclass.idx_in_list:
             try:
                 _list = allowed_kw_values[kw]
-                val = self.json_string[kw]
+                val = self._json[kw]
                 self.hdr[kw] = _list[val]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
@@ -170,7 +170,7 @@ class Header(ABC):
     def _check_type(self):
         for hdr_kw in self.kw_dataclass.keywords:
             try:
-                val = self.json_string[hdr_kw]
+                val = self._json[hdr_kw]
                 _type = keyword_types[hdr_kw]
                 if not isinstance(val, self.kw_types[_type]):
                     self._write_log_file(
@@ -194,7 +194,7 @@ class Header(ABC):
         return
 
     def _check_number_in_range(self, hdr_kw):
-        val = self.json_string[hdr_kw]
+        val = self._json[hdr_kw]
         a_values = allowed_kw_values[hdr_kw]
         min, *max = a_values
         if not isinstance(val, (int, float)):
@@ -207,7 +207,7 @@ class Header(ABC):
         return
 
     def _check_string_in_allowed_values(self, hdr_kw):
-        val = self.json_string[hdr_kw]
+        val = self._json[hdr_kw]
         a_values = allowed_kw_values[hdr_kw]
         if not isinstance(val, str):
             return
@@ -235,7 +235,7 @@ class Header(ABC):
             )
 
     def _search_unwanted_kw(self, kw, _str):
-        if _str in self.json_string[kw]:
+        if _str in self._json[kw]:
             self._write_log_file(
                 f"An unexpected string was found in the keyword value: {_str}", kw
             )
@@ -335,7 +335,7 @@ class ICS(Header):
 
     def _write_WPPOS(self):
         try:
-            val = self.json_string["WPPOS"]
+            val = self._json["WPPOS"]
             if "NONE" in val:
                 self.hdr["WPPOS"] = 0
             elif "WP" in val:
@@ -350,7 +350,7 @@ class ICS(Header):
 
     def _write_CALW(self):
         try:
-            val = self.json_string["CALW"]
+            val = self._json["CALW"]
             expected_values = ["POLARIZER", "DEPOLARIZER", "NONE", "PINHOLE", "POS5"]
             if val in expected_values:
                 self.hdr["CALW"] = val
@@ -374,7 +374,7 @@ class TCS(Header):
 
     def __init__(self, _json, night_dir) -> None:
         super().__init__(_json, night_dir)
-        self.json_string["TCSDATE"] = self._write_TCSDATE(_json)
+        self._json["TCSDATE"] = self._write_TCSDATE()
 
     def _initialize_kw_dataclass(self):
         keywords = ["RA", "DEC", "TCSHA", "INSTROT", "AIRMASS"]
@@ -390,16 +390,19 @@ class TCS(Header):
         self._write_any_value()
         return
 
-    def _write_TCSDATE(self, json_string):
+    def _write_TCSDATE(self):
         try:
+            if self.json_string == "":
+                raise KeyError("DATE", "TIME")
+            _json = json.loads(self.json_string)
             for kw in ["DATE", "TIME"]:
-                if not isinstance(kw, str):
+                if not isinstance(_json[kw], str):
                     self._write_log_file(
-                        f'Keyword value "{json_string[kw]}" is not an instance of {repr(str)}.',
+                        f'Keyword value "{_json[kw]}" is not an instance of {repr(str)}.',
                         kw,
                     )
                     return
-            date, time = json_string["DATE"], json_string["TIME"]
+            date, time = _json["DATE"], _json["TIME"]
             date = date.split("/")[::-1]
             time = time.split(":")
             tmp = [int(val) for val in date + time]
@@ -455,7 +458,7 @@ class S4GUI(Header):
         try:
             if kw in self.hdr.keys():
                 del self.hdr[kw]
-            self.hdr[kw] = self.json_string[kw]
+            self.hdr[kw] = self._json[kw]
         except Exception as e:
             self._write_log_file(repr(e), kw)
         return
@@ -580,14 +583,14 @@ class CCD(Header):
             self._write_log_file(repr(e), "GAIN")
 
     def find_index_tab(self):
-        json_string = self.json_string
+        _json = self._json
         index = 0
         readout_modes = [30.0, 20.0, 10.0, 1.0]
-        if json_string["EMMODE"] == "Conventional":
+        if _json["EMMODE"] == "Conventional":
             index += 8
         readout_modes = [1.0, 0.1]
-        index += 2 * readout_modes.index(json_string["READRATE"])
-        index += float(json_string["PREAMP"][-1])
+        index += 2 * readout_modes.index(_json["READRATE"])
+        index += float(_json["PREAMP"][-1])
         return index
 
     def _fix_ccd_parameters(self, _json):
