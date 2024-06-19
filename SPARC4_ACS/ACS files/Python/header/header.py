@@ -394,7 +394,7 @@ class TCS(Header):
         try:
             if self.json_string == "":
                 raise KeyError("DATE", "TIME")
-            _json = json.loads(self.json_string)
+            _json = {k.upper(): v for (k, v) in json.loads(self.json_string).items()}
             for kw in ["DATE", "TIME"]:
                 if not isinstance(_json[kw], str):
                     self._write_log_file(
