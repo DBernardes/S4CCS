@@ -44,55 +44,21 @@ def format_string(string):
     return string
 
 
-def load_json(header_json):
-    # header_json.replace("True", "True")
-    # header_json.replace("False", "False")
-    # raise ValueError(header_json)
+# def load_json(header_json):
+#     # header_json.replace("True", "True")
+#     # header_json.replace("False", "False")
+#     # raise ValueError(header_json)
 
-    try:
-        header_json = json.loads(header_json)
-        for kw in ["cmd", "shutter"]:
-            if kw in header_json.keys():
-                del header_json[kw]
-        header_json = {k.upper(): v for k, v in header_json.items()}
-        header_json = fix_ccd_parameters(header_json)
-        return header_json
-    except:
-        return None
-
-
-def fix_ccd_parameters(header_json):
-    try:
-        trigger_modes = {0: "Internal", 6: "External"}
-        acq_modes = {1: "Single Scan", 3: "Kinetics"}
-        em_modes = ["Electron Multiplying", "Conventional"]
-        shutter_modes = ["Auto", "Open", "Closed"]
-        vclock_modes = ["Normal", "+1", "+2", "+3", "+4"]
-        preamp_modes = ["Gain 1", "Gain 2"]
-        vshift_modes = [0.6, 1.13, 2.2, 4.33]
-        header_json["READRATE"] = write_READRATE(header_json)
-        header_json["TRIGGER"] = trigger_modes[header_json["TRIGGER"]]
-        header_json["ACQMODE"] = acq_modes[header_json["ACQMODE"]]
-        header_json["EMMODE"] = em_modes[header_json["EMMODE"]]
-        header_json["SHUTTER"] = shutter_modes[header_json["SHUTTER"]]
-        header_json["VCLKAMP"] = vclock_modes[header_json["VCLKAMP"]]
-        header_json["PREAMP"] = preamp_modes[header_json["PREAMP"]]
-        header_json["VSHIFT"] = vshift_modes[header_json["VSHIFT"]]
-        header_json["COOLER"] = header_json["COOLER"] == 1
-        header_json["SEQINDEX"] = header_json["SEQINDEX"] + 1
-        header_json["CYCLIND"] = header_json["CYCLIND"] + 1
-        header_json["EXPTIME"] = float(header_json["EXPTIME"])
-    except:
-        pass
-
-    return header_json
-
-
-def write_READRATE(json_string):
-    _list = [30.0, 20.0, 10.0, 1.0]
-    if json_string["EMMODE"] == 1:
-        _list = [1.0, 0.1]
-    return _list[json_string["READRATE"]]
+#     try:
+#         header_json = json.loads(header_json)
+#         for kw in ["cmd", "shutter"]:
+#             if kw in header_json.keys():
+#                 del header_json[kw]
+#         header_json = {k.upper(): v for k, v in header_json.items()}
+#         header_json = fix_ccd_parameters(header_json)
+#         return header_json
+#     except:
+#         return None
 
 
 def fix_image_orientation(channel, em_mode, data):
@@ -136,6 +102,15 @@ def write_error_log(message, night_dir):
 
 # --------------------------------------------------------------------------------------------------------------------------
 
+sub_systems = [
+    "CCD",
+    "S4GUI",
+    "S4ICS",
+    "TCS",
+    "FOCUSER",
+    "WSTATION",
+    "GENERAL KW",
+]
 
 # --------------------------------------------------------------------------------------------------------------------------
 
@@ -198,6 +173,7 @@ focuser_json = {
     "temperature": 0,
     "timestamp": "2024-02-27T10:15:48.255",
     "version": "1.0.0",
+    "telfocus": 5000,
 }
 
 WS_json = {
@@ -260,7 +236,7 @@ s4gui_json = {
     "CHANNEL 3": False,
     "CHANNEL 4": False,
     "TCSMODE": True,
-    "COMMENT": "",
+    "COMMENT": "FGH",
     "BROKER": "S4GUI",
 }
 general_kw = {

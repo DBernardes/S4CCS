@@ -1,3 +1,4 @@
+import json
 import os
 from datetime import datetime
 
@@ -9,7 +10,6 @@ from utils import (
     WS_json,
     ccd_kw,
     everthing_json,
-    fix_ccd_parameters,
     focuser_json,
     general_kw,
     ics_kw,
@@ -18,13 +18,20 @@ from utils import (
     test_json,
 )
 
+dicts = {
+    "CCD": ccd_kw,
+    "WSTATION": WS_json,
+    "FOCUSER": focuser_json,
+    "GENERAL KW": general_kw,
+    "S4ICS": ics_kw,
+    "TCS": tcs_json,
+    "S4GUI": s4gui_json,
+}
+
+dicts = {k: json.dumps(v) for (k, v) in dicts.items()}
 night_dir = r"C:\images\today"
-s4gui_json = {k.upper(): v for k, v in test_json.items()}
-s4gui_json = fix_ccd_parameters(s4gui_json)
-del s4gui_json["CMD"]
-s4gui_json["SHUTTER"] = "Closed"
-for cls in [CCD, TCS, Focuser, Weather_Station]:
-    tcs = cls(s4gui_json, night_dir)
+for cls in [S4GUI]:
+    tcs = cls(dicts, night_dir)
     tcs.fix_keywords()
-    # print(repr(tcs.json_string))
-# print(repr(tcs.hdr))
+    print(repr(tcs._json))
+print(repr(tcs.hdr))
