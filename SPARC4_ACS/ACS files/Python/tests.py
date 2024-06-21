@@ -10,7 +10,6 @@ from utils import (
     WS_json,
     ccd_kw,
     everthing_json,
-    fix_ccd_parameters,
     focuser_json,
     general_kw,
     ics_kw,
@@ -31,8 +30,8 @@ dicts = {
 
 dicts = {k: json.dumps(v) for (k, v) in dicts.items()}
 night_dir = r"C:\images\today"
-for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
+for cls in [S4GUI]:
     tcs = cls(dicts, night_dir)
     tcs.fix_keywords()
-    print(repr(tcs.json_string))
-# print(repr(tcs.hdr))
+    print(repr(tcs._json))
+print(repr(tcs.hdr))

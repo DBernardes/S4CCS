@@ -236,7 +236,7 @@ s4gui_json = {
     "CHANNEL 3": False,
     "CHANNEL 4": False,
     "TCSMODE": True,
-    "COMMENT": "",
+    "COMMENT": "FGH",
     "BROKER": "S4GUI",
 }
 general_kw = {

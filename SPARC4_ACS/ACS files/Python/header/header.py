@@ -435,7 +435,6 @@ class S4GUI(Header):
             "INSTMODE",
             "OBSTYPE",
             "COMMENT",
-            "GUIVRSN",
         ]
         to_bool_kw = ["CHANNEL1", "CHANNEL2", "CHANNEL3", "CHANNEL4", "TCSMODE"]
         write_any_val = ["OBJECT", "OBSERVER", "PROJID", "GUIVRSN"]
@@ -458,7 +457,8 @@ class S4GUI(Header):
         try:
             if kw in self.hdr.keys():
                 del self.hdr[kw]
-            self.hdr[kw] = self._json[kw]
+            _json = {k.upper(): v for (k, v) in json.loads(self.json_string).items()}
+            self.hdr[kw] = _json[kw]
         except Exception as e:
             self._write_log_file(repr(e), kw)
         return
