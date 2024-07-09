@@ -44,10 +44,6 @@ def format_string(string):
     return string
 
 
-def create_log_file_path():
-    return os.path.join(*["C:", "Users", os.getlogin(), "SPARC4", "ACS"])
-
-
 def fix_image_orientation(channel, em_mode, data):
     setup = {
         "Conventional": {
@@ -80,8 +76,7 @@ def verify_file_already_exists(file):
     return file
 
 
-def write_error_log(message, night_dir):
-    log_file = os.path.join(night_dir, "acs_errors.log")
+def write_error_log(message, log_file):
     with open(log_file, "a") as file:
         now = str(datetime.now())
         file.write(now + " - " + message + "\n")
