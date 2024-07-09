@@ -44,21 +44,8 @@ def format_string(string):
     return string
 
 
-# def load_json(header_json):
-#     # header_json.replace("True", "True")
-#     # header_json.replace("False", "False")
-#     # raise ValueError(header_json)
-
-#     try:
-#         header_json = json.loads(header_json)
-#         for kw in ["cmd", "shutter"]:
-#             if kw in header_json.keys():
-#                 del header_json[kw]
-#         header_json = {k.upper(): v for k, v in header_json.items()}
-#         header_json = fix_ccd_parameters(header_json)
-#         return header_json
-#     except:
-#         return None
+def create_log_file_path():
+    return os.path.join(*["C:", "Users", os.getlogin(), "SPARC4", "ACS"])
 
 
 def fix_image_orientation(channel, em_mode, data):
