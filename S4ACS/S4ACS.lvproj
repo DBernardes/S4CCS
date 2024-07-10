@@ -68,26 +68,6 @@
 			<Item Name="Log file.vi" Type="VI" URL="../Unit tests/Log file.vi"/>
 			<Item Name="Error log.vi" Type="VI" URL="../Unit tests/Error log.vi"/>
 		</Item>
-		<Item Name="Python" Type="Folder">
-			<Item Name="csvs" Type="Folder">
-				<Item Name="header_content.csv" Type="Document" URL="../ACS files/Python/csvs/header_content.csv"/>
-				<Item Name="preamp_gains.csv" Type="Document" URL="../ACS files/Python/csvs/preamp_gains.csv"/>
-				<Item Name="read_noises.csv" Type="Document" URL="../ACS files/Python/csvs/read_noises.csv"/>
-			</Item>
-			<Item Name="header" Type="Folder">
-				<Item Name="__init__.py" Type="Document" URL="../ACS files/Python/header/__init__.py"/>
-				<Item Name="header.py" Type="Document" URL="../ACS files/Python/header/header.py"/>
-				<Item Name="utils.py" Type="Document" URL="../ACS files/Python/header/utils.py"/>
-			</Item>
-			<Item Name="main.py" Type="Document" URL="../ACS files/Python/main.py"/>
-			<Item Name="temp.py" Type="Document" URL="../ACS files/Python/temp.py"/>
-			<Item Name="tests.py" Type="Document" URL="../ACS files/Python/tests.py"/>
-			<Item Name="utils.py" Type="Document" URL="../ACS files/Python/utils.py"/>
-		</Item>
-		<Item Name="Camera parameters" Type="Folder">
-			<Item Name="limit_values_parameters.csv" Type="Document" URL="../ACS files/Camera parameters/limit_values_parameters.csv"/>
-			<Item Name="readout_times.csv" Type="Document" URL="../ACS files/Camera parameters/readout_times.csv"/>
-		</Item>
 		<Item Name="General VIs" Type="Folder">
 			<Item Name="TESTE.vi" Type="VI" URL="../General VIs/TESTE.vi"/>
 			<Item Name="old tests.vi" Type="VI" URL="../General VIs/old tests.vi"/>
@@ -334,7 +314,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{C186FE8B-7112-49D5-8AB1-DBFECD94CC12}</Property>
-				<Property Name="Bld_version.build" Type="Int">11</Property>
+				<Property Name="Bld_version.build" Type="Int">16</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS.exe</Property>
@@ -342,15 +322,13 @@
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/data</Property>
-				<Property Name="Destination[2].destName" Type="Str">ACS files</Property>
-				<Property Name="Destination[2].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS files</Property>
+				<Property Name="Destination[2].destName" Type="Str">Python</Property>
+				<Property Name="Destination[2].path" Type="Path">../builds/NI_AB_PROJECTNAME/Comm VIs</Property>
 				<Property Name="Destination[2].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[3].destName" Type="Str">root</Property>
 				<Property Name="Destination[3].path" Type="Path">../builds/NI_AB_PROJECTNAME</Property>
-				<Property Name="Destination[4].destName" Type="Str">Comm VIs</Property>
-				<Property Name="Destination[4].path" Type="Path">../builds/NI_AB_PROJECTNAME/Comm VIs</Property>
-				<Property Name="DestinationCount" Type="Int">5</Property>
-				<Property Name="Source[0].itemID" Type="Str">{5D9DF078-AFE5-42D2-B54A-141955BD6584}</Property>
+				<Property Name="DestinationCount" Type="Int">4</Property>
+				<Property Name="Source[0].itemID" Type="Str">{AE9D7156-0DF1-4B79-BFBF-9F543E9BDFBD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -379,26 +357,24 @@
 				<Property Name="Source[5].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[5].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[5].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Python</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref"></Property>
 				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].type" Type="Str">Container</Property>
-				<Property Name="Source[6].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[6].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[6].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[6].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Camera parameters</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/General VIs</Property>
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].type" Type="Str">Container</Property>
-				<Property Name="Source[7].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[7].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/General VIs</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">3</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/acs_config_TEMPLATE.cfg</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[7].type" Type="Str">Container</Property>
-				<Property Name="Source[8].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/acs_config_TEMPLATE.cfg</Property>
+				<Property Name="Source[8].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[8].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[8].itemID" Type="Ref"></Property>
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].type" Type="Str">Container</Property>
 				<Property Name="SourceCount" Type="Int">9</Property>
 				<Property Name="TgtF_companyName" Type="Str">Laboratório Nacional de Astrofísica</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">ACS</Property>
