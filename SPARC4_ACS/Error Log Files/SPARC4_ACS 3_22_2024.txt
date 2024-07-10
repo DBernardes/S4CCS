@@ -1,9 +1,0 @@
-Security error: 3_22_2024 10_38_49
-4 Number of frames must be 1 for the acquisition mode single scan
-
-Security error: 3_22_2024 10_47_27
-4 Number of frames must be 1 for the acquisition mode single scan
-
-Security error: 3_22_2024 10_48_48
-4 Number of frames must be 1 for the acquisition mode single scan
-

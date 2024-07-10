@@ -24,11 +24,11 @@ class Header(ABC):
     kw_types = {"integer": int, "boolean": bool, "float": float, "string": str}
     sub_system = "HEADER"
 
-    def __init__(self, dict_header_jsons, night_dir) -> None:
+    def __init__(self, dict_header_jsons, log_file) -> None:
 
         _json = self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
-        self.log_file = os.path.join(night_dir, "keywords_log.log")
+        self.log_file = log_file
         self._json = self.extract_info(_json)
         self._check_type()
         self._check_allowed_values()

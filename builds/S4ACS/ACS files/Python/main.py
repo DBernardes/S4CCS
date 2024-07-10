@@ -12,13 +12,14 @@ from utils import (
 )
 
 
-def main(night_dir, file, data, tuple_header_jsons):
+def main(night_dir, file, data, tuple_header_jsons, log_file):
     try:
         dict_header_jsons = {k: v for (k, v) in zip(sub_systems, tuple_header_jsons)}
         data = np.asarray(data)
         file = os.path.join(night_dir, file)
+
         for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
-            obj = cls(dict_header_jsons, night_dir)
+            obj = cls(dict_header_jsons, log_file)
             obj.fix_keywords()
             hdr = obj.hdr
         data = fix_image_orientation(hdr["CHANNEL"], hdr["EMMODE"], data)
@@ -26,7 +27,7 @@ def main(night_dir, file, data, tuple_header_jsons):
         fits.writeto(file, data, hdr, output_verify="ignore")
         return 0
     except Exception as e:
-        write_error_log(traceback.format_exc(), night_dir)
+        write_error_log(traceback.format_exc(), log_file)
         return 1
 
 
