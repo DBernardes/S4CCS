@@ -1,5 +1,60 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="18008000">
+	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Property Name="NI.Project.Description" Type="Str"></Property>
+	<Property Name="utf.calculate.project.code.coverage" Type="Bool">true</Property>
+	<Property Name="utf.create.arraybrackets" Type="Str">[]</Property>
+	<Property Name="utf.create.arraythreshold" Type="UInt">100</Property>
+	<Property Name="utf.create.captureinputvalues" Type="Bool">true</Property>
+	<Property Name="utf.create.captureoutputvalues" Type="Bool">true</Property>
+	<Property Name="utf.create.codecoverage.flag" Type="Bool">false</Property>
+	<Property Name="utf.create.codecoverage.value" Type="UInt">100</Property>
+	<Property Name="utf.create.editor.flag" Type="Bool">false</Property>
+	<Property Name="utf.create.editor.path" Type="Path"></Property>
+	<Property Name="utf.create.nameseparator" Type="Str">/</Property>
+	<Property Name="utf.create.precision" Type="UInt">6</Property>
+	<Property Name="utf.create.repetitions" Type="UInt">1</Property>
+	<Property Name="utf.create.testpath.flag" Type="Bool">true</Property>
+	<Property Name="utf.create.testpath.path" Type="Path">Unit tests/unit test framework/State Machine</Property>
+	<Property Name="utf.create.timeout.flag" Type="Bool">false</Property>
+	<Property Name="utf.create.timeout.value" Type="UInt">0</Property>
+	<Property Name="utf.create.type" Type="UInt">0</Property>
+	<Property Name="utf.enable.RT.VI.server" Type="Bool">false</Property>
+	<Property Name="utf.passwords" Type="Bin">'!#!!!!!!!)!%%!Q`````Q:4&gt;(*J&lt;G=!!":!1!!"`````Q!!#6"B=X.X&lt;X*E=Q!"!!%!!!!"!!!!#F652E&amp;-4&amp;.516)!!!!!</Property>
+	<Property Name="utf.report.atml.create" Type="Bool">false</Property>
+	<Property Name="utf.report.atml.path" Type="Path">ATML report.xml</Property>
+	<Property Name="utf.report.atml.view" Type="Bool">false</Property>
+	<Property Name="utf.report.details.errors" Type="Bool">false</Property>
+	<Property Name="utf.report.details.failed" Type="Bool">false</Property>
+	<Property Name="utf.report.details.passed" Type="Bool">false</Property>
+	<Property Name="utf.report.errors" Type="Bool">true</Property>
+	<Property Name="utf.report.failed" Type="Bool">true</Property>
+	<Property Name="utf.report.html.create" Type="Bool">false</Property>
+	<Property Name="utf.report.html.path" Type="Path">HTML report.html</Property>
+	<Property Name="utf.report.html.view" Type="Bool">false</Property>
+	<Property Name="utf.report.passed" Type="Bool">true</Property>
+	<Property Name="utf.report.skipped" Type="Bool">true</Property>
+	<Property Name="utf.report.sortby" Type="UInt">1</Property>
+	<Property Name="utf.report.stylesheet.flag" Type="Bool">false</Property>
+	<Property Name="utf.report.stylesheet.path" Type="Path"></Property>
+	<Property Name="utf.report.summary" Type="Bool">true</Property>
+	<Property Name="utf.report.txt.create" Type="Bool">false</Property>
+	<Property Name="utf.report.txt.path" Type="Path">ASCII report.txt</Property>
+	<Property Name="utf.report.txt.view" Type="Bool">false</Property>
+	<Property Name="utf.run.changed.days" Type="UInt">1</Property>
+	<Property Name="utf.run.changed.outdated" Type="Bool">false</Property>
+	<Property Name="utf.run.changed.timestamp" Type="Bin">'!#!!!!!!!%!%%"5!!9*2'&amp;U:3^U;7VF!!%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
+	<Property Name="utf.run.days.flag" Type="Bool">false</Property>
+	<Property Name="utf.run.includevicallers" Type="Bool">false</Property>
+	<Property Name="utf.run.logfile.flag" Type="Bool">false</Property>
+	<Property Name="utf.run.logfile.overwrite" Type="Bool">false</Property>
+	<Property Name="utf.run.logfile.path" Type="Path">test execution log.txt</Property>
+	<Property Name="utf.run.modified.last.run.flag" Type="Bool">true</Property>
+	<Property Name="utf.run.priority.flag" Type="Bool">false</Property>
+	<Property Name="utf.run.priority.value" Type="UInt">5</Property>
+	<Property Name="utf.run.statusfile.flag" Type="Bool">false</Property>
+	<Property Name="utf.run.statusfile.path" Type="Path">test status log.txt</Property>
+	<Property Name="utf.run.timestamp.flag" Type="Bool">false</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -54,19 +109,40 @@
 			<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcr120.dll"/>
 		</Item>
 		<Item Name="Unit Tests" Type="Folder">
-			<Item Name="R/W" Type="Folder">
-				<Item Name="RW State Machine.vi" Type="VI" URL="../Unit tests/RW State Machine.vi"/>
-				<Item Name="RW RxTx.vi" Type="VI" URL="../Unit tests/RW RxTx.vi"/>
-				<Item Name="RW Log File.vi" Type="VI" URL="../Unit tests/RW Log File.vi"/>
-				<Item Name="RW Error Log File.vi" Type="VI" URL="../Unit tests/RW Error Log File.vi"/>
-				<Item Name="RW Keywords Log File.vi" Type="VI" URL="../Unit tests/RW Keywords Log File.vi"/>
+			<Item Name="caraya" Type="Folder">
+				<Item Name="RW VIs" Type="Folder">
+					<Item Name="RW Error Log File.vi" Type="VI" URL="../Unit tests/caraya/RW Error Log File.vi"/>
+					<Item Name="RW Keywords Log File.vi" Type="VI" URL="../Unit tests/caraya/RW Keywords Log File.vi"/>
+					<Item Name="RW Log File.vi" Type="VI" URL="../Unit tests/caraya/RW Log File.vi"/>
+					<Item Name="RW RxTx.vi" Type="VI" URL="../Unit tests/caraya/RW RxTx.vi"/>
+					<Item Name="RW State Machine.vi" Type="VI" URL="../Unit tests/caraya/RW State Machine.vi"/>
+					<Item Name="RxTx.vi" Type="VI" URL="../Unit tests/caraya/RxTx.vi"/>
+				</Item>
+				<Item Name="Error log.vi" Type="VI" URL="../Unit tests/caraya/Error log.vi"/>
+				<Item Name="Keywords Log file.vi" Type="VI" URL="../Unit tests/caraya/Keywords Log file.vi"/>
+				<Item Name="Log file.vi" Type="VI" URL="../Unit tests/caraya/Log file.vi"/>
+				<Item Name="State Machine.vi" Type="VI" URL="../Unit tests/caraya/State Machine.vi"/>
+				<Item Name="Test all.vi" Type="VI" URL="../Unit tests/caraya/Test all.vi"/>
 			</Item>
-			<Item Name="Test all.vi" Type="VI" URL="../Unit tests/Test all.vi"/>
-			<Item Name="State Machine.vi" Type="VI" URL="../Unit tests/State Machine.vi"/>
-			<Item Name="RxTx.vi" Type="VI" URL="../Unit tests/RxTx.vi"/>
-			<Item Name="Keywords Log file.vi" Type="VI" URL="../Unit tests/Keywords Log file.vi"/>
-			<Item Name="Log file.vi" Type="VI" URL="../Unit tests/Log file.vi"/>
-			<Item Name="Error log.vi" Type="VI" URL="../Unit tests/Error log.vi"/>
+			<Item Name="unit test framework" Type="Folder">
+				<Item Name="State Machine" Type="Folder">
+					<Item Name="Write Counter.lvtest" Type="TestItem" URL="../Unit tests/unit test framework/State Machine/Write Counter.lvtest">
+						<Property Name="utf.test.bind" Type="Str">State Machine.lvclass:Write Counter.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">89A8DBFC-35E7-11EC-F3E6-A8EE8FCE8427</Property>
+					</Item>
+					<Item Name="Reset State Machine.lvtest" Type="TestItem" URL="../Unit tests/unit test framework/State Machine/Reset State Machine.lvtest">
+						<Property Name="utf.test.bind" Type="Str">State Machine.lvclass:Reset State Machine.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">AD4CB786-C35D-EFF7-AB46-BE5DA5519CFD</Property>
+					</Item>
+					<Item Name="Decrement Counter.lvtest" Type="TestItem" URL="../Unit tests/unit test framework/State Machine/Decrement Counter.lvtest">
+						<Property Name="utf.test.bind" Type="Str">State Machine.lvclass:Decrement Counter.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">B26302EE-50C0-77AC-5E74-27A3E65146D2</Property>
+					</Item>
+					<Item Name="write counter.vi" Type="VI" URL="../Unit tests/unit test framework/State Machine/write counter.vi"/>
+					<Item Name="decrement counter.vi" Type="VI" URL="../Unit tests/unit test framework/State Machine/decrement counter.vi"/>
+					<Item Name="restart state machine.vi" Type="VI" URL="../Unit tests/unit test framework/State Machine/restart state machine.vi"/>
+				</Item>
+			</Item>
 		</Item>
 		<Item Name="General VIs" Type="Folder">
 			<Item Name="TESTE.vi" Type="VI" URL="../General VIs/TESTE.vi"/>
@@ -75,6 +151,26 @@
 			<Item Name="get machine path.vi" Type="VI" URL="../General VIs/get machine path.vi"/>
 			<Item Name="night time stamp.vi" Type="VI" URL="../General VIs/night time stamp.vi"/>
 			<Item Name="split string.vi" Type="VI" URL="../General VIs/split string.vi"/>
+		</Item>
+		<Item Name="python" Type="Folder">
+			<Item Name="csvs" Type="Folder">
+				<Item Name="header_content.csv" Type="Document" URL="../ACS files/python/csvs/header_content.csv"/>
+				<Item Name="preamp_gains.csv" Type="Document" URL="../ACS files/python/csvs/preamp_gains.csv"/>
+				<Item Name="read_noises.csv" Type="Document" URL="../ACS files/python/csvs/read_noises.csv"/>
+			</Item>
+			<Item Name="header" Type="Folder">
+				<Item Name="__init__.py" Type="Document" URL="../ACS files/python/header/__init__.py"/>
+				<Item Name="header.py" Type="Document" URL="../ACS files/python/header/header.py"/>
+				<Item Name="utils.py" Type="Document" URL="../ACS files/python/header/utils.py"/>
+			</Item>
+			<Item Name="main.py" Type="Document" URL="../ACS files/python/main.py"/>
+			<Item Name="temp.py" Type="Document" URL="../ACS files/python/temp.py"/>
+			<Item Name="tests.py" Type="Document" URL="../ACS files/python/tests.py"/>
+			<Item Name="utils.py" Type="Document" URL="../ACS files/python/utils.py"/>
+		</Item>
+		<Item Name="cam_parameters" Type="Folder">
+			<Item Name="limit_values_parameters.csv" Type="Document" URL="../ACS files/cam_parameters/limit_values_parameters.csv"/>
+			<Item Name="readout_times.csv" Type="Document" URL="../ACS files/cam_parameters/readout_times.csv"/>
 		</Item>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
@@ -199,14 +295,26 @@
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
+				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
+				<Item Name="imagedata.ctl" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/imagedata.ctl"/>
+				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="TRef TravTarget.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef TravTarget.ctl"/>
+				<Item Name="VI Scripting - Traverse.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/traverseref.llb/VI Scripting - Traverse.lvlib"/>
+				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
+				<Item Name="TRef Traverse.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef Traverse.vi"/>
 				<Item Name="Caraya.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/Caraya/Caraya.lvlib"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Timestamp to ISO8601 UTC DateTime.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Timestamp to ISO8601 UTC DateTime.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Local UTC Offset.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Local UTC Offset.vi"/>
-				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Cluster to Array of VData__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Cluster to Array of VData__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Unwrap VVariant__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Unwrap VVariant__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Variant to Header Info__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Variant to Header Info__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Header from TD__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Header from TD__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Build Error Cluster__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Build Error Cluster__ogtk.vi"/>
+				<Item Name="TD_Get MDT Information.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_Get MDT Information.vi"/>
+				<Item Name="Type Descriptor I16 Array.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Type Descriptor I16 Array.ctl"/>
+				<Item Name="Type Descriptor I16.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Type Descriptor I16.ctl"/>
+				<Item Name="TD_MDTFlavor.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_MDTFlavor.ctl"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Cluster to Array of VData__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Cluster to Array of VData__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Split Cluster TD__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Split Cluster TD__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Parse String with TDs__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Parse String with TDs__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Array to Array of VData__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Array to Array of VData__ogtk.vi"/>
@@ -218,50 +326,54 @@
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Last PString__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Last PString__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Set Data Name__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Set Data Name__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Variant Attributes__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Variant Attributes__ogtk.vi"/>
-				<Item Name="TD_Get MDT Information.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_Get MDT Information.vi"/>
-				<Item Name="Type Descriptor I16 Array.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Type Descriptor I16 Array.ctl"/>
-				<Item Name="Type Descriptor I16.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Type Descriptor I16.ctl"/>
-				<Item Name="TD_MDTFlavor.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_MDTFlavor.ctl"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Unwrap VVariant__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Unwrap VVariant__ogtk.vi"/>
-				<Item Name="Parse State Queue__jki_lib_state_machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Parse State Queue__jki_lib_state_machine.vi"/>
+				<Item Name="Caraya Interactive Menu.rtm" Type="Document" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/Caraya/menu/Caraya Interactive Menu.rtm"/>
 				<Item Name="Add State(s) to Queue__jki_lib_state_machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Add State(s) to Queue__jki_lib_state_machine.vi"/>
-				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
-				<Item Name="Set Cursor.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor.vi"/>
-				<Item Name="Set Cursor (Cursor ID).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Cursor ID).vi"/>
-				<Item Name="Set Cursor (Icon Pict).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Icon Pict).vi"/>
-				<Item Name="Set Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Busy.vi"/>
-				<Item Name="imagedata.ctl" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/imagedata.ctl"/>
-				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
-				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="Parse State Queue__jki_lib_state_machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Parse State Queue__jki_lib_state_machine.vi"/>
 				<Item Name="Open URL in Default Browser.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser.vi"/>
 				<Item Name="Open URL in Default Browser (string).vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser (string).vi"/>
 				<Item Name="Open URL in Default Browser core.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser core.vi"/>
 				<Item Name="Open URL in Default Browser (path).vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser (path).vi"/>
 				<Item Name="Path to URL.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Path to URL.vi"/>
 				<Item Name="Escape Characters for HTTP.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Escape Characters for HTTP.vi"/>
+				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
+				<Item Name="Set Cursor.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor.vi"/>
+				<Item Name="Set Cursor (Cursor ID).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Cursor ID).vi"/>
+				<Item Name="Set Cursor (Icon Pict).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Cursor (Icon Pict).vi"/>
+				<Item Name="Set Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Set Busy.vi"/>
+				<Item Name="Compare Two Paths.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Compare Two Paths.vi"/>
+				<Item Name="Get LV Class Name.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Get LV Class Name.vi"/>
+				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5File Exists - Scalar__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5File Exists - Scalar__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (Path)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (Path)__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5List Directory Recursive__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5List Directory Recursive__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Build Path - File Names Array__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Build Path - File Names Array__ogtk.vi"/>
 				<Item Name="Has LLB Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Has LLB Extension.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5List Directory__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5List Directory__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Trim Whitespace (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Trim Whitespace (String)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (String)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Build Path - File Names Array__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Build Path - File Names Array__ogtk.vi"/>
 				<Item Name="Get VI Library File Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get VI Library File Info.vi"/>
 				<Item Name="Librarian File Info Out.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian File Info Out.ctl"/>
 				<Item Name="Librarian.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian.vi"/>
 				<Item Name="Librarian File Info In.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian File Info In.ctl"/>
 				<Item Name="Librarian File List.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian File List.ctl"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5List Directory__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5List Directory__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (String)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Trim Whitespace (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Trim Whitespace (String)__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Filter 1D Array (Path)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Filter 1D Array (Path)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (Path)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (Path)__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Delete Elements from 1D Array (Path)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Delete Elements from 1D Array (Path)__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Sort 1D Array (I32)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Sort 1D Array (I32)__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Reorder 1D Array2 (Path)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Reorder 1D Array2 (Path)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (Path)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (Path)__ogtk.vi"/>
-				<Item Name="TRef TravTarget.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef TravTarget.ctl"/>
 				<Item Name="TRef Traverse for References.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef Traverse for References.vi"/>
-				<Item Name="VI Scripting - Traverse.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/traverseref.llb/VI Scripting - Traverse.lvlib"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Strip Path Extension - String__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Strip Path Extension - String__ogtk.vi"/>
 				<Item Name="Get File System Separator.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysinfo.llb/Get File System Separator.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Filter 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Filter 1D Array (String)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (String)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Delete Elements from 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Delete Elements from 1D Array (String)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Reorder 1D Array2 (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Reorder 1D Array2 (String)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (I32)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (I32)__ogtk.vi"/>
+				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Empty 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Empty 1D Array (String)__ogtk.vi"/>
+				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
+				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
+				<Item Name="Dflt Data Dir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Dflt Data Dir.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Physical Units__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Physical Units__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Physical Units from TD__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Physical Units from TD__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get TDEnum from TD__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get TDEnum from TD__ogtk.vi"/>
@@ -277,22 +389,6 @@
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Waveform Type Enum from Data__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Waveform Type Enum from Data__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Get Waveform Type Enum from TD__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Get Waveform Type Enum from TD__ogtk.vi"/>
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Resolve Timestamp Format__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Resolve Timestamp Format__ogtk.vi"/>
-				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
-				<Item Name="Compare Two Paths.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Compare Two Paths.vi"/>
-				<Item Name="Get LV Class Name.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Get LV Class Name.vi"/>
-				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
-				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
-				<Item Name="Caraya Interactive Menu.rtm" Type="Document" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/Caraya/menu/Caraya Interactive Menu.rtm"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Filter 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Filter 1D Array (String)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Delete Elements from 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Delete Elements from 1D Array (String)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Reorder 1D Array2 (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Reorder 1D Array2 (String)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Search 1D Array (String)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (I32)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Remove Duplicates from 1D Array (I32)__ogtk.vi"/>
-				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Empty 1D Array (String)__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Empty 1D Array (String)__ogtk.vi"/>
-				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
-				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
-				<Item Name="Dflt Data Dir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Dflt Data Dir.vi"/>
-				<Item Name="TRef Traverse.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef Traverse.vi"/>
 			</Item>
 			<Item Name="Atmcd32d.dll" Type="Document" URL="Atmcd32d.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -314,7 +410,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{C186FE8B-7112-49D5-8AB1-DBFECD94CC12}</Property>
-				<Property Name="Bld_version.build" Type="Int">16</Property>
+				<Property Name="Bld_version.build" Type="Int">19</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS.exe</Property>
@@ -322,8 +418,8 @@
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/data</Property>
-				<Property Name="Destination[2].destName" Type="Str">Python</Property>
-				<Property Name="Destination[2].path" Type="Path">../builds/NI_AB_PROJECTNAME/Comm VIs</Property>
+				<Property Name="Destination[2].destName" Type="Str">ACS files</Property>
+				<Property Name="Destination[2].path" Type="Path">../builds/NI_AB_PROJECTNAME/ACS files</Property>
 				<Property Name="Destination[2].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[3].destName" Type="Str">root</Property>
 				<Property Name="Destination[3].path" Type="Path">../builds/NI_AB_PROJECTNAME</Property>
@@ -354,25 +450,27 @@
 				<Property Name="Source[4].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[5].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[5].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[5].Container.depDestIndex" Type="Int">0</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref"></Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/General VIs</Property>
 				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].type" Type="Str">Container</Property>
-				<Property Name="Source[6].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[6].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/General VIs</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">3</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/acs_config_TEMPLATE.cfg</Property>
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[6].type" Type="Str">Container</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/acs_config_TEMPLATE.cfg</Property>
+				<Property Name="Source[7].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[7].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[7].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/python</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[7].type" Type="Str">Container</Property>
+				<Property Name="Source[8].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[8].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[8].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref"></Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/cam_parameters</Property>
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].type" Type="Str">Container</Property>
 				<Property Name="SourceCount" Type="Int">9</Property>
@@ -384,6 +482,19 @@
 				<Property Name="TgtF_targetfileGUID" Type="Str">{5E5B5194-4FCE-4773-B5AF-15F6EA393346}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">ACS.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+			<Item Name="S4ACS" Type="Zip File">
+				<Property Name="Absolute[0]" Type="Bool">false</Property>
+				<Property Name="BuildName" Type="Str">S4ACS</Property>
+				<Property Name="Comments" Type="Str"></Property>
+				<Property Name="DestinationID[0]" Type="Str">{54965EAE-1F9F-4F3D-B308-A3ADAFB425DB}</Property>
+				<Property Name="DestinationItemCount" Type="Int">1</Property>
+				<Property Name="DestinationName[0]" Type="Str">Destination Directory</Property>
+				<Property Name="IncludedItemCount" Type="Int">1</Property>
+				<Property Name="IncludedItems[0]" Type="Ref">/My Computer/Build Specifications/ACS</Property>
+				<Property Name="IncludeProject" Type="Bool">false</Property>
+				<Property Name="Path[0]" Type="Path">../../builds/S4ACS.zip</Property>
+				<Property Name="ZipBase" Type="Str">NI_zipbasedefault</Property>
 			</Item>
 		</Item>
 	</Item>
