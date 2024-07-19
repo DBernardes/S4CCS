@@ -1,38 +1,39 @@
-﻿# SPARC4 Acquisition Control System
-
-The Astrophysics Division of the *Instituto Nacional de Pesquisas Espaciais* (INPE) in collaboration with the *Laboratório Nacional de Astrofísica* (LNA) is developing a new astronomical instrument, the Simultaneous Polarimeter and Rapid Camera in Four Bands ([SPARC4](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8446/844626/Concept-of-SPARC4--a-simultaneous-polarimeter-and-rapid-camera/10.1117/12.924976.full?casa_token=7b-hbhyqIMoAAAAA%3a99lzc7LW-gGeFuEs1N_7ZGdcFS1EiapC3jbzEYyrWT3PDiUP4RXPDEiR9IdfuRvDY7pPetsPx88&SSO=1)). SPARC4 will be installed on the 1.6 m Perkin-Elmer telescope at Observatório Pico dos Dias (OPD), Brazil, and it will allow image acquisition in the four Sloan Digital Sky Survey (SDSS) photometric bands: g, r, i and z. For the acquisition in each band (channel), there is a dedicated iXon Ultra EMCCD, produced by Andor Technology. These devices have an optical window and coating optimized for the spectral range in which they were designed to operate. These cameras also have frame transfer and electron-multiplying capabilities, allowing acquisition rates (AR) of up to 26 fps full-frame (1024 x 1024 pixels) even on faint astronomical objects, which requires high sensitivity for short exposure times.   
-
-For the control of the SPARC4 cameras, it is being developed the SPARC4 acquisition control system (ACS). The ACS is in version 1.7 and its development is being done through the graphical programming language Labview with the Software Development Kit (SDK) package, made availabel by Andor, to comunicate with the cameras. This software will allow simultaneous and synchronized acquisition for the four SPARC4 channels. The synchronization will be made by a digital pulse generator developed by the Highlands Technology with a resolution of 10 ps between pulses. For each channel it is possible to acquire cubes with up to 170 full-frame images (1024 x x1024 pixels) with a delay of approximately 1.7 ms between exposures. It is also possible to concatenate cubes with 170 images with a delay of 950 ms between cubes. Thus, this system will allow the acquisition of synchronized image cubes for the four channels, a feature that is not available on the control software delivered by the manufacturer, the Andor Solis.
-
-This README presents a step-by-step tutorial to download the latest version of the code and run a simple test for image acquisition. Figure below presents an image of the Graphical Engineering Interface (GEI) developed to control the ACS for engineering purposes. However, the ACS is being developed only to control the cameras and its final version will not have a graphical interface. 
-
 <p align="center">
-  <img src="https://github.com/DBernardes/SPARC4_ACS/blob/master/Images/GEI_Front_Panel.png" />
+  <img src="Images/S4ACSp.png" />
 </p>
 
+ # SPARC4 Acquisition Control System
+
+*Instituto Nacional de Pesquisas Espaciais* (INPE), in collaboration with *Laboratório Nacional de Astrofísica* (LNA), is developing the Simultaneous Polarimeter and Rapid Camera in Four Bands (SPARC4), a new astronomical instrument installed in the Perkin-Elmer 1.6 m telescope of Picos dos Dias Observatory (in Portuguese, OPD). In this repository, we present the Acquisition Control System ([SPARC4](https://coast.lna.br/home/sparc4)) that, integrated into the other systems of the instrument, controls the data acquisition of the four scientific detectors. The development of S4ACS has been done using the graphical programming language Laboratory Virtual Instrument Engineering Workbench (LabVIEW) 2018 using the routines of the Software Development Kit (SDK) made available by the Andor Technology company (the manufacturer of the detectors) for the communication with the cameras. The data acquired by the cameras are saved in Flexible Image Transport System (FITS) files, created using python scripts. These scripts run in the LabVIEW platform using an integrated library for running the Python 3.6 interpreter, previously installed on the machine. With the current version of S4ACS, it is possible to acquire a series of 1400 images of 1024 x 1024 pixels, with an overhead of 1.7 ms between images. Besides, it is possible to acquire several series of 1400 images, with an overhead of 140 ms between series. 
  
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project on your local machine for testing purposes. 
 
 ### Prerequisites
-There are some packages that need to be installed before running the software. The first one is the Software Development Kit (SDK) developed by Andor Technology to control the CCDs. The second one is the GFITSIO package, used to save the data acquired by the camera in FITS format. 
 
-[Software Development Kit (SDK)](https://andor.oxinst.com/products/software-development-kit/)
+S4ACS uses a [Python 3.6 (32 bits)](https://www.python.org/downloads/release/python-368/) interpreter to be able to run the scripts responsible for saving the images. 
+This is the most recent version of Python supported by LabVIEW 2018. It should be downloaded and installed on your local machine.
+After that, some python dependencies need to be installed too. For that, run the following command:
 
-[GFITSIO](https://github.com/USNavalResearchLaboratory/GFITSIO)
-
+```bash
+pip install dataclasses astropy numpy pandas
+```
 
 ### Installing
-Clone this repo using ``` git clone https://github.com/DBernardes/SPARC4_ACS.git ```
+- Download and extract the S4ACS .zip file found in this [link](https://github.com/DBernardes/S4ACS/releases/latest). 
+- Inside the extracted folder, there is a file name `acs_config_TEMPLARE`.
+This file has the configuration that S4ACS needs to run and it **must** be saved in the path `C:\Users\<user_name>\SPARC4\ACS\acs_config.cfg` (without the `_TEMPLATE` string).
+- Running the executable `ACS.exe`, a window shows up. It should be similar to the image at the top of this page.
+- Set the  `use config file` buttom in the most top panel to `NO`. This will set the S4ACS to use the information present in the `Init configuration` panel to initialize.
+- Configure the `Init configuration` panel according to your local environment.
+The `Remote IP` is the IP from where S4ACS will receive a query.
+The `Channel` corresponds to one of the four SPARC4 cameras.
+The `ACS mode` indicates if S4ACS should run in the real or simulated mode. You should keep it 'simulated' if you do not have an iXon Ultra 888 EMCCD camera.
+The `Communcation` indicates to S4ACS the type of communication that should be used. The option TCP-IP is deprecated and does not should be used, though.
+The `Image path` is the path where the images should be saved.
+- After this configuration, you should be able to run the software by pressing the white arrow at the top of the window.
 
-## Running the tests
-1. Before running the software, you need to connect an Andor iXon Ultra EMCCD camera to your computer. If you do not have this camera, the ACS will run in the simulated mode. In this mode, the ACS uses a class that simulates the communication with the camera to create the image files. This feature is available since the 1.7 version of the code.
-2. Open the project SPARC4_AC.lvproj.
-3. Run the VI SPARC4_GUI.vi.
-4. Wait until the camera starts.
-5. Set the night directory where the acquired images should be saved.
-6. Press the Acquire button to start an acquisition. This would allow you to obtain a FITS files in your directory with the data acquired by the camera.
 
 ## Authors and Contact
 
