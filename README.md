@@ -30,7 +30,7 @@ This file has the configuration that S4ACS needs to run and it **must** be saved
   - The `Image path` is the path where the images should be saved.
 6. After this configuration, you should be able to run the software by pressing the white arrow at the top of the window.
 
-<p align="center"><img src="Images/S4ACSp.png" alt="S4ACS front panel" width="500"/></p>
+<p align="center"><img src="docs/images/S4ACSp.png" alt="S4ACS front panel" width="500"/></p>
 
 
 ## Authors and Contact

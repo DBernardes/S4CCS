@@ -1,0 +1,54 @@
+# LabVIEW Project Files
+*.aliases
+*.lvlps
+*.lvclass
+*.lvlibp
+*.lvproj
+*.lvtest
+*.lvcdp
+*.lvws
+
+# User-specific Files
+*.lvuser
+*.lvlog
+*.lvhints
+*.lvrules
+*.lvstyle
+*.lvsettings
+
+# Compiled Files
+*.exe
+*.llb
+*.dll
+*.lib
+*.lvlib
+*.lvlibp
+*.lvclass
+*.lvsc
+
+# Backup Files
+*.bak
+*.backup
+
+# Object Files
+*.obj
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.temp
+
+# OS-specific Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Miscellaneous
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
