@@ -39,6 +39,7 @@ This file has the configuration that S4ACS needs to run and it **must** be saved
   - [Github](https://github.com/DBernardes)
   - [LinkedIn](www.linkedin.com/in/denisbernardes)
   - [Email](mailto:denis.bernardes099@gmail.com)
+  - Affiliation: Instituto Nacional de Pesquisas Espaciais (INPE).
   - Address: 1758 Astronautas Avenue, Jardim da Granja, São José dos Campos, São Paulo, Brazil.
 
 ## License
