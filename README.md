@@ -35,9 +35,11 @@ This file has the configuration that S4ACS needs to run and it **must** be saved
 
 ## Authors and Contact
 
-* **Denis Bernardes**: 
-
-email: denis.bernardes099@gmail.com 
+- **Denis Bernardes**
+  - [Github](https://github.com/DBernardes)
+  - [LinkedIn](www.linkedin.com/in/denisbernardes)
+  - [Email](mailto:denis.bernardes099@gmail.com)
+  - Address: 1758 Astronautas Avenue, Jardim da Granja, São José dos Campos, São Paulo, Brazil.
 
 ## License
 
