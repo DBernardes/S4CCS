@@ -32,6 +32,12 @@ This file has the configuration that S4ACS needs to run and it **must** be saved
 
 <p align="center"><img src="docs/images/S4ACSp.png" alt="S4ACS front panel" width="500"/></p>
 
+## How to cite
+If this work helped you in any way, please consider citing it.
+Visit our Zenodo webpage on:
+
+[![DOI](https://zenodo.org/badge/295755182.svg)](https://zenodo.org/doi/10.5281/zenodo.12796063)
+
 
 ## Authors and Contact
 
