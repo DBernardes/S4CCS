@@ -78,6 +78,9 @@
 				<Item Name="CH3_ZEROMQ_PULL.vi" Type="VI" URL="../Comm VIs/CH3_ZEROMQ_PULL.vi"/>
 				<Item Name="CH4_ZEROMQ_PULL.vi" Type="VI" URL="../Comm VIs/CH4_ZEROMQ_PULL.vi"/>
 				<Item Name="CH1_ZEROMQ_REP.vi" Type="VI" URL="../Comm VIs/CH1_ZEROMQ_REP.vi"/>
+				<Item Name="CH2_ZEROMQ_REP.vi" Type="VI" URL="../Comm VIs/CH2_ZEROMQ_REP.vi"/>
+				<Item Name="CH3_ZEROMQ_REP.vi" Type="VI" URL="../Comm VIs/CH3_ZEROMQ_REP.vi"/>
+				<Item Name="CH4_ZEROMQ_REP.vi" Type="VI" URL="../Comm VIs/CH4_ZEROMQ_REP.vi"/>
 			</Item>
 			<Item Name="ACS status" Type="Folder">
 				<Item Name="publish_C1_ACS_status.vi" Type="VI" URL="../Comm VIs/publish_C1_ACS_status.vi"/>
@@ -173,9 +176,9 @@
 			<Item Name="limit_values_parameters.csv" Type="Document" URL="../ACS files/cam_parameters/limit_values_parameters.csv"/>
 			<Item Name="readout_times.csv" Type="Document" URL="../ACS files/cam_parameters/readout_times.csv"/>
 		</Item>
-		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
 		<Item Name="acs_config_TEMPLATE.cfg" Type="Document" URL="../ACS files/acs_config_TEMPLATE.cfg"/>
+		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="Simulated Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated Camera.lvclass"/>
 		<Item Name="Real Camera.lvclass" Type="LVClass" URL="../CCDCamera/Real Camera.lvclass"/>
 		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
