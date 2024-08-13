@@ -56,8 +56,7 @@ The control of S4CCS can be done by using ethernet request...
 ## Authors and acknowledgment
 
 - **Denis Bernardes (main developer)**
-
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=flat&logo=github&logoColor=white)](https://github.com/DBernardes) 
+  - [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=flat&logo=github&logoColor=white)](https://github.com/DBernardes) 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](www.linkedin.com/in/denisbernardes) 
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white)](mailto:denis.bernardes099@gmail.com)
   - Affiliation: Instituto Nacional de Pesquisas Espaciais (INPE).
