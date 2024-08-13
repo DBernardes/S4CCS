@@ -25,8 +25,8 @@ pip install dataclasses astropy numpy pandas
 1. Download and extract the S4CCS .zip file found in this [link](https://github.com/DBernardes/S4CCS/releases/latest). 
 1. Inside the extracted folder, there is a file name `acs_config_TEMPLARE`.
 This file has the configuration that S4CCS needs to run and it **must** be placed in the path `C:\Users\<user_name>\SPARC4\CCS\acs_config.cfg` (without the `_TEMPLATE` string).
-1. Running the executable `CCS.exe`, an interface will show up. It should be similar to the image below. In this interface, set the `use config file` buttom in the most top panel to `NO`. This will set S4CCS to use the information present in the `Init configuration` panel to initialize.
-1. Configure the `Init configuration` panel according to your local environment. Table presented in this [link](https://github.com/DBernardes/S4CCS#Description-of-the-inital-configuration-parameters) presents a description of inital configuration parameters.
+1. Running the executable `S4CCS.exe`, an interface will show up. It should be similar to the image presented below. In this interface, set the `use config file` buttom in the most top panel to `NO`. This will set S4CCS to use the information presented in the `Init configuration` panel to initialize.
+1. Configure the `Init configuration` panel according to your local environment. Table presented in this [link](https://github.com/DBernardes/S4CCS#description-of-the-inital-configuration-parameters) presents a description of the parameters cotained in this panel.
 1. After this configuration, you should be able to run the software by pressing the white arrow at the top of the window.
 
 <p align="center"><img src="docs/images/S4ACSp.png" alt="S4CCS front panel" width="500"/></p>
@@ -40,7 +40,7 @@ This file has the configuration that S4CCS needs to run and it **must** be place
 |Channel| The current channel of the instrument|
 | CCS mode | The mode of S4CCS (real or simulated)
 | Communication | The type of communication that should be used (TCP-IP or ZeroMQ)|
-|IOmage path | The path where the acquired images should be saved|
+|Image path | The path where the acquired images should be saved|
 
 ## How to cite
 If this work helped you in any way, please consider citing it.
