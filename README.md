@@ -2,6 +2,7 @@
  ![Windows](https://img.shields.io/badge/Windows-0078D6?style=Flat&logo=windows&logoColor=white)
  [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
  [![DOI](https://zenodo.org/badge/295755182.svg)](https://zenodo.org/doi/10.5281/zenodo.12796063)
+ [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
  # SPARC4 Camera Control System
 
@@ -42,21 +43,38 @@ This file has the configuration that S4CCS needs to run and it **must** be place
 | Communication | The type of communication that should be used (TCP-IP or ZeroMQ)|
 |Image path | The path where the acquired images should be saved|
 
-## How to cite
-If this work helped you in any way, please consider citing it.
-Visit our Zenodo webpage on:
 
-[![DOI](https://zenodo.org/badge/295755182.svg)](https://zenodo.org/doi/10.5281/zenodo.12796063)
+## Usage
 
+The control of S4CCS can be done by using ethernet request...
 
-## Authors and Contact
+## Contributing
 
-- **Denis Bernardes**
-  - [Github](https://github.com/DBernardes)
-  - [LinkedIn](www.linkedin.com/in/denisbernardes)
-  - [Email](mailto:denis.bernardes099@gmail.com)
+- Do this
+- Do that
+
+## Authors and acknowledgment
+
+- **Denis Bernardes (main developer)**
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=flat&logo=github&logoColor=white)](https://github.com/DBernardes) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](www.linkedin.com/in/denisbernardes) [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white)](mailto:denis.bernardes099@gmail.com)
   - Affiliation: Instituto Nacional de Pesquisas Espaciais (INPE).
   - Address: 1758 Astronautas Avenue, Jardim da Granja, São José dos Campos, São Paulo, Brazil.
+
+- **Claudia Vilega Rodrigues (supervisor)**
+  - Affiliation: Instituto Nacional de Pesquisas Espaciais (INPE).
+  - Address: 1758 Astronautas Avenue, Jardim da Granja, São José dos Campos, São Paulo, Brazil.
+
+- **Eder Martioli (supervisor)**
+  - Affiliation: Laboratório Nacional de Astrofísica (LNA).
+  - Address: 154 Estados Unidos Street, Nações, Itajubá, Minas Gerais, Brazil.
+
+- **Luciano Fraga (supervisor)**
+  - Affiliation: Laboratório Nacional de Astrofísica (LNA).
+  - Address: 154 Estados Unidos Street, Nações, Itajubá, Minas Gerais, Brazil.
+
+- **Orlando Verducci Júnior (contributor)**
+  - Affiliation: Laboratório Nacional de Astrofísica (LNA).
+  - Address: 154 Estados Unidos Street, Nações, Itajubá, Minas Gerais, Brazil.
 
 ## License
 
