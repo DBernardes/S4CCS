@@ -1,21 +1,22 @@
 # Hardware
 
-This section presents the hardware components used by S4CCS in image acquisition. These components are the detectors, the acquisition computers, and the optical fiber set.
+This section presents the hardware components used to run an S4CCS instace. These components are the detectors, the acquisition computers, and the optical fiber set.
 
 ## Detectors
 
-The detectors used by SPARC4 are four Frame Transfer (FT) iXon Ultra 888 Electron Multiplying CCD (EMCCD) cameras, produced by Oxford Instruments company. These cameras have a window and a coating optimized for the spectral band where they operate. These bands are similar to the g, r, i, and z bands of the Sloan Digital Sky Survey (SDSS) photometric system. These devices have the Electron Multiplying option, which allows the amplification of the acquired signal. Also, they have the FT option, which allows the acquisition of an exposure simultaneously with the reading of the previous one. For this reason, it is possible to acquire images with a maximum acquisition rate of 27 fps, for full-frame images. An article with the characterization of the CCDs can be found in this [link](https://arxiv.org/abs/1806.02191). This [link](https://arxiv.org/abs/2107.14769) presents a dissertation about a study of the optimization of the operation mode of the CCDs.
+The detectors used by SPARC4 are four Frame Transfer (FT) iXon Ultra 888 Electron Multiplying CCD (EMCCD) cameras, of 1024 x 1024 pixels of 13 &mu;m, produced by Oxford Instruments company. These cameras have a window and a coating optimized for the spectral band where they operate, which are similar to the g, r, i, and z bands of the Sloan Digital Sky Survey (SDSS) photometric system. These devices have the Electron Multiplying option, which allows the amplification of the acquired signal. Also, they have the FT option, which allows the acquisition of an exposure happens simultaneously with the reading of the previous one. For this reason, date acqiosition can be done with a maximum acquisition rate of 27 fps, for full-frame images. 
 
-Below, all the parameters of the operation mode of the cameras are presented. These parameters are available in the engineering tab of the S4GUI and should be set only at the beginning of the night (see Section 3.2). Each line lists the keyword that represents a given parameter, the possible values in the first brackets, the default value in the second brackets, and a brief description of the parameter. 
+Tabela Below, all the parameters of the cameras operation mode are presented. These parameters are presented in the engineering tab of the S4GUI. Each line lists the keyword that represents a given parameter, the possible values in the first brackets, the default value in the second brackets, and a brief description of the parameter. 
 
-|Parameter|Allowed values|Default value|Description|
-|-----|-----|-----|-----|
-|INITIAL_LINE| 1-1024 | 1 | The initial line of the image. This number must be smaller than the FINAL_LINE.|
-|INITIAL_COLUMN |1-1024| 1 | The initial column of the image.  This number must be smaller than the FINAL_COLUMN|
-|FINAL_LINE| 1-1024 | 1024 | The final line of the image.|
-|FINAL_COLUMN |1-1024| 1024| The final column of the image.|
-|VBIN |1-1024| 1 | Vertical binning of the pixels. The number of lines of the image (FINAL_LINE - INITIAL_LINE)  must be a multiple of the chosen value for the VBIN.|
-|HBIN |1-1024| 1 | Horizontal binning of the pixels. The number of columns of the image (FINAL_COLUMN - INITIAL_COLUMN) must be a multiple of the chosen value for the |HBIN.
+Table 1: operation mode parameters of the SPARC4 cameras. In the table, the name, allowed values, default value, and a brief description are presented.
+|Parameter|Type| Unit |Allowed values|Default value|Description|
+|-|-|-|-|-|-|
+|INITIAL_LINE   | integer | 1-1024 | 1 | Initial image line.|
+|INITIAL_COLUMN | integer |1-1024| 1 | Initial image column.|
+|FINAL_LINE| integer |1-1024 | 1024 | Final image line of the image.|
+|FINAL_COLUMN |integer |1-1024| 1024| The final column of the image.|
+|VBIN |integer |1-1024| 1 | Vertical binning of the pixels. The number of lines of the image (FINAL_LINE - INITIAL_LINE)  must be a multiple of the chosen value for the VBIN.|
+|HBIN |integer |1-1024| 1 | Horizontal binning of the pixels. The number of columns of the image (FINAL_COLUMN - INITIAL_COLUMN) must be a multiple of the chosen value for the |HBIN.
 |PREAMP |Gain 1, Gain 2| Gain 1| Type of the pre-amplification gain of the CCD (see Table 1).|
 |EM_GAIN | 2-300| 2 | EM gain of the CCD. This parameter can be used only in the EM mode.|
 |EM_MODE |Electron Multiplying, Conventional| Conventional| Output amplifier mode. This parameter constrains the possible values of the EM_GAIN and the READOUT_RATE.|
@@ -77,4 +78,9 @@ There are four acquisition computers. They have been acquired using Fapemig fund
 ## Fiber optic set 
 The fiber optic set is composed of a cable of 50 m of optical fiber, a converter from fiber cable to USB 3.0 cable, and the PCI Express plate. The specifications of the fiber set can be viewed in this link.
 If the PCI Express plate is installed in a computer, the converter should be energized, otherwise the computer is not able to start. Also, the converter should not be turned off while the computer is on. If this happens, the computer will freeze and reboot. For more information, see this link.
+
+## Related links
+
+- [Characterization of the SPARC4 CCDs](https://arxiv.org/abs/1806.02191)
+- [Optimization of EMCCD operating parameters for the acquisitionsystem of SPARC4](https://arxiv.org/abs/2107.14769)
 
