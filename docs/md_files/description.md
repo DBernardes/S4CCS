@@ -1,7 +1,7 @@
 ## Software description
 
 
-S4CCS (see Figure 1) is a software being written using the graphical programming language Labview 2018 to control the four iXon Ultra EMCCD cameras, produced by the Andor Technology company. To communicate with the cameras, S4CCS uses the development package SDK version 2.104.30000.0 (02-24-2020), available for Linux and Windows operating systems. The data acquired by the cameras is saved in a fits file using a python (version 3.6) script running in Labview platform. For that, a python integration toolkit for labview, developed by the Enthought company, is used. S4CCS is kept in the code hosting platform Github and can be found in this link. This link presents a conference abstract about S4CCS. 
+S4CCS is a software developed using the LabVIEW 2018 programming language and the Software Development Kit (SDK) package, version 2.104.30000.0 (02-24-2020), made available by Oxford Instruments, to control the SPARC4 EMCCDs (see Figure 1). The operational system used for the development of S4CCS was the Windows Server 2016 Standard, version 1607. Using S4CCS, it is possible to configure all the parameters of the SPARC4 scientific detectors and acquire a series of images. The acquired data is saved in a Flexible Image Transport System (FITS) file. All the information related to the acquisition, as the instrument configuration and the telescope and weather information, are written into the FITS file header in parallel with the acquisition. Both the creation of the files and the edition of the headers are made using scripts in Python language. These scripts are run using a Python interpreter 3.6, running in the LabVIEW platform, using a native library for creating Python sessions. With the current S4CCS version, it is possible to acquire a series with up to 1400 images of 1024 x  1024 pixels, with an overhead of 4.5 ms between images. Besides, it is possible to acquire several series of images with an overhead of 120 ms between series, using the asynchronous mode of the instrument. 
 
 <div style="text-align: center">
   <figure>
@@ -11,38 +11,46 @@ S4CCS (see Figure 1) is a software being written using the graphical programming
 </div>
 
 
-With the current S4CCS version, it is possible to set the configuration of all parameters presented in Section 2.1. We can acquire a kinetic series of images with the maximum size of 1470 frames (1024 x 1024 pixels), with a delay of 1.7 ms between frames. Also, it is possible to acquire a series of images with a delay of 180 ms between each series. 
-During the development, we noticed a limitation in the use of SDK. SDK can communicate with one camera at a time. The control of two or more cameras can be done only by switching the active camera at that moment. This reduces the performance of the instrument. So, to circumvent this problem, we decided to use four computers, one computer for each camera. In each computer, there will be one instance of S4CCS. We found that Pirola, V., et al., in their article, found the same solution for the polarimeter Dipol-UF. 
+During the development of S4CCS, we verified that SDK is able to communicate with only one camera at a time. For the control of several cameras, the current active device should be set. This procedure could reduce the performance of the instrument if more than one camera is controlled by the same computer. This occurs because the reading of the acquired data by two different cameras can not be done simultaneously. To circumvent this problem, we decided to use one camera per computer and, for each computer, one instance of S4CCS.
 
-The control of all the S4CCS instances is done using S4GUI (see Figure 2). S4GUI communicates with each S4CCS instance using the TCP-IP protocol. S4GUI allows to set the operation mode of the cameras and start the acquisition of a series of images. To synchronize the image acquisition between each camera, S4GUI uses the sync box (see this link for the manual of the manufacturer). When the cameras are ready to start the next acquisition, S4GUI controls the sync box to send four digital pulses with a synchronization error of 12 ps between them. Thus, we can acquire a simultaneous and synchronized series of images for the four cameras.
+S4CCS provides a series of security procedures to prevent a misuse of the EMCCD cameras. One of them is related to the configuration of these cameras' parameters. The SPARC4 cameras present several parameters for controlling their operation. The proper use of these parameters can be a little complex without some technical knowledge. For this reason, S4CCS performs a sequence of verification steps over the parameter values provided by S4GUI, raising a warning in the case of any inconsistency. 
 
+
+
+## Communication 
+
+Each S4CCS instance communicates with the SPARC4 and observatory sub-systems using the ZeroMQ protocol. This is an open-source standard capable of communicating with several different languages using the Ethernet. S4CCS uses two communication patterns. In the first one, it periodically publishes its status using the publish-subscribe pattern. S4GUI, in turn, uses these publications to access the status of the 4 channels at any time. Moreover, S4CCS uses this communication pattern to access the status of the instrument and the observatory sub-systems and get the information to be written into the image headers. The second pattern used by S4CCS is the request-reply. This pattern is used in receiving the requests sent by S4GUI, like a command to set the cameras configuration or even the trigger of the acquisition of an image series.
 
 Figure 2. Flowchart of the acquisition system of SPARC4.
+
+
+## Log files
+
+In other to help diagnose the behavior of S4CCS during its use to control the SPARC4 cameras, its creates three files for each observation night. These files are used to log relevant information related to the operation of S4CCS. In the first file, unexpected errors that might happen while S4CCS is running are logged. The second file is used to log any inconsistency found between the information received from the sub-systems of the observatory and the formatting expected for the image header. For the last file, events considered important during the execution of S4CCS, as requests received from S4GUI or problems detected for an incoming configuration of the camera are logged.
+
+## S4CCS operating modes
+
+S4CCS presents two operation modes: real and simulated. In the real mode, S4CCS communicates with a real camera. Therefore, all the tasks performed by the software, as writing the operation mode, or reading the acquired image, occur using SDK to control this device. In the simulated mode, on the other hand, S4CCS simulates all the functions that require the use of SDK. In image acquisitions, for example, S4CCS creates an image filled with zeros with the same size request by the user. This mode was useful when performing engineering tests of the system, dispensing the use of a real camera.
+
+
 
 ## When S4CCS initializes
 S4CCS does some tasks when it initializes. The main tasks are presented in this section.
 
 The first task accomplished by S4CCS is to start the communication with the camera. For that, it verifies if the currently detected camera is an iXon Ultra. If it is, S4CCS continues with the initialization. If not, It will shut down the camera and pass to the next. This procedure was included because S4CCS was having problems in communicating with the camera when it runs in the same computer where the software AutoGuider of the OPD is running.
 
-Another important task made by S4CCS during initialization is to find the index of the lastest acquired image. For that, S4CCS searches for the largest index found in the name of the images present in the current directory. The name of the next images will be created based on this index.
 
+## Commands accepted by S4CCS
 
-## Communication with S4CCS
+S4CCS provides a set of pre-configured commands that allow the control of the EMCCD cameras. Following, a brief description these commands is presented. 
 
-S4CCS is able to control one camera at a time. Each camera is represented in Labview by a class named Channel. Each instance of the Channel class can be controlled by an external application (for example, S4GUI) using the TCP-IP protocol. For that, each channel has a Virtual Instrument (VI), a code block in the Labview language, which runs in parallel with S4CCS. This VI is responsible for the communication between the channel and the external application.  
-First, this VI creates a listener, based on the IP of the external application and a pre-configured serial port. This process creates an ID of the connection. Then, the VI waits for a connection request on this ID from the external application. Once the connection is established, the message is read, processed by the channel, answered, and closed. After this, a new connection ID will be created, and the VI will wait for a new connection request. This process is used to avoid some problems related to communication. For example, even though the communication request fails, the external application can request another one some time later without reinitiating S4CCS.
-It should be highlighted that the TCP-IP communication requires a series of steps that stop the execution of the code while the connection is not established. For this reason, the communication between S4CCS and this VI is done using the Labview package named Queue. The communication occurs between two queues with the same name, but the creation of one queue does not require the creation of the other one. For each channel, two queues are created: one to transmite and other to receive messages. Figure 2 presents a schematic structure of the S4CCS communication system. An advantage of using this system is that the communication with S4GUI could still work even though the communication with the camera fails.
+- SET: allow the user to set a parameter of the cameras. The syntax should be `COMMAND <PARAMETER> <VALUE>`, where `PARAMETER` should be a valid parameter of the operation mode of the CCD, and `VALUE` should be a valid value of this parameter. The allowed parameter and their allowed values are presented in Section ??
 
-
-## Set of commands implemented in S4CCS
-Besides the use of a graphical interface to control the cameras, S4CCS provides the option to control the acquisition by command line. For that, there are a set of pre-configured commands in S4CCS. Below, a brief description of each one of these commands is presented. 
-SET/GET: allows the user to set and get, respectively, the CCD parameters. For the SET command, the syntax should be `COMMAND PARAMETER VALUE` (separated by whitespaces), where `PARAMETER` should be a valid parameter of the operation mode of the CCD, and `VALUE` should be a valid value of this parameter. The syntax for the GET command is the same as the SET without the `VALUE`. The allowed values for the `PARAMETER` are presented in Section 2.1.
-
-- EXPOSE: this command allows the user to start the acquisition of a series of images.  
-- STATUS: this command returns the current status of the camera. The returned parameters are:
+- EXPOSE: start the acquisition of a series of images.  
+- STATUS: return the current status of the camera. The returned parameters are:
     - ERROR: this parameter indicates if any error was generated during the execution.
-    - SERIAL_NUMBER: the serial number of the CCD.
-    - ACQUIRING: the acquisition status (boolean).
+    - SERIAL_NUMBER: the serial number of CCD.
+    - ACQUIRING: the acquisition status.
     - CUBES_DONE: the number of cubes already acquired in the series.
     - FRAMES_DONE: the number of frames already acquired in the cube.
     - FRAME_EXPOSURE_TIME: the exposure time of the current frame.

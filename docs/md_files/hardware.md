@@ -9,47 +9,47 @@ The detectors used by SPARC4 are four Frame Transfer (FT) iXon Ultra 888 Electro
 Tabela Below, all the parameters of the cameras operation mode are presented. These parameters are presented in the engineering tab of the S4GUI. Each line lists the keyword that represents a given parameter, the possible values in the first brackets, the default value in the second brackets, and a brief description of the parameter. 
 
 Table 1: operation mode parameters of the SPARC4 cameras. In the table, the name, allowed values, default value, and a brief description are presented.
-|Parameter|Type| Unit |Allowed values|Default value|Description|
-|-|-|-|-|-|-|
-|INITIAL_LINE   | integer | 1-1024 | 1 | Initial image line.|
-|INITIAL_COLUMN | integer |1-1024| 1 | Initial image column.|
-|FINAL_LINE| integer |1-1024 | 1024 | Final image line of the image.|
-|FINAL_COLUMN |integer |1-1024| 1024| The final column of the image.|
-|VBIN |integer |1-1024| 1 | Vertical binning of the pixels. The number of lines of the image (FINAL_LINE - INITIAL_LINE)  must be a multiple of the chosen value for the VBIN.|
-|HBIN |integer |1-1024| 1 | Horizontal binning of the pixels. The number of columns of the image (FINAL_COLUMN - INITIAL_COLUMN) must be a multiple of the chosen value for the |HBIN.
-|PREAMP |Gain 1, Gain 2| Gain 1| Type of the pre-amplification gain of the CCD (see Table 1).|
-|EM_GAIN | 2-300| 2 | EM gain of the CCD. This parameter can be used only in the EM mode.|
-|EM_MODE |Electron Multiplying, Conventional| Conventional| Output amplifier mode. This parameter constrains the possible values of the EM_GAIN and the READOUT_RATE.|
-|READOUT_RATE |0.1, 1, 10, 20, 30| 1 MHz | Pixel readout rate (horizontal shift speed) in MHz. For the Conventional mode, the allowed values are 0.1 MHz and 1 MHz. For the EM mode, the allowed values are 1, 10, 20, and 30 MHz.|
-|SHUTTER_MODE |Open, Closed| Open | Shutter operation mode.|
-|SHUTTER_TTL |High, Low| Low |: signal to open shutter.|
-|SHUTTER_OPENING_TIME |1-2E9| 50 | Time to open the shutter in milliseconds.|
-|SHUTTER_CLOSING_TIME |1-2E9| 50| Time to close the shutter in milliseconds.|
-|TRIGGER_MODE |Internal, External | External| Trigger mode for the start of the exposure.|
-|VERTICAL_SHIFT_SPEED |0.6, 1.13, 2.2, 4.33| 0.6| Shift speed of the lines of CCD in MHz (see this link).|
-|READ_MODE |Image| Image | Image read mode.|
-|FRAME_TRANSFER |ON, OFF| ON | Frame transfer mode.|
-|VERTICAL_CLOCK_VOLTAGE |Normal, +1, +2, +3, +4| Normal| Amplitude of the clock signal (see this link).|
-|ACQUISITION_MODE |Single Scan, Kinetic| Kinetic| Image acquisition mode. |
-|AD_CHANNEL |0 | 0 | Analogical-to-digital converter. The iXon cameras have only one AD channel.|
+|Parameter      | Allowed values | Default value | Description|
+|-|-|-|-|
+|INITIAL_LINE   | 1-1024 | 1    | Initial image line.|
+|INITIAL_COLUMN | 1-1024 | 1    | Initial image column.|
+|FINAL_LINE     | 1-1024 | 1024 | Final image line of the image.|
+|FINAL_COLUMN   | 1-1024 | 1024 | The final column of the image.|
+|VBIN           | 1-1024 | 1    | Number of pixels to be binned in the vertical direction.|
+|HBIN           | 1-1024 | 1    | Number of pixels to be binned in the horizontal direction.|
+|PREAMP         |Gain 1, Gain 2	| Gain 1 | Pre-amplification gain.|
+|EMGAIN         | 2-300	 | 2    | EM CCD gain.|
+|EM_MODE        | Electron Multiplying, Conventional| Conventional| Output amplifier mode.|
+|READOUT_RATE   | 0.1, 1, 10, 20, 30 | 1    | Readout rate of the pixels in MHz.|
+|SHUTTER_MODE         | Open, Closed | Open | Shutter operation mode.|
+|SHUTTER_TTL          | High, Low    | Low  | Level of the analogical output signal of the sutther.|
+|SHUTTER_OPENING_TIME | 1-2e9        | 50   | Time to open the shutter in ms.|
+|SHUTTER_CLOSING_TIME | 1-2e9        | 50   | Time to close the shutter in ms.|
+|TRIGGER_MODE         | Internal, External  | External| Trigger mode of the exposure start.|
+|VERTICAL_SHIFT_SPEED |0.6, 1.13, 2.2, 4.33 | 0.6     | Vertical shift speed of the pixels in &mu;s|
+|READ_MODE            | Image  | Image | Image read mode.|
+|FRAME_TRANSFER       | ON, OFF| ON    | Frame transfer mode.|
+|VERTICAL_CLOCK_VOLTAGE | Normal, +1, +2, +3, +4 | Normal | Amplitude of the clock pulse.|
+|ACQUISITION_MODE       |Single Scan, Kinetic    | Kinetic| Image acquisition mode. |
+|AD_CHANNEL             |0 | 0 | Analogical-to-digital converter.|
 
-Besides these parameters, there is another set of parameters that can be set only by using the SET command (see Section 3.2). These parameters are:
+Besides these parameters, there is another set that can be set only by using the SET command. These parameters are:
 
 |Parameter|Allowed values|Default value|Description|
 |-----|-----|-----|-----|
 |COOLER_POWER_STATUS |ON, OFF | OFF| CCD cooler status. |
-|TEMP |-80, 20|20| CCD temperature. To set the temperature, the cooler of the CCD must be on.|
-|EXPTIME |1e-5-2E9| 1| Exposure time in seconds.|
-|#FRAMES |1- 2E9| 1| The number of frames in the cube. The number of frames can be set only if Kinetic mode is selected.|
-|#CUBES |1 - 2E9| 1| The number of cubes in the series.|
-|SUFFIX |string| ''| The suffix of the image name.|
-|OBSTYPE |string|‘NONE’| The observation type (FLAT, DARK, ZERO, OBJECT, or NONE).|
-|COMMENT |string|''| Comment of the image header.|
-|OBJECT |string|''| The name of the observed object.|
+|TEMP |-80, 20|20| CCD temperature.|
+|EXPTIME  |1e-5-2e9| 1| Exposure time in seconds.|
+|#FRAMES  |1- 2e9  | 1| The number of exposures in a sequence.|
+|#CYCLES  |1 - 2e9 | 1| The number of cycles to be acquired.|
+|SUFFIX   |string| ''| Suffix of the image name.|
+|OBSTYPE  |string|"OBJECT"| The observation type (FLAT, DARK, ZERO, OBJECT, or NONE).|
+|COMMENT  |string|''| Comment for the image header.|
+|OBJECT   |string|''| Name of the object to be observed.|
 |OBSERVER |string|''| Observer’s name.|
-|FILTER|string|''| Filter used during acquisition (UBVRI).|
-|CTRLINTE|string|''| Graphical interface used to control S4CCS.|
-|INSTMODE|string|''| Instrument mode (photometric or polarimetric).|
+|FILTER   |string|'CLEAR'| Filter used during the acquisition.|
+|CTRLINTE |string|''| Graphical interface used to control S4CCS.|
+|INSTMODE |string|''| Instrument mode (photometric or polarimetric).|
 |WAVEPLATE_POS|string|''| An integer related to the positions of the waveplate. |
 
 
@@ -73,14 +73,14 @@ Table 1. Gain and readout noise values for the four SPARC4 cameras as a function
 | Conv | 0.1 | 2 | 0.8 | 0.79 | 0.8 | 0.8 | 3.47 | 3.4 | 3.46 | 3.21 |
 
 ## Computers
-There are four acquisition computers. They have been acquired using Fapemig funds and their model is Dell Server Poweredge R440: Intel 4108; RAM 16GB; 3 HDD 2TB; OME Server ConfigMgmt; Win Ser 2016; iDRAC9 Enterprise. 
+There are four acquisition computers. They have been acquired using Fapemig funds and their model are Dell Server Poweredge R440: Intel 4108; RAM 16GB; 3 HDD 2TB; OME Server ConfigMgmt; Win Ser 2016; iDRAC9 Enterprise. 
 
 ## Fiber optic set 
-The fiber optic set is composed of a cable of 50 m of optical fiber, a converter from fiber cable to USB 3.0 cable, and the PCI Express plate. The specifications of the fiber set can be viewed in this link.
-If the PCI Express plate is installed in a computer, the converter should be energized, otherwise the computer is not able to start. Also, the converter should not be turned off while the computer is on. If this happens, the computer will freeze and reboot. For more information, see this link.
+The fiber optic set is composed of a cable of 50 m of optical fiber, a converter from fiber cable to USB 3.0 cable, and the PCI Express plate. The specifications of the fiber set can be viewed in this [link](https://drive.google.com/file/d/14uqgvXuZYkZz6ZpClSB4r5PszCqede9I/view?usp=sharing).
+If the PCI Express plate is installed in a computer, the converter should be energized, otherwise the computer is not able to start. Also, the converter should not be turned off while the computer is on. If this happens, the computer will freeze and reboot. For more information, see this [link](https://docs.google.com/document/d/1h8MHF6c-eTaa6kjQiAshKDKzEIM9V5fIWD2VZ3ULVRY/edit?usp=sharing).
 
 ## Related links
 
 - [Characterization of the SPARC4 CCDs](https://arxiv.org/abs/1806.02191)
-- [Optimization of EMCCD operating parameters for the acquisitionsystem of SPARC4](https://arxiv.org/abs/2107.14769)
+- [Optimization of EMCCD operating parameters for the acquisition system of SPARC4](https://arxiv.org/abs/2107.14769)
 
