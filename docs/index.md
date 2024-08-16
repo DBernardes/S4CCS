@@ -1,4 +1,4 @@
-# SPARC4 Camera Control System (S4S4CCS)
+# SPARC4 Camera Control System (S4CCS)
 
 # Table of contents
 
