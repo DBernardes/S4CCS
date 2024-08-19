@@ -1,9 +1,9 @@
 # LabVIEW Project Files
-*.aliases
-*.lvlps
-*.lvclass
-*.lvlibp
-*.lvproj
+.aliases
+.lvlps
+.lvclass
+.lvlibp
+.lvproj
 *.lvtest
 *.lvcdp
 *.lvws
@@ -17,13 +17,13 @@
 *.lvsettings
 
 # Compiled Files
-*.exe
-*.llb
-*.dll
-*.lib
-*.lvlib
-*.lvlibp
-*.lvclass
+.exe
+.llb
+.dll
+.lib
+.lvlib
+.lvlibp
+.lvclass
 *.lvsc
 
 # Backup Files
