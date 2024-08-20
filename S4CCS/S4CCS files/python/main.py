@@ -29,27 +29,3 @@ def main(night_dir, file, data, tuple_header_jsons, log_file):
     except Exception as e:
         write_error_log(traceback.format_exc(), log_file)
         return 1
-
-
-def main_1(night_dir, file, data, header_json):
-    data = np.asarray(data)
-    file = os.path.join(night_dir, file)
-    header_json = load_json(header_json)
-
-    if header_json == None:
-        hdr = fits.Header()
-        error_str = "[WARNNING] A wrong formatting was found for the header content."
-        write_error_log(error_str, night_dir)
-    else:
-        for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
-            obj = cls(header_json, night_dir)
-            obj.fix_keywords()
-            hdr = obj.hdr
-        try:
-            data = fix_image_orientation(hdr["CHANNEL"], hdr["EMMODE"], data)
-        except Exception as e:
-            write_error_log(repr(e), night_dir)
-
-    file = verify_file_already_exists(file)
-    fits.writeto(file, data, hdr, output_verify="ignore")
-    return
