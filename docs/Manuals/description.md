@@ -5,7 +5,7 @@ S4CCS is a software developed using the LabVIEW 2018 programming language and th
 
 <div style="text-align: center">
   <figure>
-    <img src="../images/S4ACSp.png" alt="Exemplo de Imagem" width="400">
+    <img src="../images/S4ACS_front_panel.png" alt="Exemplo de Imagem" width="400">
     <figcaption>Figura 1: Camera Control System front panel.</figcaption>
   </figure>
 </div>
