@@ -30,7 +30,7 @@ This file has the configuration that S4ACS needs to run and it **must** be place
 1. Configure the `Init configuration` panel according to your local environment. Table presented in this [link](https://github.com/DBernardes/S4ACS#description-of-the-inital-configuration-parameters) presents a description of the parameters cotained in this panel.
 1. After this configuration, you should be able to run the software by pressing the white arrow at the top of the window.
 
-<p align="center"><img src="docs/images/S4ACSp.png" alt="S4ACS front panel" width="500"/></p>
+<p align="center"><img src="docs/images/S4ACS_front_panel.png" alt="S4ACS front panel" width="500"/></p>
 
 
 ### Description of the inital configuration parameters
