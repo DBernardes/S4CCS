@@ -138,23 +138,23 @@
 		</Item>
 		<Item Name="python" Type="Folder">
 			<Item Name="csvs" Type="Folder">
-				<Item Name="header_content.csv" Type="Document" URL="../S4CCS files/python/csvs/header_content.csv"/>
-				<Item Name="preamp_gains.csv" Type="Document" URL="../S4CCS files/python/csvs/preamp_gains.csv"/>
-				<Item Name="read_noises.csv" Type="Document" URL="../S4CCS files/python/csvs/read_noises.csv"/>
+				<Item Name="header_content.csv" Type="Document" URL="../S4ACS files/python/csvs/header_content.csv"/>
+				<Item Name="preamp_gains.csv" Type="Document" URL="../S4ACS files/python/csvs/preamp_gains.csv"/>
+				<Item Name="read_noises.csv" Type="Document" URL="../S4ACS files/python/csvs/read_noises.csv"/>
 			</Item>
 			<Item Name="header" Type="Folder">
-				<Item Name="__init__.py" Type="Document" URL="../S4CCS files/python/header/__init__.py"/>
-				<Item Name="header.py" Type="Document" URL="../S4CCS files/python/header/header.py"/>
-				<Item Name="utils.py" Type="Document" URL="../S4CCS files/python/header/utils.py"/>
+				<Item Name="__init__.py" Type="Document" URL="../S4ACS files/python/header/__init__.py"/>
+				<Item Name="header.py" Type="Document" URL="../S4ACS files/python/header/header.py"/>
+				<Item Name="utils.py" Type="Document" URL="../S4ACS files/python/header/utils.py"/>
 			</Item>
-			<Item Name="main.py" Type="Document" URL="../S4CCS files/python/main.py"/>
-			<Item Name="temp.py" Type="Document" URL="../S4CCS files/python/temp.py"/>
-			<Item Name="tests.py" Type="Document" URL="../S4CCS files/python/tests.py"/>
-			<Item Name="utils.py" Type="Document" URL="../S4CCS files/python/utils.py"/>
+			<Item Name="main.py" Type="Document" URL="../S4ACS files/python/main.py"/>
+			<Item Name="temp.py" Type="Document" URL="../S4ACS files/python/temp.py"/>
+			<Item Name="tests.py" Type="Document" URL="../S4ACS files/python/tests.py"/>
+			<Item Name="utils.py" Type="Document" URL="../S4ACS files/python/utils.py"/>
 		</Item>
 		<Item Name="cam_parameters" Type="Folder">
-			<Item Name="limit_values_parameters.csv" Type="Document" URL="../S4CCS files/cam_parameters/limit_values_parameters.csv"/>
-			<Item Name="readout_times.csv" Type="Document" URL="../S4CCS files/cam_parameters/readout_times.csv"/>
+			<Item Name="limit_values_parameters.csv" Type="Document" URL="../S4ACS files/cam_parameters/limit_values_parameters.csv"/>
+			<Item Name="readout_times.csv" Type="Document" URL="../S4ACS files/cam_parameters/readout_times.csv"/>
 		</Item>
 		<Item Name="comm man classes" Type="Folder">
 			<Item Name="RxTx.lvclass" Type="LVClass" URL="../communication-manager/RxTx/RxTx.lvclass"/>
@@ -170,7 +170,8 @@
 			<Item Name="split string.vi" Type="VI" URL="../communication-manager/General VIs/split string.vi"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
-		<Item Name="s4ccs_config_TEMPLATE.cfg" Type="Document" URL="../S4CCS files/s4ccs_config_TEMPLATE.cfg"/>
+		<Item Name="socket_TEMPLATE.cfg" Type="Document" URL="../S4ACS files/socket_TEMPLATE.cfg"/>
+		<Item Name="acs_config_TEMPLATE.cfg" Type="Document" URL="../S4ACS files/acs_config_TEMPLATE.cfg"/>
 		<Item Name="S4CCS.vi" Type="VI" URL="../S4CCS.vi"/>
 		<Item Name="Simulated Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated Camera.lvclass"/>
 		<Item Name="Real Camera.lvclass" Type="LVClass" URL="../CCDCamera/Real Camera.lvclass"/>
@@ -409,8 +410,8 @@
 				<Property Name="Bld_previewCacheID" Type="Str">{C186FE8B-7112-49D5-8AB1-DBFECD94CC12}</Property>
 				<Property Name="Bld_version.build" Type="Int">45</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">S4CCS.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4CCS.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">S4ACS.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ACS.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
@@ -421,7 +422,7 @@
 				<Property Name="Destination[3].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4CCS files</Property>
 				<Property Name="Destination[3].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="DestinationCount" Type="Int">4</Property>
-				<Property Name="Source[0].itemID" Type="Str">{B9D71329-5501-435B-B9E2-D1D08CE4B434}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C01FB16C-3D54-4EA4-BB5C-A5B88B6831DC}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4CCS.vi</Property>
@@ -438,8 +439,8 @@
 				<Property Name="Source[11].itemID" Type="Ref">/My Computer/comm man classes/split string.vi</Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[11].type" Type="Str">VI</Property>
-				<Property Name="Source[12].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/s4ccs_config_TEMPLATE.cfg</Property>
+				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/acs_config_TEMPLATE.cfg</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[2].Container.applyInclusion" Type="Bool">true</Property>
@@ -493,7 +494,7 @@
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2024 Laboratório Nacional de Astrofísica</Property>
 				<Property Name="TgtF_productName" Type="Str">S4CCS</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{5E5B5194-4FCE-4773-B5AF-15F6EA393346}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">S4CCS.exe</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">S4ACS.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="S4ACS" Type="Zip File">

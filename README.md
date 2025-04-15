@@ -12,15 +12,8 @@ For the development of S4ACS, the graphical programming language Laboratory Virt
  
 ## Getting Started
 
-These instructions will get you a copy of the .exe of S4ACS on your local machine for testing purposes. 
+These instructions will get you a copy of the .exe of S4ACS on your local. However, it should be highlighted that some dependencies are needed before running S4ACS, which are the Python interpreter, the Andor Software Development Kit (SDK) and the LabVIEW runtime engine. In this tutorial, we are considering that these dependencies were properly installed. 
 
-### Prerequisites
-
-S4ACS uses a [Python 3.6 (32-bits)](https://www.python.org/downloads/release/python-368/) interpreter to run the scripts responsible for saving the FITS files. This is the most recent version of Python supported by LabVIEW 2018. It should be downloaded and installed on your local machine. After that, some python dependencies mustbe installed too. For that, run the following command:
-
-```bash
-pip install dataclasses astropy numpy pandas
-```
 
 ### Installing S4ACS
 1. Download and extract the S4ACS .zip file found in this [link](https://github.com/DBernardes/S4ACS/releases/latest). 
