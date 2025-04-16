@@ -6,22 +6,20 @@
 
  # SPARC4 Acquisition Control System
 
-The Simultaneous Polarimeter and Rapid Camera in Four Bands ([SPARC4](https://coast.lna.br/home/sparc4)) is a new astronomical instrument developed by *Instituto Nacional de Pesquisas Espaciais* (INPE), in collaboration with *Laboratório Nacional de Astrofísica* (LNA), that is currently installed on the Perkin-Elmer 1.6 m telescope of Picos dos Dias Observatory (in Portuguese, OPD). SPARC4 was developed to allow simultaneous photometric and polarimetric acquisitions in the g, r, i and, z bands of the Sloan Digital Sky Survey ([SDSS](https://www.sdss.org/)). The data acquisition is done using four Electron Multplying CCD cameras, one for each optical band of the instrument, produced by Oxford Instruments. The control of SPARC4 is done by a set of dedicated softwares. These softwares are the Acquisition Control System (S4ACS), the Instrument Control System, and the Graphical User Interface (S4GUI). S4ACS is responsible for controlling the scientific cameras of the instrument. S4ICS controls its moving mechanisms. S4GUI is an user interface the coordinates all the sub-systems of SPARC4.
+The Simultaneous Polarimeter and Rapid Camera in Four Bands ([SPARC4](https://coast.lna.br/home/sparc4)) is a new astronomical instrument developed by the *Instituto Nacional de Pesquisas Espaciais* (INPE), in collaboration with the *Laboratório Nacional de Astrofísica* (LNA), that is currently installed on the Perkin-Elmer 1.6 m telescope of Picos dos Dias Observatory (in Portuguese, OPD). SPARC4 was developed to allow simultaneous photometric and polarimetric acquisitions in the g, r, i and, z bands of the Sloan Digital Sky Survey ([SDSS](https://www.sdss.org/)). The acquisition of data is done using four Electron Multplying CCD cameras, one for each optical band of the instrument, produced by Oxford Instruments. 
 
-For the development of S4ACS, the graphical programming language Laboratory Virtual Instrument Engineering Workbench (LabVIEW) 2018 was used together with the Software Development Kit (SDK) made available by the Oxford Instruments for the communication with the cameras. The data acquired by the cameras are saved in Flexible Image Transport System (FITS) files, created using python scripts. These scripts are run using an integrated library of LabVIEW for running Python interpreters. With the current version of S4ACS, it is possible to acquire a series of 1400 images of 1024 x 1024 pixels, with an overhead of 1.7 ms between images. Besides, it is possible to acquire several series of 1400 images, with an overhead of 120 ms between series. 
- 
-## Getting Started
+The control of SPARC4 is done by a set of dedicated softwares. These softwares are the Acquisition Control System (S4ACS), the Instrument Control Software (S4ICSoft), and the Graphical User Interface (S4GUI). S4ACS is responsible for controlling the scientific cameras of the instrument, S4ICSoft controls its moving mechanisms, and S4GUI is an user interface that coordinates all the subsystems of the instrument.
 
-These instructions will get you a copy of the .exe of S4ACS on your local. However, it should be highlighted that some dependencies are needed before running S4ACS, which are the Python interpreter, the Andor Software Development Kit (SDK) and the LabVIEW runtime engine. In this tutorial, we are considering that these dependencies were properly installed. 
+S4ACS, in particular, was developed using the graphical programming language Laboratory Virtual Instrument Engineering Workbench (LabVIEW) 2018, together with the Software Development Kit (SDK) made available by the Oxford Instruments for the control of the cameras. The data acquired by the detectors are saved in the Flexible Image Transport System (FITS) files, created using python scripts. These scripts are run in the LabVIEW platform using a native library for creting Python environments. With the current version of S4ACS, a series of 1400 images of 1024 x 1024 pixels can be acquired with an overhead of 1.7 ms between images. Besides, several images series can be acquired with an overhead of 120 ms between series. 
+
+This document provides a step-by-step guide to help you obtain a copy of the S4ACS executable on your local machine. Please note that S4ACS requires several dependencies to be installed beforehand: the Python interpreter, the Andor SDK, and the LabVIEW Runtime Engine. This tutorial assumes that these dependencies are already properly installed. If they are not, we recommend reaching out to the development team for assistance.
 
 
 ### Installing S4ACS
 1. Download and extract the S4ACS .zip file found in this [link](https://github.com/DBernardes/S4ACS/releases/latest). 
-1. Inside the extracted folder, there is a file name `acs_config_TEMPLARE`.
-This file has the configuration that S4ACS needs to run and it **must** be placed in the path `C:\Users\<user_name>\SPARC4\CCS\acs_config.cfg` (without the `_TEMPLATE` string).
-1. Running the executable `S4ACS.exe`, an interface will show up. It should be similar to the image presented below. In this interface, set the `use config file` buttom in the most top panel to `NO`. This will set S4ACS to use the information presented in the `Init configuration` panel to initialize.
-1. Configure the `Init configuration` panel according to your local environment. Table presented in this [link](https://github.com/DBernardes/S4ACS#description-of-the-inital-configuration-parameters) presents a description of the parameters cotained in this panel.
-1. After this configuration, you should be able to run the software by pressing the white arrow at the top of the window.
+1. Inside the extracted folder, there is a file name `acs_config_TEMPLATE.cgf`, which has the configuration that S4ACS needs when initializing. This file should be renamed to `acs_config.cfg` (without the `_TEMPLATE` string) and placed into the `C:\Users\<user_name>\SPARC4\ACS` directory. For more details about the content of this file, see the description presented in this [section](https://github.com/DBernardes/S4ACS?tab=readme-ov-file#description-of-the-inital-configuration-parameters).
+1. Similarly, another important file is `socket_TEMPLATE.cfg`, which contains a default IP address for all the applications that S4ACS communicates with. This file should be renamed to `socket.cfg` (without the `_TEMPLATE` string) and placed into the `C:\Users\<user_name>\SPARC4\COMMAN` directory. However, note that the IP addresses of the instrument and/or observatory applications may have changed since the last S4ACS release. For this reason, it's recommended to review the contents of this file before launching S4ACS.
+1. When running the S4ACS executable, an interface (see figure below) will show up. If everything was properly installed, you should be able to execute the software by pressing the white arrow at the top of the window.
 
 <p align="center"><img src="docs/images/S4ACS_front_panel.png" alt="S4ACS front panel" width="500"/></p>
 
@@ -30,11 +28,10 @@ This file has the configuration that S4ACS needs to run and it **must** be place
 
 |Parameter|Description|
 |----|-----|
-|Remote IP| IP from where S4ACS will receive a query|
-|Channel| The current channel of the instrument|
-| CCS mode | The mode of S4ACS (real or simulated)
-| Communication | The type of communication that should be used (TCP-IP or ZeroMQ)|
-|Image path | The path where the acquired images should be saved|
+|Channel| The current channel of the instrument (1, 2, 3, or 4)|
+| ACS mode | The mode of S4ACS (real=0 or simulated=1)
+| Communication | The type of communication that should be used (ZeroMQ=0 or TCP-IP=1)|
+| Image path | The path where the acquired images should be saved|
 
 
 ## Usage
