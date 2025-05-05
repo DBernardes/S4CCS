@@ -1,11 +1,9 @@
 import json
-import os
-import traceback
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
+import astropy.io.fits as fits
 from datetime import datetime
 
-import astropy.io.fits as fits
 from astropy.time import Time
 
 from .utils import (
@@ -379,10 +377,14 @@ class TCS(Header):
     def _initialize_kw_dataclass(self):
         keywords = ["RA", "DEC", "TCSHA", "INSTROT", "AIRMASS"]
         to_float_kws = ["AIRMASS", "INSTROT"]
-        write_any_val = ["RA", "DEC", "TCSHA", "TCSDATE"]
+        write_any_val = ["RA", "DEC", "TCSDATE"]
+        comma_kws = ["TCSHA"]
 
         return Keywords_Dataclass(
-            keywords=keywords, to_float_kws=to_float_kws, write_any_val=write_any_val
+            keywords=keywords,
+            to_float_kws=to_float_kws,
+            write_any_val=write_any_val,
+            comma_kws=comma_kws,
         )
 
     def fix_keywords(self):
