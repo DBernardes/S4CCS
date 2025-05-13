@@ -30,8 +30,7 @@ dicts = {
 
 dicts = {k: json.dumps(v) for (k, v) in dicts.items()}
 night_dir = r"C:\images\today"
-for cls in [S4GUI]:
+for cls in [CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station]:
     tcs = cls(dicts, night_dir)
     tcs.fix_keywords()
-    print(repr(tcs._json))
-print(repr(tcs.hdr))
+
