@@ -264,6 +264,13 @@ class Weather_Station(Header):
 
     sub_system = "WSTATION"
 
+    def __init__(self, dict_header_jsons, log_file):
+        json_string = dict_header_jsons[self.sub_system]
+        if 'Weather' in json_string[:7]:
+            json_string = json_string.replace('Weather', '')
+        dict_header_jsons[self.sub_system] = json_string
+        super().__init__(dict_header_jsons, log_file)
+
     def _initialize_kw_dataclass(self):
         keywords = ["HUMIDITY", "EXTTEMP", "PRESSURE"]
         to_float_kws = ["PRESSURE", "HUMIDITY", "EXTTEMP"]
