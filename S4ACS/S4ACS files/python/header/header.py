@@ -599,7 +599,7 @@ class CCD(Header):
             index += 8
         readout_modes = [1.0, 0.1]
         index += 2 * readout_modes.index(_json["READRATE"])
-        index += float(_json["PREAMP"][-1])
+        index += float(_json["PREAMP"][-1]) - 1
         return index
 
     def _fix_ccd_parameters(self, _json):
