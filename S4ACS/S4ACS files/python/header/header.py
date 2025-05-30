@@ -593,11 +593,12 @@ class CCD(Header):
 
     def find_index_tab(self):
         _json = self._json
-        index = 0
-        readout_modes = [30.0, 20.0, 10.0, 1.0]
+        index = 0        
         if _json["EMMODE"] == "Conventional":
             index += 8
-        readout_modes = [1.0, 0.1]
+            readout_modes = [1.0, 0.1]
+        else:
+            readout_modes = [30.0, 20.0, 10.0, 1.0]
         index += 2 * readout_modes.index(_json["READRATE"])
         index += float(_json["PREAMP"][-1]) - 1
         return index
@@ -658,7 +659,7 @@ class General_KWs(Header):
             "INSTRUME": "SPARC4",
             "SIMPLE": True,
             "BSCALE": 1,
-            "BZERO": 32768,
+            "BZERO": 1,
             "BITPIX": 16,
         }
         return Keywords_Dataclass(

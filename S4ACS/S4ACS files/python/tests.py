@@ -19,18 +19,18 @@ from utils import (
 )
 
 dicts = {
-    "CCD": ccd_kw,
-    "WSTATION": WS_json,
-    "FOCUSER": focuser_json,
+    # "CCD": ccd_kw,
+    # "WSTATION": WS_json,
+    # "FOCUSER": focuser_json,
     "GENERAL KW": general_kw,
-    "S4ICS": ics_kw,
-    "TCS": tcs_json,
-    "S4GUI": s4gui_json,
+    # "S4ICS": ics_kw,
+    # "TCS": tcs_json,
+    # "S4GUI": s4gui_json,
 }
 
 dicts = {k: json.dumps(v) for (k, v) in dicts.items()}
-night_dir = r"C:\images\today"
-for cls in [CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station]:
+night_dir = "C:\\images\\today"
+for cls in [General_KWs]:
     tcs = cls(dicts, night_dir)
     tcs.fix_keywords()
 

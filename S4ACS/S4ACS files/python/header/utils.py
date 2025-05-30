@@ -22,7 +22,7 @@ for kw, values in allowed_kw_values.items():
     if values != "":
         val = allowed_kw_values[kw].split(",")
         if "inf" in val:
-            val[val.index("inf")] = np.infty
+            val[val.index("inf")] = np.inf
         if keyword_types[kw] in ["integer", "float"]:
             val = [float(v) for v in val]
         if keyword_types[kw] == "boolean":
