@@ -48,7 +48,6 @@ Desktop.ini
 
 # Miscellaneous
 .idea/
-.vscode/
 *.iml
 *.ipr
 *.iws
