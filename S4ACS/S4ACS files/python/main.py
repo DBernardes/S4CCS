@@ -3,7 +3,7 @@ import traceback
 
 import astropy.io.fits as fits
 import numpy as np
-from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
+from header import CCD, S4GUI, S4ICS, TCS, Focuser, General_KWs, Weather_Station
 from utils import (
     fix_image_orientation,
     sub_systems,
@@ -18,7 +18,7 @@ def main(night_dir, file, data, tuple_header_jsons, log_file):
         data = np.asarray(data)
         file = os.path.join(night_dir, file)
 
-        for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
+        for cls in [Focuser, S4ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
             obj = cls(dict_header_jsons, log_file)
             obj.fix_keywords()
             hdr = obj.hdr

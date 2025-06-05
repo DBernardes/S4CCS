@@ -1,4 +1,5 @@
 import json
+import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -24,9 +25,9 @@ class Header(ABC):
 
     def __init__(self, dict_header_jsons, log_file) -> None:
 
+        self.log_file = log_file
         _json = self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
-        self.log_file = log_file
         self._json = self.extract_info(_json)
         self._check_type()
         self._check_allowed_values()
@@ -286,9 +287,16 @@ class Weather_Station(Header):
         return
 
 
-class ICS(Header):
+class S4ICS(Header):
 
     sub_system = "S4ICS"
+
+    def __init__(self, dict_header_jsons, log_file):
+        # json_string = dict_header_jsons[self.sub_system]
+        # json_string = '{"broker' + json_string.split("broker")[1]
+        # json_string = re.sub(r"\r?\n", "", json_string)
+        # dict_header_jsons[self.sub_system] = json_string
+        super().__init__(dict_header_jsons, log_file)
 
     def _initialize_kw_dataclass(self):
         keywords = [
