@@ -42,9 +42,10 @@ class Header(ABC):
             _json = {k.upper(): v for k, v in _json.items()}
             return _json
         except Exception as e:
-            raise Exception(
+            self._write_log_file(
                 f"{self.sub_system}: There was an error when loading the JSON data --> {self.json_string}."
-                + repr(e)
+                + repr(e),
+                "",
             )
 
     @abstractmethod
