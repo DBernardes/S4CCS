@@ -1,9 +1,9 @@
 import json
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-import astropy.io.fits as fits
 from datetime import datetime
 
+import astropy.io.fits as fits
 from astropy.time import Time
 
 from .utils import (
@@ -266,8 +266,8 @@ class Weather_Station(Header):
 
     def __init__(self, dict_header_jsons, log_file):
         json_string = dict_header_jsons[self.sub_system]
-        if 'Weather' in json_string[:7]:
-            json_string = json_string.replace('Weather', '')
+        if "Weather" in json_string[:7]:
+            json_string = json_string.replace("Weather", "")
         dict_header_jsons[self.sub_system] = json_string
         super().__init__(dict_header_jsons, log_file)
 
@@ -593,7 +593,7 @@ class CCD(Header):
 
     def find_index_tab(self):
         _json = self._json
-        index = 0        
+        index = 0
         if _json["EMMODE"] == "Conventional":
             index += 8
             readout_modes = [1.0, 0.1]
@@ -659,7 +659,7 @@ class General_KWs(Header):
             "INSTRUME": "SPARC4",
             "SIMPLE": True,
             "BSCALE": 1,
-            "BZERO": 1,
+            "BZERO": 0,
             "BITPIX": 16,
         }
         return Keywords_Dataclass(
