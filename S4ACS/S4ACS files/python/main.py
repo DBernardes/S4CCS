@@ -15,7 +15,7 @@ from utils import (
 def main(night_dir, file, data, tuple_header_jsons, log_file):
     try:
         dict_header_jsons = {k: v for (k, v) in zip(sub_systems, tuple_header_jsons)}
-        data = np.asarray(data)
+        data = np.asarray(data, dtype=np.int16)
         file = os.path.join(night_dir, file)
 
         for cls in [Focuser, S4ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
@@ -24,7 +24,12 @@ def main(night_dir, file, data, tuple_header_jsons, log_file):
             hdr = obj.hdr
         data = fix_image_orientation(hdr["CHANNEL"], hdr["EMMODE"], data)
         file = verify_file_already_exists(file)
-        fits.writeto(file, data, hdr, output_verify="ignore")
+        hdu = fits.PrimaryHDU(data, hdr)
+        hdu.header["BZERO"] = (0, "Zero point in scaling equation")
+        hdu.header["BSCALE"] = (1, "Linear factor in scaling equation")
+        hdu.header["NAXIS1"] = (hdu.header["NAXIS1"], "Number of columns")
+        hdu.header["NAXIS2"] = (hdu.header["NAXIS2"], "Number of rows")
+        hdu.writeto(file, output_verify="ignore")
         return 0
     except Exception as e:
         write_error_log(traceback.format_exc(), log_file)
