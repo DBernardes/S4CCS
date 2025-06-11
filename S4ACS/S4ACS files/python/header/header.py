@@ -506,8 +506,6 @@ class CCD(Header):
 
     def _initialize_kw_dataclass(self):
         keywords = [
-            "NAXIS1",
-            "NAXIS2",
             "FRAMEIND",
             "CCDTEMP",
             "TEMPST",

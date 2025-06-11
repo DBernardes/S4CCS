@@ -1,3 +1,4 @@
+import json
 import os
 import traceback
 
@@ -13,6 +14,7 @@ from utils import (
 
 
 def main(night_dir, file, data, tuple_header_jsons, log_file):
+    error_json = {"status": False, "code": 0, "source": ""}
     try:
         dict_header_jsons = {k: v for (k, v) in zip(sub_systems, tuple_header_jsons)}
         data = np.asarray(data, dtype=np.int16)
@@ -30,7 +32,9 @@ def main(night_dir, file, data, tuple_header_jsons, log_file):
         hdu.header["NAXIS1"] = (hdu.header["NAXIS1"], "Number of columns")
         hdu.header["NAXIS2"] = (hdu.header["NAXIS2"], "Number of rows")
         hdu.writeto(file, output_verify="ignore")
-        return 0
+        return json.dumps(error_json)
     except Exception as e:
-        write_error_log(traceback.format_exc(), log_file)
-        return 1
+        error_json["status"] = True
+        error_json["code"] = 1
+        error_json["source"] = repr(e)
+        return json.dumps(error_json)
