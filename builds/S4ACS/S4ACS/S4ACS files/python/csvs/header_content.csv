@@ -66,8 +66,6 @@ TCSHA;HOURANGLE;string;;TCS hour angle: HH:MM:SS
 TCSDATE;;string;;TCS local date (isot)
 GFOC;;float;0,inf;Guiding focus position (mm)
 GMIR;;float;0,36;Rotation angle of the guiding mirror (deg)
-GUIDERA;;string;;RA of guider field
-GUIDEDEC;;string;;DEC of guider field            
 EXTTEMP;OUTTEMP;float;-20,3;Temperature (deg C), weather tower
 AIRMASS;;float;1,inf;Airmass at start of observation                
 PRESSURE;;float;0,inf;Barometric pressure (mb), weather tower

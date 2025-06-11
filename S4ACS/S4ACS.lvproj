@@ -110,18 +110,6 @@
 			</Item>
 			<Item Name="unit test framework" Type="Folder">
 				<Item Name="State Machine" Type="Folder">
-					<Item Name="Write Counter.lvtest" Type="TestItem" URL="../Unit tests/unit test framework/State Machine/Write Counter.lvtest">
-						<Property Name="utf.test.bind" Type="Str">CCS_State Machine.lvclass:Write Counter.vi</Property>
-						<Property Name="utf.vector.test.bind" Type="Str">89A8DBFC-35E7-11EC-F3E6-A8EE8FCE8427</Property>
-					</Item>
-					<Item Name="Reset State Machine.lvtest" Type="TestItem" URL="../Unit tests/unit test framework/State Machine/Reset State Machine.lvtest">
-						<Property Name="utf.test.bind" Type="Str">CCS_State Machine.lvclass:Reset State Machine.vi</Property>
-						<Property Name="utf.vector.test.bind" Type="Str">AD4CB786-C35D-EFF7-AB46-BE5DA5519CFD</Property>
-					</Item>
-					<Item Name="Decrement Counter.lvtest" Type="TestItem" URL="../Unit tests/unit test framework/State Machine/Decrement Counter.lvtest">
-						<Property Name="utf.test.bind" Type="Str">CCS_State Machine.lvclass:Decrement Counter.vi</Property>
-						<Property Name="utf.vector.test.bind" Type="Str">B26302EE-50C0-77AC-5E74-27A3E65146D2</Property>
-					</Item>
 					<Item Name="write counter.vi" Type="VI" URL="../Unit tests/unit test framework/State Machine/write counter.vi"/>
 					<Item Name="decrement counter.vi" Type="VI" URL="../Unit tests/unit test framework/State Machine/decrement counter.vi"/>
 					<Item Name="restart state machine.vi" Type="VI" URL="../Unit tests/unit test framework/State Machine/restart state machine.vi"/>
@@ -149,8 +137,8 @@
 			</Item>
 			<Item Name="main.py" Type="Document" URL="../S4ACS files/python/main.py"/>
 			<Item Name="temp.py" Type="Document" URL="../S4ACS files/python/temp.py"/>
-			<Item Name="tests.py" Type="Document" URL="../S4ACS files/python/tests.py"/>
 			<Item Name="utils.py" Type="Document" URL="../S4ACS files/python/utils.py"/>
+			<Item Name="general_tests.py" Type="Document" URL="../S4ACS files/python/general_tests.py"/>
 		</Item>
 		<Item Name="cam_parameters" Type="Folder">
 			<Item Name="limit_values_parameters.csv" Type="Document" URL="../S4ACS files/cam_parameters/limit_values_parameters.csv"/>
@@ -238,9 +226,6 @@
 				<Item Name="Error Code Enum typedef.ctl" Type="VI" URL="/&lt;userlib&gt;/atmcd32d.llb/Error Code Enum typedef.ctl"/>
 				<Item Name="U32 To Error Code Enum.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 To Error Code Enum.vi"/>
 				<Item Name="U32 Array To AndorCapabilities.vi" Type="VI" URL="/&lt;userlib&gt;/atmcd32d_internal.llb/U32 Array To AndorCapabilities.vi"/>
-				<Item Name="gfitsio-open-create-replace-file.vi" Type="VI" URL="/&lt;userlib&gt;/gfitsio/gfitsio-open-create-replace-file.vi"/>
-				<Item Name="gfitsio-read-image-subset.vi" Type="VI" URL="/&lt;userlib&gt;/gfitsio/gfitsio-read-image-subset.vi"/>
-				<Item Name="gfitsio-read-image-subset-i32-2d.vi" Type="VI" URL="/&lt;userlib&gt;/gfitsio/gfitsio-read-image-subset-i32-2d.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
@@ -408,7 +393,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{4B72D823-97E4-4F55-A103-EC19C8B7E8AB}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">S4ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ACS/S4ACS.exe</Property>

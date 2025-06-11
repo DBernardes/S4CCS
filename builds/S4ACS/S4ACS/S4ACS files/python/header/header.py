@@ -1,9 +1,10 @@
 import json
+import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-import astropy.io.fits as fits
 from datetime import datetime
 
+import astropy.io.fits as fits
 from astropy.time import Time
 
 from .utils import (
@@ -24,9 +25,9 @@ class Header(ABC):
 
     def __init__(self, dict_header_jsons, log_file) -> None:
 
+        self.log_file = log_file
         _json = self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
-        self.log_file = log_file
         self._json = self.extract_info(_json)
         self._check_type()
         self._check_allowed_values()
@@ -42,9 +43,10 @@ class Header(ABC):
             _json = {k.upper(): v for k, v in _json.items()}
             return _json
         except Exception as e:
-            raise Exception(
+            self._write_log_file(
                 f"{self.sub_system}: There was an error when loading the JSON data --> {self.json_string}."
-                + repr(e)
+                + repr(e),
+                "",
             )
 
     @abstractmethod
@@ -266,8 +268,8 @@ class Weather_Station(Header):
 
     def __init__(self, dict_header_jsons, log_file):
         json_string = dict_header_jsons[self.sub_system]
-        if 'Weather' in json_string[:7]:
-            json_string = json_string.replace('Weather', '')
+        if "Weather" in json_string[:7]:
+            json_string = json_string.replace("Weather", "")
         dict_header_jsons[self.sub_system] = json_string
         super().__init__(dict_header_jsons, log_file)
 
@@ -285,9 +287,16 @@ class Weather_Station(Header):
         return
 
 
-class ICS(Header):
+class S4ICS(Header):
 
     sub_system = "S4ICS"
+
+    def __init__(self, dict_header_jsons, log_file):
+        # json_string = dict_header_jsons[self.sub_system]
+        # json_string = '{"broker' + json_string.split("broker")[1]
+        # json_string = re.sub(r"\r?\n", "", json_string)
+        # dict_header_jsons[self.sub_system] = json_string
+        super().__init__(dict_header_jsons, log_file)
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -594,12 +603,13 @@ class CCD(Header):
     def find_index_tab(self):
         _json = self._json
         index = 0
-        readout_modes = [30.0, 20.0, 10.0, 1.0]
         if _json["EMMODE"] == "Conventional":
             index += 8
-        readout_modes = [1.0, 0.1]
+            readout_modes = [1.0, 0.1]
+        else:
+            readout_modes = [30.0, 20.0, 10.0, 1.0]
         index += 2 * readout_modes.index(_json["READRATE"])
-        index += float(_json["PREAMP"][-1])
+        index += float(_json["PREAMP"][-1]) - 1
         return index
 
     def _fix_ccd_parameters(self, _json):
@@ -658,7 +668,7 @@ class General_KWs(Header):
             "INSTRUME": "SPARC4",
             "SIMPLE": True,
             "BSCALE": 1,
-            "BZERO": 32768,
+            "BZERO": 0,
             "BITPIX": 16,
         }
         return Keywords_Dataclass(

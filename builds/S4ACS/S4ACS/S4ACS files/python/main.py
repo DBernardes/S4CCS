@@ -1,9 +1,10 @@
+import json
 import os
 import traceback
 
 import astropy.io.fits as fits
 import numpy as np
-from header import CCD, ICS, S4GUI, TCS, Focuser, General_KWs, Weather_Station
+from header import CCD, S4GUI, S4ICS, TCS, Focuser, General_KWs, Weather_Station
 from utils import (
     fix_image_orientation,
     sub_systems,
@@ -13,19 +14,27 @@ from utils import (
 
 
 def main(night_dir, file, data, tuple_header_jsons, log_file):
+    error_json = {"status": False, "code": 0, "source": ""}
     try:
         dict_header_jsons = {k: v for (k, v) in zip(sub_systems, tuple_header_jsons)}
-        data = np.asarray(data)
+        data = np.asarray(data, dtype=np.int16)
         file = os.path.join(night_dir, file)
 
-        for cls in [Focuser, ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
+        for cls in [Focuser, S4ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
             obj = cls(dict_header_jsons, log_file)
             obj.fix_keywords()
             hdr = obj.hdr
         data = fix_image_orientation(hdr["CHANNEL"], hdr["EMMODE"], data)
         file = verify_file_already_exists(file)
-        fits.writeto(file, data, hdr, output_verify="ignore")
-        return 0
+        hdu = fits.PrimaryHDU(data, hdr)
+        hdu.header["BZERO"] = (0, "Zero point in scaling equation")
+        hdu.header["BSCALE"] = (1, "Linear factor in scaling equation")
+        hdu.header["NAXIS1"] = (hdu.header["NAXIS1"], "Number of columns")
+        hdu.header["NAXIS2"] = (hdu.header["NAXIS2"], "Number of rows")
+        hdu.writeto(file, output_verify="ignore")
+        return json.dumps(error_json)
     except Exception as e:
-        write_error_log(traceback.format_exc(), log_file)
-        return 1
+        error_json["status"] = True
+        error_json["code"] = 1
+        error_json["source"] = repr(e)
+        return json.dumps(error_json)

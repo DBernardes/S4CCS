@@ -1,4 +1,4 @@
-Readout rate,Sub-image, Binning ,Readout time
+Readout rate,Sub-image,Binning,Readout time
 30,256,1,0.011
 30,256,2,0.0059
 30,512,1,0.02
