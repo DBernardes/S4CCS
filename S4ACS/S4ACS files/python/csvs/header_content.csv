@@ -1,7 +1,7 @@
 Keyword;Expected name;Type;Allowed values;Comment
 SIMPLE;;boolean;true,false;Conforms to FITS standard
 BSCALE;;integer;1,inf;Linear factor in scaling equation
-BZERO;;integer;1,inf;Zero point in scaling equation
+BZERO;;integer;0,inf;Zero point in scaling equation
 BITPIX;;integer;-64,-32,8,16,32;Bits per data value
 NAXIS;;integer;2,2;Number of array dimensions
 NAXIS1;;integer;1,1024;Number of columns
@@ -9,13 +9,13 @@ NAXIS2;;integer;1,1024;Number of rows
 PROJID;;string;;Project identification code
 OBSERVER;;string;;Name(s) of observer(s)
 OBJECT;;string;;Object name    
-OBSLONG;;float;-180,18;Observatory East Longitude (DEG, -180 to 180)
-OBSLAT;;float;-90,9;Observatory North Latitude (DEG, -90 to 90)
+OBSLONG;;float;-180,180;Observatory East Longitude (DEG, -180 to 180)
+OBSLAT;;float;-90,90;Observatory North Latitude (DEG, -90 to 90)
 OBSALT;;float;0,inf;Observatory elevation above sea level (m)
 INSTRUME;;string;;Instrument name
 INSTMODE;;string;PHOT,POLAR;Instrument mode: PHOT or POLAR
 SYNCMODE;;string;SYNC,ASYNC;Synchronization across channels at start of acq.
-INSTROT;GUIDEANG;float;0,36;Instrument rotator angle in degrees
+INSTROT;GUIDEANG;float;0,360;Instrument rotator angle in degrees
 FILTER;;string;CLEAR,B,V,R,I;Filter
 OBSTYPE;;string;OBJECT,ZERO,FLAT,DARK,FOCUS;Image type: OBJECT, ZERO, FLAT, DARK, FOCUS
 CHANNEL;;integer;1,4;Instrument channel: 1 (g), 2 (r), 3 (i), 4 (z)   
@@ -42,7 +42,7 @@ READRATE;;float;0.1,1,10,20,30;Readout rate (MHz)
 VSHIFT;;float;0.6,1.13,2.2,4.33;Vertical shift speed (ms)                     
 TRIGGER;;string;Internal,External;Trigger mode
 EMMODE;;string;Electron Multiplying,Conventional;Output amplifier mode                        
-EMGAIN;;integer;2,3;Electron multiplier gain 
+EMGAIN;;integer;2,300;Electron multiplier gain 
 VBIN;;integer;1,1024;Vertical binning (pix)                       
 HBIN;;integer;1,1024;Horizontal binning (pix)                         
 INITLIN;;integer;1,1024;Initial line (pix)
@@ -65,11 +65,11 @@ TELFOCUS;POSITION;integer;0,inf;Telescope focus position (arbitrary units)
 TCSHA;HOURANGLE;string;;TCS hour angle: HH:MM:SS
 TCSDATE;;string;;TCS local date (isot)
 GFOC;;float;0,inf;Guiding focus position (mm)
-GMIR;;float;0,36;Rotation angle of the guiding mirror (deg)
-EXTTEMP;OUTTEMP;float;-20,3;Temperature (deg C), weather tower
+GMIR;;float;0,360;Rotation angle of the guiding mirror (deg)
+EXTTEMP;OUTTEMP;float;-20,30;Temperature (deg C), weather tower
 AIRMASS;;float;1,inf;Airmass at start of observation                
 PRESSURE;;float;0,inf;Barometric pressure (mb), weather tower
-HUMIDITY;OUTHUMIDITY;float;0,1;Relative humidity (%), weather tower
+HUMIDITY;OUTHUMIDITY;float;0,100;Relative humidity (%), weather tower
 ACSVRSN;;string;;S4ACS software version
 ICSVRSN;;string;;S4ICS software version
 GUIVRSN;;string;;S4GUI software version
@@ -85,8 +85,8 @@ TCSMODE;;boolean;true,false;TCS: real (T) or simulated (F)
 WPSEL;;string;None,L2,L4;Waveplate: half-wave (L2), quarter-wave (L4)
 WPSELPO;;float;0,inf;Waveplate selector position (mm)
 WPPOS;WPROT;integer;0,16;Waveplate idx position from 1 to 16, 0 if none
-WPANG;;float;0,36;Waveplate position angle (deg)
+WPANG;;float;0,360;Waveplate position angle (deg)
 CALW;;string;POLARIZER,DEPOLARIZER,NONE,PINHOLE,POS5;Selected element in calibration wheel
-CALWANG;;float;0,36;Calibration wheel position angle (deg)
+CALWANG;;float;0,360;Calibration wheel position angle (deg)
 ASEL;;boolean;true,false;Savart prism analyzer selected
-ANALANG;;float;0,36;Analyzer position angle (deg)
+ANALANG;;float;0,360;Analyzer position angle (deg)
