@@ -21,4 +21,5 @@ astropy = "^7.1.0"
 numpy = "^2.2.6"
 pandas = "^2.2.3"
 ipython = "^9.3.0"
+rstr = "^3.2.2"
 

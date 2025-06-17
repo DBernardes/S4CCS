@@ -104,6 +104,20 @@ class Header(ABC):
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
+    def _verify_regex(self):
+        for kw, (regex_expr, ex_value) in self.kw_dataclass.regex_str.items():
+            try:
+                kw_value = self._json[kw]
+                if re.match(regex_expr, kw_value) == None:
+                    self._write_log_file(
+                        f"The provided value for the keyword {kw} '{kw_value}' does not match the expected format {ex_value}",
+                        kw,
+                    )
+                else:
+                    self.hdr[kw] = self._json[kw]
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
+
     def _delete_str(self):
         for kw, _str in self.kw_dataclass.delete_str.items():
             try:
@@ -329,21 +343,21 @@ class S4ICS(Header):
             "GFOCMODE": ("SIMULATED", "ACTIVE"),
             "ASEL": ("OFF", "ON"),
         }
-        write_any_val = ["ICSVRSN"]
+        regex_str = ["ICSVRSN"]
 
         return Keywords_Dataclass(
             keywords=keywords,
             to_float_kws=to_float_kws,
             idx_in_dict=idx_in_dict,
             to_bool_with_condition=to_bool_with_condition,
-            write_any_val=write_any_val,
+            regex_str=regex_str,
         )
 
     def fix_keywords(self):
         self._convert_to_float()
         self._substitute_idx_in_dict()
         self._convert_to_bool_with_condition()
-        self._write_any_value()
+        self._verify_regex()
         self._write_WPPOS()
         self._write_CALW()
 
@@ -393,19 +407,29 @@ class TCS(Header):
     def _initialize_kw_dataclass(self):
         keywords = ["RA", "DEC", "TCSHA", "INSTROT", "AIRMASS"]
         to_float_kws = ["AIRMASS", "INSTROT"]
-        write_any_val = ["RA", "DEC", "TCSDATE"]
+        regex_str = {
+            "RA": (r"[\+-]?\d{2}:\d{2}:\d{2}(\.\d+)?", "HH:MM:SS.ss"),
+            "DEC": (r"[\+-]?\d{2}:\d{2}:\d{2}(\.\d+)?", "HH:MM:SS.ss"),
+            "TCSHA": (r"[\+-]?\d{2}:\d{2}:\d{2}(\.\d+)?", "HH:MM:SS.ss"),
+            "TCSDATE": (
+                r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}",
+                "YYY-MM-DDTHH:MM:SS.sss",
+            ),
+        }
         comma_kws = ["TCSHA"]
 
         return Keywords_Dataclass(
             keywords=keywords,
             to_float_kws=to_float_kws,
-            write_any_val=write_any_val,
             comma_kws=comma_kws,
+            regex_str=regex_str,
         )
 
     def fix_keywords(self):
         self._convert_to_float()
         self._write_any_value()
+        self._replace_comma()
+        self._verify_regex()
         return
 
     def _write_TCSDATE(self):
@@ -455,7 +479,7 @@ class S4GUI(Header):
             "COMMENT",
         ]
         to_bool_kw = ["CHANNEL1", "CHANNEL2", "CHANNEL3", "CHANNEL4", "TCSMODE"]
-        write_any_val = ["OBJECT", "OBSERVER", "PROJID", "GUIVRSN"]
+        write_any_val = ["OBJECT", "OBSERVER", "PROJID"]
         write_predefined_value = [
             "FILTER",
             "CTRLINTE",
@@ -463,11 +487,14 @@ class S4GUI(Header):
             "OBSTYPE",
             "INSTMODE",
         ]
+        regex_str = {"GUIVRSN": (r"v\d+\.\d+\.\d+", "v0.0.0")}
+
         return Keywords_Dataclass(
             keywords=keywords,
             to_bool_kws=to_bool_kw,
             write_any_val=write_any_val,
             write_predefined_value=write_predefined_value,
+            regex_str=regex_str,
         )
 
     def _write_COMMENT(self):
@@ -485,6 +512,7 @@ class S4GUI(Header):
         self._convert_to_boolean()
         self._write_any_value()
         self._write_predefined_value()
+        self._verify_regex()
         self._write_COMMENT()
         return
 
@@ -706,6 +734,7 @@ class Keywords_Dataclass:
     comma_kws: list = field(default_factory=list)
     replace_str: dict = field(default_factory=dict)
     delete_str: dict = field(default_factory=dict)
+    regex_str: dict = field(default_factory=dict)
 
     write_any_val: list = field(default_factory=list)
     write_predefined_value: dict = field(default_factory=dict)

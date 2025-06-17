@@ -102,8 +102,8 @@ tcs_json = {
     "version": "20240131",
     "cmd": "",
     "objectName": "NO_OBJ",
-    "raAcquis": "03:19:21",
-    "decAcquis": "+03:22:12",
+    "raAcquis": "-03:19:21.1",
+    "decAcquis": "+03:22:12.1",
     "epochAcquis": "2000.0",
     "airMass": "1.000",
     "julianDate": "2460368.05207",
@@ -220,6 +220,7 @@ s4gui_json = {
     "TCSMODE": True,
     "COMMENT": "FGH",
     "BROKER": "S4GUI",
+    "GUIVRSN": "v0.0.0",
 }
 general_kw = {
     "FILENAME": "20240426_s4c1_000003.fits",
