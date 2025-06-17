@@ -343,7 +343,7 @@ class S4ICS(Header):
             "GFOCMODE": ("SIMULATED", "ACTIVE"),
             "ASEL": ("OFF", "ON"),
         }
-        regex_str = ["ICSVRSN"]
+        regex_str = {"ICSVRSN": (r"v\d+\.\d+\.\d+", "v0.0.0")}
 
         return Keywords_Dataclass(
             keywords=keywords,
@@ -500,10 +500,8 @@ class S4GUI(Header):
     def _write_COMMENT(self):
         kw = "COMMENT"
         try:
-            if kw in self.hdr.keys():
-                del self.hdr[kw]
-            _json = {k.upper(): v for (k, v) in json.loads(self.json_string).items()}
-            self.hdr[kw] = _json[kw]
+            if self._json[kw] != "":
+                self.hdr[kw] = self._json[kw]
         except Exception as e:
             self._write_log_file(repr(e), kw)
         return
