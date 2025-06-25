@@ -36,6 +36,7 @@ class Header(ABC):
 
     def _load_json(self, dict_header_jsons):
         self.json_string = dict_header_jsons[self.sub_system]
+        _json = json.loads(self.json_string)
         if self.json_string == "":
             return {}
         try:
@@ -306,11 +307,16 @@ class S4ICS(Header):
     sub_system = "S4ICS"
 
     def __init__(self, dict_header_jsons, log_file):
-        # json_string = dict_header_jsons[self.sub_system]
-        # json_string = '{"broker' + json_string.split("broker")[1]
-        # json_string = re.sub(r"\r?\n", "", json_string)
-        # dict_header_jsons[self.sub_system] = json_string
-        super().__init__(dict_header_jsons, log_file)
+        self.log_file = log_file
+        json_string = dict_header_jsons[self.sub_system].split("\n")[1]
+        dict_header_jsons[self.sub_system] = json_string
+        _json = self._load_json(dict_header_jsons)
+        _json = self._create_s4ics_kws(_json)
+        self.kw_dataclass = self._initialize_kw_dataclass()
+        self._json = self.extract_info(_json)
+        self._check_type()
+        self._check_allowed_values()
+        return
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -332,8 +338,21 @@ class S4ICS(Header):
             "GFOCMODE",
             "ICSVRSN",
         ]
-        idx_in_dict = {"WPSEL": {"OFF": "None", "L/2": "L2", "L/4": "L4"}}
-        to_float_kws = ["GMIR", "GFOC"]
+        idx_in_dict = {
+            "WPSEL": {"OFF": "None", "L/2": "L2", "L/4": "L4"},
+            "CALW": {
+                "POLARIZER": "POLARIZER",
+                "DEPOLARIZER": "DEPOLARIZER",
+                "CLEAR": "CLEAR",
+                "OFF": "CLEAR",
+                "PINHOLE": "SPARE",
+                "SPARE": "SPARE",
+                "SHUTTER": "CLOSED",
+                "CLOSED": "CLOSED",
+            },
+        }
+        to_float_kws = ["GMIR", "GFOC", "WPANG", "WPSELPO", "CALWANG", "ANALANG"]
+        to_int_kws = ["WPPOS"]
         to_bool_with_condition = {
             "WPROMODE": ("SIMULATED", "ACTIVE"),
             "WPSEMODE": ("SIMULATED", "ACTIVE"),
@@ -351,15 +370,17 @@ class S4ICS(Header):
             idx_in_dict=idx_in_dict,
             to_bool_with_condition=to_bool_with_condition,
             regex_str=regex_str,
+            to_int_kws=to_int_kws,
         )
 
     def fix_keywords(self):
         self._convert_to_float()
+        self._convert_to_int()
         self._substitute_idx_in_dict()
         self._convert_to_bool_with_condition()
         self._verify_regex()
-        self._write_WPPOS()
-        self._write_CALW()
+        # self._write_WPPOS()
+        # self._write_CALW()
 
     def _write_WPPOS(self):
         try:
@@ -394,6 +415,34 @@ class S4ICS(Header):
         except Exception as e:
             self._write_log_file(repr(e), "CALW")
         return
+
+    @staticmethod
+    def _create_s4ics_kws(_json):
+        mechanisms_list = _json["MECHANISMS"]
+        mechanisms = {}
+        for mechanism in mechanisms_list:
+            mechanisms[mechanism["name"]] = mechanism["status"]
+        print(mechanisms)
+        _json["ICSVRSN"] = _json["VERSION"]
+        _json["WPROMODE"] = mechanisms["WPROT"]["mode"]  # * Pode vir None
+        _json["WPSEMODE"] = mechanisms["WPSEL"]["mode"]
+        _json["ANMODE"] = mechanisms["ASEL"]["mode"]
+        _json["CALWMODE"] = mechanisms["CALW"]["mode"]
+        _json["GMIRMODE"] = mechanisms["GMIR"]["mode"]
+        _json["GFOCMODE"] = mechanisms["GFOC"]["mode"]
+
+        #! adicionar verificação pos_id
+        _json["WPSEL"] = mechanisms["WPSEL"][
+            "pos_name"
+        ]  # * existem posições fora dos valores esperados
+        _json["WPSELPO"] = mechanisms["WPSEL"]["position"]
+        _json["WPPOS"] = mechanisms["WPROT"]["pos_id"]
+        _json["WPANG"] = mechanisms["WPROT"]["position"]
+        _json["CALW"] = mechanisms["CALW"]["pos_name"]
+        _json["CALWANG"] = mechanisms["CALW"]["position"]
+        _json["ASEL"] = mechanisms["ASEL"]["pos_name"]  # * pode vir none
+        _json["ANALANG"] = mechanisms["ASEL"]["position"]
+        return _json
 
 
 class TCS(Header):
@@ -673,6 +722,7 @@ class General_KWs(Header):
             "ACSVRSN",
             "ACSMODE",
             "CHANNEL",
+            "ACQERROR",
         ]
 
         write_any_val = [
@@ -684,7 +734,7 @@ class General_KWs(Header):
             "SEQINDEX",
             "CYCLIND",
         ]
-        to_bool_kw = ["ACSMODE"]
+        to_bool_kw = ["ACSMODE", "ACQERROR"]
         replace_empty_kws = {
             "NAXIS": 2,
             "OBSLONG": -45.5825,

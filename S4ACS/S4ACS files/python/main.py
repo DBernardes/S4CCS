@@ -17,7 +17,7 @@ def main(night_dir, file, data, tuple_header_jsons, log_file):
     error_json = {"status": False, "code": 0, "source": ""}
     try:
         dict_header_jsons = {k: v for (k, v) in zip(sub_systems, tuple_header_jsons)}
-        data = np.asarray(data, dtype=np.int16)
+        data = np.asarray(data, dtype=np.uint16)
         file = os.path.join(night_dir, file)
 
         for cls in [Focuser, S4ICS, S4GUI, TCS, Weather_Station, General_KWs, CCD]:
