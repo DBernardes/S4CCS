@@ -381,6 +381,7 @@ class S4ICS(Header):
         self._verify_regex()
         # self._write_WPPOS()
         # self._write_CALW()
+        pass
 
     def _write_WPPOS(self):
         try:
@@ -416,33 +417,36 @@ class S4ICS(Header):
             self._write_log_file(repr(e), "CALW")
         return
 
-    @staticmethod
-    def _create_s4ics_kws(_json):
-        mechanisms_list = _json["MECHANISMS"]
-        mechanisms = {}
-        for mechanism in mechanisms_list:
-            mechanisms[mechanism["name"]] = mechanism["status"]
-        print(mechanisms)
-        _json["ICSVRSN"] = _json["VERSION"]
-        _json["WPROMODE"] = mechanisms["WPROT"]["mode"]  # * Pode vir None
-        _json["WPSEMODE"] = mechanisms["WPSEL"]["mode"]
-        _json["ANMODE"] = mechanisms["ASEL"]["mode"]
-        _json["CALWMODE"] = mechanisms["CALW"]["mode"]
-        _json["GMIRMODE"] = mechanisms["GMIR"]["mode"]
-        _json["GFOCMODE"] = mechanisms["GFOC"]["mode"]
+    def _create_s4ics_kws(self, _json):
+        try:
+            mechanisms_list = _json["MECHANISMS"]
+            mechanisms = {}
+            for mechanism in mechanisms_list:
+                mechanisms[mechanism["name"]] = mechanism["status"]
 
-        #! adicionar verificação pos_id
-        _json["WPSEL"] = mechanisms["WPSEL"][
-            "pos_name"
-        ]  # * existem posições fora dos valores esperados
-        _json["WPSELPO"] = mechanisms["WPSEL"]["position"]
-        _json["WPPOS"] = mechanisms["WPROT"]["pos_id"]
-        _json["WPANG"] = mechanisms["WPROT"]["position"]
-        _json["CALW"] = mechanisms["CALW"]["pos_name"]
-        _json["CALWANG"] = mechanisms["CALW"]["position"]
-        _json["ASEL"] = mechanisms["ASEL"]["pos_name"]  # * pode vir none
-        _json["ANALANG"] = mechanisms["ASEL"]["position"]
-        return _json
+            # print(mechanisms)
+            _json["ICSVRSN"] = _json["VERSION"]
+            _json["WPROMODE"] = mechanisms["WPROT"]["mode"]  # * Pode vir None
+            _json["WPSEMODE"] = mechanisms["WPSEL"]["mode"]
+            _json["ANMODE"] = mechanisms["ASEL"]["mode"]
+            _json["CALWMODE"] = mechanisms["CALW"]["mode"]
+            _json["GMIRMODE"] = mechanisms["GMIR"]["mode"]
+            _json["GFOCMODE"] = mechanisms["GFOC"]["mode"]
+
+            #! adicionar verificação pos_id
+            _json["WPSEL"] = mechanisms["WPSEL"][
+                "pos_name"
+            ]  # * existem posições fora dos valores esperados
+            _json["WPSELPO"] = mechanisms["WPSEL"]["position"]
+            _json["WPPOS"] = mechanisms["WPROT"]["pos_id"]
+            _json["WPANG"] = mechanisms["WPROT"]["position"]
+            _json["CALW"] = mechanisms["CALW"]["pos_name"]
+            _json["CALWANG"] = mechanisms["CALW"]["position"]
+            _json["ASEL"] = mechanisms["ASEL"]["pos_name"]  # * pode vir none
+            _json["ANALANG"] = mechanisms["ASEL"]["position"]
+            return _json
+        except Exception as e:
+            self._write_log_file(repr(e), "CALW")
 
 
 class TCS(Header):
