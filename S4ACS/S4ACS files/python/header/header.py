@@ -481,17 +481,14 @@ class TCS(Header):
 
     def _write_TCSDATE(self):
         try:
-            if self.json_string == "":
-                raise KeyError("DATE", "TIME")
-            _json = {k.upper(): v for (k, v) in json.loads(self.json_string).items()}
             for kw in ["DATE", "TIME"]:
-                if not isinstance(_json[kw], str):
+                if not isinstance(self.original_json[kw], str):
                     self._write_log_file(
-                        f'Keyword value "{_json[kw]}" is not an instance of {repr(str)}.',
+                        f'Keyword value "{self.original_json[kw]}" is not an instance of {repr(str)}.',
                         kw,
                     )
                     return
-            date, time = _json["DATE"], _json["TIME"]
+            date, time = self.original_json["DATE"], self.original_json["TIME"]
             date = date.split("/")[::-1]
             time = time.split(":")
             tmp = [int(val) for val in date + time]
@@ -500,7 +497,6 @@ class TCS(Header):
             return tcsdate
         except Exception as e:
             self._write_log_file(repr(e), "TCSDATE")
-            return ""
 
 
 class S4GUI(Header):
@@ -553,10 +549,11 @@ class S4GUI(Header):
                 )
                 return
             if self.original_json[kw] == "":
-                self._write_log_file(
-                    f"An empty string was found for the COMMENT keyword."
-                )
+                self._write_log_file(f"An empty string was found for the {kw} keyword.")
                 return
+            if kw in self.hdr.keys():
+                del self.hdr[kw]
+
             self.hdr[kw] = self.original_json[kw]
         except Exception as e:
             self._write_log_file(repr(e), kw)
