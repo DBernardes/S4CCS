@@ -662,6 +662,7 @@ class CCD(Header):
         self._write_predefined_value()
         self._write_ccd_gain()
         self._write_read_noise()
+        self._fix_EXPTIME()
 
         return
 
@@ -711,6 +712,11 @@ class CCD(Header):
         if _json["EMMODE"] == 1:
             _list = [1.0, 0.1]
         return _list[_json["READRATE"]]
+
+    def _fix_EXPTIME(self):
+        if 1e-5 > self.hdr["EXPTIME"] > 9.9999997e-6:
+            self.hdr["EXPTIME"] = 10e-6
+        return
 
 
 class General_KWs(Header):
