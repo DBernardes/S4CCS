@@ -305,14 +305,17 @@ class S4ICS(Header):
 
     def __init__(self, dict_header_jsons, log_file):
         self.log_file = log_file
-        json_string = dict_header_jsons[self.sub_system].split("\n")[1]
-        dict_header_jsons[self.sub_system] = json_string
-        self._load_json(dict_header_jsons)
-        self._create_s4ics_kws()
+        try:
+            json_string = dict_header_jsons[self.sub_system].split("\n")[1]
+            dict_header_jsons[self.sub_system] = json_string
+            self._load_json(dict_header_jsons)
+            self._create_s4ics_kws()
+        except Exception as e:
+            self._write_log_file(repr(e), "")
         self.kw_dataclass = self._initialize_kw_dataclass()
         self.extract_info()
         self._check_type()
-        # self._check_allowed_values()
+        self._check_allowed_values()
         return
 
     def _initialize_kw_dataclass(self):
