@@ -34,9 +34,8 @@ class Header(ABC):
 
     def _load_json(self, dict_header_jsons):
         self.json_string = dict_header_jsons[self.sub_system]
-        _json = json.loads(self.json_string)
         if self.json_string == "":
-            return {}
+            self.original_json = {}
         try:
             _json = json.loads(self.json_string)
             self.original_json = {k.upper(): v for k, v in _json.items()}

@@ -32,6 +32,7 @@ def main(night_dir, file, data, tuple_header_jsons, log_file):
         hdu.header["NAXIS1"] = (hdu.header["NAXIS1"], "Number of columns")
         hdu.header["NAXIS2"] = (hdu.header["NAXIS2"], "Number of rows")
         hdu.writeto(file, output_verify="ignore")
+        obj.reset_header()
         return json.dumps(error_json)
     except Exception as e:
         error_json["status"] = True
