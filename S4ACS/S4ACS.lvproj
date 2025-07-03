@@ -81,17 +81,6 @@
 			<Item Name="TCPIP.vi" Type="VI" URL="../Comm VIs/TCPIP.vi"/>
 			<Item Name="communication manager.vi" Type="VI" URL="../General VIs/communication manager.vi"/>
 		</Item>
-		<Item Name="zeroqmq" Type="Folder">
-			<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
-			<Item Name="libsodium.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libsodium.dll"/>
-			<Item Name="libzmq-v120-mt-4_3_2.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libzmq-v120-mt-4_3_2.dll"/>
-			<Item Name="libzmq-v120-mt-4_3_2.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/libzmq-v120-mt-4_3_2.lib"/>
-			<Item Name="lvzmq32.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.dll"/>
-			<Item Name="lvzmq32.exp" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.exp"/>
-			<Item Name="lvzmq32.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/lvzmq32.lib"/>
-			<Item Name="msvcp120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcp120.dll"/>
-			<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win32/msvcr120.dll"/>
-		</Item>
 		<Item Name="Unit Tests" Type="Folder">
 			<Item Name="caraya" Type="Folder">
 				<Item Name="RW VIs" Type="Folder">
@@ -120,9 +109,9 @@
 			<Item Name="TESTE.vi" Type="VI" URL="../General VIs/TESTE.vi"/>
 			<Item Name="old tests.vi" Type="VI" URL="../General VIs/old tests.vi"/>
 			<Item Name="fix_ICS_msg.vi" Type="VI" URL="../General VIs/fix_ICS_msg.vi"/>
-			<Item Name="CCS get machine path.vi" Type="VI" URL="../General VIs/CCS get machine path.vi"/>
-			<Item Name="CCS night time stamp.vi" Type="VI" URL="../General VIs/CCS night time stamp.vi"/>
-			<Item Name="CCS split string.vi" Type="VI" URL="../General VIs/CCS split string.vi"/>
+			<Item Name="get machine path.vi" Type="VI" URL="../General VIs/get machine path.vi"/>
+			<Item Name="night time stamp.vi" Type="VI" URL="../General VIs/night time stamp.vi"/>
+			<Item Name="split string.vi" Type="VI" URL="../General VIs/split string.vi"/>
 		</Item>
 		<Item Name="python" Type="Folder">
 			<Item Name="csvs" Type="Folder">
@@ -145,31 +134,44 @@
 			<Item Name="readout_times.csv" Type="Document" URL="../S4ACS files/cam_parameters/readout_times.csv"/>
 		</Item>
 		<Item Name="comm man classes" Type="Folder">
-			<Item Name="RxTx.lvclass" Type="LVClass" URL="../communication-manager/RxTx/RxTx.lvclass"/>
-			<Item Name="State Machine.lvclass" Type="LVClass" URL="../communication-manager/State Machine/State Machine.lvclass"/>
+			<Item Name="CM_Log File.lvclass" Type="LVClass" URL="../communication-manager/Log File/CM_Log File.lvclass"/>
+			<Item Name="CM_RxTx.lvclass" Type="LVClass" URL="../communication-manager/RxTx/CM_RxTx.lvclass"/>
+			<Item Name="CM_State Machine.lvclass" Type="LVClass" URL="../communication-manager/State Machine/CM_State Machine.lvclass"/>
 			<Item Name="Socket.lvclass" Type="LVClass" URL="../communication-manager/Socket/Socket.lvclass"/>
 			<Item Name="socket PUB.lvclass" Type="LVClass" URL="../communication-manager/socket PUB/socket PUB.lvclass"/>
 			<Item Name="socket REP.lvclass" Type="LVClass" URL="../communication-manager/socket REP/socket REP.lvclass"/>
 			<Item Name="socket REQ.lvclass" Type="LVClass" URL="../communication-manager/socket REQ/socket REQ.lvclass"/>
 			<Item Name="socket SUB.lvclass" Type="LVClass" URL="../communication-manager/socket SUB/socket SUB.lvclass"/>
-			<Item Name="Log File.lvclass" Type="LVClass" URL="../communication-manager/Log File/Log File.lvclass"/>
-			<Item Name="get machine path.vi" Type="VI" URL="../communication-manager/General VIs/get machine path.vi"/>
-			<Item Name="night time stamp.vi" Type="VI" URL="../communication-manager/General VIs/night time stamp.vi"/>
-			<Item Name="split string.vi" Type="VI" URL="../communication-manager/General VIs/split string.vi"/>
+			<Item Name="CM get machine path.vi" Type="VI" URL="../communication-manager/General VIs/CM get machine path.vi"/>
+			<Item Name="CM night time stamp.vi" Type="VI" URL="../communication-manager/General VIs/CM night time stamp.vi"/>
+			<Item Name="CM_split string.vi" Type="VI" URL="../communication-manager/General VIs/CM_split string.vi"/>
+		</Item>
+		<Item Name="zeromq64" Type="Folder">
+			<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
+			<Item Name="libsodium.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/libsodium.dll"/>
+			<Item Name="libzmq-v120-mt-4_3_2.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/libzmq-v120-mt-4_3_2.dll"/>
+			<Item Name="libzmq-v120-mt-4_3_2.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/libzmq-v120-mt-4_3_2.lib"/>
+			<Item Name="lvzmq64.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/lvzmq64.dll"/>
+			<Item Name="lvzmq64.exp" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/lvzmq64.exp"/>
+			<Item Name="lvzmq64.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/lvzmq64.lib"/>
+			<Item Name="msvcp120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/msvcp120.dll"/>
+			<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/msvcr120.dll"/>
+			<Item Name="zmq.h" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/zmq.h"/>
 		</Item>
 		<Item Name="ATMCD32D.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2018/ATMCD32D.dll"/>
+		<Item Name="atmcd64d.dll" Type="Document" URL="../../../../../../Program Files/Andor SDK/atmcd64d.dll"/>
 		<Item Name="socket_TEMPLATE.cfg" Type="Document" URL="../S4ACS files/socket_TEMPLATE.cfg"/>
 		<Item Name="acs_config_TEMPLATE.cfg" Type="Document" URL="../S4ACS files/acs_config_TEMPLATE.cfg"/>
 		<Item Name="S4ACS.vi" Type="VI" URL="../S4ACS.vi"/>
 		<Item Name="Simulated Camera.lvclass" Type="LVClass" URL="../Simulated_CCD_Camera/Simulated Camera.lvclass"/>
 		<Item Name="Real Camera.lvclass" Type="LVClass" URL="../CCDCamera/Real Camera.lvclass"/>
-		<Item Name="CCS_State Machine.lvclass" Type="LVClass" URL="../State Machine/CCS_State Machine.lvclass"/>
+		<Item Name="State Machine.lvclass" Type="LVClass" URL="../State Machine/State Machine.lvclass"/>
 		<Item Name="Channel.lvclass" Type="LVClass" URL="../Channel/Channel.lvclass"/>
 		<Item Name="Save Image.lvclass" Type="LVClass" URL="../Save Image/Save Image.lvclass"/>
 		<Item Name="Header content.lvclass" Type="LVClass" URL="../Header content/Header content.lvclass"/>
-		<Item Name="CCS_RxTx.lvclass" Type="LVClass" URL="../RxTx/CCS_RxTx.lvclass"/>
+		<Item Name="RxTx.lvclass" Type="LVClass" URL="../RxTx/RxTx.lvclass"/>
 		<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../Python Toolkit/Python Toolkit.lvclass"/>
-		<Item Name="CCS_Log File.lvclass" Type="LVClass" URL="../Log File/CCS_Log File.lvclass"/>
+		<Item Name="Log File.lvclass" Type="LVClass" URL="../Log File/Log File.lvclass"/>
 		<Item Name="Error log.lvclass" Type="LVClass" URL="../Error log/Error log.lvclass"/>
 		<Item Name="Keywords Log File.lvclass" Type="LVClass" URL="../Keywords Log File/Keywords Log File.lvclass"/>
 		<Item Name="Server.lvclass" Type="LVClass" URL="../Server/Server.lvclass"/>
@@ -639,7 +641,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{4B72D823-97E4-4F55-A103-EC19C8B7E8AB}</Property>
-				<Property Name="Bld_version.build" Type="Int">7</Property>
+				<Property Name="Bld_version.build" Type="Int">16</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">S4ACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/S4ACS.exe</Property>
@@ -653,7 +655,7 @@
 				<Property Name="Destination[3].destName" Type="Str">root</Property>
 				<Property Name="Destination[3].path" Type="Path">../builds/NI_AB_PROJECTNAME</Property>
 				<Property Name="DestinationCount" Type="Int">4</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F1B069B7-964D-4697-AEF6-C8DC82D30650}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{5A02A1B5-2DC9-4CB1-B85F-D609C3520DCF}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/S4ACS.vi</Property>
@@ -663,25 +665,31 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Comm/communication manager.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/General VIs/night time stamp.vi</Property>
 				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/General VIs/CCS get machine path.vi</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/General VIs/split string.vi</Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[11].type" Type="Str">VI</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/General VIs/CCS night time stamp.vi</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/General VIs/fix_ICS_msg.vi</Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[12].type" Type="Str">VI</Property>
-				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/General VIs/CCS split string.vi</Property>
+				<Property Name="Source[13].destinationIndex" Type="Int">3</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/atmcd64d.dll</Property>
 				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">VI</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/General VIs/fix_ICS_msg.vi</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Comm/communication manager.vi</Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
+				<Property Name="Source[15].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[15].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[15].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[15].destinationIndex" Type="Int">1</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/zeromq64</Property>
+				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[15].type" Type="Str">Container</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/ATMCD32D.dll</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -705,22 +713,19 @@
 				<Property Name="Source[6].itemID" Type="Ref">/My Computer/python</Property>
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].type" Type="Str">Container</Property>
-				<Property Name="Source[7].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[7].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[7].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/zeroqmq</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Comm/Save_Header.vi</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[7].type" Type="Str">Container</Property>
+				<Property Name="Source[7].type" Type="Str">VI</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Comm/Save_Header.vi</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Comm/TCPIP.vi</Property>
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].type" Type="Str">VI</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Comm/TCPIP.vi</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/General VIs/get machine path.vi</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">15</Property>
+				<Property Name="SourceCount" Type="Int">16</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">S4ACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">S4ACS</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2025 </Property>

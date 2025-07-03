@@ -24,24 +24,22 @@ class Header(ABC):
     sub_system = "HEADER"
 
     def __init__(self, dict_header_jsons, log_file) -> None:
-
         self.log_file = log_file
-        _json = self._load_json(dict_header_jsons)
+        self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
-        self._json = self.extract_info(_json)
+        self.extract_info()
         self._check_type()
         self._check_allowed_values()
-
         return
 
     def _load_json(self, dict_header_jsons):
         self.json_string = dict_header_jsons[self.sub_system]
+        _json = json.loads(self.json_string)
         if self.json_string == "":
             return {}
         try:
             _json = json.loads(self.json_string)
-            _json = {k.upper(): v for k, v in _json.items()}
-            return _json
+            self.original_json = {k.upper(): v for k, v in _json.items()}
         except Exception as e:
             self._write_log_file(
                 f"{self.sub_system}: There was an error when loading the JSON data --> {self.json_string}."
@@ -56,21 +54,21 @@ class Header(ABC):
     def _convert_to_float(self):
         for kw in self.kw_dataclass.to_float_kws:
             try:
-                self.hdr[kw] = float(self._json[kw])
+                self.hdr[kw] = float(self.new_json[kw])
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _convert_to_int(self):
         for kw in self.kw_dataclass.to_int_kws:
             try:
-                self.hdr[kw] = int(self._json[kw])
+                self.hdr[kw] = int(self.new_json[kw])
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _convert_to_boolean(self):
         for kw in self.kw_dataclass.to_bool_kws:
             try:
-                val = self._json[kw]
+                val = self.new_json[kw]
                 self.hdr[kw] = bool(val)
             except Exception as e:
                 self._write_log_file(repr(e), kw)
@@ -78,7 +76,7 @@ class Header(ABC):
     def _convert_to_bool_with_condition(self):
         for kw, (off, on) in self.kw_dataclass.to_bool_with_condition.items():
             try:
-                val = self._json[kw]
+                val = self.new_json[kw]
                 if val == off:
                     self.hdr[kw] = False
                 elif val == on:
@@ -92,7 +90,7 @@ class Header(ABC):
         for kw in self.kw_dataclass.comma_kws:
             try:
                 self._search_unwanted_kw(kw, ",")
-                self._json[kw] = self._json[kw].replace(",", ".")
+                self.new_json[kw] = self.new_json[kw].replace(",", ".")
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -100,7 +98,21 @@ class Header(ABC):
         for kw, (prev, new) in self.kw_dataclass.replace_str.items():
             try:
                 self._search_unwanted_kw(kw, prev)
-                self.hdr[kw] = self._json[kw].replace(prev, new)
+                self.hdr[kw] = self.new_json[kw].replace(prev, new)
+            except Exception as e:
+                self._write_log_file(repr(e), kw)
+
+    def _verify_regex(self):
+        for kw, (regex_expr, ex_value) in self.kw_dataclass.regex_str.items():
+            try:
+                kw_value = self.new_json[kw]
+                if re.match(regex_expr, kw_value) == None:
+                    self._write_log_file(
+                        f"The provided value for the keyword {kw} '{kw_value}' does not match the expected format {ex_value}",
+                        kw,
+                    )
+                else:
+                    self.hdr[kw] = self.new_json[kw]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
@@ -123,14 +135,14 @@ class Header(ABC):
     def _write_any_value(self):
         for kw in self.kw_dataclass.write_any_val:
             try:
-                self.hdr[kw] = self._json[kw]
+                self.hdr[kw] = self.new_json[kw]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
     def _write_predefined_value(self):
         for kw in self.kw_dataclass.write_predefined_value:
             try:
-                val = self._json[kw]
+                val = self.new_json[kw]
                 _list = allowed_kw_values[kw]
                 if val in _list:
                     self.hdr[kw] = val
@@ -140,7 +152,7 @@ class Header(ABC):
     def _substitute_idx_in_dict(self):
         for kw, dict in self.kw_dataclass.idx_in_dict.items():
             try:
-                val = self._json[kw]
+                val = self.new_json[kw]
                 self.hdr[kw] = dict[val]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
@@ -149,12 +161,12 @@ class Header(ABC):
         for kw in self.kw_dataclass.idx_in_list:
             try:
                 _list = allowed_kw_values[kw]
-                val = self._json[kw]
+                val = self.new_json[kw]
                 self.hdr[kw] = _list[val]
             except Exception as e:
                 self._write_log_file(repr(e), kw)
 
-    def extract_info(self, _json):
+    def extract_info(self):
         new_json = {}
         for hdr_kw in self.kw_dataclass.keywords:
             try:
@@ -162,15 +174,15 @@ class Header(ABC):
                 expected_name = expected_kw_names[hdr_kw]
                 if expected_name != "":
                     json_kw = expected_name
-                new_json[hdr_kw] = _json[json_kw]
+                new_json[hdr_kw] = self.original_json[json_kw]
             except Exception as e:
                 self._write_log_file(repr(e), hdr_kw)
-        return new_json
+        self.new_json = new_json
 
     def _check_type(self):
         for hdr_kw in self.kw_dataclass.keywords:
             try:
-                val = self._json[hdr_kw]
+                val = self.new_json[hdr_kw]
                 _type = keyword_types[hdr_kw]
                 if not isinstance(val, self.kw_types[_type]):
                     self._write_log_file(
@@ -194,7 +206,7 @@ class Header(ABC):
         return
 
     def _check_number_in_range(self, hdr_kw):
-        val = self._json[hdr_kw]
+        val = self.new_json[hdr_kw]
         a_values = allowed_kw_values[hdr_kw]
         min, *max = a_values
         if not isinstance(val, (int, float)):
@@ -207,7 +219,7 @@ class Header(ABC):
         return
 
     def _check_string_in_allowed_values(self, hdr_kw):
-        val = self._json[hdr_kw]
+        val = self.new_json[hdr_kw]
         a_values = allowed_kw_values[hdr_kw]
         if not isinstance(val, str):
             return
@@ -235,7 +247,7 @@ class Header(ABC):
             )
 
     def _search_unwanted_kw(self, kw, _str):
-        if _str in self._json[kw]:
+        if _str in self.new_json[kw]:
             self._write_log_file(
                 f"An unexpected string was found in the keyword value: {_str}", kw
             )
@@ -292,11 +304,16 @@ class S4ICS(Header):
     sub_system = "S4ICS"
 
     def __init__(self, dict_header_jsons, log_file):
-        # json_string = dict_header_jsons[self.sub_system]
-        # json_string = '{"broker' + json_string.split("broker")[1]
-        # json_string = re.sub(r"\r?\n", "", json_string)
-        # dict_header_jsons[self.sub_system] = json_string
-        super().__init__(dict_header_jsons, log_file)
+        self.log_file = log_file
+        json_string = dict_header_jsons[self.sub_system].split("\n")[1]
+        dict_header_jsons[self.sub_system] = json_string
+        self._load_json(dict_header_jsons)
+        self._create_s4ics_kws()
+        self.kw_dataclass = self._initialize_kw_dataclass()
+        self.extract_info()
+        self._check_type()
+        # self._check_allowed_values()
+        return
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -318,8 +335,21 @@ class S4ICS(Header):
             "GFOCMODE",
             "ICSVRSN",
         ]
-        idx_in_dict = {"WPSEL": {"OFF": "None", "L/2": "L2", "L/4": "L4"}}
-        to_float_kws = ["GMIR", "GFOC"]
+        idx_in_dict = {
+            "WPSEL": {"OFF": "None", "L/2": "L2", "L/4": "L4"},
+            "CALW": {
+                "POLARIZER": "POLARIZER",
+                "DEPOLARIZER": "DEPOLARIZER",
+                "CLEAR": "CLEAR",
+                "OFF": "CLEAR",
+                "PINHOLE": "SPARE",
+                "SPARE": "SPARE",
+                "SHUTTER": "CLOSED",
+                "CLOSED": "CLOSED",
+            },
+        }
+        to_float_kws = ["GMIR", "GFOC", "WPANG", "WPSELPO", "CALWANG", "ANALANG"]
+        to_int_kws = ["WPPOS"]
         to_bool_with_condition = {
             "WPROMODE": ("SIMULATED", "ACTIVE"),
             "WPSEMODE": ("SIMULATED", "ACTIVE"),
@@ -329,57 +359,88 @@ class S4ICS(Header):
             "GFOCMODE": ("SIMULATED", "ACTIVE"),
             "ASEL": ("OFF", "ON"),
         }
-        write_any_val = ["ICSVRSN"]
+        regex_str = {"ICSVRSN": (r"v\d+\.\d+\.\d+", "v0.0.0")}
 
         return Keywords_Dataclass(
             keywords=keywords,
             to_float_kws=to_float_kws,
             idx_in_dict=idx_in_dict,
             to_bool_with_condition=to_bool_with_condition,
-            write_any_val=write_any_val,
+            regex_str=regex_str,
+            to_int_kws=to_int_kws,
         )
 
     def fix_keywords(self):
         self._convert_to_float()
+        self._convert_to_int()
         self._substitute_idx_in_dict()
         self._convert_to_bool_with_condition()
-        self._write_any_value()
-        self._write_WPPOS()
-        self._write_CALW()
+        self._verify_regex()
+        return
 
-    def _write_WPPOS(self):
+    def _create_s4ics_kws(self):
+        mechanisms = self._treat_s4ics_json()
+
+        components_list = [
+            "WPROMODE",
+            "WPSEMODE",
+            "CALWMODE",
+            "ANMODE",
+            "GMIRMODE",
+            "GFOCMODE",
+        ]
+        s4ics_correspondents = ["WPROT", "WPSEL", "CALW", "ASEL", "GMIR", "GFOC"]
+        self._write_s4ics_kws_into_json(
+            mechanisms, components_list, s4ics_correspondents, "mode"
+        )
+
+        components_list = ["WPANG", "WPSELPO", "CALWANG", "ANALANG", "GMIR", "GFOC"]
+        self._write_s4ics_kws_into_json(
+            mechanisms, components_list, s4ics_correspondents, "position"
+        )
+
+        components_list = ["WPSEL", "CALW", "ASEL"]
+        self._write_s4ics_kws_into_json(
+            mechanisms, components_list, components_list, "pos_name"
+        )
+
         try:
-            val = self._json["WPPOS"]
-            if "NONE" in val:
-                self.hdr["WPPOS"] = 0
-            elif "WP" in val:
-                self.hdr["WPPOS"] = int(val[2:])
-            else:
-                self._write_log_file(
-                    f"The expected values for keyword are (NONE, WP1, ..., WP16). {val} was found.",
-                    "WPPOS",
-                )
+            self.original_json["ICSVRSN"] = self.original_json["VERSION"]
+        except Exception as e:
+            self._write_log_file(repr(e), "ICSVRSN")
+        try:
+            self.original_json["WPPOS"] = mechanisms["WPROT"]["pos_id"]
         except Exception as e:
             self._write_log_file(repr(e), "WPPOS")
 
-    def _write_CALW(self):
+    def _write_s4ics_kws_into_json(
+        self, mechanisms, components_list, s4ics_correspondents, st_param
+    ):
+        for comp, ics_corresp in zip(components_list, s4ics_correspondents):
+            try:
+                self.original_json[comp] = mechanisms[ics_corresp][st_param]
+            except Exception as e:
+                self._write_log_file(repr(e), comp)
+
+    def _treat_s4ics_json(self):
         try:
-            val = self._json["CALW"]
-            expected_values = ["POLARIZER", "DEPOLARIZER", "NONE", "PINHOLE", "POS5"]
-            if val in expected_values:
-                self.hdr["CALW"] = val
-                if self.hdr["CALW"] == "NONE":
-                    self.hdr["CALW"] = "None"
-            else:
-                if val == "OFF":
-                    self.hdr["CALW"] = "None"
-                self._write_log_file(
-                    f'The expected values for this keyword are {expected_values}. "{val}" was found.',
-                    "CALW",
-                )
+            mechanisms_list = self.original_json["MECHANISMS"]
+            mechanisms = {}
+            for mechanism in mechanisms_list:
+                mechanism_st = mechanism["status"]
+                mechanism_name = mechanism["name"]
+                if int(mechanism_st["pos_id"]) == -1:
+                    self._write_log_file(
+                        f"There was an error related to the {mechanism_name} position: {mechanism_st}.",
+                        "",
+                    )
+                    continue
+                mechanisms[mechanism_name] = mechanism_st
+
+            return mechanisms
         except Exception as e:
-            self._write_log_file(repr(e), "CALW")
-        return
+            self._write_log_file(repr(e), "")
+            return {}
 
 
 class TCS(Header):
@@ -388,39 +449,46 @@ class TCS(Header):
 
     def __init__(self, _json, night_dir) -> None:
         super().__init__(_json, night_dir)
-        self._json["TCSDATE"] = self._write_TCSDATE()
+        self.new_json["TCSDATE"] = self._write_TCSDATE()
 
     def _initialize_kw_dataclass(self):
         keywords = ["RA", "DEC", "TCSHA", "INSTROT", "AIRMASS"]
         to_float_kws = ["AIRMASS", "INSTROT"]
-        write_any_val = ["RA", "DEC", "TCSDATE"]
+        regex_str = {
+            "RA": (r"[\+-]?\d{2}:\d{2}:\d{2}(\.\d+)?", "HH:MM:SS.ss"),
+            "DEC": (r"[\+-]?\d{2}:\d{2}:\d{2}(\.\d+)?", "HH:MM:SS.ss"),
+            "TCSHA": (r"[\+-]?\d{2}:\d{2}:\d{2}(\.\d+)?", "HH:MM:SS.ss"),
+            "TCSDATE": (
+                r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}",
+                "YYY-MM-DDTHH:MM:SS.sss",
+            ),
+        }
         comma_kws = ["TCSHA"]
 
         return Keywords_Dataclass(
             keywords=keywords,
             to_float_kws=to_float_kws,
-            write_any_val=write_any_val,
             comma_kws=comma_kws,
+            regex_str=regex_str,
         )
 
     def fix_keywords(self):
         self._convert_to_float()
         self._write_any_value()
+        self._replace_comma()
+        self._verify_regex()
         return
 
     def _write_TCSDATE(self):
         try:
-            if self.json_string == "":
-                raise KeyError("DATE", "TIME")
-            _json = {k.upper(): v for (k, v) in json.loads(self.json_string).items()}
             for kw in ["DATE", "TIME"]:
-                if not isinstance(_json[kw], str):
+                if not isinstance(self.original_json[kw], str):
                     self._write_log_file(
-                        f'Keyword value "{_json[kw]}" is not an instance of {repr(str)}.',
+                        f'Keyword value "{self.original_json[kw]}" is not an instance of {repr(str)}.',
                         kw,
                     )
                     return
-            date, time = _json["DATE"], _json["TIME"]
+            date, time = self.original_json["DATE"], self.original_json["TIME"]
             date = date.split("/")[::-1]
             time = time.split(":")
             tmp = [int(val) for val in date + time]
@@ -429,7 +497,6 @@ class TCS(Header):
             return tcsdate
         except Exception as e:
             self._write_log_file(repr(e), "TCSDATE")
-            return ""
 
 
 class S4GUI(Header):
@@ -452,10 +519,9 @@ class S4GUI(Header):
             "SYNCMODE",
             "INSTMODE",
             "OBSTYPE",
-            "COMMENT",
         ]
         to_bool_kw = ["CHANNEL1", "CHANNEL2", "CHANNEL3", "CHANNEL4", "TCSMODE"]
-        write_any_val = ["OBJECT", "OBSERVER", "PROJID", "GUIVRSN"]
+        write_any_val = ["OBJECT", "OBSERVER", "PROJID"]
         write_predefined_value = [
             "FILTER",
             "CTRLINTE",
@@ -463,20 +529,32 @@ class S4GUI(Header):
             "OBSTYPE",
             "INSTMODE",
         ]
+        regex_str = {"GUIVRSN": (r"v\d+\.\d+\.\d+", "v0.0.0")}
+
         return Keywords_Dataclass(
             keywords=keywords,
             to_bool_kws=to_bool_kw,
             write_any_val=write_any_val,
             write_predefined_value=write_predefined_value,
+            regex_str=regex_str,
         )
 
     def _write_COMMENT(self):
         kw = "COMMENT"
         try:
+            val = self.original_json[kw]
+            if not isinstance(val, str):
+                self._write_log_file(
+                    f'Keyword value "{val}" is not an instance of {str}.'
+                )
+                return
+            if self.original_json[kw] == "":
+                self._write_log_file(f"An empty string was found for the {kw} keyword.")
+                return
             if kw in self.hdr.keys():
                 del self.hdr[kw]
-            _json = {k.upper(): v for (k, v) in json.loads(self.json_string).items()}
-            self.hdr[kw] = _json[kw]
+
+            self.hdr[kw] = self.original_json[kw]
         except Exception as e:
             self._write_log_file(repr(e), kw)
         return
@@ -485,6 +563,7 @@ class S4GUI(Header):
         self._convert_to_boolean()
         self._write_any_value()
         self._write_predefined_value()
+        self._verify_regex()
         self._write_COMMENT()
         return
 
@@ -501,8 +580,8 @@ class CCD(Header):
     vshift_modes = [0.6, 1.13, 2.2, 4.33]
 
     def _load_json(self, dict_header_jsons):
-        _json = super()._load_json(dict_header_jsons)
-        return self._fix_ccd_parameters(_json)
+        super()._load_json(dict_header_jsons)
+        self._fix_ccd_parameters()
 
     def _initialize_kw_dataclass(self):
         keywords = [
@@ -583,6 +662,7 @@ class CCD(Header):
         self._write_predefined_value()
         self._write_ccd_gain()
         self._write_read_noise()
+        self._fix_EXPTIME()
 
         return
 
@@ -601,7 +681,7 @@ class CCD(Header):
             self._write_log_file(repr(e), "GAIN")
 
     def find_index_tab(self):
-        _json = self._json
+        _json = self.new_json
         index = 0
         if _json["EMMODE"] == "Conventional":
             index += 8
@@ -612,7 +692,8 @@ class CCD(Header):
         index += float(_json["PREAMP"][-1]) - 1
         return index
 
-    def _fix_ccd_parameters(self, _json):
+    def _fix_ccd_parameters(self):
+        _json = self.original_json
         _json["READRATE"] = self._write_READRATE(_json)
         _json["TRIGGER"] = self.trigger_modes[_json["TRIGGER"]]
         _json["ACQMODE"] = self.acq_modes[_json["ACQMODE"]]
@@ -623,7 +704,7 @@ class CCD(Header):
         _json["VSHIFT"] = self.vshift_modes[_json["VSHIFT"]]
         _json["COOLER"] = _json["COOLER"] == 1
         _json["EXPTIME"] = float(_json["EXPTIME"])
-        return _json
+        self.original_json = _json
 
     @staticmethod
     def _write_READRATE(_json):
@@ -631,6 +712,11 @@ class CCD(Header):
         if _json["EMMODE"] == 1:
             _list = [1.0, 0.1]
         return _list[_json["READRATE"]]
+
+    def _fix_EXPTIME(self):
+        if 1e-5 > self.hdr["EXPTIME"] > 9.9999997e-6:
+            self.hdr["EXPTIME"] = 10e-6
+        return
 
 
 class General_KWs(Header):
@@ -647,6 +733,7 @@ class General_KWs(Header):
             "ACSVRSN",
             "ACSMODE",
             "CHANNEL",
+            "ACQERROR",
         ]
 
         write_any_val = [
@@ -658,7 +745,7 @@ class General_KWs(Header):
             "SEQINDEX",
             "CYCLIND",
         ]
-        to_bool_kw = ["ACSMODE"]
+        to_bool_kw = ["ACSMODE", "ACQERROR"]
         replace_empty_kws = {
             "NAXIS": 2,
             "OBSLONG": -45.5825,
@@ -679,14 +766,12 @@ class General_KWs(Header):
         )
 
     def _load_json(self, dict_header_jsons):
-        _json = super()._load_json(dict_header_jsons)
-        return self._fix_parameters(_json)
+        super()._load_json(dict_header_jsons)
+        self._fix_parameters()
 
-    @staticmethod
-    def _fix_parameters(_json):
-        _json["SEQINDEX"] = _json["SEQINDEX"] + 1
-        _json["CYCLIND"] = _json["CYCLIND"] + 1
-        return _json
+    def _fix_parameters(self):
+        self.original_json["SEQINDEX"] = self.original_json["SEQINDEX"] + 1
+        self.original_json["CYCLIND"] = self.original_json["CYCLIND"] + 1
 
     def fix_keywords(self):
         self._replace_empty_str()
@@ -706,6 +791,7 @@ class Keywords_Dataclass:
     comma_kws: list = field(default_factory=list)
     replace_str: dict = field(default_factory=dict)
     delete_str: dict = field(default_factory=dict)
+    regex_str: dict = field(default_factory=dict)
 
     write_any_val: list = field(default_factory=list)
     write_predefined_value: dict = field(default_factory=dict)

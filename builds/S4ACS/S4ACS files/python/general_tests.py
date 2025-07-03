@@ -26,15 +26,16 @@ dicts = {
     "GENERAL KW": general_kw,
     "TCS": tcs_json,
     "S4GUI": s4gui_json,
+    "GENERAL KW": general_kw,
 }
 
 dicts = {k: json.dumps(v) for (k, v) in dicts.items()}
 dicts["S4ICS"] = ics_kw
 log_file = "C:\\Users\\Denis\\SPARC4\\ACS\\20250429\\acs_ch1_keywords.log"
-for cls in [S4ICS]:
+for cls in [TCS]:
     tcs = cls(dicts, log_file)
-    print(tcs._json)
-    # tcs.fix_keywords()
+    tcs.fix_keywords()
+print(repr(tcs.hdr))
 
 # image = np.zeros((100, 100), dtype=np.int16)
 # file = os.path.join("C:\\", "images", "today", "test.fits")
