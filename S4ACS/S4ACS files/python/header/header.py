@@ -643,7 +643,14 @@ class CCD(Header):
             "PREAMP",
             "VCLKAMP",
         ]
-        write_any_val = ["DATE-OBS", "UTDATE", "UTTIME"]
+        regex_str = {
+            "DATE-OBS": (
+                r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}",
+                "YYYY-MM-DDTHH:MM:SS.ssssss",
+            ),
+            "UTTIME": (r"\d{2}:\d{2}:\d{2}\.\d{6}", "HH:MM:SS.ssssss"),
+            "UTDATE": (r"\d{4}-\d{2}-\d{2}", "YYYY-MM-DD"),
+        }
 
         return Keywords_Dataclass(
             keywords=keywords,
@@ -651,7 +658,7 @@ class CCD(Header):
             to_float_kws=to_float_kws,
             to_int_kws=to_int_kws,
             write_predefined_value=write_predefined_value,
-            write_any_val=write_any_val,
+            regex_str=regex_str,
         )
 
     def fix_keywords(self):
@@ -660,8 +667,8 @@ class CCD(Header):
         self._convert_to_int()
         self._subs_idx_in_list()
         self._substitute_idx_in_dict()
-        self._write_any_value()
         self._write_predefined_value()
+        self._verify_regex()
         self._write_ccd_gain()
         self._write_read_noise()
         self._fix_EXPTIME()
@@ -738,15 +745,21 @@ class General_KWs(Header):
             "ACQERROR",
         ]
 
-        write_any_val = [
-            "FILENAME",
-            "ACSVRSN",
+        to_int_kws = [
             "NSEQ",
             "NCYCLES",
             "CHANNEL",
             "SEQINDEX",
             "CYCLIND",
         ]
+        regex_str = {
+            "ACSVRSN": (r"v\d+\.\d+\.\d+", "v0.0.0"),
+            "FILENAME": (
+                r"\d{8}_s4c[1-4]_\d{6}(_[a-z0-9]+)?\.fits",
+                "YYYYMMDD_s4c1_000000.fits",
+            ),
+        }
+
         to_bool_kw = ["ACSMODE", "ACQERROR"]
         replace_empty_kws = {
             "NAXIS": 2,
@@ -756,15 +769,14 @@ class General_KWs(Header):
             "EQUINOX": 2000.0,
             "INSTRUME": "SPARC4",
             "SIMPLE": True,
-            "BSCALE": 1,
-            "BZERO": 0,
             "BITPIX": 16,
         }
         return Keywords_Dataclass(
             keywords=keywords,
             replace_empty_kws=replace_empty_kws,
             to_bool_kws=to_bool_kw,
-            write_any_val=write_any_val,
+            to_int_kws=to_int_kws,
+            regex_str=regex_str,
         )
 
     def _load_json(self, dict_header_jsons):
@@ -777,7 +789,8 @@ class General_KWs(Header):
 
     def fix_keywords(self):
         self._replace_empty_str()
-        self._write_any_value()
+        self._convert_to_int()
+        self._verify_regex()
         self._convert_to_boolean()
 
 
