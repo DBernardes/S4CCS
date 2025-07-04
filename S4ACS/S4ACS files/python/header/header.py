@@ -252,8 +252,7 @@ class Header(ABC):
             )
 
     def reset_header(self):
-        for kw in self.hdr.keys():
-            self.hdr[kw] = ""
+        Header.hdr = fits.Header(cards)
 
     def return_empty_header(self):
         return fits.Header(cards)
