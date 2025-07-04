@@ -25,6 +25,7 @@ class Header(ABC):
 
     def __init__(self, dict_header_jsons, log_file) -> None:
         self.log_file = log_file
+        self.dict_header_jsons = dict_header_jsons
         self._load_json(dict_header_jsons)
         self.kw_dataclass = self._initialize_kw_dataclass()
         self.extract_info()
@@ -303,6 +304,7 @@ class S4ICS(Header):
 
     def __init__(self, dict_header_jsons, log_file):
         self.log_file = log_file
+        self.dict_header_jsons = dict_header_jsons
         try:
             json_string = dict_header_jsons[self.sub_system].split("\n")[1]
             dict_header_jsons[self.sub_system] = json_string
@@ -409,10 +411,8 @@ class S4ICS(Header):
             self.original_json["ICSVRSN"] = self.original_json["VERSION"]
         except Exception as e:
             self._write_log_file(repr(e), "ICSVRSN")
-        try:
-            self.original_json["WPPOS"] = mechanisms["WPROT"]["pos_id"]
-        except Exception as e:
-            self._write_log_file(repr(e), "WPPOS")
+
+        self._write_WPPOS(mechanisms["WPROT"]["pos_id"])
 
     def _write_s4ics_kws_into_json(
         self, mechanisms, components_list, s4ics_correspondents, st_param
@@ -430,7 +430,8 @@ class S4ICS(Header):
             for mechanism in mechanisms_list:
                 mechanism_st = mechanism["status"]
                 mechanism_name = mechanism["name"]
-                if int(mechanism_st["pos_id"]) == -1:
+                pos_id = mechanism_st["pos_id"]
+                if int(mechanism_st["pos_id"]) == -1 and mechanism_name != "WPROT":
                     self._write_log_file(
                         f"There was an error related to the {mechanism_name} position: {mechanism_st}.",
                         "",
@@ -442,6 +443,22 @@ class S4ICS(Header):
         except Exception as e:
             self._write_log_file(repr(e), "")
             return {}
+
+    def _write_WPPOS(self, wppos):
+        try:
+            kw = "WPPOS"
+            wppos = int(wppos)
+            s4gui_json = json.loads(self.dict_header_jsons[S4GUI.sub_system])
+            inst_mode = s4gui_json["INSTMODE"]
+            if wppos == -1 and inst_mode == "PHOT":
+                self.original_json[kw] = 0
+            elif 1 <= wppos <= 16 and inst_mode == "POL":
+                self.original_json[kw] = wppos
+            else:
+                self._write_log_file(f"The unexpected value {wppos} was found.", kw)
+        except Exception as e:
+            self._write_log_file(repr(e), kw)
+        return
 
 
 class TCS(Header):

@@ -32,11 +32,7 @@ dicts = {
 dicts = {k: json.dumps(v) for (k, v) in dicts.items()}
 dicts["S4ICS"] = ics_kw
 log_file = "C:\\Users\\Denis\\SPARC4\\ACS\\20250429\\acs_ch1_keywords.log"
-for cls in [CCD, S4GUI, S4ICS, TCS, Focuser, General_KWs, Weather_Station]:
-    tcs = cls(dicts, log_file)
-    tcs.fix_keywords()
-tcs.reset_header()
-for cls in [CCD]:
+for cls in [S4ICS]:
     tcs = cls(dicts, log_file)
     tcs.fix_keywords()
 print(repr(tcs.hdr))
