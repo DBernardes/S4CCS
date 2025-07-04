@@ -546,11 +546,11 @@ class S4GUI(Header):
             val = self.original_json[kw]
             if not isinstance(val, str):
                 self._write_log_file(
-                    f'Keyword value "{val}" is not an instance of {str}.'
+                    f'Keyword value "{val}" is not an instance of {str}.', kw
                 )
                 return
             if self.original_json[kw] == "":
-                self._write_log_file(f"An empty string was found for the {kw} keyword.")
+                self._write_log_file(f"An empty string was found.", kw)
                 return
             if kw in self.hdr.keys():
                 del self.hdr[kw]
